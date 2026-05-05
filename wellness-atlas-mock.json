@@ -1,0 +1,6545 @@
+{
+  "meta": {
+    "title": "Wellness Atlas — Synthetic",
+    "description": "Reproduction of the original built-in mock dataset. Drop this file into the loader to populate the atlas.",
+    "projection": "umap",
+    "seed": 1729,
+    "generatedAt": 1777852800000
+  },
+  "categories": [
+    {
+      "id": "physical",
+      "label": "Physical",
+      "color": "#ff6b6b",
+      "position": [
+        3.2,
+        1,
+        -2.2
+      ]
+    },
+    {
+      "id": "emotional",
+      "label": "Emotional",
+      "color": "#ff9ec4",
+      "position": [
+        -3,
+        2.2,
+        1.1
+      ]
+    },
+    {
+      "id": "social",
+      "label": "Social",
+      "color": "#ffc857",
+      "position": [
+        1,
+        -3,
+        2.4
+      ]
+    },
+    {
+      "id": "intellectual",
+      "label": "Intellectual",
+      "color": "#4ecdc4",
+      "position": [
+        -2.4,
+        -2.2,
+        -2
+      ]
+    },
+    {
+      "id": "spiritual",
+      "label": "Spiritual",
+      "color": "#b794f4",
+      "position": [
+        4,
+        -1.2,
+        3.2
+      ]
+    },
+    {
+      "id": "occupational",
+      "label": "Occupational",
+      "color": "#a3e635",
+      "position": [
+        -4.2,
+        -0.8,
+        -1.4
+      ]
+    },
+    {
+      "id": "environmental",
+      "label": "Environmental",
+      "color": "#34d399",
+      "position": [
+        2.4,
+        3.2,
+        -3
+      ]
+    },
+    {
+      "id": "financial",
+      "label": "Financial",
+      "color": "#60a5fa",
+      "position": [
+        -1,
+        1.4,
+        4
+      ]
+    }
+  ],
+  "mapperEdges": [
+    {
+      "from": "physical",
+      "to": "emotional",
+      "weight": 0.85
+    },
+    {
+      "from": "physical",
+      "to": "environmental",
+      "weight": 0.72
+    },
+    {
+      "from": "physical",
+      "to": "spiritual",
+      "weight": 0.55
+    },
+    {
+      "from": "emotional",
+      "to": "social",
+      "weight": 0.78
+    },
+    {
+      "from": "emotional",
+      "to": "spiritual",
+      "weight": 0.68
+    },
+    {
+      "from": "social",
+      "to": "occupational",
+      "weight": 0.74
+    },
+    {
+      "from": "intellectual",
+      "to": "occupational",
+      "weight": 0.88
+    },
+    {
+      "from": "intellectual",
+      "to": "spiritual",
+      "weight": 0.5
+    },
+    {
+      "from": "occupational",
+      "to": "financial",
+      "weight": 0.82
+    },
+    {
+      "from": "environmental",
+      "to": "spiritual",
+      "weight": 0.66
+    }
+  ],
+  "points": [
+    {
+      "id": 0,
+      "x": 3.4869,
+      "y": 1.592,
+      "z": -1.7605,
+      "category": "physical",
+      "label": "Step total",
+      "value": 41,
+      "timestamp": 1776279600000
+    },
+    {
+      "id": 1,
+      "x": -2.9961,
+      "y": 2.0773,
+      "z": 1.7748,
+      "category": "emotional",
+      "label": "Stress signal",
+      "value": 27.8,
+      "timestamp": 1776207600000
+    },
+    {
+      "id": 2,
+      "x": 1.5579,
+      "y": -2.8195,
+      "z": 2.7341,
+      "category": "social",
+      "label": "Calendar event",
+      "value": 96.1,
+      "timestamp": 1777503600000
+    },
+    {
+      "id": 3,
+      "x": -3.2774,
+      "y": -1.2876,
+      "z": -1.4618,
+      "category": "intellectual",
+      "label": "Course progress",
+      "value": 45.6,
+      "timestamp": 1775451600000
+    },
+    {
+      "id": 4,
+      "x": 3.2314,
+      "y": -1.2351,
+      "z": 3.2495,
+      "category": "spiritual",
+      "label": "Walk in nature",
+      "value": 31.4,
+      "timestamp": 1775966400000
+    },
+    {
+      "id": 5,
+      "x": -2.8579,
+      "y": 0.2327,
+      "z": -1.2842,
+      "category": "occupational",
+      "label": "Project milestone",
+      "value": 37.8,
+      "timestamp": 1776099600000
+    },
+    {
+      "id": 6,
+      "x": 3.5253,
+      "y": 3.2577,
+      "z": -2.0443,
+      "category": "environmental",
+      "label": "Time outdoors",
+      "value": 40.6,
+      "timestamp": 1775268000000
+    },
+    {
+      "id": 7,
+      "x": -0.4283,
+      "y": 0.8962,
+      "z": 4.4194,
+      "category": "financial",
+      "label": "Investment",
+      "value": 74.3,
+      "timestamp": 1776139200000
+    },
+    {
+      "id": 8,
+      "x": 1.7033,
+      "y": 1.3089,
+      "z": -1.8045,
+      "category": "physical",
+      "label": "Resting HR",
+      "value": 0.2,
+      "timestamp": 1777032000000
+    },
+    {
+      "id": 9,
+      "x": -3.3342,
+      "y": 1.8493,
+      "z": 1.5557,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 38.7,
+      "timestamp": 1775980800000
+    },
+    {
+      "id": 10,
+      "x": 0.228,
+      "y": -3.1673,
+      "z": 2.7406,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 96.1,
+      "timestamp": 1776243600000
+    },
+    {
+      "id": 11,
+      "x": -3.6932,
+      "y": -3.1584,
+      "z": -1.2677,
+      "category": "intellectual",
+      "label": "Course progress",
+      "value": 57.5,
+      "timestamp": 1777597200000
+    },
+    {
+      "id": 12,
+      "x": 4.872,
+      "y": -1.7258,
+      "z": 3.6859,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 20,
+      "timestamp": 1776844800000
+    },
+    {
+      "id": 13,
+      "x": -3.9861,
+      "y": -0.4655,
+      "z": -1.3299,
+      "category": "occupational",
+      "label": "Meeting",
+      "value": 32.8,
+      "timestamp": 1776088800000
+    },
+    {
+      "id": 14,
+      "x": 2.3991,
+      "y": 3.3695,
+      "z": -2.6373,
+      "category": "environmental",
+      "label": "Sunlight exposure",
+      "value": 43.1,
+      "timestamp": 1775340000000
+    },
+    {
+      "id": 15,
+      "x": -1.3257,
+      "y": 1.0371,
+      "z": 3.9328,
+      "category": "financial",
+      "label": "Investment",
+      "value": 35,
+      "timestamp": 1777716000000
+    },
+    {
+      "id": 16,
+      "x": 4.2313,
+      "y": 0.4812,
+      "z": -1.2207,
+      "category": "physical",
+      "label": "Sleep recovery",
+      "value": 20.3,
+      "timestamp": 1776981600000
+    },
+    {
+      "id": 17,
+      "x": -2.4129,
+      "y": 2.096,
+      "z": 0.8918,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 16,
+      "timestamp": 1777197600000
+    },
+    {
+      "id": 18,
+      "x": 0.698,
+      "y": -2.8824,
+      "z": 1.9421,
+      "category": "social",
+      "label": "Family call",
+      "value": 42.3,
+      "timestamp": 1776085200000
+    },
+    {
+      "id": 19,
+      "x": -3.0473,
+      "y": -2.7174,
+      "z": -1.228,
+      "category": "intellectual",
+      "label": "Reading session",
+      "value": 32.6,
+      "timestamp": 1777230000000
+    },
+    {
+      "id": 20,
+      "x": 4.2294,
+      "y": -1.3355,
+      "z": 4.0075,
+      "category": "spiritual",
+      "label": "Reflection",
+      "value": 25.3,
+      "timestamp": 1775908800000
+    },
+    {
+      "id": 21,
+      "x": -4.9825,
+      "y": -1.1487,
+      "z": -1.0046,
+      "category": "occupational",
+      "label": "Deep work block",
+      "value": 22.2,
+      "timestamp": 1777618800000
+    },
+    {
+      "id": 22,
+      "x": 2.6185,
+      "y": 3.157,
+      "z": -2.6326,
+      "category": "environmental",
+      "label": "Sunlight exposure",
+      "value": 27.3,
+      "timestamp": 1775599200000
+    },
+    {
+      "id": 23,
+      "x": -1.5348,
+      "y": 1.7027,
+      "z": 4.1775,
+      "category": "financial",
+      "label": "Budget check",
+      "value": 96.9,
+      "timestamp": 1777737600000
+    },
+    {
+      "id": 24,
+      "x": 3.2069,
+      "y": 1.0118,
+      "z": -1.6716,
+      "category": "physical",
+      "label": "HRV reading",
+      "value": 50,
+      "timestamp": 1777528800000
+    },
+    {
+      "id": 25,
+      "x": -3.3613,
+      "y": 1.6865,
+      "z": 1.5965,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 55.3,
+      "timestamp": 1777208400000
+    },
+    {
+      "id": 26,
+      "x": 1.6319,
+      "y": -2.8938,
+      "z": 2.9921,
+      "category": "social",
+      "label": "Message thread",
+      "value": 50.4,
+      "timestamp": 1775689200000
+    },
+    {
+      "id": 27,
+      "x": -3.1211,
+      "y": -1.9602,
+      "z": -1.2834,
+      "category": "intellectual",
+      "label": "Reading session",
+      "value": 42.9,
+      "timestamp": 1776366000000
+    },
+    {
+      "id": 28,
+      "x": 2.8784,
+      "y": -0.7078,
+      "z": 2.9069,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 21.6,
+      "timestamp": 1776510000000
+    },
+    {
+      "id": 29,
+      "x": -3.9606,
+      "y": -0.7825,
+      "z": -1.3671,
+      "category": "occupational",
+      "label": "Project milestone",
+      "value": 0.2,
+      "timestamp": 1775592000000
+    },
+    {
+      "id": 30,
+      "x": 3.2153,
+      "y": 3.5558,
+      "z": -2.7244,
+      "category": "environmental",
+      "label": "Sunlight exposure",
+      "value": 90,
+      "timestamp": 1776441600000
+    },
+    {
+      "id": 31,
+      "x": 0.3401,
+      "y": 1.1642,
+      "z": 4.258,
+      "category": "financial",
+      "label": "Transaction",
+      "value": 10.6,
+      "timestamp": 1775502000000
+    },
+    {
+      "id": 32,
+      "x": 2.7861,
+      "y": 0.7083,
+      "z": -1.7918,
+      "category": "physical",
+      "label": "Resting HR",
+      "value": 56.7,
+      "timestamp": 1777446000000
+    },
+    {
+      "id": 33,
+      "x": -2.1567,
+      "y": 2.7838,
+      "z": 1.0502,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 45.9,
+      "timestamp": 1777096800000
+    },
+    {
+      "id": 34,
+      "x": 1.5461,
+      "y": -2.9825,
+      "z": 3.2321,
+      "category": "social",
+      "label": "Family call",
+      "value": 61.6,
+      "timestamp": 1776553200000
+    },
+    {
+      "id": 35,
+      "x": -1.6309,
+      "y": -3.5841,
+      "z": -2.029,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 63.4,
+      "timestamp": 1776924000000
+    },
+    {
+      "id": 36,
+      "x": 2.2918,
+      "y": -1.0517,
+      "z": 2.9324,
+      "category": "spiritual",
+      "label": "Meditation",
+      "value": 75.7,
+      "timestamp": 1776913200000
+    },
+    {
+      "id": 37,
+      "x": -4.2623,
+      "y": -1.2341,
+      "z": -1.5632,
+      "category": "occupational",
+      "label": "Project milestone",
+      "value": 51.7,
+      "timestamp": 1776819600000
+    },
+    {
+      "id": 38,
+      "x": 3.105,
+      "y": 2.8777,
+      "z": -2.4907,
+      "category": "environmental",
+      "label": "Time outdoors",
+      "value": 54.2,
+      "timestamp": 1775851200000
+    },
+    {
+      "id": 39,
+      "x": -2.1103,
+      "y": 0.8163,
+      "z": 4.5908,
+      "category": "financial",
+      "label": "Savings progress",
+      "value": 22.4,
+      "timestamp": 1775970000000
+    },
+    {
+      "id": 40,
+      "x": 3.381,
+      "y": 0.8983,
+      "z": -2.4966,
+      "category": "physical",
+      "label": "Workout intensity",
+      "value": 61.5,
+      "timestamp": 1776081600000
+    },
+    {
+      "id": 41,
+      "x": -4.171,
+      "y": 2.4915,
+      "z": 1.9778,
+      "category": "emotional",
+      "label": "Stress signal",
+      "value": 76.8,
+      "timestamp": 1776776400000
+    },
+    {
+      "id": 42,
+      "x": -0.341,
+      "y": -3.1696,
+      "z": 3.2932,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 8.5,
+      "timestamp": 1777705200000
+    },
+    {
+      "id": 43,
+      "x": -1.6674,
+      "y": -3.3492,
+      "z": -1.9456,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 36.2,
+      "timestamp": 1776315600000
+    },
+    {
+      "id": 44,
+      "x": 4.4676,
+      "y": -1.8488,
+      "z": 2.8032,
+      "category": "spiritual",
+      "label": "Walk in nature",
+      "value": 6.1,
+      "timestamp": 1775278800000
+    },
+    {
+      "id": 45,
+      "x": -3.8058,
+      "y": -2.2211,
+      "z": -1.425,
+      "category": "occupational",
+      "label": "Project milestone",
+      "value": 71.5,
+      "timestamp": 1775462400000
+    },
+    {
+      "id": 46,
+      "x": 2.2303,
+      "y": 4.089,
+      "z": -2.8208,
+      "category": "environmental",
+      "label": "Air quality",
+      "value": 98.4,
+      "timestamp": 1775829600000
+    },
+    {
+      "id": 47,
+      "x": -1.2782,
+      "y": 2.024,
+      "z": 4.7341,
+      "category": "financial",
+      "label": "Investment",
+      "value": 42.7,
+      "timestamp": 1776808800000
+    },
+    {
+      "id": 48,
+      "x": 4.6939,
+      "y": 1.0099,
+      "z": -1.6889,
+      "category": "physical",
+      "label": "HRV reading",
+      "value": 20.6,
+      "timestamp": 1775379600000
+    },
+    {
+      "id": 49,
+      "x": -3.6836,
+      "y": 2.0601,
+      "z": 1.8744,
+      "category": "emotional",
+      "label": "Mood log",
+      "value": 31.3,
+      "timestamp": 1777143600000
+    },
+    {
+      "id": 50,
+      "x": 0.1517,
+      "y": -4.0724,
+      "z": 3.4166,
+      "category": "social",
+      "label": "Family call",
+      "value": 79.4,
+      "timestamp": 1777039200000
+    },
+    {
+      "id": 51,
+      "x": -1.7123,
+      "y": -2.1828,
+      "z": -0.9385,
+      "category": "intellectual",
+      "label": "Note captured",
+      "value": 60.9,
+      "timestamp": 1775757600000
+    },
+    {
+      "id": 52,
+      "x": 3.9257,
+      "y": -1.3257,
+      "z": 3.4055,
+      "category": "spiritual",
+      "label": "Meditation",
+      "value": 50.9,
+      "timestamp": 1777388400000
+    },
+    {
+      "id": 53,
+      "x": -4.1839,
+      "y": -0.6833,
+      "z": -1.3739,
+      "category": "occupational",
+      "label": "Deep work block",
+      "value": 70.5,
+      "timestamp": 1776531600000
+    },
+    {
+      "id": 54,
+      "x": 3.6071,
+      "y": 2.6193,
+      "z": -2.6163,
+      "category": "environmental",
+      "label": "Time outdoors",
+      "value": 33.7,
+      "timestamp": 1776218400000
+    },
+    {
+      "id": 55,
+      "x": -1.6976,
+      "y": 1.4962,
+      "z": 3.9106,
+      "category": "financial",
+      "label": "Investment",
+      "value": 10.6,
+      "timestamp": 1776481200000
+    },
+    {
+      "id": 56,
+      "x": 4.3517,
+      "y": 0.9844,
+      "z": -2.2163,
+      "category": "physical",
+      "label": "Workout intensity",
+      "value": 39.2,
+      "timestamp": 1776189600000
+    },
+    {
+      "id": 57,
+      "x": -2.8237,
+      "y": 2.1195,
+      "z": 1.32,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 15.1,
+      "timestamp": 1775545200000
+    },
+    {
+      "id": 58,
+      "x": 2.1128,
+      "y": -3.3367,
+      "z": 2.2927,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 87.3,
+      "timestamp": 1776160800000
+    },
+    {
+      "id": 59,
+      "x": -2.4658,
+      "y": -1.519,
+      "z": -1.7665,
+      "category": "intellectual",
+      "label": "Reading session",
+      "value": 72.7,
+      "timestamp": 1777384800000
+    },
+    {
+      "id": 60,
+      "x": 5.1019,
+      "y": -0.791,
+      "z": 4.1347,
+      "category": "spiritual",
+      "label": "Walk in nature",
+      "value": 57.9,
+      "timestamp": 1776384000000
+    },
+    {
+      "id": 61,
+      "x": -4.0312,
+      "y": -1.317,
+      "z": -0.7684,
+      "category": "occupational",
+      "label": "Deep work block",
+      "value": 10.6,
+      "timestamp": 1777496400000
+    },
+    {
+      "id": 62,
+      "x": 2.7619,
+      "y": 2.5566,
+      "z": -2.7227,
+      "category": "environmental",
+      "label": "Travel",
+      "value": 28.6,
+      "timestamp": 1776146400000
+    },
+    {
+      "id": 63,
+      "x": -2.0355,
+      "y": 1.6616,
+      "z": 5.0946,
+      "category": "financial",
+      "label": "Transaction",
+      "value": 37.5,
+      "timestamp": 1777161600000
+    },
+    {
+      "id": 64,
+      "x": 5.0452,
+      "y": 1.3003,
+      "z": -1.8053,
+      "category": "physical",
+      "label": "HRV reading",
+      "value": 48.7,
+      "timestamp": 1775268000000
+    },
+    {
+      "id": 65,
+      "x": -2.2133,
+      "y": 1.8853,
+      "z": 1.6196,
+      "category": "emotional",
+      "label": "Mood log",
+      "value": 52.3,
+      "timestamp": 1776506400000
+    },
+    {
+      "id": 66,
+      "x": 0.6905,
+      "y": -2.9826,
+      "z": 2.1348,
+      "category": "social",
+      "label": "Message thread",
+      "value": 54.1,
+      "timestamp": 1775739600000
+    },
+    {
+      "id": 67,
+      "x": -3.6313,
+      "y": -1.5948,
+      "z": -1.583,
+      "category": "intellectual",
+      "label": "Course progress",
+      "value": 15.1,
+      "timestamp": 1777352400000
+    },
+    {
+      "id": 68,
+      "x": 4.4167,
+      "y": -0.7873,
+      "z": 3.2255,
+      "category": "spiritual",
+      "label": "Reflection",
+      "value": 59.8,
+      "timestamp": 1776538800000
+    },
+    {
+      "id": 69,
+      "x": -4.2832,
+      "y": -0.3181,
+      "z": -1.5982,
+      "category": "occupational",
+      "label": "Email triaged",
+      "value": 37.3,
+      "timestamp": 1776042000000
+    },
+    {
+      "id": 70,
+      "x": 2.6206,
+      "y": 3.096,
+      "z": -3.0677,
+      "category": "environmental",
+      "label": "Travel",
+      "value": 82.3,
+      "timestamp": 1776934800000
+    },
+    {
+      "id": 71,
+      "x": -1.0763,
+      "y": 1.9082,
+      "z": 4.7625,
+      "category": "financial",
+      "label": "Savings progress",
+      "value": 27.4,
+      "timestamp": 1776520800000
+    },
+    {
+      "id": 72,
+      "x": 2.9569,
+      "y": 1.746,
+      "z": -1.4169,
+      "category": "physical",
+      "label": "Resting HR",
+      "value": 1.1,
+      "timestamp": 1776834000000
+    },
+    {
+      "id": 73,
+      "x": -3.0456,
+      "y": 1.1859,
+      "z": 0.9551,
+      "category": "emotional",
+      "label": "Journal note",
+      "value": 56.5,
+      "timestamp": 1776369600000
+    },
+    {
+      "id": 74,
+      "x": 2.2506,
+      "y": -3.1306,
+      "z": 2.2037,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 32.1,
+      "timestamp": 1775534400000
+    },
+    {
+      "id": 75,
+      "x": -3.5738,
+      "y": -2.7315,
+      "z": -1.6184,
+      "category": "intellectual",
+      "label": "Course progress",
+      "value": 40.1,
+      "timestamp": 1777298400000
+    },
+    {
+      "id": 76,
+      "x": 3.8712,
+      "y": -0.4795,
+      "z": 3.7365,
+      "category": "spiritual",
+      "label": "Walk in nature",
+      "value": 67,
+      "timestamp": 1776402000000
+    },
+    {
+      "id": 77,
+      "x": -3.2553,
+      "y": -0.7958,
+      "z": -0.992,
+      "category": "occupational",
+      "label": "Deep work block",
+      "value": 74.2,
+      "timestamp": 1776578400000
+    },
+    {
+      "id": 78,
+      "x": 0.9206,
+      "y": 2.9101,
+      "z": -2.7963,
+      "category": "environmental",
+      "label": "Air quality",
+      "value": 35.5,
+      "timestamp": 1777320000000
+    },
+    {
+      "id": 79,
+      "x": 0.4395,
+      "y": 1.5679,
+      "z": 3.9473,
+      "category": "financial",
+      "label": "Investment",
+      "value": 39.2,
+      "timestamp": 1776682800000
+    },
+    {
+      "id": 80,
+      "x": 2.8034,
+      "y": 0.8491,
+      "z": -1.9504,
+      "category": "physical",
+      "label": "Step total",
+      "value": 36.3,
+      "timestamp": 1775534400000
+    },
+    {
+      "id": 81,
+      "x": -3.4802,
+      "y": 2.5429,
+      "z": 2.0966,
+      "category": "emotional",
+      "label": "Stress signal",
+      "value": 52.7,
+      "timestamp": 1777752000000
+    },
+    {
+      "id": 82,
+      "x": 1.439,
+      "y": -3.2183,
+      "z": 2.483,
+      "category": "social",
+      "label": "Family call",
+      "value": 93.5,
+      "timestamp": 1775556000000
+    },
+    {
+      "id": 83,
+      "x": -1.7943,
+      "y": -2.8393,
+      "z": -1.145,
+      "category": "intellectual",
+      "label": "Course progress",
+      "value": 28.8,
+      "timestamp": 1776603600000
+    },
+    {
+      "id": 84,
+      "x": 3.9444,
+      "y": -2.2551,
+      "z": 3.8669,
+      "category": "spiritual",
+      "label": "Reflection",
+      "value": 68.3,
+      "timestamp": 1777788000000
+    },
+    {
+      "id": 85,
+      "x": -5.5686,
+      "y": -1.583,
+      "z": -0.628,
+      "category": "occupational",
+      "label": "Meeting",
+      "value": 1.2,
+      "timestamp": 1775714400000
+    },
+    {
+      "id": 86,
+      "x": 2.7399,
+      "y": 4.4707,
+      "z": -2.368,
+      "category": "environmental",
+      "label": "Travel",
+      "value": 18.3,
+      "timestamp": 1776567600000
+    },
+    {
+      "id": 87,
+      "x": -0.4952,
+      "y": 1.3025,
+      "z": 4.502,
+      "category": "financial",
+      "label": "Investment",
+      "value": 35.9,
+      "timestamp": 1776402000000
+    },
+    {
+      "id": 88,
+      "x": 3.9515,
+      "y": 1.1278,
+      "z": -1.7247,
+      "category": "physical",
+      "label": "Workout intensity",
+      "value": 55,
+      "timestamp": 1777654800000
+    },
+    {
+      "id": 89,
+      "x": -2.7547,
+      "y": 1.3948,
+      "z": 2.1177,
+      "category": "emotional",
+      "label": "Journal note",
+      "value": 89,
+      "timestamp": 1775296800000
+    },
+    {
+      "id": 90,
+      "x": 2.0631,
+      "y": -4.1038,
+      "z": 3.1364,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 31.5,
+      "timestamp": 1777161600000
+    },
+    {
+      "id": 91,
+      "x": -1.5713,
+      "y": -2.9879,
+      "z": -1.5542,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 88.7,
+      "timestamp": 1775761200000
+    },
+    {
+      "id": 92,
+      "x": 3.8437,
+      "y": -1.8585,
+      "z": 3.0501,
+      "category": "spiritual",
+      "label": "Walk in nature",
+      "value": 60.4,
+      "timestamp": 1776402000000
+    },
+    {
+      "id": 93,
+      "x": -2.9422,
+      "y": -0.9281,
+      "z": -1.4789,
+      "category": "occupational",
+      "label": "Meeting",
+      "value": 66.3,
+      "timestamp": 1777690800000
+    },
+    {
+      "id": 94,
+      "x": 2.9336,
+      "y": 2.9673,
+      "z": -2.6728,
+      "category": "environmental",
+      "label": "Air quality",
+      "value": 43.9,
+      "timestamp": 1777532400000
+    },
+    {
+      "id": 95,
+      "x": -0.077,
+      "y": 2.052,
+      "z": 4.3883,
+      "category": "financial",
+      "label": "Transaction",
+      "value": 2.6,
+      "timestamp": 1776700800000
+    },
+    {
+      "id": 96,
+      "x": 4.5957,
+      "y": 0.9244,
+      "z": -1.6674,
+      "category": "physical",
+      "label": "HRV reading",
+      "value": 12.9,
+      "timestamp": 1775862000000
+    },
+    {
+      "id": 97,
+      "x": -3.7557,
+      "y": 1.7952,
+      "z": 1.6005,
+      "category": "emotional",
+      "label": "Journal note",
+      "value": 73.9,
+      "timestamp": 1776002400000
+    },
+    {
+      "id": 98,
+      "x": 1.1531,
+      "y": -3.3164,
+      "z": 2.1472,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 7.8,
+      "timestamp": 1775322000000
+    },
+    {
+      "id": 99,
+      "x": -2.0141,
+      "y": -2.8629,
+      "z": -2.0784,
+      "category": "intellectual",
+      "label": "Note captured",
+      "value": 44.6,
+      "timestamp": 1776369600000
+    },
+    {
+      "id": 100,
+      "x": 3.7776,
+      "y": -1.8088,
+      "z": 3.3619,
+      "category": "spiritual",
+      "label": "Meditation",
+      "value": 68.2,
+      "timestamp": 1776362400000
+    },
+    {
+      "id": 101,
+      "x": -4.3599,
+      "y": -1.3501,
+      "z": -1.3332,
+      "category": "occupational",
+      "label": "Email triaged",
+      "value": 78.1,
+      "timestamp": 1776895200000
+    },
+    {
+      "id": 102,
+      "x": 2.4414,
+      "y": 3.7575,
+      "z": -2.3067,
+      "category": "environmental",
+      "label": "Time outdoors",
+      "value": 99.7,
+      "timestamp": 1775901600000
+    },
+    {
+      "id": 103,
+      "x": -1.383,
+      "y": 1.199,
+      "z": 4.2504,
+      "category": "financial",
+      "label": "Savings progress",
+      "value": 18.5,
+      "timestamp": 1775977200000
+    },
+    {
+      "id": 104,
+      "x": 3.8965,
+      "y": 1.7876,
+      "z": -2.1467,
+      "category": "physical",
+      "label": "Step total",
+      "value": 29.1,
+      "timestamp": 1776297600000
+    },
+    {
+      "id": 105,
+      "x": -2.0519,
+      "y": 1.7736,
+      "z": 1.3339,
+      "category": "emotional",
+      "label": "Journal note",
+      "value": 80.5,
+      "timestamp": 1775937600000
+    },
+    {
+      "id": 106,
+      "x": 2.0622,
+      "y": -3.3672,
+      "z": 2.3562,
+      "category": "social",
+      "label": "Family call",
+      "value": 79.3,
+      "timestamp": 1776794400000
+    },
+    {
+      "id": 107,
+      "x": -1.9003,
+      "y": -2.5925,
+      "z": -2.0328,
+      "category": "intellectual",
+      "label": "Reading session",
+      "value": 90.6,
+      "timestamp": 1777737600000
+    },
+    {
+      "id": 108,
+      "x": 2.9599,
+      "y": -1.9096,
+      "z": 4.2895,
+      "category": "spiritual",
+      "label": "Meditation",
+      "value": 52.3,
+      "timestamp": 1777482000000
+    },
+    {
+      "id": 109,
+      "x": -5.2056,
+      "y": -1.4443,
+      "z": -0.6492,
+      "category": "occupational",
+      "label": "Project milestone",
+      "value": 80.1,
+      "timestamp": 1777474800000
+    },
+    {
+      "id": 110,
+      "x": 0.9932,
+      "y": 2.7792,
+      "z": -3.2169,
+      "category": "environmental",
+      "label": "Travel",
+      "value": 21.3,
+      "timestamp": 1776110400000
+    },
+    {
+      "id": 111,
+      "x": 0.1081,
+      "y": 0.5283,
+      "z": 4.0549,
+      "category": "financial",
+      "label": "Savings progress",
+      "value": 52.9,
+      "timestamp": 1775617200000
+    },
+    {
+      "id": 112,
+      "x": 3.4765,
+      "y": -0.4216,
+      "z": -1.7246,
+      "category": "physical",
+      "label": "HRV reading",
+      "value": 87.1,
+      "timestamp": 1777525200000
+    },
+    {
+      "id": 113,
+      "x": -2.1069,
+      "y": 2.7307,
+      "z": 1.2829,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 57.5,
+      "timestamp": 1776348000000
+    },
+    {
+      "id": 114,
+      "x": 1.5819,
+      "y": -3.8278,
+      "z": 2.7404,
+      "category": "social",
+      "label": "Message thread",
+      "value": 58.6,
+      "timestamp": 1775278800000
+    },
+    {
+      "id": 115,
+      "x": -2.3505,
+      "y": -1.7742,
+      "z": -0.9519,
+      "category": "intellectual",
+      "label": "Reading session",
+      "value": 51.2,
+      "timestamp": 1777788000000
+    },
+    {
+      "id": 116,
+      "x": 3.1253,
+      "y": -1.6901,
+      "z": 3.896,
+      "category": "spiritual",
+      "label": "Walk in nature",
+      "value": 95.1,
+      "timestamp": 1777669200000
+    },
+    {
+      "id": 117,
+      "x": -3.0257,
+      "y": -0.6263,
+      "z": -1.127,
+      "category": "occupational",
+      "label": "Meeting",
+      "value": 88.5,
+      "timestamp": 1777446000000
+    },
+    {
+      "id": 118,
+      "x": 1.0548,
+      "y": 2.8142,
+      "z": -2.8006,
+      "category": "environmental",
+      "label": "Travel",
+      "value": 44.3,
+      "timestamp": 1776603600000
+    },
+    {
+      "id": 119,
+      "x": 0.0887,
+      "y": 1.3269,
+      "z": 5.0515,
+      "category": "financial",
+      "label": "Budget check",
+      "value": 30.5,
+      "timestamp": 1776567600000
+    },
+    {
+      "id": 120,
+      "x": 2.1037,
+      "y": 0.2545,
+      "z": -1.9715,
+      "category": "physical",
+      "label": "HRV reading",
+      "value": 39.1,
+      "timestamp": 1777046400000
+    },
+    {
+      "id": 121,
+      "x": -4.2362,
+      "y": 1.8365,
+      "z": 2.0908,
+      "category": "emotional",
+      "label": "Stress signal",
+      "value": 82.1,
+      "timestamp": 1776423600000
+    },
+    {
+      "id": 122,
+      "x": 1.1202,
+      "y": -3.0956,
+      "z": 2.918,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 80.9,
+      "timestamp": 1775862000000
+    },
+    {
+      "id": 123,
+      "x": -3.2891,
+      "y": -2.8742,
+      "z": -1.3534,
+      "category": "intellectual",
+      "label": "Note captured",
+      "value": 1.7,
+      "timestamp": 1777273200000
+    },
+    {
+      "id": 124,
+      "x": 4.0793,
+      "y": -1.3809,
+      "z": 3.6166,
+      "category": "spiritual",
+      "label": "Meditation",
+      "value": 36.7,
+      "timestamp": 1775732400000
+    },
+    {
+      "id": 125,
+      "x": -3.7847,
+      "y": -1.8141,
+      "z": -1.2503,
+      "category": "occupational",
+      "label": "Email triaged",
+      "value": 32,
+      "timestamp": 1775628000000
+    },
+    {
+      "id": 126,
+      "x": 2.622,
+      "y": 1.8261,
+      "z": -2.5287,
+      "category": "environmental",
+      "label": "Travel",
+      "value": 66.6,
+      "timestamp": 1776924000000
+    },
+    {
+      "id": 127,
+      "x": -0.9465,
+      "y": 1.5002,
+      "z": 4.0172,
+      "category": "financial",
+      "label": "Savings progress",
+      "value": 86.1,
+      "timestamp": 1777518000000
+    },
+    {
+      "id": 128,
+      "x": 2.8386,
+      "y": 0.8712,
+      "z": -2.454,
+      "category": "physical",
+      "label": "Workout intensity",
+      "value": 22.1,
+      "timestamp": 1776690000000
+    },
+    {
+      "id": 129,
+      "x": -3.9085,
+      "y": 1.844,
+      "z": 1.9416,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 71.9,
+      "timestamp": 1775494800000
+    },
+    {
+      "id": 130,
+      "x": 0.1486,
+      "y": -2.2862,
+      "z": 2.9349,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 41.1,
+      "timestamp": 1776610800000
+    },
+    {
+      "id": 131,
+      "x": -1.7491,
+      "y": -2.4249,
+      "z": -2.0553,
+      "category": "intellectual",
+      "label": "Course progress",
+      "value": 57.4,
+      "timestamp": 1777161600000
+    },
+    {
+      "id": 132,
+      "x": 5.0204,
+      "y": -1.3587,
+      "z": 3.3453,
+      "category": "spiritual",
+      "label": "Meditation",
+      "value": 61.7,
+      "timestamp": 1777554000000
+    },
+    {
+      "id": 133,
+      "x": -2.9885,
+      "y": -0.3553,
+      "z": -1.0534,
+      "category": "occupational",
+      "label": "Email triaged",
+      "value": 51.6,
+      "timestamp": 1776402000000
+    },
+    {
+      "id": 134,
+      "x": 2.9652,
+      "y": 2.9892,
+      "z": -3.1517,
+      "category": "environmental",
+      "label": "Time outdoors",
+      "value": 97.7,
+      "timestamp": 1776571200000
+    },
+    {
+      "id": 135,
+      "x": 0.4761,
+      "y": 0.6278,
+      "z": 3.6707,
+      "category": "financial",
+      "label": "Savings progress",
+      "value": 66.2,
+      "timestamp": 1776603600000
+    },
+    {
+      "id": 136,
+      "x": 3.8273,
+      "y": 0.2509,
+      "z": -1.7755,
+      "category": "physical",
+      "label": "HRV reading",
+      "value": 64,
+      "timestamp": 1776585600000
+    },
+    {
+      "id": 137,
+      "x": -1.5934,
+      "y": 1.8412,
+      "z": 1.2142,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 58.8,
+      "timestamp": 1777107600000
+    },
+    {
+      "id": 138,
+      "x": 1.2576,
+      "y": -3.801,
+      "z": 3.3554,
+      "category": "social",
+      "label": "Calendar event",
+      "value": 76.2,
+      "timestamp": 1777071600000
+    },
+    {
+      "id": 139,
+      "x": -0.9807,
+      "y": -1.7099,
+      "z": -1.3623,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 52.3,
+      "timestamp": 1775300400000
+    },
+    {
+      "id": 140,
+      "x": 3.441,
+      "y": -1.6654,
+      "z": 3.7449,
+      "category": "spiritual",
+      "label": "Reflection",
+      "value": 83.5,
+      "timestamp": 1777708800000
+    },
+    {
+      "id": 141,
+      "x": -4.7806,
+      "y": -1.2339,
+      "z": -0.9351,
+      "category": "occupational",
+      "label": "Email triaged",
+      "value": 63,
+      "timestamp": 1776330000000
+    },
+    {
+      "id": 142,
+      "x": 2.4883,
+      "y": 3.6208,
+      "z": -2.5144,
+      "category": "environmental",
+      "label": "Air quality",
+      "value": 31.7,
+      "timestamp": 1777197600000
+    },
+    {
+      "id": 143,
+      "x": -2.499,
+      "y": 1.2667,
+      "z": 4.2491,
+      "category": "financial",
+      "label": "Savings progress",
+      "value": 72.6,
+      "timestamp": 1777705200000
+    },
+    {
+      "id": 144,
+      "x": 3.7885,
+      "y": 1.7859,
+      "z": -1.9721,
+      "category": "physical",
+      "label": "Workout intensity",
+      "value": 27.9,
+      "timestamp": 1775973600000
+    },
+    {
+      "id": 145,
+      "x": -2.0655,
+      "y": 2.2108,
+      "z": 1.777,
+      "category": "emotional",
+      "label": "Stress signal",
+      "value": 69.1,
+      "timestamp": 1777586400000
+    },
+    {
+      "id": 146,
+      "x": 2.4678,
+      "y": -2.9524,
+      "z": 2.3249,
+      "category": "social",
+      "label": "Message thread",
+      "value": 85.4,
+      "timestamp": 1776700800000
+    },
+    {
+      "id": 147,
+      "x": -3.8843,
+      "y": -1.9272,
+      "z": -2.0126,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 77.8,
+      "timestamp": 1777669200000
+    },
+    {
+      "id": 148,
+      "x": 3.9159,
+      "y": -2.0046,
+      "z": 3.3158,
+      "category": "spiritual",
+      "label": "Walk in nature",
+      "value": 36.5,
+      "timestamp": 1777291200000
+    },
+    {
+      "id": 149,
+      "x": -4.5937,
+      "y": -0.6211,
+      "z": -0.7925,
+      "category": "occupational",
+      "label": "Project milestone",
+      "value": 47.9,
+      "timestamp": 1775847600000
+    },
+    {
+      "id": 150,
+      "x": 2.0889,
+      "y": 3.4056,
+      "z": -2.2802,
+      "category": "environmental",
+      "label": "Time outdoors",
+      "value": 31.8,
+      "timestamp": 1776513600000
+    },
+    {
+      "id": 151,
+      "x": -2.0881,
+      "y": 2.1032,
+      "z": 4.6085,
+      "category": "financial",
+      "label": "Savings progress",
+      "value": 52,
+      "timestamp": 1777572000000
+    },
+    {
+      "id": 152,
+      "x": 3.6191,
+      "y": 0.7016,
+      "z": -2.544,
+      "category": "physical",
+      "label": "Sleep recovery",
+      "value": 69.1,
+      "timestamp": 1776384000000
+    },
+    {
+      "id": 153,
+      "x": -4.5142,
+      "y": 1.9504,
+      "z": 1.0123,
+      "category": "emotional",
+      "label": "Journal note",
+      "value": 55.2,
+      "timestamp": 1776733200000
+    },
+    {
+      "id": 154,
+      "x": 0.8929,
+      "y": -2.7395,
+      "z": 2.7676,
+      "category": "social",
+      "label": "Family call",
+      "value": 3,
+      "timestamp": 1777327200000
+    },
+    {
+      "id": 155,
+      "x": -3.4479,
+      "y": -2.4247,
+      "z": -1.8737,
+      "category": "intellectual",
+      "label": "Reading session",
+      "value": 71.5,
+      "timestamp": 1777640400000
+    },
+    {
+      "id": 156,
+      "x": 2.8673,
+      "y": -1.5234,
+      "z": 3.5372,
+      "category": "spiritual",
+      "label": "Walk in nature",
+      "value": 44.8,
+      "timestamp": 1775318400000
+    },
+    {
+      "id": 157,
+      "x": -3.0149,
+      "y": -0.4572,
+      "z": -0.5254,
+      "category": "occupational",
+      "label": "Email triaged",
+      "value": 10.8,
+      "timestamp": 1776164400000
+    },
+    {
+      "id": 158,
+      "x": 1.9,
+      "y": 2.5796,
+      "z": -2.6089,
+      "category": "environmental",
+      "label": "Travel",
+      "value": 4.1,
+      "timestamp": 1776304800000
+    },
+    {
+      "id": 159,
+      "x": -1.9563,
+      "y": 1.4481,
+      "z": 4.7366,
+      "category": "financial",
+      "label": "Investment",
+      "value": 9.4,
+      "timestamp": 1776103200000
+    },
+    {
+      "id": 160,
+      "x": 3.486,
+      "y": 0.8136,
+      "z": -2.3116,
+      "category": "physical",
+      "label": "Sleep recovery",
+      "value": 15.4,
+      "timestamp": 1775584800000
+    },
+    {
+      "id": 161,
+      "x": -3.359,
+      "y": 2.6524,
+      "z": 0.7,
+      "category": "emotional",
+      "label": "Mood log",
+      "value": 35,
+      "timestamp": 1777608000000
+    },
+    {
+      "id": 162,
+      "x": 1.0885,
+      "y": -2.986,
+      "z": 2.4735,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 44.1,
+      "timestamp": 1775394000000
+    },
+    {
+      "id": 163,
+      "x": -2.624,
+      "y": -1.2512,
+      "z": -1.0082,
+      "category": "intellectual",
+      "label": "Course progress",
+      "value": 70.9,
+      "timestamp": 1776340800000
+    },
+    {
+      "id": 164,
+      "x": 4.8289,
+      "y": -0.5567,
+      "z": 3.489,
+      "category": "spiritual",
+      "label": "Reflection",
+      "value": 2.9,
+      "timestamp": 1776074400000
+    },
+    {
+      "id": 165,
+      "x": -3.8754,
+      "y": -0.2378,
+      "z": -1.1404,
+      "category": "occupational",
+      "label": "Deep work block",
+      "value": 39.2,
+      "timestamp": 1776290400000
+    },
+    {
+      "id": 166,
+      "x": 3.1392,
+      "y": 2.8163,
+      "z": -1.9967,
+      "category": "environmental",
+      "label": "Sunlight exposure",
+      "value": 28.5,
+      "timestamp": 1775804400000
+    },
+    {
+      "id": 167,
+      "x": -1.0861,
+      "y": 1.306,
+      "z": 3.9618,
+      "category": "financial",
+      "label": "Investment",
+      "value": 14.9,
+      "timestamp": 1777777200000
+    },
+    {
+      "id": 168,
+      "x": 2.8696,
+      "y": 0.8469,
+      "z": -1.9473,
+      "category": "physical",
+      "label": "Resting HR",
+      "value": 64.9,
+      "timestamp": 1776016800000
+    },
+    {
+      "id": 169,
+      "x": -3.281,
+      "y": 2.633,
+      "z": 0.6653,
+      "category": "emotional",
+      "label": "Journal note",
+      "value": 24.6,
+      "timestamp": 1776463200000
+    },
+    {
+      "id": 170,
+      "x": 2.8687,
+      "y": -2.6661,
+      "z": 2.5942,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 58.8,
+      "timestamp": 1775725200000
+    },
+    {
+      "id": 171,
+      "x": -2.9827,
+      "y": -1.8853,
+      "z": -1.4754,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 31.4,
+      "timestamp": 1777294800000
+    },
+    {
+      "id": 172,
+      "x": 3.6531,
+      "y": -0.7105,
+      "z": 3.527,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 26.9,
+      "timestamp": 1776358800000
+    },
+    {
+      "id": 173,
+      "x": -3.8949,
+      "y": -0.9586,
+      "z": -1.8183,
+      "category": "occupational",
+      "label": "Deep work block",
+      "value": 58.7,
+      "timestamp": 1775613600000
+    },
+    {
+      "id": 174,
+      "x": 2.5037,
+      "y": 2.7927,
+      "z": -2.5807,
+      "category": "environmental",
+      "label": "Travel",
+      "value": 20.3,
+      "timestamp": 1775502000000
+    },
+    {
+      "id": 175,
+      "x": -2.1459,
+      "y": 2.1373,
+      "z": 3.8607,
+      "category": "financial",
+      "label": "Savings progress",
+      "value": 99.9,
+      "timestamp": 1776668400000
+    },
+    {
+      "id": 176,
+      "x": 2.9725,
+      "y": 0.8614,
+      "z": -1.507,
+      "category": "physical",
+      "label": "Step total",
+      "value": 42.7,
+      "timestamp": 1775844000000
+    },
+    {
+      "id": 177,
+      "x": -4.3381,
+      "y": 1.7689,
+      "z": 1.1752,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 12.6,
+      "timestamp": 1775390400000
+    },
+    {
+      "id": 178,
+      "x": 1.2909,
+      "y": -3.3284,
+      "z": 2.5861,
+      "category": "social",
+      "label": "Family call",
+      "value": 77.6,
+      "timestamp": 1777510800000
+    },
+    {
+      "id": 179,
+      "x": -2.0174,
+      "y": -2.5824,
+      "z": -1.8199,
+      "category": "intellectual",
+      "label": "Reading session",
+      "value": 70.6,
+      "timestamp": 1777680000000
+    },
+    {
+      "id": 180,
+      "x": 4.5558,
+      "y": -1.9416,
+      "z": 3.1914,
+      "category": "spiritual",
+      "label": "Meditation",
+      "value": 31.3,
+      "timestamp": 1777107600000
+    },
+    {
+      "id": 181,
+      "x": -3.8151,
+      "y": 0.017,
+      "z": -1.4165,
+      "category": "occupational",
+      "label": "Meeting",
+      "value": 76.3,
+      "timestamp": 1775815200000
+    },
+    {
+      "id": 182,
+      "x": 2.1927,
+      "y": 3.831,
+      "z": -2.0787,
+      "category": "environmental",
+      "label": "Travel",
+      "value": 44.6,
+      "timestamp": 1777269600000
+    },
+    {
+      "id": 183,
+      "x": 0.143,
+      "y": 2.0112,
+      "z": 4.5017,
+      "category": "financial",
+      "label": "Transaction",
+      "value": 30.1,
+      "timestamp": 1777100400000
+    },
+    {
+      "id": 184,
+      "x": 3.344,
+      "y": 0.1762,
+      "z": -1.7801,
+      "category": "physical",
+      "label": "Resting HR",
+      "value": 57.5,
+      "timestamp": 1775577600000
+    },
+    {
+      "id": 185,
+      "x": -3.4016,
+      "y": 3.0613,
+      "z": 1.9352,
+      "category": "emotional",
+      "label": "Journal note",
+      "value": 9.6,
+      "timestamp": 1775545200000
+    },
+    {
+      "id": 186,
+      "x": 1.4106,
+      "y": -1.9457,
+      "z": 2.1067,
+      "category": "social",
+      "label": "Calendar event",
+      "value": 58,
+      "timestamp": 1776236400000
+    },
+    {
+      "id": 187,
+      "x": -3.2731,
+      "y": -1.7525,
+      "z": -1.925,
+      "category": "intellectual",
+      "label": "Note captured",
+      "value": 53.1,
+      "timestamp": 1777734000000
+    },
+    {
+      "id": 188,
+      "x": 3.4593,
+      "y": -1.0639,
+      "z": 3.2004,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 77.1,
+      "timestamp": 1776038400000
+    },
+    {
+      "id": 189,
+      "x": -5.1822,
+      "y": 0.3301,
+      "z": -1.5591,
+      "category": "occupational",
+      "label": "Email triaged",
+      "value": 99.5,
+      "timestamp": 1777035600000
+    },
+    {
+      "id": 190,
+      "x": 2.072,
+      "y": 3.1667,
+      "z": -2.7964,
+      "category": "environmental",
+      "label": "Sunlight exposure",
+      "value": 29.9,
+      "timestamp": 1775901600000
+    },
+    {
+      "id": 191,
+      "x": -0.1809,
+      "y": 0.978,
+      "z": 4.7949,
+      "category": "financial",
+      "label": "Investment",
+      "value": 13.2,
+      "timestamp": 1777028400000
+    },
+    {
+      "id": 192,
+      "x": 3.9193,
+      "y": 1.2027,
+      "z": -1.4958,
+      "category": "physical",
+      "label": "Step total",
+      "value": 8.1,
+      "timestamp": 1775487600000
+    },
+    {
+      "id": 193,
+      "x": -3.3505,
+      "y": 2.0539,
+      "z": 1.6081,
+      "category": "emotional",
+      "label": "Stress signal",
+      "value": 25.5,
+      "timestamp": 1776859200000
+    },
+    {
+      "id": 194,
+      "x": 2.1292,
+      "y": -2.8182,
+      "z": 3.4287,
+      "category": "social",
+      "label": "Message thread",
+      "value": 22,
+      "timestamp": 1775372400000
+    },
+    {
+      "id": 195,
+      "x": -2.3546,
+      "y": -2.1167,
+      "z": -2.3074,
+      "category": "intellectual",
+      "label": "Note captured",
+      "value": 51.5,
+      "timestamp": 1775379600000
+    },
+    {
+      "id": 196,
+      "x": 3.0609,
+      "y": -0.8698,
+      "z": 3.5038,
+      "category": "spiritual",
+      "label": "Walk in nature",
+      "value": 93.6,
+      "timestamp": 1775311200000
+    },
+    {
+      "id": 197,
+      "x": -3.9952,
+      "y": -1.5185,
+      "z": -0.9343,
+      "category": "occupational",
+      "label": "Deep work block",
+      "value": 40.3,
+      "timestamp": 1775368800000
+    },
+    {
+      "id": 198,
+      "x": 1.3681,
+      "y": 3.3572,
+      "z": -3.183,
+      "category": "environmental",
+      "label": "Time outdoors",
+      "value": 18.4,
+      "timestamp": 1777651200000
+    },
+    {
+      "id": 199,
+      "x": -1.4302,
+      "y": 1.6404,
+      "z": 3.651,
+      "category": "financial",
+      "label": "Investment",
+      "value": 40.7,
+      "timestamp": 1776016800000
+    },
+    {
+      "id": 200,
+      "x": 4.4889,
+      "y": -0.1719,
+      "z": -2.1347,
+      "category": "physical",
+      "label": "HRV reading",
+      "value": 32.7,
+      "timestamp": 1776873600000
+    },
+    {
+      "id": 201,
+      "x": -3.1801,
+      "y": 1.522,
+      "z": 1.8846,
+      "category": "emotional",
+      "label": "Stress signal",
+      "value": 61.3,
+      "timestamp": 1776542400000
+    },
+    {
+      "id": 202,
+      "x": 0.9571,
+      "y": -2.762,
+      "z": 2.1744,
+      "category": "social",
+      "label": "Calendar event",
+      "value": 53.5,
+      "timestamp": 1776600000000
+    },
+    {
+      "id": 203,
+      "x": -2.8575,
+      "y": -2.924,
+      "z": -1.0147,
+      "category": "intellectual",
+      "label": "Course progress",
+      "value": 37.6,
+      "timestamp": 1776909600000
+    },
+    {
+      "id": 204,
+      "x": 4.4194,
+      "y": 0.2346,
+      "z": 2.9592,
+      "category": "spiritual",
+      "label": "Reflection",
+      "value": 39.2,
+      "timestamp": 1775649600000
+    },
+    {
+      "id": 205,
+      "x": -3.9338,
+      "y": -1.4384,
+      "z": -0.7885,
+      "category": "occupational",
+      "label": "Deep work block",
+      "value": 7.4,
+      "timestamp": 1776546000000
+    },
+    {
+      "id": 206,
+      "x": 1.7928,
+      "y": 3.3131,
+      "z": -2.2611,
+      "category": "environmental",
+      "label": "Time outdoors",
+      "value": 33.4,
+      "timestamp": 1777208400000
+    },
+    {
+      "id": 207,
+      "x": -0.3359,
+      "y": 1.9338,
+      "z": 3.927,
+      "category": "financial",
+      "label": "Transaction",
+      "value": 69.5,
+      "timestamp": 1776672000000
+    },
+    {
+      "id": 208,
+      "x": 2.324,
+      "y": 0.4945,
+      "z": -1.4431,
+      "category": "physical",
+      "label": "Sleep recovery",
+      "value": 44.3,
+      "timestamp": 1775523600000
+    },
+    {
+      "id": 209,
+      "x": -3.7359,
+      "y": 1.9946,
+      "z": 1.2718,
+      "category": "emotional",
+      "label": "Stress signal",
+      "value": 17.5,
+      "timestamp": 1775350800000
+    },
+    {
+      "id": 210,
+      "x": 1.0398,
+      "y": -2.1209,
+      "z": 3.4009,
+      "category": "social",
+      "label": "Message thread",
+      "value": 48,
+      "timestamp": 1776700800000
+    },
+    {
+      "id": 211,
+      "x": -1.1222,
+      "y": -2.6129,
+      "z": -1.5664,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 50.3,
+      "timestamp": 1776938400000
+    },
+    {
+      "id": 212,
+      "x": 3.2535,
+      "y": -0.34,
+      "z": 3.4805,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 3.4,
+      "timestamp": 1777615200000
+    },
+    {
+      "id": 213,
+      "x": -3.9955,
+      "y": -0.4728,
+      "z": -0.4442,
+      "category": "occupational",
+      "label": "Deep work block",
+      "value": 64.6,
+      "timestamp": 1775869200000
+    },
+    {
+      "id": 214,
+      "x": 0.7918,
+      "y": 3.2667,
+      "z": -3.1068,
+      "category": "environmental",
+      "label": "Air quality",
+      "value": 17,
+      "timestamp": 1776999600000
+    },
+    {
+      "id": 215,
+      "x": -0.9925,
+      "y": 0.5563,
+      "z": 3.9678,
+      "category": "financial",
+      "label": "Budget check",
+      "value": 84.6,
+      "timestamp": 1775383200000
+    },
+    {
+      "id": 216,
+      "x": 1.9718,
+      "y": 1.838,
+      "z": -1.5142,
+      "category": "physical",
+      "label": "HRV reading",
+      "value": 9.2,
+      "timestamp": 1777287600000
+    },
+    {
+      "id": 217,
+      "x": -2.8083,
+      "y": 2.3735,
+      "z": 1.3043,
+      "category": "emotional",
+      "label": "Mood log",
+      "value": 36.5,
+      "timestamp": 1777424400000
+    },
+    {
+      "id": 218,
+      "x": 1.1034,
+      "y": -3.351,
+      "z": 2.2333,
+      "category": "social",
+      "label": "Message thread",
+      "value": 38.5,
+      "timestamp": 1777042800000
+    },
+    {
+      "id": 219,
+      "x": -3.5961,
+      "y": -1.2924,
+      "z": -1.8546,
+      "category": "intellectual",
+      "label": "Reading session",
+      "value": 76.4,
+      "timestamp": 1776538800000
+    },
+    {
+      "id": 220,
+      "x": 4.0142,
+      "y": -0.7714,
+      "z": 3.7151,
+      "category": "spiritual",
+      "label": "Meditation",
+      "value": 1,
+      "timestamp": 1775685600000
+    },
+    {
+      "id": 221,
+      "x": -4.7182,
+      "y": -0.2808,
+      "z": -1.2022,
+      "category": "occupational",
+      "label": "Deep work block",
+      "value": 86.7,
+      "timestamp": 1777266000000
+    },
+    {
+      "id": 222,
+      "x": 1.2988,
+      "y": 3.2431,
+      "z": -2.4595,
+      "category": "environmental",
+      "label": "Sunlight exposure",
+      "value": 53.6,
+      "timestamp": 1776736800000
+    },
+    {
+      "id": 223,
+      "x": -0.0593,
+      "y": 0.9761,
+      "z": 4.5586,
+      "category": "financial",
+      "label": "Transaction",
+      "value": 50,
+      "timestamp": 1777662000000
+    },
+    {
+      "id": 224,
+      "x": 3.5099,
+      "y": 1.4496,
+      "z": -1.5641,
+      "category": "physical",
+      "label": "Step total",
+      "value": 34.8,
+      "timestamp": 1776996000000
+    },
+    {
+      "id": 225,
+      "x": -2.4757,
+      "y": 2.2491,
+      "z": 0.8652,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 94,
+      "timestamp": 1776672000000
+    },
+    {
+      "id": 226,
+      "x": 2.2085,
+      "y": -3.002,
+      "z": 2.4461,
+      "category": "social",
+      "label": "Message thread",
+      "value": 99.7,
+      "timestamp": 1777561200000
+    },
+    {
+      "id": 227,
+      "x": -3.2147,
+      "y": -2.0094,
+      "z": -1.6543,
+      "category": "intellectual",
+      "label": "Note captured",
+      "value": 43,
+      "timestamp": 1776938400000
+    },
+    {
+      "id": 228,
+      "x": 3.1274,
+      "y": -1.2472,
+      "z": 3.144,
+      "category": "spiritual",
+      "label": "Meditation",
+      "value": 65.3,
+      "timestamp": 1777312800000
+    },
+    {
+      "id": 229,
+      "x": -3.8963,
+      "y": -0.3628,
+      "z": -1.0407,
+      "category": "occupational",
+      "label": "Email triaged",
+      "value": 97.8,
+      "timestamp": 1775527200000
+    },
+    {
+      "id": 230,
+      "x": 1.4331,
+      "y": 2.1751,
+      "z": -2.5498,
+      "category": "environmental",
+      "label": "Time outdoors",
+      "value": 87.5,
+      "timestamp": 1777266000000
+    },
+    {
+      "id": 231,
+      "x": -1.1974,
+      "y": 1.4136,
+      "z": 3.7705,
+      "category": "financial",
+      "label": "Savings progress",
+      "value": 78.7,
+      "timestamp": 1775970000000
+    },
+    {
+      "id": 232,
+      "x": 1.86,
+      "y": 0.1227,
+      "z": -1.9215,
+      "category": "physical",
+      "label": "Resting HR",
+      "value": 39,
+      "timestamp": 1775383200000
+    },
+    {
+      "id": 233,
+      "x": -1.8343,
+      "y": 2.9419,
+      "z": 0.9596,
+      "category": "emotional",
+      "label": "Mood log",
+      "value": 33.1,
+      "timestamp": 1776513600000
+    },
+    {
+      "id": 234,
+      "x": 0.953,
+      "y": -2.8434,
+      "z": 2.7874,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 5.5,
+      "timestamp": 1775487600000
+    },
+    {
+      "id": 235,
+      "x": -2.8352,
+      "y": -2.2751,
+      "z": -1.2784,
+      "category": "intellectual",
+      "label": "Reading session",
+      "value": 39.7,
+      "timestamp": 1775494800000
+    },
+    {
+      "id": 236,
+      "x": 4.3075,
+      "y": -1.5501,
+      "z": 2.8826,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 27.6,
+      "timestamp": 1776823200000
+    },
+    {
+      "id": 237,
+      "x": -2.9689,
+      "y": -0.7688,
+      "z": -0.6265,
+      "category": "occupational",
+      "label": "Email triaged",
+      "value": 66.1,
+      "timestamp": 1776844800000
+    },
+    {
+      "id": 238,
+      "x": 2.6751,
+      "y": 3.2813,
+      "z": -2.7938,
+      "category": "environmental",
+      "label": "Sunlight exposure",
+      "value": 57,
+      "timestamp": 1775512800000
+    },
+    {
+      "id": 239,
+      "x": -1.0423,
+      "y": 1.5772,
+      "z": 4.5477,
+      "category": "financial",
+      "label": "Savings progress",
+      "value": 82.1,
+      "timestamp": 1776639600000
+    },
+    {
+      "id": 240,
+      "x": 3.0468,
+      "y": 1.059,
+      "z": -1.8546,
+      "category": "physical",
+      "label": "HRV reading",
+      "value": 48.6,
+      "timestamp": 1776625200000
+    },
+    {
+      "id": 241,
+      "x": -3.5046,
+      "y": 1.7082,
+      "z": 1.0483,
+      "category": "emotional",
+      "label": "Stress signal",
+      "value": 28,
+      "timestamp": 1775275200000
+    },
+    {
+      "id": 242,
+      "x": 0.8383,
+      "y": -4.3077,
+      "z": 3.0619,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 42.1,
+      "timestamp": 1775786400000
+    },
+    {
+      "id": 243,
+      "x": -2.622,
+      "y": -1.7826,
+      "z": -1.0854,
+      "category": "intellectual",
+      "label": "Note captured",
+      "value": 37.3,
+      "timestamp": 1777399200000
+    },
+    {
+      "id": 244,
+      "x": 3.6918,
+      "y": -2.2901,
+      "z": 4.0148,
+      "category": "spiritual",
+      "label": "Reflection",
+      "value": 30.8,
+      "timestamp": 1776819600000
+    },
+    {
+      "id": 245,
+      "x": -4.031,
+      "y": -1.2313,
+      "z": -1.5954,
+      "category": "occupational",
+      "label": "Deep work block",
+      "value": 100,
+      "timestamp": 1776330000000
+    },
+    {
+      "id": 246,
+      "x": 1.5974,
+      "y": 3.7731,
+      "z": -2.6407,
+      "category": "environmental",
+      "label": "Time outdoors",
+      "value": 0.8,
+      "timestamp": 1777777200000
+    },
+    {
+      "id": 247,
+      "x": -0.2901,
+      "y": 2.0027,
+      "z": 4.5177,
+      "category": "financial",
+      "label": "Transaction",
+      "value": 77.2,
+      "timestamp": 1775714400000
+    },
+    {
+      "id": 248,
+      "x": 3.8658,
+      "y": 1.2034,
+      "z": -2.1301,
+      "category": "physical",
+      "label": "Sleep recovery",
+      "value": 57.8,
+      "timestamp": 1777719600000
+    },
+    {
+      "id": 249,
+      "x": -3.8191,
+      "y": 1.6296,
+      "z": 1.5667,
+      "category": "emotional",
+      "label": "Mood log",
+      "value": 90,
+      "timestamp": 1777111200000
+    },
+    {
+      "id": 250,
+      "x": 0.9466,
+      "y": -2.8498,
+      "z": 2.0904,
+      "category": "social",
+      "label": "Family call",
+      "value": 74.1,
+      "timestamp": 1775872800000
+    },
+    {
+      "id": 251,
+      "x": -2.3542,
+      "y": -2.7819,
+      "z": -1.962,
+      "category": "intellectual",
+      "label": "Note captured",
+      "value": 32,
+      "timestamp": 1775685600000
+    },
+    {
+      "id": 252,
+      "x": 3.4614,
+      "y": 0.1107,
+      "z": 3.2977,
+      "category": "spiritual",
+      "label": "Meditation",
+      "value": 49.4,
+      "timestamp": 1777586400000
+    },
+    {
+      "id": 253,
+      "x": -4.2394,
+      "y": -0.9906,
+      "z": -1.4053,
+      "category": "occupational",
+      "label": "Project milestone",
+      "value": 67.8,
+      "timestamp": 1777820400000
+    },
+    {
+      "id": 254,
+      "x": 3.1882,
+      "y": 2.9808,
+      "z": -2.523,
+      "category": "environmental",
+      "label": "Air quality",
+      "value": 90.2,
+      "timestamp": 1775919600000
+    },
+    {
+      "id": 255,
+      "x": -0.0324,
+      "y": 1.8448,
+      "z": 4.9004,
+      "category": "financial",
+      "label": "Transaction",
+      "value": 89.3,
+      "timestamp": 1775293200000
+    },
+    {
+      "id": 256,
+      "x": 3.7853,
+      "y": 1.074,
+      "z": -1.2036,
+      "category": "physical",
+      "label": "HRV reading",
+      "value": 31.6,
+      "timestamp": 1776225600000
+    },
+    {
+      "id": 257,
+      "x": -2.4123,
+      "y": 2.6246,
+      "z": 1.524,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 59.3,
+      "timestamp": 1776376800000
+    },
+    {
+      "id": 258,
+      "x": 0.584,
+      "y": -3.5615,
+      "z": 2.7894,
+      "category": "social",
+      "label": "Family call",
+      "value": 3.7,
+      "timestamp": 1776250800000
+    },
+    {
+      "id": 259,
+      "x": -3.2216,
+      "y": -2.3248,
+      "z": -1.9978,
+      "category": "intellectual",
+      "label": "Note captured",
+      "value": 38.3,
+      "timestamp": 1776142800000
+    },
+    {
+      "id": 260,
+      "x": 3.1361,
+      "y": -0.5564,
+      "z": 4.19,
+      "category": "spiritual",
+      "label": "Meditation",
+      "value": 36.5,
+      "timestamp": 1777597200000
+    },
+    {
+      "id": 261,
+      "x": -3.6482,
+      "y": -1.1548,
+      "z": -0.6719,
+      "category": "occupational",
+      "label": "Email triaged",
+      "value": 17.7,
+      "timestamp": 1775577600000
+    },
+    {
+      "id": 262,
+      "x": 1.7727,
+      "y": 3.1605,
+      "z": -2.168,
+      "category": "environmental",
+      "label": "Air quality",
+      "value": 34.3,
+      "timestamp": 1775358000000
+    },
+    {
+      "id": 263,
+      "x": -1.9333,
+      "y": 1.6381,
+      "z": 4.7053,
+      "category": "financial",
+      "label": "Transaction",
+      "value": 54.2,
+      "timestamp": 1775934000000
+    },
+    {
+      "id": 264,
+      "x": 3.0661,
+      "y": 0.2432,
+      "z": -2.2,
+      "category": "physical",
+      "label": "Sleep recovery",
+      "value": 11.8,
+      "timestamp": 1775930400000
+    },
+    {
+      "id": 265,
+      "x": -1.831,
+      "y": 1.8454,
+      "z": 1.607,
+      "category": "emotional",
+      "label": "Stress signal",
+      "value": 17.7,
+      "timestamp": 1775293200000
+    },
+    {
+      "id": 266,
+      "x": 2.4263,
+      "y": -2.9613,
+      "z": 2.6943,
+      "category": "social",
+      "label": "Family call",
+      "value": 25.6,
+      "timestamp": 1777795200000
+    },
+    {
+      "id": 267,
+      "x": -1.9467,
+      "y": -1.7903,
+      "z": -1.3818,
+      "category": "intellectual",
+      "label": "Course progress",
+      "value": 75.1,
+      "timestamp": 1775552400000
+    },
+    {
+      "id": 268,
+      "x": 2.5513,
+      "y": -0.8462,
+      "z": 3.6657,
+      "category": "spiritual",
+      "label": "Meditation",
+      "value": 60,
+      "timestamp": 1776715200000
+    },
+    {
+      "id": 269,
+      "x": -5.6475,
+      "y": -1.4475,
+      "z": -1.8559,
+      "category": "occupational",
+      "label": "Project milestone",
+      "value": 93.8,
+      "timestamp": 1777428000000
+    },
+    {
+      "id": 270,
+      "x": 2.1184,
+      "y": 3.0171,
+      "z": -2.4334,
+      "category": "environmental",
+      "label": "Air quality",
+      "value": 78.2,
+      "timestamp": 1777082400000
+    },
+    {
+      "id": 271,
+      "x": -1.1406,
+      "y": 0.9798,
+      "z": 4.3164,
+      "category": "financial",
+      "label": "Budget check",
+      "value": 27.2,
+      "timestamp": 1775793600000
+    },
+    {
+      "id": 272,
+      "x": 4.084,
+      "y": 1.8255,
+      "z": -1.8611,
+      "category": "physical",
+      "label": "Workout intensity",
+      "value": 16.5,
+      "timestamp": 1777122000000
+    },
+    {
+      "id": 273,
+      "x": -2.8964,
+      "y": 2.3967,
+      "z": 1.7274,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 71.5,
+      "timestamp": 1777143600000
+    },
+    {
+      "id": 274,
+      "x": 1.388,
+      "y": -1.6496,
+      "z": 2.9498,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 96.2,
+      "timestamp": 1777334400000
+    },
+    {
+      "id": 275,
+      "x": -3.0398,
+      "y": -1.1464,
+      "z": -1.2156,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 17.2,
+      "timestamp": 1775898000000
+    },
+    {
+      "id": 276,
+      "x": 2.9498,
+      "y": -1.692,
+      "z": 3.2786,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 4.8,
+      "timestamp": 1776870000000
+    },
+    {
+      "id": 277,
+      "x": -4.2171,
+      "y": -0.3023,
+      "z": -1.5611,
+      "category": "occupational",
+      "label": "Meeting",
+      "value": 82.4,
+      "timestamp": 1776268800000
+    },
+    {
+      "id": 278,
+      "x": 2.2112,
+      "y": 2.9866,
+      "z": -2.505,
+      "category": "environmental",
+      "label": "Travel",
+      "value": 42.9,
+      "timestamp": 1776276000000
+    },
+    {
+      "id": 279,
+      "x": -2.0009,
+      "y": 1.4011,
+      "z": 4.8266,
+      "category": "financial",
+      "label": "Savings progress",
+      "value": 55.5,
+      "timestamp": 1777770000000
+    },
+    {
+      "id": 280,
+      "x": 3.1741,
+      "y": 1.5883,
+      "z": -1.8932,
+      "category": "physical",
+      "label": "Resting HR",
+      "value": 44.2,
+      "timestamp": 1776592800000
+    },
+    {
+      "id": 281,
+      "x": -4.162,
+      "y": 1.7744,
+      "z": 1.5798,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 6.6,
+      "timestamp": 1775635200000
+    },
+    {
+      "id": 282,
+      "x": 1.1728,
+      "y": -2.9196,
+      "z": 2.6449,
+      "category": "social",
+      "label": "Message thread",
+      "value": 64.2,
+      "timestamp": 1775606400000
+    },
+    {
+      "id": 283,
+      "x": -0.5195,
+      "y": -2.2188,
+      "z": -2.4304,
+      "category": "intellectual",
+      "label": "Course progress",
+      "value": 64.2,
+      "timestamp": 1777363200000
+    },
+    {
+      "id": 284,
+      "x": 3.2302,
+      "y": -0.465,
+      "z": 2.8587,
+      "category": "spiritual",
+      "label": "Walk in nature",
+      "value": 41.3,
+      "timestamp": 1776427200000
+    },
+    {
+      "id": 285,
+      "x": -4.3722,
+      "y": -1.7794,
+      "z": -1.0471,
+      "category": "occupational",
+      "label": "Project milestone",
+      "value": 38.4,
+      "timestamp": 1776430800000
+    },
+    {
+      "id": 286,
+      "x": 2.1005,
+      "y": 4.0041,
+      "z": -3.0446,
+      "category": "environmental",
+      "label": "Travel",
+      "value": 63.2,
+      "timestamp": 1775962800000
+    },
+    {
+      "id": 287,
+      "x": -0.9204,
+      "y": 2.5196,
+      "z": 4.7786,
+      "category": "financial",
+      "label": "Investment",
+      "value": 27.7,
+      "timestamp": 1777024800000
+    },
+    {
+      "id": 288,
+      "x": 3.9947,
+      "y": 1.0696,
+      "z": -1.6027,
+      "category": "physical",
+      "label": "Resting HR",
+      "value": 9.4,
+      "timestamp": 1775678400000
+    },
+    {
+      "id": 289,
+      "x": -2.5662,
+      "y": 2.0247,
+      "z": 1.2736,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 71.1,
+      "timestamp": 1777111200000
+    },
+    {
+      "id": 290,
+      "x": -0.0967,
+      "y": -3.2411,
+      "z": 2.8795,
+      "category": "social",
+      "label": "Calendar event",
+      "value": 57.1,
+      "timestamp": 1776913200000
+    },
+    {
+      "id": 291,
+      "x": -2.0084,
+      "y": -1.7527,
+      "z": -1.2017,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 31.6,
+      "timestamp": 1777536000000
+    },
+    {
+      "id": 292,
+      "x": 3.562,
+      "y": -1.3945,
+      "z": 3.652,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 60.8,
+      "timestamp": 1776711600000
+    },
+    {
+      "id": 293,
+      "x": -4.4925,
+      "y": -1.7587,
+      "z": -0.5108,
+      "category": "occupational",
+      "label": "Project milestone",
+      "value": 56.5,
+      "timestamp": 1776549600000
+    },
+    {
+      "id": 294,
+      "x": 4.2387,
+      "y": 3.078,
+      "z": -2.5866,
+      "category": "environmental",
+      "label": "Time outdoors",
+      "value": 29.2,
+      "timestamp": 1775779200000
+    },
+    {
+      "id": 295,
+      "x": -0.2301,
+      "y": 0.8648,
+      "z": 3.9023,
+      "category": "financial",
+      "label": "Budget check",
+      "value": 56.6,
+      "timestamp": 1775372400000
+    },
+    {
+      "id": 296,
+      "x": 2.7875,
+      "y": 0.3383,
+      "z": -1.9667,
+      "category": "physical",
+      "label": "Resting HR",
+      "value": 8.7,
+      "timestamp": 1777528800000
+    },
+    {
+      "id": 297,
+      "x": -3.2585,
+      "y": 2.3073,
+      "z": 1.6732,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 81.3,
+      "timestamp": 1775444400000
+    },
+    {
+      "id": 298,
+      "x": 0.4525,
+      "y": -3.7658,
+      "z": 2.7565,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 50.1,
+      "timestamp": 1775973600000
+    },
+    {
+      "id": 299,
+      "x": -2.9562,
+      "y": -2.6767,
+      "z": -1.9726,
+      "category": "intellectual",
+      "label": "Note captured",
+      "value": 35.7,
+      "timestamp": 1776963600000
+    },
+    {
+      "id": 300,
+      "x": 4.5823,
+      "y": -1.749,
+      "z": 4.1231,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 54.9,
+      "timestamp": 1775556000000
+    },
+    {
+      "id": 301,
+      "x": -4.039,
+      "y": -1.4412,
+      "z": -1.4042,
+      "category": "occupational",
+      "label": "Deep work block",
+      "value": 91.2,
+      "timestamp": 1775329200000
+    },
+    {
+      "id": 302,
+      "x": 1.5182,
+      "y": 3.9256,
+      "z": -2.6318,
+      "category": "environmental",
+      "label": "Air quality",
+      "value": 99.5,
+      "timestamp": 1776762000000
+    },
+    {
+      "id": 303,
+      "x": -0.0014,
+      "y": 0.5416,
+      "z": 4.8907,
+      "category": "financial",
+      "label": "Savings progress",
+      "value": 15.8,
+      "timestamp": 1777503600000
+    },
+    {
+      "id": 304,
+      "x": 2.7985,
+      "y": 0.6393,
+      "z": -1.7844,
+      "category": "physical",
+      "label": "Sleep recovery",
+      "value": 18.8,
+      "timestamp": 1777240800000
+    },
+    {
+      "id": 305,
+      "x": -4.6445,
+      "y": 2.1776,
+      "z": 1.2008,
+      "category": "emotional",
+      "label": "Journal note",
+      "value": 4,
+      "timestamp": 1775484000000
+    },
+    {
+      "id": 306,
+      "x": 1.7392,
+      "y": -2.8584,
+      "z": 2.6513,
+      "category": "social",
+      "label": "Family call",
+      "value": 46.4,
+      "timestamp": 1775624400000
+    },
+    {
+      "id": 307,
+      "x": -2.1371,
+      "y": -1.7995,
+      "z": -1.7652,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 88.6,
+      "timestamp": 1777449600000
+    },
+    {
+      "id": 308,
+      "x": 4.9023,
+      "y": -2.207,
+      "z": 3.6693,
+      "category": "spiritual",
+      "label": "Meditation",
+      "value": 82.7,
+      "timestamp": 1775995200000
+    },
+    {
+      "id": 309,
+      "x": -2.3417,
+      "y": -0.4706,
+      "z": -1.4781,
+      "category": "occupational",
+      "label": "Meeting",
+      "value": 59.6,
+      "timestamp": 1776747600000
+    },
+    {
+      "id": 310,
+      "x": 2.8192,
+      "y": 4.07,
+      "z": -2.34,
+      "category": "environmental",
+      "label": "Time outdoors",
+      "value": 69.5,
+      "timestamp": 1777665600000
+    },
+    {
+      "id": 311,
+      "x": -1.847,
+      "y": 0.9991,
+      "z": 4.6685,
+      "category": "financial",
+      "label": "Transaction",
+      "value": 61.2,
+      "timestamp": 1775559600000
+    },
+    {
+      "id": 312,
+      "x": 1.5436,
+      "y": 0.8992,
+      "z": -2.2066,
+      "category": "physical",
+      "label": "Sleep recovery",
+      "value": 93.4,
+      "timestamp": 1775329200000
+    },
+    {
+      "id": 313,
+      "x": -3.2216,
+      "y": 2.3329,
+      "z": 1.8774,
+      "category": "emotional",
+      "label": "Mood log",
+      "value": 88.7,
+      "timestamp": 1776387600000
+    },
+    {
+      "id": 314,
+      "x": 0.8751,
+      "y": -2.4719,
+      "z": 2.9556,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 32.2,
+      "timestamp": 1776477600000
+    },
+    {
+      "id": 315,
+      "x": -1.7221,
+      "y": -1.5305,
+      "z": -1.2141,
+      "category": "intellectual",
+      "label": "Course progress",
+      "value": 81.7,
+      "timestamp": 1776564000000
+    },
+    {
+      "id": 316,
+      "x": 5.6963,
+      "y": -1.7521,
+      "z": 3.2515,
+      "category": "spiritual",
+      "label": "Walk in nature",
+      "value": 96,
+      "timestamp": 1776920400000
+    },
+    {
+      "id": 317,
+      "x": -4.1173,
+      "y": -1.4698,
+      "z": -1.1939,
+      "category": "occupational",
+      "label": "Project milestone",
+      "value": 74.1,
+      "timestamp": 1775548800000
+    },
+    {
+      "id": 318,
+      "x": 2.2245,
+      "y": 3.804,
+      "z": -2.8684,
+      "category": "environmental",
+      "label": "Air quality",
+      "value": 67.6,
+      "timestamp": 1776355200000
+    },
+    {
+      "id": 319,
+      "x": -1.0618,
+      "y": 1.9655,
+      "z": 4.8552,
+      "category": "financial",
+      "label": "Savings progress",
+      "value": 33.9,
+      "timestamp": 1776574800000
+    },
+    {
+      "id": 320,
+      "x": 3.4279,
+      "y": 1.1405,
+      "z": -1.9216,
+      "category": "physical",
+      "label": "Resting HR",
+      "value": 55.8,
+      "timestamp": 1775970000000
+    },
+    {
+      "id": 321,
+      "x": -1.7465,
+      "y": 2.1641,
+      "z": 1.594,
+      "category": "emotional",
+      "label": "Mood log",
+      "value": 17.6,
+      "timestamp": 1777618800000
+    },
+    {
+      "id": 322,
+      "x": 0.5747,
+      "y": -3.7621,
+      "z": 3.4358,
+      "category": "social",
+      "label": "Message thread",
+      "value": 92.1,
+      "timestamp": 1776549600000
+    },
+    {
+      "id": 323,
+      "x": -2.4726,
+      "y": -2.0308,
+      "z": -2.1468,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 71.8,
+      "timestamp": 1775808000000
+    },
+    {
+      "id": 324,
+      "x": 4.4637,
+      "y": -2.2547,
+      "z": 3.6876,
+      "category": "spiritual",
+      "label": "Walk in nature",
+      "value": 73.8,
+      "timestamp": 1775739600000
+    },
+    {
+      "id": 325,
+      "x": -3.8671,
+      "y": -1.1279,
+      "z": -0.6582,
+      "category": "occupational",
+      "label": "Meeting",
+      "value": 31.6,
+      "timestamp": 1775415600000
+    },
+    {
+      "id": 326,
+      "x": 2.8917,
+      "y": 3.236,
+      "z": -2.2182,
+      "category": "environmental",
+      "label": "Time outdoors",
+      "value": 5.3,
+      "timestamp": 1775984400000
+    },
+    {
+      "id": 327,
+      "x": -0.8983,
+      "y": 0.6856,
+      "z": 5.0731,
+      "category": "financial",
+      "label": "Transaction",
+      "value": 42.4,
+      "timestamp": 1777129200000
+    },
+    {
+      "id": 328,
+      "x": 3.2189,
+      "y": 0.1201,
+      "z": -1.9933,
+      "category": "physical",
+      "label": "Workout intensity",
+      "value": 66.3,
+      "timestamp": 1777132800000
+    },
+    {
+      "id": 329,
+      "x": -1.682,
+      "y": 2.3443,
+      "z": 1.9563,
+      "category": "emotional",
+      "label": "Stress signal",
+      "value": 6.2,
+      "timestamp": 1776664800000
+    },
+    {
+      "id": 330,
+      "x": 0.6904,
+      "y": -2.5152,
+      "z": 3.1645,
+      "category": "social",
+      "label": "Calendar event",
+      "value": 7.7,
+      "timestamp": 1776373200000
+    },
+    {
+      "id": 331,
+      "x": -3.6307,
+      "y": -1.968,
+      "z": -1.9104,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 49.4,
+      "timestamp": 1776704400000
+    },
+    {
+      "id": 332,
+      "x": 3.7958,
+      "y": -1.7672,
+      "z": 3.8841,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 55.8,
+      "timestamp": 1776308400000
+    },
+    {
+      "id": 333,
+      "x": -3.6921,
+      "y": -1.2385,
+      "z": -1.0856,
+      "category": "occupational",
+      "label": "Meeting",
+      "value": 50.3,
+      "timestamp": 1776481200000
+    },
+    {
+      "id": 334,
+      "x": 3.4486,
+      "y": 2.6243,
+      "z": -2.3908,
+      "category": "environmental",
+      "label": "Time outdoors",
+      "value": 45.2,
+      "timestamp": 1777438800000
+    },
+    {
+      "id": 335,
+      "x": -2.3264,
+      "y": 1.3129,
+      "z": 4.7027,
+      "category": "financial",
+      "label": "Investment",
+      "value": 39.6,
+      "timestamp": 1777338000000
+    },
+    {
+      "id": 336,
+      "x": 2.6493,
+      "y": 0.797,
+      "z": -1.2398,
+      "category": "physical",
+      "label": "Workout intensity",
+      "value": 72.5,
+      "timestamp": 1776711600000
+    },
+    {
+      "id": 337,
+      "x": -3.4096,
+      "y": 2.1579,
+      "z": 1.2704,
+      "category": "emotional",
+      "label": "Journal note",
+      "value": 48.1,
+      "timestamp": 1777748400000
+    },
+    {
+      "id": 338,
+      "x": 1.8179,
+      "y": -1.6132,
+      "z": 2.6103,
+      "category": "social",
+      "label": "Family call",
+      "value": 20.7,
+      "timestamp": 1775682000000
+    },
+    {
+      "id": 339,
+      "x": -2.9362,
+      "y": -1.8987,
+      "z": -1.4885,
+      "category": "intellectual",
+      "label": "Course progress",
+      "value": 53.3,
+      "timestamp": 1777618800000
+    },
+    {
+      "id": 340,
+      "x": 4.2314,
+      "y": -0.8993,
+      "z": 2.9177,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 36.5,
+      "timestamp": 1775444400000
+    },
+    {
+      "id": 341,
+      "x": -3.4552,
+      "y": -0.6326,
+      "z": -0.5001,
+      "category": "occupational",
+      "label": "Project milestone",
+      "value": 4.9,
+      "timestamp": 1777640400000
+    },
+    {
+      "id": 342,
+      "x": 2.2872,
+      "y": 3.2781,
+      "z": -3.0842,
+      "category": "environmental",
+      "label": "Time outdoors",
+      "value": 10.3,
+      "timestamp": 1777338000000
+    },
+    {
+      "id": 343,
+      "x": -1.6193,
+      "y": 1.5367,
+      "z": 3.9694,
+      "category": "financial",
+      "label": "Budget check",
+      "value": 73.5,
+      "timestamp": 1775977200000
+    },
+    {
+      "id": 344,
+      "x": 2.5751,
+      "y": 0.7876,
+      "z": -1.7197,
+      "category": "physical",
+      "label": "HRV reading",
+      "value": 49.9,
+      "timestamp": 1777831200000
+    },
+    {
+      "id": 345,
+      "x": -2.3495,
+      "y": 2.7379,
+      "z": 1.5831,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 44.7,
+      "timestamp": 1775401200000
+    },
+    {
+      "id": 346,
+      "x": 0.4176,
+      "y": -1.7563,
+      "z": 2.2209,
+      "category": "social",
+      "label": "Message thread",
+      "value": 0.9,
+      "timestamp": 1775703600000
+    },
+    {
+      "id": 347,
+      "x": -4.072,
+      "y": -1.5921,
+      "z": -1.726,
+      "category": "intellectual",
+      "label": "Note captured",
+      "value": 88.3,
+      "timestamp": 1777795200000
+    },
+    {
+      "id": 348,
+      "x": 3.4774,
+      "y": -1.2164,
+      "z": 3.8067,
+      "category": "spiritual",
+      "label": "Meditation",
+      "value": 88.2,
+      "timestamp": 1775617200000
+    },
+    {
+      "id": 349,
+      "x": -4.0672,
+      "y": -0.361,
+      "z": -1.6721,
+      "category": "occupational",
+      "label": "Meeting",
+      "value": 34.2,
+      "timestamp": 1777521600000
+    },
+    {
+      "id": 350,
+      "x": 2.73,
+      "y": 3.5869,
+      "z": -2.371,
+      "category": "environmental",
+      "label": "Sunlight exposure",
+      "value": 87.2,
+      "timestamp": 1776715200000
+    },
+    {
+      "id": 351,
+      "x": -1.2138,
+      "y": 1.3437,
+      "z": 4.0829,
+      "category": "financial",
+      "label": "Savings progress",
+      "value": 93.7,
+      "timestamp": 1777323600000
+    },
+    {
+      "id": 352,
+      "x": 2.5274,
+      "y": 0.4572,
+      "z": -1.8214,
+      "category": "physical",
+      "label": "Resting HR",
+      "value": 54.5,
+      "timestamp": 1775476800000
+    },
+    {
+      "id": 353,
+      "x": -3.3788,
+      "y": 2.6886,
+      "z": 1.5397,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 40.7,
+      "timestamp": 1777597200000
+    },
+    {
+      "id": 354,
+      "x": 0.8261,
+      "y": -3.8512,
+      "z": 2.5998,
+      "category": "social",
+      "label": "Family call",
+      "value": 57.7,
+      "timestamp": 1776546000000
+    },
+    {
+      "id": 355,
+      "x": -2.1243,
+      "y": -2.771,
+      "z": -1.201,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 14.9,
+      "timestamp": 1776621600000
+    },
+    {
+      "id": 356,
+      "x": 3.8202,
+      "y": -0.5829,
+      "z": 3.0177,
+      "category": "spiritual",
+      "label": "Meditation",
+      "value": 96.1,
+      "timestamp": 1777017600000
+    },
+    {
+      "id": 357,
+      "x": -4.1421,
+      "y": 0.1033,
+      "z": -0.6657,
+      "category": "occupational",
+      "label": "Meeting",
+      "value": 30.2,
+      "timestamp": 1775592000000
+    },
+    {
+      "id": 358,
+      "x": 1.6641,
+      "y": 3.0872,
+      "z": -1.927,
+      "category": "environmental",
+      "label": "Air quality",
+      "value": 89.8,
+      "timestamp": 1777107600000
+    },
+    {
+      "id": 359,
+      "x": -1.7149,
+      "y": 0.639,
+      "z": 4.0268,
+      "category": "financial",
+      "label": "Transaction",
+      "value": 73.4,
+      "timestamp": 1775966400000
+    },
+    {
+      "id": 360,
+      "x": 2.9136,
+      "y": 2.3745,
+      "z": -1.6945,
+      "category": "physical",
+      "label": "Workout intensity",
+      "value": 49.4,
+      "timestamp": 1776697200000
+    },
+    {
+      "id": 361,
+      "x": -2.1647,
+      "y": 2.2812,
+      "z": 1.6869,
+      "category": "emotional",
+      "label": "Journal note",
+      "value": 26.9,
+      "timestamp": 1777485600000
+    },
+    {
+      "id": 362,
+      "x": 1.1545,
+      "y": -2.5649,
+      "z": 2.1544,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 92.1,
+      "timestamp": 1775433600000
+    },
+    {
+      "id": 363,
+      "x": -3.8193,
+      "y": -2.8795,
+      "z": -1.6099,
+      "category": "intellectual",
+      "label": "Note captured",
+      "value": 7.8,
+      "timestamp": 1777244400000
+    },
+    {
+      "id": 364,
+      "x": 3.6707,
+      "y": -0.668,
+      "z": 3.291,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 67.3,
+      "timestamp": 1776247200000
+    },
+    {
+      "id": 365,
+      "x": -5.5431,
+      "y": -0.2908,
+      "z": -1.4714,
+      "category": "occupational",
+      "label": "Meeting",
+      "value": 89.4,
+      "timestamp": 1775995200000
+    },
+    {
+      "id": 366,
+      "x": 1.1428,
+      "y": 2.9406,
+      "z": -2.4444,
+      "category": "environmental",
+      "label": "Time outdoors",
+      "value": 62.1,
+      "timestamp": 1777417200000
+    },
+    {
+      "id": 367,
+      "x": -2.7304,
+      "y": 1.2974,
+      "z": 3.9661,
+      "category": "financial",
+      "label": "Budget check",
+      "value": 58.4,
+      "timestamp": 1776416400000
+    },
+    {
+      "id": 368,
+      "x": 4.5472,
+      "y": 1.1161,
+      "z": -1.671,
+      "category": "physical",
+      "label": "Workout intensity",
+      "value": 31.8,
+      "timestamp": 1777244400000
+    },
+    {
+      "id": 369,
+      "x": -2.8786,
+      "y": 1.9766,
+      "z": 0.8798,
+      "category": "emotional",
+      "label": "Stress signal",
+      "value": 57.8,
+      "timestamp": 1775530800000
+    },
+    {
+      "id": 370,
+      "x": 0.4218,
+      "y": -2.5681,
+      "z": 2.2615,
+      "category": "social",
+      "label": "Calendar event",
+      "value": 78.6,
+      "timestamp": 1776369600000
+    },
+    {
+      "id": 371,
+      "x": -2.8092,
+      "y": -1.7105,
+      "z": -1.262,
+      "category": "intellectual",
+      "label": "Course progress",
+      "value": 31.1,
+      "timestamp": 1777262400000
+    },
+    {
+      "id": 372,
+      "x": 4.2841,
+      "y": -0.0186,
+      "z": 3.2643,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 26.8,
+      "timestamp": 1777568400000
+    },
+    {
+      "id": 373,
+      "x": -5.2537,
+      "y": -0.4664,
+      "z": -1.2686,
+      "category": "occupational",
+      "label": "Email triaged",
+      "value": 86.6,
+      "timestamp": 1776711600000
+    },
+    {
+      "id": 374,
+      "x": 1.3467,
+      "y": 3.1442,
+      "z": -2.8333,
+      "category": "environmental",
+      "label": "Travel",
+      "value": 28.7,
+      "timestamp": 1775984400000
+    },
+    {
+      "id": 375,
+      "x": -0.6236,
+      "y": 1.9517,
+      "z": 4.0069,
+      "category": "financial",
+      "label": "Savings progress",
+      "value": 46.9,
+      "timestamp": 1776196800000
+    },
+    {
+      "id": 376,
+      "x": 2.0432,
+      "y": 0.5728,
+      "z": -1.6734,
+      "category": "physical",
+      "label": "Workout intensity",
+      "value": 63.1,
+      "timestamp": 1775779200000
+    },
+    {
+      "id": 377,
+      "x": -3.5019,
+      "y": 1.4775,
+      "z": 1.4243,
+      "category": "emotional",
+      "label": "Stress signal",
+      "value": 64.6,
+      "timestamp": 1776607200000
+    },
+    {
+      "id": 378,
+      "x": 1.637,
+      "y": -2.5311,
+      "z": 2.8754,
+      "category": "social",
+      "label": "Message thread",
+      "value": 5.9,
+      "timestamp": 1777348800000
+    },
+    {
+      "id": 379,
+      "x": -3.2461,
+      "y": -2.5355,
+      "z": -1.3139,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 86,
+      "timestamp": 1777694400000
+    },
+    {
+      "id": 380,
+      "x": 3.3798,
+      "y": -0.3745,
+      "z": 3.183,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 45.8,
+      "timestamp": 1775822400000
+    },
+    {
+      "id": 381,
+      "x": -3.9198,
+      "y": -1.5289,
+      "z": -0.8859,
+      "category": "occupational",
+      "label": "Project milestone",
+      "value": 21.6,
+      "timestamp": 1775401200000
+    },
+    {
+      "id": 382,
+      "x": 2.8089,
+      "y": 2.4492,
+      "z": -2.4713,
+      "category": "environmental",
+      "label": "Sunlight exposure",
+      "value": 51.9,
+      "timestamp": 1776740400000
+    },
+    {
+      "id": 383,
+      "x": -2.2065,
+      "y": 1.5186,
+      "z": 4.1174,
+      "category": "financial",
+      "label": "Budget check",
+      "value": 27.8,
+      "timestamp": 1776794400000
+    },
+    {
+      "id": 384,
+      "x": 2.3715,
+      "y": 1.973,
+      "z": -2.3428,
+      "category": "physical",
+      "label": "Resting HR",
+      "value": 5.5,
+      "timestamp": 1777377600000
+    },
+    {
+      "id": 385,
+      "x": -3.6799,
+      "y": 1.5375,
+      "z": 1.5207,
+      "category": "emotional",
+      "label": "Stress signal",
+      "value": 37,
+      "timestamp": 1775426400000
+    },
+    {
+      "id": 386,
+      "x": 1.4606,
+      "y": -2.2782,
+      "z": 2.1855,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 54.3,
+      "timestamp": 1777255200000
+    },
+    {
+      "id": 387,
+      "x": -2.6327,
+      "y": -2.5286,
+      "z": -1.4373,
+      "category": "intellectual",
+      "label": "Reading session",
+      "value": 34,
+      "timestamp": 1776193200000
+    },
+    {
+      "id": 388,
+      "x": 3.7643,
+      "y": -2.1192,
+      "z": 4.2586,
+      "category": "spiritual",
+      "label": "Meditation",
+      "value": 43.5,
+      "timestamp": 1775901600000
+    },
+    {
+      "id": 389,
+      "x": -3.6273,
+      "y": -0.0374,
+      "z": -1.2307,
+      "category": "occupational",
+      "label": "Email triaged",
+      "value": 14.6,
+      "timestamp": 1776013200000
+    },
+    {
+      "id": 390,
+      "x": 2.6538,
+      "y": 2.3514,
+      "z": -3.0535,
+      "category": "environmental",
+      "label": "Air quality",
+      "value": 82.4,
+      "timestamp": 1777654800000
+    },
+    {
+      "id": 391,
+      "x": -1.01,
+      "y": 1.1347,
+      "z": 3.6546,
+      "category": "financial",
+      "label": "Transaction",
+      "value": 81.9,
+      "timestamp": 1776574800000
+    },
+    {
+      "id": 392,
+      "x": 3.1421,
+      "y": 1.7006,
+      "z": -1.7422,
+      "category": "physical",
+      "label": "Resting HR",
+      "value": 46.7,
+      "timestamp": 1776013200000
+    },
+    {
+      "id": 393,
+      "x": -2.7331,
+      "y": 2.5975,
+      "z": 0.959,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 26.1,
+      "timestamp": 1775462400000
+    },
+    {
+      "id": 394,
+      "x": 0.7287,
+      "y": -3.4291,
+      "z": 2.5632,
+      "category": "social",
+      "label": "Message thread",
+      "value": 11.6,
+      "timestamp": 1776448800000
+    },
+    {
+      "id": 395,
+      "x": -2.4356,
+      "y": -1.381,
+      "z": -1.744,
+      "category": "intellectual",
+      "label": "Note captured",
+      "value": 29.1,
+      "timestamp": 1776949200000
+    },
+    {
+      "id": 396,
+      "x": 4.5556,
+      "y": -2.4275,
+      "z": 3.1841,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 82.5,
+      "timestamp": 1776942000000
+    },
+    {
+      "id": 397,
+      "x": -3.5378,
+      "y": -0.7735,
+      "z": -0.7249,
+      "category": "occupational",
+      "label": "Email triaged",
+      "value": 19.4,
+      "timestamp": 1777640400000
+    },
+    {
+      "id": 398,
+      "x": 1.4113,
+      "y": 3.1206,
+      "z": -2.8701,
+      "category": "environmental",
+      "label": "Time outdoors",
+      "value": 87.2,
+      "timestamp": 1777705200000
+    },
+    {
+      "id": 399,
+      "x": -0.3763,
+      "y": 0.1234,
+      "z": 3.6938,
+      "category": "financial",
+      "label": "Savings progress",
+      "value": 0.2,
+      "timestamp": 1775282400000
+    },
+    {
+      "id": 400,
+      "x": 3.0585,
+      "y": 1.0755,
+      "z": -2.3483,
+      "category": "physical",
+      "label": "Sleep recovery",
+      "value": 27,
+      "timestamp": 1777136400000
+    },
+    {
+      "id": 401,
+      "x": -2.8866,
+      "y": 1.5966,
+      "z": 1.0056,
+      "category": "emotional",
+      "label": "Journal note",
+      "value": 26.6,
+      "timestamp": 1777327200000
+    },
+    {
+      "id": 402,
+      "x": 0.3037,
+      "y": -2.2514,
+      "z": 3.0665,
+      "category": "social",
+      "label": "Message thread",
+      "value": 24.3,
+      "timestamp": 1776337200000
+    },
+    {
+      "id": 403,
+      "x": -2.7259,
+      "y": -1.685,
+      "z": -1.9801,
+      "category": "intellectual",
+      "label": "Note captured",
+      "value": 10.4,
+      "timestamp": 1777687200000
+    },
+    {
+      "id": 404,
+      "x": 5.7574,
+      "y": -0.485,
+      "z": 3.8303,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 28.3,
+      "timestamp": 1776722400000
+    },
+    {
+      "id": 405,
+      "x": -3.9533,
+      "y": -1.0228,
+      "z": -0.7328,
+      "category": "occupational",
+      "label": "Deep work block",
+      "value": 85.3,
+      "timestamp": 1777093200000
+    },
+    {
+      "id": 406,
+      "x": 2.9194,
+      "y": 2.3953,
+      "z": -2.3615,
+      "category": "environmental",
+      "label": "Travel",
+      "value": 14.9,
+      "timestamp": 1776654000000
+    },
+    {
+      "id": 407,
+      "x": -1.6336,
+      "y": 1.9786,
+      "z": 4.7084,
+      "category": "financial",
+      "label": "Transaction",
+      "value": 59.8,
+      "timestamp": 1776229200000
+    },
+    {
+      "id": 408,
+      "x": 3.3928,
+      "y": 1.4,
+      "z": -1.9712,
+      "category": "physical",
+      "label": "HRV reading",
+      "value": 89.3,
+      "timestamp": 1777798800000
+    },
+    {
+      "id": 409,
+      "x": -4.2689,
+      "y": 2.155,
+      "z": 2.0471,
+      "category": "emotional",
+      "label": "Mood log",
+      "value": 9.9,
+      "timestamp": 1775962800000
+    },
+    {
+      "id": 410,
+      "x": 1.326,
+      "y": -3.5971,
+      "z": 3.1463,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 19.7,
+      "timestamp": 1776243600000
+    },
+    {
+      "id": 411,
+      "x": -1.9943,
+      "y": -1.8256,
+      "z": -2.5017,
+      "category": "intellectual",
+      "label": "Course progress",
+      "value": 69.9,
+      "timestamp": 1777460400000
+    },
+    {
+      "id": 412,
+      "x": 4.4427,
+      "y": -0.7757,
+      "z": 3.7481,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 14.1,
+      "timestamp": 1777791600000
+    },
+    {
+      "id": 413,
+      "x": -4.6482,
+      "y": -1.2376,
+      "z": -1.3531,
+      "category": "occupational",
+      "label": "Deep work block",
+      "value": 8.8,
+      "timestamp": 1775617200000
+    },
+    {
+      "id": 414,
+      "x": 2.2891,
+      "y": 3.7095,
+      "z": -2.7896,
+      "category": "environmental",
+      "label": "Travel",
+      "value": 81.3,
+      "timestamp": 1777006800000
+    },
+    {
+      "id": 415,
+      "x": -1.8749,
+      "y": 1.3116,
+      "z": 4.7024,
+      "category": "financial",
+      "label": "Investment",
+      "value": 11.2,
+      "timestamp": 1776769200000
+    },
+    {
+      "id": 416,
+      "x": 2.8154,
+      "y": 0.736,
+      "z": -2.0806,
+      "category": "physical",
+      "label": "HRV reading",
+      "value": 62.2,
+      "timestamp": 1775322000000
+    },
+    {
+      "id": 417,
+      "x": -3.2139,
+      "y": 2.7084,
+      "z": 1.7331,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 6.8,
+      "timestamp": 1775394000000
+    },
+    {
+      "id": 418,
+      "x": 1.0352,
+      "y": -2.2907,
+      "z": 2.7285,
+      "category": "social",
+      "label": "Message thread",
+      "value": 50.9,
+      "timestamp": 1776391200000
+    },
+    {
+      "id": 419,
+      "x": -1.6893,
+      "y": -2.9,
+      "z": -1.7388,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 70.6,
+      "timestamp": 1777366800000
+    },
+    {
+      "id": 420,
+      "x": 4.4027,
+      "y": -1.334,
+      "z": 3.3636,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 95,
+      "timestamp": 1775844000000
+    },
+    {
+      "id": 421,
+      "x": -4.2697,
+      "y": -0.7209,
+      "z": -1.5806,
+      "category": "occupational",
+      "label": "Meeting",
+      "value": 44.7,
+      "timestamp": 1776859200000
+    },
+    {
+      "id": 422,
+      "x": 2.9064,
+      "y": 3.5489,
+      "z": -2.6471,
+      "category": "environmental",
+      "label": "Sunlight exposure",
+      "value": 80.8,
+      "timestamp": 1777190400000
+    },
+    {
+      "id": 423,
+      "x": -0.4772,
+      "y": 0.8644,
+      "z": 4.4801,
+      "category": "financial",
+      "label": "Investment",
+      "value": 23.9,
+      "timestamp": 1775390400000
+    },
+    {
+      "id": 424,
+      "x": 2.8825,
+      "y": 1.5367,
+      "z": -2.1354,
+      "category": "physical",
+      "label": "Sleep recovery",
+      "value": 46.6,
+      "timestamp": 1776931200000
+    },
+    {
+      "id": 425,
+      "x": -2.4512,
+      "y": 1.7095,
+      "z": 1.2369,
+      "category": "emotional",
+      "label": "Stress signal",
+      "value": 23.2,
+      "timestamp": 1776308400000
+    },
+    {
+      "id": 426,
+      "x": 1.0326,
+      "y": -4.068,
+      "z": 2.2457,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 87.5,
+      "timestamp": 1777287600000
+    },
+    {
+      "id": 427,
+      "x": -2.5828,
+      "y": -3.1987,
+      "z": -1.926,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 64.7,
+      "timestamp": 1775534400000
+    },
+    {
+      "id": 428,
+      "x": 4.2365,
+      "y": -1.861,
+      "z": 2.9654,
+      "category": "spiritual",
+      "label": "Meditation",
+      "value": 1.9,
+      "timestamp": 1775977200000
+    },
+    {
+      "id": 429,
+      "x": -5.0763,
+      "y": -0.4401,
+      "z": -0.6707,
+      "category": "occupational",
+      "label": "Email triaged",
+      "value": 56.9,
+      "timestamp": 1777327200000
+    },
+    {
+      "id": 430,
+      "x": 3.6032,
+      "y": 3.4706,
+      "z": -2.5614,
+      "category": "environmental",
+      "label": "Sunlight exposure",
+      "value": 16,
+      "timestamp": 1777834800000
+    },
+    {
+      "id": 431,
+      "x": -1.4427,
+      "y": 1.094,
+      "z": 4.6622,
+      "category": "financial",
+      "label": "Savings progress",
+      "value": 48.1,
+      "timestamp": 1775725200000
+    },
+    {
+      "id": 432,
+      "x": 3.6249,
+      "y": 1.7483,
+      "z": -1.7777,
+      "category": "physical",
+      "label": "HRV reading",
+      "value": 96.1,
+      "timestamp": 1775412000000
+    },
+    {
+      "id": 433,
+      "x": -2.5868,
+      "y": 2.8104,
+      "z": 1.4553,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 88.1,
+      "timestamp": 1776297600000
+    },
+    {
+      "id": 434,
+      "x": 0.0855,
+      "y": -2.0563,
+      "z": 3.0262,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 13.5,
+      "timestamp": 1776297600000
+    },
+    {
+      "id": 435,
+      "x": -1.6469,
+      "y": -2.3626,
+      "z": -1.0515,
+      "category": "intellectual",
+      "label": "Course progress",
+      "value": 11.4,
+      "timestamp": 1775426400000
+    },
+    {
+      "id": 436,
+      "x": 3.9141,
+      "y": -0.7876,
+      "z": 3.0299,
+      "category": "spiritual",
+      "label": "Walk in nature",
+      "value": 89.6,
+      "timestamp": 1776038400000
+    },
+    {
+      "id": 437,
+      "x": -2.6105,
+      "y": -1.1751,
+      "z": -0.6225,
+      "category": "occupational",
+      "label": "Meeting",
+      "value": 53.1,
+      "timestamp": 1776920400000
+    },
+    {
+      "id": 438,
+      "x": 1.0286,
+      "y": 3.7311,
+      "z": -2.556,
+      "category": "environmental",
+      "label": "Travel",
+      "value": 18.3,
+      "timestamp": 1776711600000
+    },
+    {
+      "id": 439,
+      "x": -1.2392,
+      "y": 1.7982,
+      "z": 4.7873,
+      "category": "financial",
+      "label": "Investment",
+      "value": 52.5,
+      "timestamp": 1777345200000
+    },
+    {
+      "id": 440,
+      "x": 2.1903,
+      "y": 0.6285,
+      "z": -1.9756,
+      "category": "physical",
+      "label": "Sleep recovery",
+      "value": 96.3,
+      "timestamp": 1775476800000
+    },
+    {
+      "id": 441,
+      "x": -3.085,
+      "y": 1.7728,
+      "z": 1.2311,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 6.5,
+      "timestamp": 1776438000000
+    },
+    {
+      "id": 442,
+      "x": 2.7505,
+      "y": -2.3275,
+      "z": 3.0707,
+      "category": "social",
+      "label": "Calendar event",
+      "value": 96.2,
+      "timestamp": 1776495600000
+    },
+    {
+      "id": 443,
+      "x": -2.3778,
+      "y": -2.4627,
+      "z": -1.2248,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 49.6,
+      "timestamp": 1776466800000
+    },
+    {
+      "id": 444,
+      "x": 4.616,
+      "y": -0.0287,
+      "z": 3.8885,
+      "category": "spiritual",
+      "label": "Meditation",
+      "value": 45,
+      "timestamp": 1776639600000
+    },
+    {
+      "id": 445,
+      "x": -4.5078,
+      "y": -0.2102,
+      "z": -1.3796,
+      "category": "occupational",
+      "label": "Email triaged",
+      "value": 5,
+      "timestamp": 1775336400000
+    },
+    {
+      "id": 446,
+      "x": 1.2307,
+      "y": 2.8096,
+      "z": -3.0816,
+      "category": "environmental",
+      "label": "Sunlight exposure",
+      "value": 11.9,
+      "timestamp": 1775545200000
+    },
+    {
+      "id": 447,
+      "x": -0.4593,
+      "y": 0.6584,
+      "z": 4.3579,
+      "category": "financial",
+      "label": "Budget check",
+      "value": 82.1,
+      "timestamp": 1776448800000
+    },
+    {
+      "id": 448,
+      "x": 4.3041,
+      "y": 1.7767,
+      "z": -1.9299,
+      "category": "physical",
+      "label": "Resting HR",
+      "value": 95.9,
+      "timestamp": 1776895200000
+    },
+    {
+      "id": 449,
+      "x": -2.7468,
+      "y": 1.7952,
+      "z": 0.8516,
+      "category": "emotional",
+      "label": "Mood log",
+      "value": 98.2,
+      "timestamp": 1775948400000
+    },
+    {
+      "id": 450,
+      "x": 1.3725,
+      "y": -2.3105,
+      "z": 2.9984,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 0.9,
+      "timestamp": 1775422800000
+    },
+    {
+      "id": 451,
+      "x": -2.413,
+      "y": -2.8848,
+      "z": -1.4779,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 12.5,
+      "timestamp": 1776913200000
+    },
+    {
+      "id": 452,
+      "x": 3.912,
+      "y": -1.6806,
+      "z": 3.8026,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 27.5,
+      "timestamp": 1776463200000
+    },
+    {
+      "id": 453,
+      "x": -2.978,
+      "y": 0.1674,
+      "z": -0.5287,
+      "category": "occupational",
+      "label": "Deep work block",
+      "value": 79.8,
+      "timestamp": 1775980800000
+    },
+    {
+      "id": 454,
+      "x": 1.9672,
+      "y": 3.1621,
+      "z": -2.2797,
+      "category": "environmental",
+      "label": "Travel",
+      "value": 47.8,
+      "timestamp": 1777687200000
+    },
+    {
+      "id": 455,
+      "x": -1.4198,
+      "y": 1.3823,
+      "z": 3.8859,
+      "category": "financial",
+      "label": "Budget check",
+      "value": 8.4,
+      "timestamp": 1775980800000
+    },
+    {
+      "id": 456,
+      "x": 1.8297,
+      "y": 0.9975,
+      "z": -2.3065,
+      "category": "physical",
+      "label": "HRV reading",
+      "value": 15.3,
+      "timestamp": 1777845600000
+    },
+    {
+      "id": 457,
+      "x": -2.251,
+      "y": 1.827,
+      "z": 2.0524,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 86.6,
+      "timestamp": 1776866400000
+    },
+    {
+      "id": 458,
+      "x": 1.6486,
+      "y": -2.0766,
+      "z": 3.1932,
+      "category": "social",
+      "label": "Message thread",
+      "value": 63.9,
+      "timestamp": 1776877200000
+    },
+    {
+      "id": 459,
+      "x": -4.0131,
+      "y": -2.5544,
+      "z": -2.0694,
+      "category": "intellectual",
+      "label": "Note captured",
+      "value": 59.2,
+      "timestamp": 1777269600000
+    },
+    {
+      "id": 460,
+      "x": 3.4048,
+      "y": -0.7395,
+      "z": 3.3635,
+      "category": "spiritual",
+      "label": "Meditation",
+      "value": 51.2,
+      "timestamp": 1777262400000
+    },
+    {
+      "id": 461,
+      "x": -2.4901,
+      "y": -1.183,
+      "z": -1.7289,
+      "category": "occupational",
+      "label": "Meeting",
+      "value": 37.7,
+      "timestamp": 1776938400000
+    },
+    {
+      "id": 462,
+      "x": 2.2748,
+      "y": 2.8664,
+      "z": -2.5238,
+      "category": "environmental",
+      "label": "Travel",
+      "value": 1,
+      "timestamp": 1775930400000
+    },
+    {
+      "id": 463,
+      "x": 0.0459,
+      "y": 1.1004,
+      "z": 4.2309,
+      "category": "financial",
+      "label": "Investment",
+      "value": 33.4,
+      "timestamp": 1775376000000
+    },
+    {
+      "id": 464,
+      "x": 2.8852,
+      "y": 1.2385,
+      "z": -1.7014,
+      "category": "physical",
+      "label": "Step total",
+      "value": 77.3,
+      "timestamp": 1776492000000
+    },
+    {
+      "id": 465,
+      "x": -2.4827,
+      "y": 3.0144,
+      "z": 1.5764,
+      "category": "emotional",
+      "label": "Stress signal",
+      "value": 71.8,
+      "timestamp": 1777824000000
+    },
+    {
+      "id": 466,
+      "x": 1.6622,
+      "y": -2.2886,
+      "z": 2.2592,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 75,
+      "timestamp": 1777240800000
+    },
+    {
+      "id": 467,
+      "x": -2.5926,
+      "y": -3.265,
+      "z": -1.2962,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 85,
+      "timestamp": 1777132800000
+    },
+    {
+      "id": 468,
+      "x": 4.2769,
+      "y": -2.1528,
+      "z": 3.3934,
+      "category": "spiritual",
+      "label": "Meditation",
+      "value": 72.7,
+      "timestamp": 1776398400000
+    },
+    {
+      "id": 469,
+      "x": -4.851,
+      "y": -0.725,
+      "z": -0.9984,
+      "category": "occupational",
+      "label": "Email triaged",
+      "value": 86.8,
+      "timestamp": 1776045600000
+    },
+    {
+      "id": 470,
+      "x": 2.7442,
+      "y": 4.35,
+      "z": -2.8339,
+      "category": "environmental",
+      "label": "Sunlight exposure",
+      "value": 86.5,
+      "timestamp": 1775340000000
+    },
+    {
+      "id": 471,
+      "x": -0.7512,
+      "y": 2.1369,
+      "z": 4.4355,
+      "category": "financial",
+      "label": "Transaction",
+      "value": 72.2,
+      "timestamp": 1776265200000
+    },
+    {
+      "id": 472,
+      "x": 1.9934,
+      "y": 0.7773,
+      "z": -1.9273,
+      "category": "physical",
+      "label": "HRV reading",
+      "value": 63.1,
+      "timestamp": 1775340000000
+    },
+    {
+      "id": 473,
+      "x": -1.9961,
+      "y": 2.8036,
+      "z": 2.0918,
+      "category": "emotional",
+      "label": "Journal note",
+      "value": 26,
+      "timestamp": 1777266000000
+    },
+    {
+      "id": 474,
+      "x": -0.4805,
+      "y": -3.4379,
+      "z": 2.5165,
+      "category": "social",
+      "label": "Calendar event",
+      "value": 7,
+      "timestamp": 1775898000000
+    },
+    {
+      "id": 475,
+      "x": -2.3902,
+      "y": -1.374,
+      "z": -1.5967,
+      "category": "intellectual",
+      "label": "Course progress",
+      "value": 16.1,
+      "timestamp": 1775617200000
+    },
+    {
+      "id": 476,
+      "x": 4.5263,
+      "y": -0.5501,
+      "z": 3.1067,
+      "category": "spiritual",
+      "label": "Walk in nature",
+      "value": 21.9,
+      "timestamp": 1776564000000
+    },
+    {
+      "id": 477,
+      "x": -3.0354,
+      "y": -0.7731,
+      "z": -0.7681,
+      "category": "occupational",
+      "label": "Meeting",
+      "value": 90.1,
+      "timestamp": 1777064400000
+    },
+    {
+      "id": 478,
+      "x": 1.8715,
+      "y": 3.5671,
+      "z": -2.6563,
+      "category": "environmental",
+      "label": "Air quality",
+      "value": 8.9,
+      "timestamp": 1777550400000
+    },
+    {
+      "id": 479,
+      "x": -0.8054,
+      "y": 0.6805,
+      "z": 4.0236,
+      "category": "financial",
+      "label": "Investment",
+      "value": 90.7,
+      "timestamp": 1777586400000
+    },
+    {
+      "id": 480,
+      "x": 4.4177,
+      "y": 0.657,
+      "z": -1.7283,
+      "category": "physical",
+      "label": "Step total",
+      "value": 98.8,
+      "timestamp": 1777136400000
+    },
+    {
+      "id": 481,
+      "x": -1.7363,
+      "y": 2.3837,
+      "z": 1.1231,
+      "category": "emotional",
+      "label": "Stress signal",
+      "value": 12.8,
+      "timestamp": 1777068000000
+    },
+    {
+      "id": 482,
+      "x": 1.2961,
+      "y": -3.4807,
+      "z": 2.5475,
+      "category": "social",
+      "label": "Family call",
+      "value": 88.4,
+      "timestamp": 1776744000000
+    },
+    {
+      "id": 483,
+      "x": -2.2827,
+      "y": -2.3543,
+      "z": -1.6048,
+      "category": "intellectual",
+      "label": "Note captured",
+      "value": 63.9,
+      "timestamp": 1775476800000
+    },
+    {
+      "id": 484,
+      "x": 4.0386,
+      "y": -2.6516,
+      "z": 3.664,
+      "category": "spiritual",
+      "label": "Meditation",
+      "value": 61.5,
+      "timestamp": 1776268800000
+    },
+    {
+      "id": 485,
+      "x": -2.6988,
+      "y": -1.0778,
+      "z": -0.7423,
+      "category": "occupational",
+      "label": "Deep work block",
+      "value": 26.4,
+      "timestamp": 1776866400000
+    },
+    {
+      "id": 486,
+      "x": 4.14,
+      "y": 3.3404,
+      "z": -2.8674,
+      "category": "environmental",
+      "label": "Travel",
+      "value": 32.2,
+      "timestamp": 1775642400000
+    },
+    {
+      "id": 487,
+      "x": -2.1403,
+      "y": 2.0088,
+      "z": 4.8558,
+      "category": "financial",
+      "label": "Investment",
+      "value": 61.8,
+      "timestamp": 1776949200000
+    },
+    {
+      "id": 488,
+      "x": 1.6621,
+      "y": 1.4386,
+      "z": -2.0699,
+      "category": "physical",
+      "label": "Workout intensity",
+      "value": 54.6,
+      "timestamp": 1776646800000
+    },
+    {
+      "id": 489,
+      "x": -2.2692,
+      "y": 2.246,
+      "z": 1.7203,
+      "category": "emotional",
+      "label": "Stress signal",
+      "value": 61.3,
+      "timestamp": 1776978000000
+    },
+    {
+      "id": 490,
+      "x": 0.9873,
+      "y": -3.4544,
+      "z": 2.4499,
+      "category": "social",
+      "label": "Family call",
+      "value": 7.5,
+      "timestamp": 1775930400000
+    },
+    {
+      "id": 491,
+      "x": -1.7824,
+      "y": -2.4132,
+      "z": -1.0721,
+      "category": "intellectual",
+      "label": "Course progress",
+      "value": 96.4,
+      "timestamp": 1777806000000
+    },
+    {
+      "id": 492,
+      "x": 4.6434,
+      "y": -1.5306,
+      "z": 3.3896,
+      "category": "spiritual",
+      "label": "Reflection",
+      "value": 49.9,
+      "timestamp": 1776884400000
+    },
+    {
+      "id": 493,
+      "x": -3.0859,
+      "y": 0.3782,
+      "z": -1.5839,
+      "category": "occupational",
+      "label": "Email triaged",
+      "value": 30.8,
+      "timestamp": 1775919600000
+    },
+    {
+      "id": 494,
+      "x": 1.6432,
+      "y": 2.6755,
+      "z": -2.1466,
+      "category": "environmental",
+      "label": "Air quality",
+      "value": 12.5,
+      "timestamp": 1776870000000
+    },
+    {
+      "id": 495,
+      "x": -1.7788,
+      "y": 1.8584,
+      "z": 4.6495,
+      "category": "financial",
+      "label": "Transaction",
+      "value": 14.3,
+      "timestamp": 1776157200000
+    },
+    {
+      "id": 496,
+      "x": 3.7598,
+      "y": 1.367,
+      "z": -2.158,
+      "category": "physical",
+      "label": "HRV reading",
+      "value": 46.9,
+      "timestamp": 1777755600000
+    },
+    {
+      "id": 497,
+      "x": -3.2441,
+      "y": 2.0034,
+      "z": 1.018,
+      "category": "emotional",
+      "label": "Stress signal",
+      "value": 84.6,
+      "timestamp": 1775577600000
+    },
+    {
+      "id": 498,
+      "x": 0.4914,
+      "y": -2.7716,
+      "z": 2.5841,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 96.6,
+      "timestamp": 1777460400000
+    },
+    {
+      "id": 499,
+      "x": -2.1814,
+      "y": -0.6515,
+      "z": -2.2908,
+      "category": "intellectual",
+      "label": "Note captured",
+      "value": 24.8,
+      "timestamp": 1776499200000
+    },
+    {
+      "id": 500,
+      "x": 4.4665,
+      "y": -1.346,
+      "z": 3.1428,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 55,
+      "timestamp": 1776103200000
+    },
+    {
+      "id": 501,
+      "x": -5.2642,
+      "y": -1.3582,
+      "z": -1.0557,
+      "category": "occupational",
+      "label": "Deep work block",
+      "value": 67.8,
+      "timestamp": 1775649600000
+    },
+    {
+      "id": 502,
+      "x": 2.789,
+      "y": 2.0969,
+      "z": -2.9369,
+      "category": "environmental",
+      "label": "Air quality",
+      "value": 43.4,
+      "timestamp": 1777543200000
+    },
+    {
+      "id": 503,
+      "x": -0.2253,
+      "y": 1.064,
+      "z": 4.3104,
+      "category": "financial",
+      "label": "Savings progress",
+      "value": 83.3,
+      "timestamp": 1777366800000
+    },
+    {
+      "id": 504,
+      "x": 3.6525,
+      "y": 1.4332,
+      "z": -1.8006,
+      "category": "physical",
+      "label": "HRV reading",
+      "value": 63,
+      "timestamp": 1775340000000
+    },
+    {
+      "id": 505,
+      "x": -2.1339,
+      "y": 2.437,
+      "z": 1.0059,
+      "category": "emotional",
+      "label": "Stress signal",
+      "value": 49.6,
+      "timestamp": 1777345200000
+    },
+    {
+      "id": 506,
+      "x": 0.2958,
+      "y": -2.9715,
+      "z": 3.3726,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 7.7,
+      "timestamp": 1777600800000
+    },
+    {
+      "id": 507,
+      "x": -1.1136,
+      "y": -2.5072,
+      "z": -2.3582,
+      "category": "intellectual",
+      "label": "Reading session",
+      "value": 26.7,
+      "timestamp": 1776232800000
+    },
+    {
+      "id": 508,
+      "x": 4.3243,
+      "y": -2.7056,
+      "z": 3.826,
+      "category": "spiritual",
+      "label": "Reflection",
+      "value": 24.5,
+      "timestamp": 1776909600000
+    },
+    {
+      "id": 509,
+      "x": -3.8541,
+      "y": -0.5605,
+      "z": -1.6518,
+      "category": "occupational",
+      "label": "Project milestone",
+      "value": 8.2,
+      "timestamp": 1776697200000
+    },
+    {
+      "id": 510,
+      "x": 3.2981,
+      "y": 2.5497,
+      "z": -1.9354,
+      "category": "environmental",
+      "label": "Sunlight exposure",
+      "value": 3,
+      "timestamp": 1775905200000
+    },
+    {
+      "id": 511,
+      "x": -1.5769,
+      "y": 0.1069,
+      "z": 3.9849,
+      "category": "financial",
+      "label": "Transaction",
+      "value": 61.5,
+      "timestamp": 1776175200000
+    },
+    {
+      "id": 512,
+      "x": 2.5945,
+      "y": 1.7228,
+      "z": -2.4483,
+      "category": "physical",
+      "label": "Sleep recovery",
+      "value": 81.1,
+      "timestamp": 1777298400000
+    },
+    {
+      "id": 513,
+      "x": -4.0824,
+      "y": 1.3957,
+      "z": 0.5965,
+      "category": "emotional",
+      "label": "Journal note",
+      "value": 34.7,
+      "timestamp": 1776196800000
+    },
+    {
+      "id": 514,
+      "x": -0.3172,
+      "y": -3.2258,
+      "z": 3.1253,
+      "category": "social",
+      "label": "Family call",
+      "value": 52.7,
+      "timestamp": 1776880800000
+    },
+    {
+      "id": 515,
+      "x": -1.9652,
+      "y": -1.1312,
+      "z": -1.3141,
+      "category": "intellectual",
+      "label": "Course progress",
+      "value": 26.2,
+      "timestamp": 1777464000000
+    },
+    {
+      "id": 516,
+      "x": 5.2276,
+      "y": -1.1421,
+      "z": 3.7421,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 58.6,
+      "timestamp": 1777086000000
+    },
+    {
+      "id": 517,
+      "x": -5.0573,
+      "y": -0.9363,
+      "z": -0.6195,
+      "category": "occupational",
+      "label": "Email triaged",
+      "value": 79.1,
+      "timestamp": 1776513600000
+    },
+    {
+      "id": 518,
+      "x": 1.4657,
+      "y": 2.1111,
+      "z": -2.9155,
+      "category": "environmental",
+      "label": "Time outdoors",
+      "value": 3.5,
+      "timestamp": 1775397600000
+    },
+    {
+      "id": 519,
+      "x": -0.6308,
+      "y": 0.6229,
+      "z": 4.3576,
+      "category": "financial",
+      "label": "Savings progress",
+      "value": 15.6,
+      "timestamp": 1777039200000
+    },
+    {
+      "id": 520,
+      "x": 4.5104,
+      "y": 1.2709,
+      "z": -1.7754,
+      "category": "physical",
+      "label": "Workout intensity",
+      "value": 64.2,
+      "timestamp": 1775887200000
+    },
+    {
+      "id": 521,
+      "x": -2.6882,
+      "y": 2.0165,
+      "z": 1.3548,
+      "category": "emotional",
+      "label": "Stress signal",
+      "value": 48.3,
+      "timestamp": 1775631600000
+    },
+    {
+      "id": 522,
+      "x": 1.6248,
+      "y": -1.7648,
+      "z": 3.0528,
+      "category": "social",
+      "label": "Message thread",
+      "value": 62.6,
+      "timestamp": 1776646800000
+    },
+    {
+      "id": 523,
+      "x": -3.8666,
+      "y": -2.1727,
+      "z": -2.0883,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 95.3,
+      "timestamp": 1776416400000
+    },
+    {
+      "id": 524,
+      "x": 4.6317,
+      "y": -2.5648,
+      "z": 3.2749,
+      "category": "spiritual",
+      "label": "Meditation",
+      "value": 13.5,
+      "timestamp": 1776531600000
+    },
+    {
+      "id": 525,
+      "x": -4.3749,
+      "y": -1.0053,
+      "z": -1.2718,
+      "category": "occupational",
+      "label": "Project milestone",
+      "value": 61.8,
+      "timestamp": 1775865600000
+    },
+    {
+      "id": 526,
+      "x": 2.5126,
+      "y": 3.5302,
+      "z": -3.2142,
+      "category": "environmental",
+      "label": "Air quality",
+      "value": 32.5,
+      "timestamp": 1775815200000
+    },
+    {
+      "id": 527,
+      "x": -0.9072,
+      "y": 2.3262,
+      "z": 4.7563,
+      "category": "financial",
+      "label": "Transaction",
+      "value": 47.1,
+      "timestamp": 1775782800000
+    },
+    {
+      "id": 528,
+      "x": 2.3647,
+      "y": 0.7163,
+      "z": -1.5806,
+      "category": "physical",
+      "label": "Step total",
+      "value": 53.4,
+      "timestamp": 1775757600000
+    },
+    {
+      "id": 529,
+      "x": -2.2189,
+      "y": 2.3171,
+      "z": 1.5659,
+      "category": "emotional",
+      "label": "Mood log",
+      "value": 28.6,
+      "timestamp": 1776996000000
+    },
+    {
+      "id": 530,
+      "x": 0.3963,
+      "y": -3.328,
+      "z": 3.0159,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 46.9,
+      "timestamp": 1777762800000
+    },
+    {
+      "id": 531,
+      "x": -2.0831,
+      "y": -1.2863,
+      "z": -1.4148,
+      "category": "intellectual",
+      "label": "Reading session",
+      "value": 25,
+      "timestamp": 1776312000000
+    },
+    {
+      "id": 532,
+      "x": 2.3904,
+      "y": -0.5565,
+      "z": 3.83,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 87.5,
+      "timestamp": 1777543200000
+    },
+    {
+      "id": 533,
+      "x": -4.6172,
+      "y": -0.493,
+      "z": -0.6511,
+      "category": "occupational",
+      "label": "Deep work block",
+      "value": 57.1,
+      "timestamp": 1776355200000
+    },
+    {
+      "id": 534,
+      "x": 2.432,
+      "y": 2.7574,
+      "z": -2.1786,
+      "category": "environmental",
+      "label": "Air quality",
+      "value": 12.1,
+      "timestamp": 1775887200000
+    },
+    {
+      "id": 535,
+      "x": -0.3664,
+      "y": 0.9078,
+      "z": 4.9544,
+      "category": "financial",
+      "label": "Transaction",
+      "value": 10,
+      "timestamp": 1777492800000
+    },
+    {
+      "id": 536,
+      "x": 2.2839,
+      "y": 0.3939,
+      "z": -1.3019,
+      "category": "physical",
+      "label": "Resting HR",
+      "value": 27,
+      "timestamp": 1776535200000
+    },
+    {
+      "id": 537,
+      "x": -3.8849,
+      "y": 2.2806,
+      "z": 1.8243,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 75.4,
+      "timestamp": 1776038400000
+    },
+    {
+      "id": 538,
+      "x": 0.7423,
+      "y": -2.9255,
+      "z": 2.8993,
+      "category": "social",
+      "label": "Family call",
+      "value": 95.3,
+      "timestamp": 1776722400000
+    },
+    {
+      "id": 539,
+      "x": -2.4137,
+      "y": -1.4522,
+      "z": -1.4075,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 40.4,
+      "timestamp": 1777626000000
+    },
+    {
+      "id": 540,
+      "x": 4.1539,
+      "y": -1.4872,
+      "z": 4.2733,
+      "category": "spiritual",
+      "label": "Walk in nature",
+      "value": 62.4,
+      "timestamp": 1777644000000
+    },
+    {
+      "id": 541,
+      "x": -3.8965,
+      "y": -1.715,
+      "z": -1.4148,
+      "category": "occupational",
+      "label": "Deep work block",
+      "value": 84.1,
+      "timestamp": 1776848400000
+    },
+    {
+      "id": 542,
+      "x": 1.6571,
+      "y": 2.841,
+      "z": -3.0471,
+      "category": "environmental",
+      "label": "Time outdoors",
+      "value": 57.1,
+      "timestamp": 1777849200000
+    },
+    {
+      "id": 543,
+      "x": -1.0762,
+      "y": 0.832,
+      "z": 4.0946,
+      "category": "financial",
+      "label": "Savings progress",
+      "value": 72.3,
+      "timestamp": 1775991600000
+    },
+    {
+      "id": 544,
+      "x": 4.0896,
+      "y": -0.1654,
+      "z": -2.0072,
+      "category": "physical",
+      "label": "Workout intensity",
+      "value": 43.5,
+      "timestamp": 1775300400000
+    },
+    {
+      "id": 545,
+      "x": -4.1906,
+      "y": 2.636,
+      "z": 0.7379,
+      "category": "emotional",
+      "label": "Journal note",
+      "value": 9.6,
+      "timestamp": 1775700000000
+    },
+    {
+      "id": 546,
+      "x": -0.3735,
+      "y": -2.6638,
+      "z": 2.2723,
+      "category": "social",
+      "label": "Family call",
+      "value": 18.8,
+      "timestamp": 1775829600000
+    },
+    {
+      "id": 547,
+      "x": -2.8831,
+      "y": -2.502,
+      "z": -2.2189,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 40.4,
+      "timestamp": 1777312800000
+    },
+    {
+      "id": 548,
+      "x": 3.9576,
+      "y": -0.4847,
+      "z": 3.265,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 98.8,
+      "timestamp": 1775311200000
+    },
+    {
+      "id": 549,
+      "x": -3.4113,
+      "y": -0.71,
+      "z": -0.4427,
+      "category": "occupational",
+      "label": "Project milestone",
+      "value": 49.1,
+      "timestamp": 1776038400000
+    },
+    {
+      "id": 550,
+      "x": 0.521,
+      "y": 3.2681,
+      "z": -2.8394,
+      "category": "environmental",
+      "label": "Air quality",
+      "value": 4.2,
+      "timestamp": 1776916800000
+    },
+    {
+      "id": 551,
+      "x": -1.7003,
+      "y": 1.2479,
+      "z": 4.2496,
+      "category": "financial",
+      "label": "Savings progress",
+      "value": 36.9,
+      "timestamp": 1776038400000
+    },
+    {
+      "id": 552,
+      "x": 3.279,
+      "y": 1.3579,
+      "z": -1.7207,
+      "category": "physical",
+      "label": "HRV reading",
+      "value": 11.1,
+      "timestamp": 1777122000000
+    },
+    {
+      "id": 553,
+      "x": -1.6798,
+      "y": 2.3154,
+      "z": 1.4637,
+      "category": "emotional",
+      "label": "Journal note",
+      "value": 70.4,
+      "timestamp": 1776920400000
+    },
+    {
+      "id": 554,
+      "x": 1.737,
+      "y": -3.1066,
+      "z": 2.795,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 0.1,
+      "timestamp": 1776603600000
+    },
+    {
+      "id": 555,
+      "x": -2.454,
+      "y": -2.5087,
+      "z": -1.7819,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 63.3,
+      "timestamp": 1776236400000
+    },
+    {
+      "id": 556,
+      "x": 4.83,
+      "y": -0.7292,
+      "z": 3.4227,
+      "category": "spiritual",
+      "label": "Reflection",
+      "value": 77.4,
+      "timestamp": 1777568400000
+    },
+    {
+      "id": 557,
+      "x": -3.4305,
+      "y": -0.5545,
+      "z": -1.0535,
+      "category": "occupational",
+      "label": "Project milestone",
+      "value": 74,
+      "timestamp": 1777672800000
+    },
+    {
+      "id": 558,
+      "x": 2.2424,
+      "y": 2.1016,
+      "z": -2.688,
+      "category": "environmental",
+      "label": "Air quality",
+      "value": 53.3,
+      "timestamp": 1777590000000
+    },
+    {
+      "id": 559,
+      "x": -1.1415,
+      "y": 2.4679,
+      "z": 3.8124,
+      "category": "financial",
+      "label": "Transaction",
+      "value": 82.7,
+      "timestamp": 1777165200000
+    },
+    {
+      "id": 560,
+      "x": 3.0743,
+      "y": 1.3231,
+      "z": -1.8908,
+      "category": "physical",
+      "label": "HRV reading",
+      "value": 31.9,
+      "timestamp": 1777194000000
+    },
+    {
+      "id": 561,
+      "x": -1.9029,
+      "y": 1.5955,
+      "z": 1.5411,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 7.9,
+      "timestamp": 1775581200000
+    },
+    {
+      "id": 562,
+      "x": 0.8713,
+      "y": -3.3382,
+      "z": 2.0804,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 33.4,
+      "timestamp": 1777831200000
+    },
+    {
+      "id": 563,
+      "x": -2.3003,
+      "y": -1.9673,
+      "z": -1.4716,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 41.4,
+      "timestamp": 1776456000000
+    },
+    {
+      "id": 564,
+      "x": 3.2788,
+      "y": -1.3956,
+      "z": 3.5096,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 97.3,
+      "timestamp": 1776441600000
+    },
+    {
+      "id": 565,
+      "x": -5.2716,
+      "y": -0.9108,
+      "z": -1.2991,
+      "category": "occupational",
+      "label": "Meeting",
+      "value": 61,
+      "timestamp": 1775854800000
+    },
+    {
+      "id": 566,
+      "x": 1.6918,
+      "y": 4.3698,
+      "z": -2.4634,
+      "category": "environmental",
+      "label": "Sunlight exposure",
+      "value": 54.5,
+      "timestamp": 1777183200000
+    },
+    {
+      "id": 567,
+      "x": -0.2827,
+      "y": 0.2402,
+      "z": 3.9184,
+      "category": "financial",
+      "label": "Budget check",
+      "value": 95.8,
+      "timestamp": 1777273200000
+    },
+    {
+      "id": 568,
+      "x": 3.8832,
+      "y": 1.4672,
+      "z": -1.4875,
+      "category": "physical",
+      "label": "Workout intensity",
+      "value": 62.7,
+      "timestamp": 1777723200000
+    },
+    {
+      "id": 569,
+      "x": -3.9767,
+      "y": 1.9472,
+      "z": 1.7508,
+      "category": "emotional",
+      "label": "Stress signal",
+      "value": 85.8,
+      "timestamp": 1775872800000
+    },
+    {
+      "id": 570,
+      "x": 1.697,
+      "y": -3.7478,
+      "z": 2.4437,
+      "category": "social",
+      "label": "Family call",
+      "value": 7,
+      "timestamp": 1775887200000
+    },
+    {
+      "id": 571,
+      "x": -3.6397,
+      "y": -2.7776,
+      "z": -1.3772,
+      "category": "intellectual",
+      "label": "Reading session",
+      "value": 16.5,
+      "timestamp": 1776452400000
+    },
+    {
+      "id": 572,
+      "x": 5.3753,
+      "y": -1.4544,
+      "z": 4.2017,
+      "category": "spiritual",
+      "label": "Walk in nature",
+      "value": 21.9,
+      "timestamp": 1777402800000
+    },
+    {
+      "id": 573,
+      "x": -4.3487,
+      "y": 0.0666,
+      "z": -0.4551,
+      "category": "occupational",
+      "label": "Email triaged",
+      "value": 43.2,
+      "timestamp": 1775916000000
+    },
+    {
+      "id": 574,
+      "x": 1.0486,
+      "y": 3.884,
+      "z": -2.8546,
+      "category": "environmental",
+      "label": "Air quality",
+      "value": 6.3,
+      "timestamp": 1775556000000
+    },
+    {
+      "id": 575,
+      "x": -1.372,
+      "y": 1.7787,
+      "z": 4.2953,
+      "category": "financial",
+      "label": "Budget check",
+      "value": 95.8,
+      "timestamp": 1775307600000
+    },
+    {
+      "id": 576,
+      "x": 3.9806,
+      "y": 0.5629,
+      "z": -1.9157,
+      "category": "physical",
+      "label": "Sleep recovery",
+      "value": 11.1,
+      "timestamp": 1777269600000
+    },
+    {
+      "id": 577,
+      "x": -4.2897,
+      "y": 2.6177,
+      "z": 1.6716,
+      "category": "emotional",
+      "label": "Journal note",
+      "value": 96.1,
+      "timestamp": 1775808000000
+    },
+    {
+      "id": 578,
+      "x": 0.604,
+      "y": -2.5572,
+      "z": 2.8345,
+      "category": "social",
+      "label": "Family call",
+      "value": 24.6,
+      "timestamp": 1776207600000
+    },
+    {
+      "id": 579,
+      "x": -2.5642,
+      "y": -2.0296,
+      "z": -2.2154,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 70.8,
+      "timestamp": 1776258000000
+    },
+    {
+      "id": 580,
+      "x": 4.5987,
+      "y": -0.2375,
+      "z": 3.6352,
+      "category": "spiritual",
+      "label": "Walk in nature",
+      "value": 20.6,
+      "timestamp": 1775534400000
+    },
+    {
+      "id": 581,
+      "x": -4.637,
+      "y": -0.5728,
+      "z": -1.697,
+      "category": "occupational",
+      "label": "Meeting",
+      "value": 24.8,
+      "timestamp": 1775487600000
+    },
+    {
+      "id": 582,
+      "x": 2.4597,
+      "y": 2.4762,
+      "z": -2.9689,
+      "category": "environmental",
+      "label": "Time outdoors",
+      "value": 64.5,
+      "timestamp": 1775613600000
+    },
+    {
+      "id": 583,
+      "x": -0.9145,
+      "y": 1.0021,
+      "z": 3.9261,
+      "category": "financial",
+      "label": "Transaction",
+      "value": 7.5,
+      "timestamp": 1776657600000
+    },
+    {
+      "id": 584,
+      "x": 3.5455,
+      "y": 1.0873,
+      "z": -1.7747,
+      "category": "physical",
+      "label": "HRV reading",
+      "value": 46.3,
+      "timestamp": 1776603600000
+    },
+    {
+      "id": 585,
+      "x": -3.011,
+      "y": 2.5274,
+      "z": 0.6204,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 71.2,
+      "timestamp": 1775412000000
+    },
+    {
+      "id": 586,
+      "x": 1.0728,
+      "y": -2.9964,
+      "z": 2.1704,
+      "category": "social",
+      "label": "Family call",
+      "value": 97.9,
+      "timestamp": 1777215600000
+    },
+    {
+      "id": 587,
+      "x": -3.5247,
+      "y": -3.2676,
+      "z": -1.4886,
+      "category": "intellectual",
+      "label": "Reading session",
+      "value": 50.6,
+      "timestamp": 1776114000000
+    },
+    {
+      "id": 588,
+      "x": 3.3583,
+      "y": -1.2921,
+      "z": 3.1565,
+      "category": "spiritual",
+      "label": "Meditation",
+      "value": 75.8,
+      "timestamp": 1777744800000
+    },
+    {
+      "id": 589,
+      "x": -3.5005,
+      "y": -0.2607,
+      "z": -1.4905,
+      "category": "occupational",
+      "label": "Meeting",
+      "value": 47,
+      "timestamp": 1777431600000
+    },
+    {
+      "id": 590,
+      "x": 3.6373,
+      "y": 2.908,
+      "z": -3.0681,
+      "category": "environmental",
+      "label": "Travel",
+      "value": 78.5,
+      "timestamp": 1777183200000
+    },
+    {
+      "id": 591,
+      "x": -0.1873,
+      "y": 0.7381,
+      "z": 3.979,
+      "category": "financial",
+      "label": "Investment",
+      "value": 50.9,
+      "timestamp": 1777766400000
+    },
+    {
+      "id": 592,
+      "x": 3.9809,
+      "y": 1.2474,
+      "z": -2.0451,
+      "category": "physical",
+      "label": "Sleep recovery",
+      "value": 16.6,
+      "timestamp": 1776736800000
+    },
+    {
+      "id": 593,
+      "x": -2.4885,
+      "y": 2.0533,
+      "z": 1.0752,
+      "category": "emotional",
+      "label": "Stress signal",
+      "value": 94.5,
+      "timestamp": 1777276800000
+    },
+    {
+      "id": 594,
+      "x": 1.3713,
+      "y": -2.6914,
+      "z": 2.2382,
+      "category": "social",
+      "label": "Calendar event",
+      "value": 94,
+      "timestamp": 1776394800000
+    },
+    {
+      "id": 595,
+      "x": -2.5712,
+      "y": -0.9957,
+      "z": -1.8123,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 45.9,
+      "timestamp": 1776027600000
+    },
+    {
+      "id": 596,
+      "x": 5.5076,
+      "y": -1.9106,
+      "z": 3.7015,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 5.3,
+      "timestamp": 1775768400000
+    },
+    {
+      "id": 597,
+      "x": -4.6275,
+      "y": -0.4829,
+      "z": -1.0948,
+      "category": "occupational",
+      "label": "Project milestone",
+      "value": 88.2,
+      "timestamp": 1775934000000
+    },
+    {
+      "id": 598,
+      "x": 3.5232,
+      "y": 2.326,
+      "z": -3.2814,
+      "category": "environmental",
+      "label": "Time outdoors",
+      "value": 57.3,
+      "timestamp": 1775930400000
+    },
+    {
+      "id": 599,
+      "x": -0.5684,
+      "y": 2.1995,
+      "z": 5.0753,
+      "category": "financial",
+      "label": "Transaction",
+      "value": 76,
+      "timestamp": 1777258800000
+    },
+    {
+      "id": 600,
+      "x": 4.2234,
+      "y": 0.3632,
+      "z": -1.7283,
+      "category": "physical",
+      "label": "Step total",
+      "value": 20.3,
+      "timestamp": 1776319200000
+    },
+    {
+      "id": 601,
+      "x": -2.5488,
+      "y": 1.984,
+      "z": 1.076,
+      "category": "emotional",
+      "label": "Mood log",
+      "value": 31.1,
+      "timestamp": 1775422800000
+    },
+    {
+      "id": 602,
+      "x": 0.5255,
+      "y": -2.618,
+      "z": 1.9978,
+      "category": "social",
+      "label": "Shared workout",
+      "value": 46,
+      "timestamp": 1775282400000
+    },
+    {
+      "id": 603,
+      "x": -1.1035,
+      "y": -2.4813,
+      "z": -1.1698,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 25.7,
+      "timestamp": 1777766400000
+    },
+    {
+      "id": 604,
+      "x": 4.2331,
+      "y": -0.8552,
+      "z": 3.318,
+      "category": "spiritual",
+      "label": "Walk in nature",
+      "value": 67.2,
+      "timestamp": 1775545200000
+    },
+    {
+      "id": 605,
+      "x": -3.9419,
+      "y": -0.6185,
+      "z": -0.6017,
+      "category": "occupational",
+      "label": "Email triaged",
+      "value": 43.8,
+      "timestamp": 1777096800000
+    },
+    {
+      "id": 606,
+      "x": 3.7824,
+      "y": 2.4768,
+      "z": -2.2227,
+      "category": "environmental",
+      "label": "Air quality",
+      "value": 45.3,
+      "timestamp": 1775718000000
+    },
+    {
+      "id": 607,
+      "x": -2.334,
+      "y": 1.2939,
+      "z": 3.721,
+      "category": "financial",
+      "label": "Budget check",
+      "value": 69.5,
+      "timestamp": 1775584800000
+    },
+    {
+      "id": 608,
+      "x": 1.9849,
+      "y": 1.1615,
+      "z": -2.1129,
+      "category": "physical",
+      "label": "HRV reading",
+      "value": 11,
+      "timestamp": 1777834800000
+    },
+    {
+      "id": 609,
+      "x": -2.6346,
+      "y": 1.69,
+      "z": 1.5802,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 61.4,
+      "timestamp": 1775811600000
+    },
+    {
+      "id": 610,
+      "x": 1.3323,
+      "y": -3.1925,
+      "z": 2.7633,
+      "category": "social",
+      "label": "Calendar event",
+      "value": 70.2,
+      "timestamp": 1775811600000
+    },
+    {
+      "id": 611,
+      "x": -1.7869,
+      "y": -3.02,
+      "z": -1.6135,
+      "category": "intellectual",
+      "label": "Course progress",
+      "value": 35.7,
+      "timestamp": 1776783600000
+    },
+    {
+      "id": 612,
+      "x": 4.3187,
+      "y": -2.4377,
+      "z": 3.8179,
+      "category": "spiritual",
+      "label": "Reflection",
+      "value": 61.5,
+      "timestamp": 1775455200000
+    },
+    {
+      "id": 613,
+      "x": -4.0112,
+      "y": -0.9912,
+      "z": -1.5329,
+      "category": "occupational",
+      "label": "Project milestone",
+      "value": 63.9,
+      "timestamp": 1776470400000
+    },
+    {
+      "id": 614,
+      "x": 2.4167,
+      "y": 3.5692,
+      "z": -2.4441,
+      "category": "environmental",
+      "label": "Sunlight exposure",
+      "value": 62.8,
+      "timestamp": 1777532400000
+    },
+    {
+      "id": 615,
+      "x": -0.0639,
+      "y": 1.7707,
+      "z": 4.0617,
+      "category": "financial",
+      "label": "Transaction",
+      "value": 12.7,
+      "timestamp": 1775548800000
+    },
+    {
+      "id": 616,
+      "x": 1.8357,
+      "y": 1.887,
+      "z": -1.2365,
+      "category": "physical",
+      "label": "Sleep recovery",
+      "value": 23,
+      "timestamp": 1775988000000
+    },
+    {
+      "id": 617,
+      "x": -4.7532,
+      "y": 2.642,
+      "z": 1.2896,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 7.3,
+      "timestamp": 1777255200000
+    },
+    {
+      "id": 618,
+      "x": 0.1243,
+      "y": -2.8041,
+      "z": 2.9837,
+      "category": "social",
+      "label": "Family call",
+      "value": 55,
+      "timestamp": 1777460400000
+    },
+    {
+      "id": 619,
+      "x": -1.5129,
+      "y": -2.4546,
+      "z": -1.2125,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 48.1,
+      "timestamp": 1775570400000
+    },
+    {
+      "id": 620,
+      "x": 3.4706,
+      "y": -1.0254,
+      "z": 3.9585,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 99.3,
+      "timestamp": 1777471200000
+    },
+    {
+      "id": 621,
+      "x": -6.0968,
+      "y": -0.1169,
+      "z": -1.3268,
+      "category": "occupational",
+      "label": "Meeting",
+      "value": 2.2,
+      "timestamp": 1776866400000
+    },
+    {
+      "id": 622,
+      "x": 0.5626,
+      "y": 2.8932,
+      "z": -2.9353,
+      "category": "environmental",
+      "label": "Sunlight exposure",
+      "value": 74.1,
+      "timestamp": 1775689200000
+    },
+    {
+      "id": 623,
+      "x": 0.241,
+      "y": 1.1282,
+      "z": 4.9349,
+      "category": "financial",
+      "label": "Savings progress",
+      "value": 64.5,
+      "timestamp": 1776621600000
+    },
+    {
+      "id": 624,
+      "x": 2.7714,
+      "y": 1.1477,
+      "z": -1.5198,
+      "category": "physical",
+      "label": "Resting HR",
+      "value": 46,
+      "timestamp": 1777039200000
+    },
+    {
+      "id": 625,
+      "x": -2.8102,
+      "y": 1.6108,
+      "z": 1.8919,
+      "category": "emotional",
+      "label": "Journal note",
+      "value": 86.8,
+      "timestamp": 1776787200000
+    },
+    {
+      "id": 626,
+      "x": 1.1007,
+      "y": -2.7891,
+      "z": 2.6969,
+      "category": "social",
+      "label": "Message thread",
+      "value": 47.7,
+      "timestamp": 1776758400000
+    },
+    {
+      "id": 627,
+      "x": -3.0656,
+      "y": -1.7026,
+      "z": -1.8765,
+      "category": "intellectual",
+      "label": "Course progress",
+      "value": 73.7,
+      "timestamp": 1777312800000
+    },
+    {
+      "id": 628,
+      "x": 3.9434,
+      "y": -0.3327,
+      "z": 3.8882,
+      "category": "spiritual",
+      "label": "Quiet hour",
+      "value": 71.8,
+      "timestamp": 1777042800000
+    },
+    {
+      "id": 629,
+      "x": -4.3386,
+      "y": -0.3792,
+      "z": -1.7214,
+      "category": "occupational",
+      "label": "Meeting",
+      "value": 98,
+      "timestamp": 1777010400000
+    },
+    {
+      "id": 630,
+      "x": 1.803,
+      "y": 4.2794,
+      "z": -2.2908,
+      "category": "environmental",
+      "label": "Sunlight exposure",
+      "value": 36.7,
+      "timestamp": 1777172400000
+    },
+    {
+      "id": 631,
+      "x": -1.8617,
+      "y": 1.0699,
+      "z": 4.3913,
+      "category": "financial",
+      "label": "Savings progress",
+      "value": 26.5,
+      "timestamp": 1776373200000
+    },
+    {
+      "id": 632,
+      "x": 3.5748,
+      "y": 1.5114,
+      "z": -2.3014,
+      "category": "physical",
+      "label": "HRV reading",
+      "value": 1.4,
+      "timestamp": 1775566800000
+    },
+    {
+      "id": 633,
+      "x": -2.237,
+      "y": 1.6599,
+      "z": 2.0798,
+      "category": "emotional",
+      "label": "Gratitude entry",
+      "value": 46.5,
+      "timestamp": 1775620800000
+    },
+    {
+      "id": 634,
+      "x": -0.2054,
+      "y": -3.1344,
+      "z": 2.3658,
+      "category": "social",
+      "label": "Message thread",
+      "value": 83.5,
+      "timestamp": 1777071600000
+    },
+    {
+      "id": 635,
+      "x": -0.987,
+      "y": -1.8572,
+      "z": -1.8078,
+      "category": "intellectual",
+      "label": "Skill practice",
+      "value": 5.6,
+      "timestamp": 1775833200000
+    },
+    {
+      "id": 636,
+      "x": 2.6808,
+      "y": -0.8319,
+      "z": 3.5965,
+      "category": "spiritual",
+      "label": "Reflection",
+      "value": 0.8,
+      "timestamp": 1776906000000
+    },
+    {
+      "id": 637,
+      "x": -3.5152,
+      "y": -0.2808,
+      "z": -0.8995,
+      "category": "occupational",
+      "label": "Email triaged",
+      "value": 59.2,
+      "timestamp": 1777557600000
+    },
+    {
+      "id": 638,
+      "x": 2.2181,
+      "y": 3.1134,
+      "z": -3.1865,
+      "category": "environmental",
+      "label": "Air quality",
+      "value": 4.6,
+      "timestamp": 1776459600000
+    },
+    {
+      "id": 639,
+      "x": -0.2187,
+      "y": 0.1522,
+      "z": 4.045,
+      "category": "financial",
+      "label": "Budget check",
+      "value": 60.3,
+      "timestamp": 1776546000000
+    }
+  ]
+}
