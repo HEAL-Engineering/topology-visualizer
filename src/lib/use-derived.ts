@@ -7,24 +7,34 @@
  */
 import { useMemo } from 'react';
 import { useAtlasStore } from '../store';
-import { buildClusterHull } from '../lib/cluster-hull';
+import { pcaClusterShape, type ClusterShape } from '../lib/cluster-shape';
 import { convexHull3D, type Triangle } from '../lib/convex-hull';
 import { clusterDistances } from '../lib/distances';
-import type { AtlasPoint } from '../schema/types';
+import type { AtlasCategory, AtlasPoint } from '../schema/types';
+
+export interface CategoryShape {
+  category: AtlasCategory;
+  shape: ClusterShape;
+}
 
 export function useDerivedState() {
   const dataset = useAtlasStore(s => s.dataset);
   const enabledCategories = useAtlasStore(s => s.enabledCategories);
   const enabledLabels = useAtlasStore(s => s.enabledLabels);
 
-  // Per-cluster hulls — fixed shape per category, independent of filters.
-  const clusterHulls = useMemo(() => {
+  // PCA-fit shape per category: centroid + principal-axis basis + half-axes.
+  // Independent of filters (shape reflects the full cluster, not the visible
+  // subset). Categories with < 4 points are dropped — the renderer falls
+  // back to a small isotropic sphere via the category.position field.
+  const clusterShapes = useMemo<CategoryShape[]>(() => {
     if (!dataset) return [];
-    return dataset.categories.map(cat => {
+    const out: CategoryShape[] = [];
+    for (const cat of dataset.categories) {
       const clusterPoints = dataset.points.filter(p => p.category === cat.id);
-      const hull = buildClusterHull(clusterPoints);
-      return { category: cat, hull };
-    }).filter(h => h.hull !== null);
+      const shape = pcaClusterShape(clusterPoints);
+      if (shape) out.push({ category: cat, shape });
+    }
+    return out;
   }, [dataset]);
 
   // Filtered points (annotated with original index for hull index remapping).
@@ -74,5 +84,5 @@ export function useDerivedState() {
     return { total, visible, totalVisible };
   }, [dataset, enabledCategories, enabledLabels]);
 
-  return { clusterHulls, filteredWithIdx, globalHull, distances, stats };
+  return { clusterShapes, filteredWithIdx, globalHull, distances, stats };
 }

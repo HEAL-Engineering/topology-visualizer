@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "title": "Heal Dedup — multi-metric sample",
+    "description": "Mirrors the heal-api dedup_* tables (heart_rate, sleep, steps). Each point is one canonical post-dedup row, projected to 3D via UMAP. `source` carries the winning source; `meta` retains the per-table provenance fields (dedup_strategy, source_count, min/max bpm, stage_type).",
+    "projection": "umap",
+    "metric": "wellness_dedup",
+    "seed": 42,
+    "generatedAt": 1714780800000,
+    "sources": ["apple_health", "fitbit", "oura", "google_fit"]
+  },
+  "categories": [
+    { "id": "heart_rate",   "label": "Heart Rate",       "color": "#ff6b6b", "position": [3.0, 0.0, 0.0] },
+    { "id": "sleep_deep",   "label": "Sleep — Deep",     "color": "#4338ca", "position": [-2.0, 2.5, 0.0] },
+    { "id": "sleep_rem",    "label": "Sleep — REM",      "color": "#7c3aed", "position": [-2.6, 1.4, 0.5] },
+    { "id": "sleep_light",  "label": "Sleep — Light",    "color": "#a78bfa", "position": [-1.4, 2.0, -0.6] },
+    { "id": "sleep_awake",  "label": "Sleep — Awake",    "color": "#c4b5fd", "position": [-0.8, 2.8, 0.2] },
+    { "id": "steps",        "label": "Daily Steps",      "color": "#34d399", "position": [0.5, -2.8, 1.5] }
+  ],
+  "mapperEdges": [
+    { "from": "heart_rate",  "to": "steps",       "weight": 0.78 },
+    { "from": "heart_rate",  "to": "sleep_rem",   "weight": 0.55 },
+    { "from": "sleep_deep",  "to": "sleep_rem",   "weight": 0.92 },
+    { "from": "sleep_deep",  "to": "sleep_light", "weight": 0.85 },
+    { "from": "sleep_rem",   "to": "sleep_light", "weight": 0.80 },
+    { "from": "sleep_light", "to": "sleep_awake", "weight": 0.70 },
+    { "from": "steps",       "to": "sleep_deep",  "weight": 0.42 }
+  ],
+  "points": [
+    {
+      "id": "hr-1001",
+      "x": 3.18, "y": 0.42, "z": -0.51,
+      "category": "heart_rate",
+      "label": "Resting HR window",
+      "value": 62.4,
+      "unit": "bpm",
+      "timestamp": 1714780800000,
+      "endTimestamp": 1714784400000,
+      "source": "apple_health",
+      "userId": 7,
+      "meta": {
+        "norm_id": 88421,
+        "max_bpm": 71.0,
+        "min_bpm": 54.0,
+        "avg_bpm": 62.4,
+        "deduped_at": 1714785000000
+      }
+    },
+    {
+      "id": "hr-1002",
+      "x": 2.74, "y": -0.33, "z": 0.18,
+      "category": "heart_rate",
+      "label": "Workout HR window",
+      "value": 138.7,
+      "unit": "bpm",
+      "timestamp": 1714694400000,
+      "endTimestamp": 1714697100000,
+      "source": "fitbit",
+      "userId": 7,
+      "meta": {
+        "norm_id": 88533,
+        "max_bpm": 162.0,
+        "min_bpm": 110.0,
+        "avg_bpm": 138.7,
+        "deduped_at": 1714697500000
+      }
+    },
+    {
+      "id": "sleep-2001",
+      "x": -2.05, "y": 2.41, "z": 0.12,
+      "category": "sleep_deep",
+      "label": "Deep sleep — 2024-05-03",
+      "value": 84,
+      "unit": "minutes",
+      "timestamp": 1714694400000,
+      "source": "oura",
+      "userId": 7,
+      "meta": {
+        "date": "2024-05-03",
+        "stage_type": 2,
+        "source_count": 3,
+        "dedup_strategy": "highest_priority_source"
+      }
+    },
+    {
+      "id": "sleep-2002",
+      "x": -2.61, "y": 1.38, "z": 0.49,
+      "category": "sleep_rem",
+      "label": "REM sleep — 2024-05-03",
+      "value": 96,
+      "unit": "minutes",
+      "timestamp": 1714694400000,
+      "source": "oura",
+      "userId": 7,
+      "meta": {
+        "date": "2024-05-03",
+        "stage_type": 3,
+        "source_count": 3,
+        "dedup_strategy": "highest_priority_source"
+      }
+    },
+    {
+      "id": "sleep-2003",
+      "x": -1.42, "y": 2.07, "z": -0.58,
+      "category": "sleep_light",
+      "label": "Light sleep — 2024-05-03",
+      "value": 212,
+      "unit": "minutes",
+      "timestamp": 1714694400000,
+      "source": "apple_health",
+      "userId": 7,
+      "meta": {
+        "date": "2024-05-03",
+        "stage_type": 1,
+        "source_count": 2,
+        "dedup_strategy": "longest_duration"
+      }
+    },
+    {
+      "id": "sleep-2004",
+      "x": -0.83, "y": 2.79, "z": 0.21,
+      "category": "sleep_awake",
+      "label": "Awake — 2024-05-03",
+      "value": 18,
+      "unit": "minutes",
+      "timestamp": 1714694400000,
+      "source": "oura",
+      "userId": 7,
+      "meta": {
+        "date": "2024-05-03",
+        "stage_type": 4,
+        "source_count": 3,
+        "dedup_strategy": "highest_priority_source"
+      }
+    },
+    {
+      "id": "steps-3001",
+      "x": 0.51, "y": -2.81, "z": 1.46,
+      "category": "steps",
+      "label": "Daily steps — 2024-05-03",
+      "value": 11240,
+      "unit": "steps",
+      "timestamp": 1714694400000,
+      "source": "fitbit",
+      "userId": 7,
+      "meta": {
+        "date": "2024-05-03",
+        "source_count": 2,
+        "dedup_strategy": "max_value"
+      }
+    },
+    {
+      "id": "steps-3002",
+      "x": 0.92, "y": -3.18, "z": 1.04,
+      "category": "steps",
+      "label": "Daily steps — 2024-05-04",
+      "value": 7421,
+      "unit": "steps",
+      "timestamp": 1714780800000,
+      "source": "google_fit",
+      "userId": 7,
+      "meta": {
+        "date": "2024-05-04",
+        "source_count": 1,
+        "dedup_strategy": "single_source"
+      }
+    }
+  ]
+}

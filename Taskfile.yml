@@ -1,0 +1,196 @@
+# Task runner for the embedding-atlas repo.
+#
+# Most common flows:
+#   task release       full path: regenerate atlas.json from daily_pages, build, deploy to Vercel prod
+#   task atlas         regenerate public/atlas.json from heal-daily-pages Postgres
+#   task build         vite production build into dist/
+#   task deploy        vercel deploy --prod dist/  (no rebuild)
+#   task dev           local Vite dev server
+#
+# DB / pipeline lifecycle:
+#   task db:up         start Postgres via docker-compose
+#   task db:migrate    alembic upgrade head
+#   task backfill      run heal-pages backfill against the bundled fixture
+#   task test          pytest in heal-daily-pages
+#
+# Variables can be overridden inline:
+#   task atlas USER_ID=00000000-0000-0000-0000-000000000007
+#   task backfill TODAY=2026-04-30 DAYS=30
+#   task search QUERY="restorative sleep"
+
+version: '3'
+
+vars:
+  ATLAS_OUT: '{{.ROOT_DIR}}/public/atlas.json'
+  HEAL_PAGES_DIR: '{{.ROOT_DIR}}/heal-daily-pages'
+  PIPELINE_DIR: '{{.ROOT_DIR}}/pipeline'
+  FIXTURE: '{{.HEAL_PAGES_DIR}}/fixtures/sample_user_30days.json'
+  USER_ID: '00000000-0000-0000-0000-000000000007'
+  TODAY: '2026-04-30'
+  DAYS: '41'
+  QUERY: 'restorative sleep'
+
+tasks:
+
+  default:
+    desc: 'List available tasks'
+    cmd: task --list-all
+    silent: true
+
+  # ─────────────────────── Release pipeline ────────────────────────────────
+  release:
+    desc: 'Full pipeline: regenerate atlas.json → vite build → deploy to Vercel prod'
+    cmds:
+      - task: atlas
+      - task: build
+      - task: deploy
+
+  atlas:
+    desc: 'Regenerate public/atlas.json from daily_pages (V6 bridge)'
+    dir: '{{.PIPELINE_DIR}}'
+    preconditions:
+      - sh: 'docker exec heal-daily-pages-postgres-1 pg_isready -U heal -d heal_pages >/dev/null 2>&1'
+        msg: 'Postgres is not reachable. Run `task db:up && task db:migrate` first.'
+    cmds:
+      - uv run heal-atlas-from-db {{.ATLAS_OUT}} {{.USER_ID}}
+    sources:
+      - heal_atlas/**/*.py
+    generates:
+      - '{{.ATLAS_OUT}}'
+
+  build:
+    desc: 'Vite production build into dist/ (bundles current public/atlas.json)'
+    deps: [install:web]
+    cmds:
+      - pnpm build
+    sources:
+      - src/**/*
+      - public/atlas.json
+      - index.html
+      - vite.config.ts
+      - tsconfig.json
+      - package.json
+    generates:
+      - dist/**/*
+
+  deploy:
+    desc: 'Deploy dist/ to Vercel production. Re-uses the existing build; run `task build` first if stale.'
+    preconditions:
+      - sh: 'test -d dist'
+        msg: 'dist/ does not exist. Run `task build` first.'
+      - sh: 'command -v vercel >/dev/null'
+        msg: 'vercel CLI not found. Install with `npm i -g vercel` and run `vercel login`.'
+    cmds:
+      - cd dist && vercel deploy --prod --yes
+
+  preview:
+    desc: 'Serve dist/ locally on http://localhost:4173 (sanity-check before deploy)'
+    deps: [build]
+    cmd: pnpm preview --port 4173
+
+  dev:
+    desc: 'Vite dev server on http://localhost:5173 (hot-reload, ignores dist/)'
+    deps: [install:web]
+    cmd: pnpm dev
+
+  # ─────────────────────── DB / heal-daily-pages ───────────────────────────
+  db:up:
+    desc: 'Start docker-compose Postgres for heal-daily-pages'
+    dir: '{{.HEAL_PAGES_DIR}}'
+    cmds:
+      - docker compose up -d postgres
+      - 'until docker exec heal-daily-pages-postgres-1 pg_isready -U heal -d heal_pages >/dev/null 2>&1; do sleep 1; done'
+      - echo "postgres ready on localhost:5432"
+
+  db:down:
+    desc: 'Stop docker-compose Postgres (data persists in volume)'
+    dir: '{{.HEAL_PAGES_DIR}}'
+    cmd: docker compose down
+
+  db:migrate:
+    desc: 'Apply alembic migrations'
+    dir: '{{.HEAL_PAGES_DIR}}'
+    deps: [install:py]
+    cmd: uv run alembic upgrade head
+
+  db:psql:
+    desc: 'Open psql shell into the heal_pages database'
+    cmd: docker exec -it heal-daily-pages-postgres-1 psql -U heal -d heal_pages
+
+  db:reset:
+    desc: 'Drop and recreate the heal_pages database (DESTRUCTIVE)'
+    dir: '{{.HEAL_PAGES_DIR}}'
+    prompt: 'This will wipe all daily_pages data. Continue?'
+    cmds:
+      - docker compose down -v
+      - task: db:up
+      - task: db:migrate
+
+  backfill:
+    desc: 'Run heal-pages backfill against the bundled fixture (override TODAY=YYYY-MM-DD DAYS=N USER_ID=...)'
+    dir: '{{.HEAL_PAGES_DIR}}'
+    deps: [install:py]
+    cmds:
+      - uv run heal-pages backfill --fixture {{.FIXTURE}} --days {{.DAYS}} --today {{.TODAY}} --user-id {{.USER_ID}}
+
+  search:
+    desc: 'Lexical search over daily_pages (override QUERY="...")'
+    dir: '{{.HEAL_PAGES_DIR}}'
+    cmd: uv run heal-pages search "{{.QUERY}}" --user-id {{.USER_ID}}
+
+  test:
+    desc: 'pytest in heal-daily-pages'
+    dir: '{{.HEAL_PAGES_DIR}}'
+    deps: [install:py]
+    cmd: uv run pytest
+
+  # ─────────────────────── Installs (cached) ───────────────────────────────
+  install:
+    desc: 'Install everything: pnpm deps + uv sync in heal-daily-pages and pipeline'
+    deps: [install:web, install:py, install:pipeline]
+
+  install:web:
+    internal: true
+    cmd: pnpm install
+    sources:
+      - package.json
+      - pnpm-lock.yaml
+    status:
+      - test -d node_modules
+
+  install:py:
+    internal: true
+    dir: '{{.HEAL_PAGES_DIR}}'
+    cmd: uv sync
+    sources:
+      - pyproject.toml
+      - uv.lock
+    status:
+      - test -d .venv
+
+  install:pipeline:
+    internal: true
+    dir: '{{.PIPELINE_DIR}}'
+    cmd: uv sync
+    sources:
+      - pyproject.toml
+      - uv.lock
+    status:
+      - test -d .venv
+
+  # ─────────────────────── Convenience ─────────────────────────────────────
+  bootstrap:
+    desc: 'One-shot first-time setup: install deps, start db, migrate, backfill, atlas, build, deploy'
+    cmds:
+      - task: install
+      - task: db:up
+      - task: db:migrate
+      - task: backfill
+      - task: release
+
+  clean:
+    desc: 'Remove dist/, node_modules/, venvs (does NOT touch Postgres data)'
+    cmds:
+      - rm -rf dist node_modules
+      - rm -rf {{.HEAL_PAGES_DIR}}/.venv
+      - rm -rf {{.PIPELINE_DIR}}/.venv

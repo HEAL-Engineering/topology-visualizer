@@ -20,6 +20,7 @@ export default function PointCloud() {
   const enabledLabels = useAtlasStore(s => s.enabledLabels);
   const hoveredCategory = useAtlasStore(s => s.hoveredCategory);
   const setSelectedPoint = useAtlasStore(s => s.setSelectedPoint);
+  const setInspectedCategory = useAtlasStore(s => s.setInspectedCategory);
 
   const pointsRef = useRef<THREE.Points>(null);
   const materialRef = useRef<THREE.PointsMaterial>(null);
@@ -68,16 +69,19 @@ export default function PointCloud() {
       }
       const base = categoryColors.get(p.category);
       if (!base) continue;
-      let mult = 1.7;
-      if (hoveredCategory && p.category !== hoveredCategory) mult = 0.22;
-      else if (hoveredCategory && p.category === hoveredCategory) mult = 2.4;
+      // Default multiplier reduced so cluster outlines (the new "primary"
+      // visual layer) dominate; points sit underneath as a soft swarm.
+      // Hover still spikes brightness so individual selections pop.
+      let mult = 0.7;
+      if (hoveredCategory && p.category !== hoveredCategory) mult = 0.15;
+      else if (hoveredCategory && p.category === hoveredCategory) mult = 1.8;
       colorAttr.array[i * 3 + 0] = base.r * mult;
       colorAttr.array[i * 3 + 1] = base.g * mult;
       colorAttr.array[i * 3 + 2] = base.b * mult;
     }
     colorAttr.needsUpdate = true;
 
-    materialRef.current.size = 0.38 + Math.sin(t * 0.8) * 0.02;
+    materialRef.current.size = 0.26 + Math.sin(t * 0.8) * 0.015;
   });
 
   if (!dataset) return null;
@@ -86,7 +90,13 @@ export default function PointCloud() {
     e.stopPropagation();
     if (e.index == null) return;
     const point = dataset.points[e.index];
-    if (point) setSelectedPoint(point);
+    if (point) {
+      setSelectedPoint(point);
+      // Surface the cluster's archetype reading (geometry / strengths /
+      // action items) alongside the per-point detail so users connect the
+      // individual data point with the topology of its containing cluster.
+      setInspectedCategory(point.category);
+    }
   };
 
   return (
@@ -103,7 +113,7 @@ export default function PointCloud() {
     >
       <pointsMaterial
         ref={materialRef}
-        size={0.38}
+        size={0.26}
         map={SPRITE_TEXTURE}
         vertexColors
         blending={THREE.AdditiveBlending}

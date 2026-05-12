@@ -7,14 +7,13 @@
  * received string at points[47].x") which we surface directly to the user.
  *
  * Use validateDataset() rather than calling AtlasDatasetSchema.parse() directly
- * — it adds cross-field checks (orphan category references, mapper edges
- * pointing to undefined categories) that Zod can't express alone.
+ * — it adds cross-field checks (orphan category references, duplicate ids)
+ * that Zod can't express alone.
  */
 import { z } from 'zod';
 import type {
   AtlasCategory,
   AtlasDataset,
-  AtlasMapperEdge,
   AtlasMeta,
   AtlasPoint,
 } from './types';
@@ -27,9 +26,20 @@ export const AtlasPointSchema = z.object({
   category: z.string().min(1, 'category cannot be empty'),
   label: z.string().optional(),
   value: z.number().finite().optional(),
+  unit: z.string().optional(),
   timestamp: z.number().int().nonnegative().optional(),
+  endTimestamp: z.number().int().nonnegative().optional(),
+  source: z.string().min(1).optional(),
+  userId: z.union([z.string(), z.number()]).optional(),
   meta: z.record(z.unknown()).optional(),
-}) satisfies z.ZodType<AtlasPoint>;
+}).refine(
+  p => p.endTimestamp === undefined || p.timestamp === undefined || p.endTimestamp >= p.timestamp,
+  { message: 'endTimestamp must be >= timestamp' },
+) satisfies z.ZodType<AtlasPoint>;
+
+export const ClusterShapeKindSchema = z.enum([
+  'ellipsoid', 'torus', 'octahedron', 'dodecahedron', 'sphere', 'icosahedron',
+]);
 
 export const AtlasCategorySchema = z.object({
   id: z.string().min(1),
@@ -39,13 +49,8 @@ export const AtlasCategorySchema = z.object({
     'color must be a valid CSS color (hex, rgb, hsl, or named)',
   ),
   position: z.tuple([z.number(), z.number(), z.number()]).optional(),
+  shape: ClusterShapeKindSchema.optional(),
 }) satisfies z.ZodType<AtlasCategory>;
-
-export const AtlasMapperEdgeSchema = z.object({
-  from: z.string().min(1),
-  to: z.string().min(1),
-  weight: z.number().min(0).max(1).optional(),
-}) satisfies z.ZodType<AtlasMapperEdge>;
 
 export const AtlasMetaSchema = z.object({
   title: z.string().optional(),
@@ -53,12 +58,13 @@ export const AtlasMetaSchema = z.object({
   projection: z.string().optional(),
   seed: z.number().optional(),
   generatedAt: z.number().optional(),
+  sources: z.array(z.string().min(1)).optional(),
+  metric: z.string().optional(),
 }) satisfies z.ZodType<AtlasMeta>;
 
 export const AtlasDatasetSchema = z.object({
   points: z.array(AtlasPointSchema).min(1, 'dataset must contain at least one point'),
   categories: z.array(AtlasCategorySchema).min(1, 'dataset must define at least one category'),
-  mapperEdges: z.array(AtlasMapperEdgeSchema).optional(),
   meta: AtlasMetaSchema.optional(),
 }) satisfies z.ZodType<AtlasDataset>;
 
@@ -83,17 +89,6 @@ export function validateDataset(data: unknown): AtlasDataset {
       `${orphanPoints.length} points reference undefined categories (e.g. ${sample}). ` +
       `Make sure every point's "category" matches a "categories[].id".`,
     );
-  }
-
-  if (parsed.mapperEdges) {
-    const danglingEdges = parsed.mapperEdges.filter(
-      e => !categoryIds.has(e.from) || !categoryIds.has(e.to),
-    );
-    if (danglingEdges.length > 0) {
-      issues.push(
-        `${danglingEdges.length} mapper edges reference undefined categories.`,
-      );
-    }
   }
 
   // Duplicate id detection — IDs must be unique for the table & selection

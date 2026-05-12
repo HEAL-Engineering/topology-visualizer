@@ -1,0 +1,55 @@
+{
+  "user_id": "00000000-0000-0000-0000-000000000007",
+  "days": {
+    "2026-04-01": {
+      "wearable": [
+        {"type": "hr_window", "max_bpm": 71, "min_bpm": 54, "avg_bpm": 62.4, "start_time": "2026-04-01T08:00:00Z", "end_time": "2026-04-01T09:00:00Z"},
+        {"type": "sleep", "stage_type": 2, "duration_minutes": 84},
+        {"type": "sleep", "stage_type": 3, "duration_minutes": 96},
+        {"type": "sleep", "stage_type": 1, "duration_minutes": 212},
+        {"type": "sleep", "stage_type": 4, "duration_minutes": 18},
+        {"type": "steps", "count": 11240}
+      ],
+      "financial": [
+        {"merchant": "WHOLE FOODS MARKET", "amount": -84.20, "category": "groceries", "memo": "Card ending 4321"}
+      ],
+      "email": [
+        {"from_alias": "alice", "to_alias": "self", "subject": "Project plan review", "body_excerpt": "Hi there, can we sync at 3pm tomorrow?"}
+      ],
+      "messages": [
+        {"app": "imessage", "sent": 12, "received": 8, "unique_contacts": 3, "topic_summary": "casual chat about weekend plans"}
+      ]
+    },
+    "2026-04-02": {
+      "wearable": [
+        {"type": "hr_window", "max_bpm": 162, "min_bpm": 110, "avg_bpm": 138.7, "start_time": "2026-04-02T17:00:00Z", "end_time": "2026-04-02T17:45:00Z"},
+        {"type": "sleep", "stage_type": 2, "duration_minutes": 70},
+        {"type": "sleep", "stage_type": 3, "duration_minutes": 80},
+        {"type": "sleep", "stage_type": 1, "duration_minutes": 240},
+        {"type": "sleep", "stage_type": 4, "duration_minutes": 25},
+        {"type": "steps", "count": 7421}
+      ],
+      "financial": [],
+      "email": [
+        {"from_alias": "boss", "to_alias": "self", "subject": "Quarterly report", "body_excerpt": "Please send the draft by EOD."}
+      ],
+      "messages": []
+    },
+    "2026-04-03": {
+      "wearable": [
+        {"type": "hr_window", "max_bpm": 80, "min_bpm": 56, "avg_bpm": 64.0, "start_time": "2026-04-03T08:00:00Z", "end_time": "2026-04-03T09:00:00Z"},
+        {"type": "sleep", "stage_type": 2, "duration_minutes": 55},
+        {"type": "sleep", "stage_type": 3, "duration_minutes": 75},
+        {"type": "sleep", "stage_type": 1, "duration_minutes": 220},
+        {"type": "steps", "count": 4830}
+      ],
+      "financial": [
+        {"merchant": "STARBUCKS", "amount": -6.50, "category": "coffee", "memo": ""}
+      ],
+      "email": [],
+      "messages": [
+        {"app": "whatsapp", "sent": 5, "received": 12, "unique_contacts": 2, "topic_summary": "family check-in"}
+      ]
+    }
+  }
+}

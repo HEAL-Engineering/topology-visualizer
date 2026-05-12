@@ -18,10 +18,21 @@
  *   - category: identifier matching one of the Categories below; drives color
  *
  * Optional fields and what they enable:
- *   - label:     shown in the table column and event card; falls back to id
- *   - value:     numeric metric; enables value-based sorting in the table
- *   - timestamp: unix milliseconds; enables recency-based point sizing
- *   - meta:      arbitrary additional fields shown in the event card details
+ *   - label:         shown in the table column and event card; falls back to id
+ *   - value:         numeric metric; enables value-based sorting in the table
+ *   - unit:          unit string for `value` (e.g. "bpm", "minutes", "steps")
+ *   - timestamp:     unix milliseconds; enables recency-based point sizing.
+ *                    For interval-based metrics this is the start of the window.
+ *   - endTimestamp:  unix milliseconds marking the end of an interval — set
+ *                    when the underlying record covers a window (heart-rate
+ *                    aggregates, sleep sessions). Omit for point-in-time data.
+ *   - source:        data origin / device ("apple_health", "fitbit", "oura").
+ *                    Independent from `category`; useful for filtering and
+ *                    explaining provenance after cross-source dedup.
+ *   - userId:        owning user — required for multi-user datasets, ignored
+ *                    by the renderer for single-user views.
+ *   - meta:          arbitrary additional fields shown in the event card
+ *                    details (e.g. min/max bpm, dedup_strategy, source_count).
  */
 export interface AtlasPoint {
   id: string | number;
@@ -31,7 +42,11 @@ export interface AtlasPoint {
   category: string;
   label?: string;
   value?: number;
+  unit?: string;
   timestamp?: number;
+  endTimestamp?: number;
+  source?: string;
+  userId?: string | number;
   meta?: Record<string, unknown>;
 }
 
@@ -51,20 +66,33 @@ export interface AtlasCategory {
    * are rendered. If omitted, the centroid is computed from the cluster.
    */
   position?: [number, number, number];
+  /**
+   * Cluster surface shape kind. The renderer fits this primitive to the
+   * cluster via PCA — distinct shape *kinds* give viewers a categorical
+   * recognition cue beyond color alone. Defaults to 'ellipsoid' when
+   * omitted (matches legacy datasets' visual baseline).
+   */
+  shape?: ClusterShapeKind;
 }
 
 /**
- * A topological connection between two categories — used to draw the
- * Mapper-graph overlay. Weight controls edge opacity (0 invisible, 1 full).
+ * Per-category cluster surface primitive. See ClusterShapes renderer.
+ *
+ * Visual intent:
+ *   ellipsoid    smooth, anisotropic — for distributions with clear spread
+ *   torus        ring — for distributions with hollow / cyclic feel
+ *   octahedron   sharp 6-vertex diamond — for "peak / extreme" cohorts
+ *   dodecahedron 12-face crystal — for "structured but rounded" cohorts
+ *   sphere       isotropic — when anisotropy shouldn't be implied
+ *   icosahedron  compact 20-face — used for the `user` self-marker
  */
-export interface AtlasMapperEdge {
-  /** Category id of the source node */
-  from: string;
-  /** Category id of the target node */
-  to: string;
-  /** Edge strength in [0, 1]; defaults to 0.5 if omitted */
-  weight?: number;
-}
+export type ClusterShapeKind =
+  | 'ellipsoid'
+  | 'torus'
+  | 'octahedron'
+  | 'dodecahedron'
+  | 'sphere'
+  | 'icosahedron';
 
 /**
  * Top-level dataset spec. This is what the loader produces and what
@@ -73,8 +101,6 @@ export interface AtlasMapperEdge {
 export interface AtlasDataset {
   points: AtlasPoint[];
   categories: AtlasCategory[];
-  /** Optional Mapper-graph overlay edges */
-  mapperEdges?: AtlasMapperEdge[];
   /** Free-form metadata; surfaced in the UI when present */
   meta?: AtlasMeta;
 }
@@ -88,4 +114,15 @@ export interface AtlasMeta {
   seed?: number;
   /** When the dataset was generated/exported */
   generatedAt?: number;
+  /**
+   * Known data sources / devices represented in this dataset
+   * (e.g. ["apple_health", "fitbit", "oura"]). Lets the UI pre-populate
+   * source filters even before any points are scanned.
+   */
+  sources?: string[];
+  /**
+   * Domain of the dataset. Free-form, but a stable vocabulary
+   * ("heart_rate", "sleep", "steps", "wellness") makes adapters reusable.
+   */
+  metric?: string;
 }

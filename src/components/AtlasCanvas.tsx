@@ -3,19 +3,23 @@
  * up the camera + orbit controls.
  *
  * Drei's <OrbitControls> replaces the entire hand-rolled drag/zoom logic
- * from the artifact. autoRotate is bound to the store flag.
+ * from the artifact. autoRotate is bound to the store flag, with a
+ * keyboard "hold space to pause" override layered on top.
  */
-import { Canvas } from '@react-three/fiber';
+import { useEffect, useRef, useState } from 'react';
+import { Canvas, useThree } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
+import * as THREE from 'three';
 import { useAtlasStore } from '../store';
 import PointCloud from './PointCloud';
-import ClusterHulls from './ClusterHulls';
+import ClusterShapes from './ClusterShapes';
+import ClusterLabels from './ClusterLabels';
 import GlobalHull from './GlobalHull';
-import MapperGraph from './MapperGraph';
 import Scenery from './Scenery';
 
 export default function AtlasCanvas() {
   const autoRotate = useAtlasStore(s => s.autoRotate);
+  const spaceHeld = useSpacebarHold();
 
   return (
     <Canvas
@@ -25,17 +29,109 @@ export default function AtlasCanvas() {
     >
       <Scenery />
       <PointCloud />
-      <ClusterHulls />
+      <ClusterShapes />
+      <ClusterLabels />
       <GlobalHull />
-      <MapperGraph />
       <OrbitControls
-        autoRotate={autoRotate}
+        makeDefault
+        autoRotate={autoRotate && !spaceHeld}
         autoRotateSpeed={0.6}
         enableDamping
         dampingFactor={0.08}
-        minDistance={6}
-        maxDistance={45}
+        minDistance={1}
+        maxDistance={200}
       />
+      <CameraFit />
     </Canvas>
   );
+}
+
+/**
+ * Frames the camera around the loaded point cloud once per dataset.
+ * Without this, the hard-coded starting position misses datasets whose
+ * coordinate range differs from the sample's ~±3 span.
+ */
+function CameraFit() {
+  const points = useAtlasStore(s => s.dataset?.points);
+  const camera = useThree(s => s.camera);
+  const controls = useThree(s => s.controls) as { target: THREE.Vector3; update: () => void } | null;
+  const fittedKeyRef = useRef<unknown>(null);
+
+  useEffect(() => {
+    if (!points || points.length === 0) return;
+    if (fittedKeyRef.current === points) return;
+
+    const box = new THREE.Box3();
+    const v = new THREE.Vector3();
+    for (const p of points) box.expandByPoint(v.set(p.x, p.y, p.z));
+    if (box.isEmpty()) return;
+
+    const center = box.getCenter(new THREE.Vector3());
+    const size = box.getSize(new THREE.Vector3());
+    const radius = Math.max(size.x, size.y, size.z) * 0.5 || 1;
+
+    const persp = camera as THREE.PerspectiveCamera;
+    const fov = persp.fov * (Math.PI / 180);
+    const dist = (radius / Math.tan(fov / 2)) * 2.2;
+    const dir = new THREE.Vector3(1, 0.55, 1).normalize();
+    persp.position.copy(center).addScaledVector(dir, dist);
+    persp.near = Math.max(0.01, dist * 0.01);
+    persp.far = dist * 20;
+    persp.updateProjectionMatrix();
+    persp.lookAt(center);
+
+    if (controls) {
+      controls.target.copy(center);
+      controls.update();
+    }
+    fittedKeyRef.current = points;
+  }, [points, camera, controls]);
+
+  return null;
+}
+
+/**
+ * Track whether the spacebar is held. Releasing toggles back off so auto-
+ * rotate resumes whatever the store flag says (i.e. it's a transient
+ * pause, not a permanent toggle — the Orbit button still owns the
+ * persistent setting).
+ *
+ * Edge cases:
+ *   - Typing in INPUT / TEXTAREA / contenteditable: space passes through
+ *     to the input as a literal space character (we don't preventDefault).
+ *   - Window blur (alt-tab while holding): we'd never see the keyup, so
+ *     we reset the held state on blur to avoid a "stuck space" bug.
+ *   - preventDefault on keydown stops the browser's default space-scroll
+ *     behavior when the user isn't typing.
+ */
+function useSpacebarHold(): boolean {
+  const [held, setHeld] = useState(false);
+  useEffect(() => {
+    const isTypingTarget = (el: Element | null) => {
+      if (!el) return false;
+      const tag = el.tagName;
+      return tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT'
+        || (el as HTMLElement).isContentEditable;
+    };
+    const onDown = (e: KeyboardEvent) => {
+      if (e.code !== 'Space') return;
+      if (isTypingTarget(document.activeElement)) return;
+      e.preventDefault();
+      if (!e.repeat) setHeld(true);
+    };
+    const onUp = (e: KeyboardEvent) => {
+      if (e.code !== 'Space') return;
+      setHeld(false);
+    };
+    const onBlur = () => setHeld(false);
+    window.addEventListener('keydown', onDown);
+    window.addEventListener('keyup', onUp);
+    window.addEventListener('blur', onBlur);
+    return () => {
+      window.removeEventListener('keydown', onDown);
+      window.removeEventListener('keyup', onUp);
+      window.removeEventListener('blur', onBlur);
+    };
+  }, []);
+  return held;
 }

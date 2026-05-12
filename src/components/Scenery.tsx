@@ -23,14 +23,21 @@ export default function Scenery() {
   }, []);
 
   const axisLines = useMemo(() => {
-    const points = [
-      [new THREE.Vector3(-6, 0, 0), new THREE.Vector3(6, 0, 0)],
-      [new THREE.Vector3(0, -6, 0), new THREE.Vector3(0, 6, 0)],
-      [new THREE.Vector3(0, 0, -6), new THREE.Vector3(0, 0, 6)],
+    const axes = [
+      { pts: [new THREE.Vector3(-6, 0, 0), new THREE.Vector3(6, 0, 0)], color: 0xff3366 },
+      { pts: [new THREE.Vector3(0, -6, 0), new THREE.Vector3(0, 6, 0)], color: 0x33ff77 },
+      { pts: [new THREE.Vector3(0, 0, -6), new THREE.Vector3(0, 0, 6)], color: 0x3377ff },
     ];
-    return points.map(pts => {
+    return axes.map(({ pts, color }) => {
       const g = new THREE.BufferGeometry().setFromPoints(pts);
-      const m = new THREE.LineBasicMaterial({ color: 0x223355, transparent: true, opacity: 0.35 });
+      const m = new THREE.LineBasicMaterial({
+        color,
+        transparent: true,
+        opacity: 1.0,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+        toneMapped: false,
+      });
       return new THREE.Line(g, m);
     });
   }, []);

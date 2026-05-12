@@ -1,0 +1,30 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: heal
+      POSTGRES_PASSWORD: heal
+      POSTGRES_DB: heal_pages
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U heal -d heal_pages"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  app:
+    build: .
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+psycopg://heal:heal@postgres:5432/heal_pages
+    volumes:
+      - ./fixtures:/app/fixtures:ro
+    command: ["sleep", "infinity"]   # V0: container is a workspace; no long-running service yet.
+
+volumes:
+  pgdata:

@@ -1,0 +1,27 @@
+{
+  "user_id": 7,
+  "dedup_heart_rates": [
+    {"user_id": 7, "source": "apple_health", "max_bpm": 71,  "min_bpm": 54,  "avg_bpm": 62.4, "start_time": "2024-05-01T08:00:00Z", "end_time": "2024-05-01T09:00:00Z"},
+    {"user_id": 7, "source": "apple_health", "max_bpm": 162, "min_bpm": 110, "avg_bpm": 138.7, "start_time": "2024-05-01T17:00:00Z", "end_time": "2024-05-01T17:45:00Z"},
+    {"user_id": 7, "source": "apple_health", "max_bpm": 78,  "min_bpm": 58,  "avg_bpm": 65.2, "start_time": "2024-05-02T08:00:00Z", "end_time": "2024-05-02T09:00:00Z"},
+    {"user_id": 7, "source": "fitbit",       "max_bpm": 80,  "min_bpm": 56,  "avg_bpm": 64.0, "start_time": "2024-05-03T08:00:00Z", "end_time": "2024-05-03T09:00:00Z"}
+  ],
+  "dedup_sleep_sessions": [
+    {"user_id": 7, "date": "2024-05-01", "stage_type": 2, "duration_minutes": 84,  "source": "oura"},
+    {"user_id": 7, "date": "2024-05-01", "stage_type": 3, "duration_minutes": 96,  "source": "oura"},
+    {"user_id": 7, "date": "2024-05-01", "stage_type": 1, "duration_minutes": 212, "source": "oura"},
+    {"user_id": 7, "date": "2024-05-01", "stage_type": 4, "duration_minutes": 18,  "source": "oura"},
+    {"user_id": 7, "date": "2024-05-02", "stage_type": 2, "duration_minutes": 70,  "source": "oura"},
+    {"user_id": 7, "date": "2024-05-02", "stage_type": 3, "duration_minutes": 80,  "source": "oura"},
+    {"user_id": 7, "date": "2024-05-02", "stage_type": 1, "duration_minutes": 240, "source": "oura"},
+    {"user_id": 7, "date": "2024-05-02", "stage_type": 4, "duration_minutes": 25,  "source": "oura"},
+    {"user_id": 7, "date": "2024-05-03", "stage_type": 2, "duration_minutes": 55,  "source": "oura"},
+    {"user_id": 7, "date": "2024-05-03", "stage_type": 3, "duration_minutes": 75,  "source": "oura"},
+    {"user_id": 7, "date": "2024-05-03", "stage_type": 1, "duration_minutes": 220, "source": "oura"}
+  ],
+  "dedup_daily_steps": [
+    {"user_id": 7, "date": "2024-05-01", "steps": 11240, "source": "fitbit"},
+    {"user_id": 7, "date": "2024-05-02", "steps": 7421,  "source": "fitbit"},
+    {"user_id": 7, "date": "2024-05-03", "steps": 4830,  "source": "fitbit"}
+  ]
+}
