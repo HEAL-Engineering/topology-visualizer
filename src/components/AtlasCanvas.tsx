@@ -33,7 +33,11 @@ export default function AtlasCanvas() {
       // shaded fragment count, the single biggest GPU win for this scene
       // since additive blends produce heavy overdraw.
       dpr={[1, 1.5]}
-      gl={{ antialias: true, alpha: false }}
+      // antialias: false — MSAA at 4× samples × 1.5 dpr × heavy additive
+      // overdraw was the dominant per-frame fragment cost. Additive sprite
+      // edges self-soften, so the visual delta is negligible while the
+      // shading load drops by ~half during orbit.
+      gl={{ antialias: false, alpha: false }}
       frameloop={rotating ? 'always' : 'demand'}
     >
       <Scenery />

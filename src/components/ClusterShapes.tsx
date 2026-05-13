@@ -79,17 +79,20 @@ export default function ClusterShapes() {
     items.forEach(({ category }, i) => {
       const fill = fillRefs.current[i];
       const wire = wireRefs.current[i];
+      // Halo is skipped in light mode (see render below); tolerate its
+      // absence rather than bailing out the whole opacity update.
       const halo = haloRefs.current[i];
-      if (!fill || !wire || !halo) return;
+      if (!fill || !wire) return;
       const enabled = enabledCategories.has(category.id);
-      fill.visible = wire.visible = halo.visible = enabled;
+      fill.visible = wire.visible = enabled;
+      if (halo) halo.visible = enabled;
       if (!enabled) return;
       let mult = 1;
       if (hoveredCategory && category.id !== hoveredCategory) mult = HOVER_FADE;
       else if (hoveredCategory && category.id === hoveredCategory) mult = HOVER_AMP;
       (fill.material as THREE.MeshBasicMaterial).opacity = fillOpacity * mult;
       (wire.material as THREE.LineBasicMaterial).opacity = Math.min(1, wireOpacity * mult);
-      (halo.material as THREE.LineBasicMaterial).opacity = Math.min(1, haloOpacity * mult);
+      if (halo) (halo.material as THREE.LineBasicMaterial).opacity = Math.min(1, haloOpacity * mult);
     });
     invalidate();
   }, [items, enabledCategories, hoveredCategory, invalidate, fillOpacity, wireOpacity, haloOpacity]);
@@ -142,18 +145,22 @@ export default function ClusterShapes() {
             />
           </lineSegments>
           {/* Halo: same wireframe scaled out ~4%, blended to fatten the
-              visible outline (WebGL ignores linewidth). Blending mode is
-              flipped along with the rest in light mode. */}
-          <lineSegments ref={el => { haloRefs.current[i] = el; }} geometry={haloWireGeom}>
-            <lineBasicMaterial
-              key={materialKey}
-              color={drawColor}
-              transparent
-              opacity={haloOpacity}
-              blending={blending}
-              depthWrite={false}
-            />
-          </lineSegments>
+              visible outline (WebGL ignores linewidth). Skipped in light
+              mode — additive halos vanish on paper, and a normal-blended
+              halo at low alpha adds little visible thickness while still
+              paying the full draw call + overdraw cost. */}
+          {!isLight && (
+            <lineSegments ref={el => { haloRefs.current[i] = el; }} geometry={haloWireGeom}>
+              <lineBasicMaterial
+                key={materialKey}
+                color={drawColor}
+                transparent
+                opacity={haloOpacity}
+                blending={blending}
+                depthWrite={false}
+              />
+            </lineSegments>
+          )}
         </group>
         );
       })}

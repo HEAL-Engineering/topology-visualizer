@@ -39,7 +39,7 @@ export default function InspectPanel() {
     <div
       // Side panel, not full-screen modal — leaves the 3D scene visible so
       // the user can rotate / compare while reading.
-      className="absolute top-24 right-8 bottom-16 z-20 w-[420px] flex flex-col border backdrop-blur-xl pointer-events-auto"
+      className="absolute top-24 right-8 bottom-16 z-20 w-[420px] flex flex-col border pointer-events-auto"
       style={{
         background: 'var(--panel-bg-strong)',
         borderColor: `${accent}40`,

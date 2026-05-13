@@ -8,16 +8,21 @@
  * The Canvas (3D scene) sits in the background; UI overlays float above
  * with pointer-events: auto where interactive.
  */
-import { useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import AtlasCanvas from './components/AtlasCanvas';
 import ControlBar from './components/ControlBar';
 import FilterPanel from './components/FilterPanel';
-import TablePanel from './components/TablePanel';
 import EventCard from './components/EventCard';
 import DataLoader from './components/DataLoader';
-import TopologyInfo from './components/TopologyInfo';
-import InspectPanel from './components/InspectPanel';
 import MetricLens from './components/MetricLens';
+
+// Lazy-loaded overlays. They only render after a user action (Read button,
+// cluster click, Table toggle), so their parse cost can be deferred past
+// first paint. MorphTarget is consumed inside InspectPanel and travels with
+// it automatically through the same chunk.
+const TopologyInfo = lazy(() => import('./components/TopologyInfo'));
+const InspectPanel = lazy(() => import('./components/InspectPanel'));
+const TablePanel   = lazy(() => import('./components/TablePanel'));
 import { useAtlasStore } from './store';
 import { jsonToDataset } from './schema/adapters/json';
 import { parseRawBundle } from './schema/raw';
@@ -92,11 +97,13 @@ export default function App() {
       <ControlBar onOpenTopology={() => setTopologyOpen(true)} />
       <DataLoader />
       <FilterPanel />
-      <TablePanel />
       <EventCard />
-      <TopologyInfo open={topologyOpen} onClose={() => setTopologyOpen(false)} />
-      <InspectPanel />
       <MetricLens />
+      <Suspense fallback={null}>
+        <TablePanel />
+        <TopologyInfo open={topologyOpen} onClose={() => setTopologyOpen(false)} />
+        <InspectPanel />
+      </Suspense>
 
       {/* Bottom-center hint */}
       <div className={`absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-[10px] tracking-[0.32em] ${hintColor} uppercase pointer-events-none font-mono`}>

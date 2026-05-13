@@ -37,7 +37,7 @@ export default function MetricLens() {
       style={{ width: 340, bottom: 'calc(50vh + 24px)' }}
     >
       <div
-        className="px-4 py-3 backdrop-blur-xl border"
+        className="px-4 py-3 border"
         style={{
           background: 'var(--panel-bg)',
           borderColor: active ? 'rgba(251, 191, 36, 0.45)' : 'rgba(71, 85, 105, 0.4)',

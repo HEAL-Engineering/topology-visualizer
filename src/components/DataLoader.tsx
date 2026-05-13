@@ -68,7 +68,7 @@ export default function DataLoader() {
       </div>
 
       {loadError && (
-        <div className="absolute top-32 right-8 z-30 max-w-md pointer-events-auto bg-red-950/80 border border-red-500/40 backdrop-blur-xl p-4">
+        <div className="absolute top-32 right-8 z-30 max-w-md pointer-events-auto bg-red-950/95 border border-red-500/40 p-4">
           <div className="flex items-start justify-between mb-2">
             <div className="flex items-center gap-2">
               <FileJson size={14} className="text-red-400" />

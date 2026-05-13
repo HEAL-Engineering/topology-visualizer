@@ -17,7 +17,7 @@ export default function EventCard() {
 
   return (
     <div
-      className="absolute top-28 left-8 z-20 w-[320px] backdrop-blur-xl border pointer-events-auto"
+      className="absolute top-28 left-8 z-20 w-[320px] border pointer-events-auto"
       style={{
         background: 'var(--panel-bg-soft)',
         borderColor: `${category.color}30`,

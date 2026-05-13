@@ -69,7 +69,10 @@ export default function Scenery() {
 
   const starGeom = useMemo(() => {
     const g = new THREE.BufferGeometry();
-    const count = 800;
+    // 200 stars vs the original 800 — they sit on a 60–90 unit shell well
+    // outside the cluster mass, decorative only. Most never enter the
+    // viewport at normal orbit distances; cutting them is invisible.
+    const count = 200;
     const arr = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
       const r = 60 + Math.random() * 30;

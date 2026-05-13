@@ -124,7 +124,7 @@ export default function TablePanel() {
   return (
     <div
       className="absolute top-0 right-0 z-30 h-full pointer-events-auto flex flex-col border-l border-slate-800/60"
-      style={{ width: 620, background: 'var(--table-bg)', backdropFilter: 'blur(24px)' }}
+      style={{ width: 620, background: 'var(--table-bg)' }}
     >
       <div className="px-6 py-5 border-b border-slate-800/60 flex items-start justify-between flex-shrink-0">
         <div>

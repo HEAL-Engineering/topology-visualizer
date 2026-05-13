@@ -1,6 +1,7 @@
 /**
  * Derived state hook — pulls dataset + filter state from the store and
- * computes filtered points, per-cluster hulls, and global hull.
+ * computes per-cluster shapes, filtered points, inter-cluster distances,
+ * and per-category counts.
  *
  * All computations are memoized on their inputs, so toggling a UI flag
  * (showHulls, autoRotate) doesn't trigger any recomputation.
@@ -8,7 +9,6 @@
 import { useMemo } from 'react';
 import { useAtlasStore } from '../store';
 import { pcaClusterShape, type ClusterShape } from '../lib/cluster-shape';
-import { convexHull3D, type Triangle } from '../lib/convex-hull';
 import { clusterDistances } from '../lib/distances';
 import type { AtlasCategory, AtlasPoint } from '../schema/types';
 
@@ -50,17 +50,6 @@ export function useDerivedState() {
     return out;
   }, [dataset, enabledCategories, enabledLabels]);
 
-  // Global convex hull over filtered points; faces remapped to original indices.
-  const globalHull = useMemo<Triangle[]>(() => {
-    if (filteredWithIdx.length < 4) return [];
-    const localFaces = convexHull3D(filteredWithIdx);
-    return localFaces.map(face => [
-      filteredWithIdx[face[0]]!._origIdx,
-      filteredWithIdx[face[1]]!._origIdx,
-      filteredWithIdx[face[2]]!._origIdx,
-    ] as Triangle);
-  }, [filteredWithIdx]);
-
   // Inter-cluster distances (full data, not filtered).
   const distances = useMemo(() => {
     if (!dataset) return null;
@@ -84,5 +73,5 @@ export function useDerivedState() {
     return { total, visible, totalVisible };
   }, [dataset, enabledCategories, enabledLabels]);
 
-  return { clusterShapes, filteredWithIdx, globalHull, distances, stats };
+  return { clusterShapes, filteredWithIdx, distances, stats };
 }

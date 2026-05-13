@@ -17,11 +17,11 @@ export default function TopologyInfo({ open, onClose }: Props) {
   return (
     <div
       className="absolute inset-0 z-30 flex items-center justify-center p-6 pointer-events-auto"
-      style={{ background: 'var(--scrim-bg)', backdropFilter: 'blur(4px)' }}
+      style={{ background: 'var(--scrim-bg)' }}
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-[720px] max-h-[88vh] overflow-y-auto border backdrop-blur-xl"
+        className="relative w-full max-w-[720px] max-h-[88vh] overflow-y-auto border"
         style={{
           background: 'var(--panel-bg-strong)',
           borderColor: 'rgba(52, 211, 153, 0.25)',
