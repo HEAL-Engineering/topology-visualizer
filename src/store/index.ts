@@ -30,6 +30,12 @@ export type TableSortKey =
   | 'kind'
   | 'source';
 export type TableView = 'points' | 'raw';
+/**
+ * App-wide color theme. Controls the 3D scene background, axes, grid, fog,
+ * and the page-level wrapper. Floating UI panels keep their glass aesthetic
+ * in both modes (they read as overlay cards either way).
+ */
+export type Theme = 'dark' | 'light';
 
 // ---------------- Data slice ----------------
 
@@ -64,7 +70,6 @@ interface FilterSlice {
 
 interface UISlice {
   showHulls: boolean;
-  showGlobalHull: boolean;
   showTable: boolean;
   autoRotate: boolean;
   hoveredCategory: string | null;
@@ -76,16 +81,25 @@ interface UISlice {
    * could surface their own deep-dive overlays here.
    */
   inspectedCategory: string | null;
+  /**
+   * Which biomarker metric (key into meta.biomarkers) the user has selected
+   * as a lens. When set, PointCloud recolors points by the metric's value
+   * (heatmap) and fades points lacking the field. `null` = default category
+   * coloring. Single-active by design — multi-lens overlays would garble.
+   */
+  activeMetric: string | null;
+  theme: Theme;
   tableSort: { key: TableSortKey; dir: 'asc' | 'desc' };
   tableView: TableView;
   setShowHulls: (v: boolean) => void;
-  setShowGlobalHull: (v: boolean) => void;
   setShowTable: (v: boolean) => void;
   setAutoRotate: (v: boolean) => void;
   setHoveredCategory: (v: string | null) => void;
   setExpandedCategory: (v: string | null) => void;
   setSelectedPoint: (p: AtlasPoint | null) => void;
   setInspectedCategory: (v: string | null) => void;
+  setActiveMetric: (v: string | null) => void;
+  setTheme: (v: Theme) => void;
   setTableSort: (s: { key: TableSortKey; dir: 'asc' | 'desc' }) => void;
   setTableView: (v: TableView) => void;
 }
@@ -154,24 +168,26 @@ export const useAtlasStore = create<AtlasStore>()(
     }, false, 'resetFilters'),
 
     // UI
-    showHulls: false,
-    showGlobalHull: false,
+    showHulls: true,
     showTable: false,
     autoRotate: false,
     hoveredCategory: null,
     expandedCategory: null,
     selectedPoint: null,
     inspectedCategory: null,
+    activeMetric: null,
+    theme: 'dark',
     tableSort: { key: 'user', dir: 'asc' },
     tableView: 'points',
     setShowHulls: (v) => set({ showHulls: v }, false, 'setShowHulls'),
-    setShowGlobalHull: (v) => set({ showGlobalHull: v }, false, 'setShowGlobalHull'),
     setShowTable: (v) => set({ showTable: v }, false, 'setShowTable'),
     setAutoRotate: (v) => set({ autoRotate: v }, false, 'setAutoRotate'),
     setHoveredCategory: (v) => set({ hoveredCategory: v }, false, 'setHoveredCategory'),
     setExpandedCategory: (v) => set({ expandedCategory: v }, false, 'setExpandedCategory'),
     setSelectedPoint: (p) => set({ selectedPoint: p }, false, 'setSelectedPoint'),
     setInspectedCategory: (v) => set({ inspectedCategory: v }, false, 'setInspectedCategory'),
+    setActiveMetric: (v) => set({ activeMetric: v }, false, 'setActiveMetric'),
+    setTheme: (v) => set({ theme: v }, false, 'setTheme'),
     setTableSort: (s) => set({ tableSort: s }, false, 'setTableSort'),
     setTableView: (v) => set({ tableView: v }, false, 'setTableView'),
   })),

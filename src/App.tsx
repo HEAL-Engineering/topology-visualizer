@@ -17,6 +17,7 @@ import EventCard from './components/EventCard';
 import DataLoader from './components/DataLoader';
 import TopologyInfo from './components/TopologyInfo';
 import InspectPanel from './components/InspectPanel';
+import MetricLens from './components/MetricLens';
 import { useAtlasStore } from './store';
 import { jsonToDataset } from './schema/adapters/json';
 import { parseRawBundle } from './schema/raw';
@@ -31,7 +32,20 @@ export default function App() {
   const setDataset = useAtlasStore(s => s.setDataset);
   const setRawBundle = useAtlasStore(s => s.setRawBundle);
   const resetFilters = useAtlasStore(s => s.resetFilters);
+  const theme = useAtlasStore(s => s.theme);
   const [topologyOpen, setTopologyOpen] = useState(false);
+
+  const isLight = theme === 'light';
+  // Match the canvas's `<color attach="background">` in Scenery so the
+  // wrapper doesn't flash a different color before WebGL paints.
+  const wrapperBg = isLight ? '#f4f1ea' : '#040711';
+  // Vignette: dark fade-in on dark mode (the original look); a faint
+  // warm-gray fade on light mode so the scene still feels framed without
+  // muddying the paper background.
+  const vignette = isLight
+    ? 'radial-gradient(ellipse at center, transparent 55%, rgba(100,116,139,0.18) 100%)'
+    : 'radial-gradient(ellipse at center, transparent 50%, rgba(4,7,17,0.6) 100%)';
+  const hintColor = isLight ? 'text-slate-500' : 'text-slate-600';
 
   useEffect(() => {
     let cancelled = false;
@@ -70,7 +84,10 @@ export default function App() {
   }, [setDataset, setRawBundle, resetFilters]);
 
   return (
-    <div className="w-full h-screen relative overflow-hidden bg-[#040711]">
+    <div
+      className={`w-full h-screen relative overflow-hidden ${isLight ? 'theme-light' : 'theme-dark'}`}
+      style={{ background: wrapperBg }}
+    >
       <AtlasCanvas />
       <ControlBar onOpenTopology={() => setTopologyOpen(true)} />
       <DataLoader />
@@ -79,16 +96,17 @@ export default function App() {
       <EventCard />
       <TopologyInfo open={topologyOpen} onClose={() => setTopologyOpen(false)} />
       <InspectPanel />
+      <MetricLens />
 
       {/* Bottom-center hint */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-[10px] tracking-[0.32em] text-slate-600 uppercase pointer-events-none font-mono">
+      <div className={`absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-[10px] tracking-[0.32em] ${hintColor} uppercase pointer-events-none font-mono`}>
         Drag to rotate · Scroll to zoom · Click point to inspect · Click your cluster to morph · Hold space to pause orbit
       </div>
 
       {/* Vignette overlay */}
       <div
         className="absolute inset-0 pointer-events-none z-10"
-        style={{ background: 'radial-gradient(ellipse at center, transparent 50%, rgba(4,7,17,0.6) 100%)' }}
+        style={{ background: vignette }}
       />
     </div>
   );

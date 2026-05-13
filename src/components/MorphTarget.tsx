@@ -318,7 +318,7 @@ function MetricCard({
       className="border transition-colors"
       style={{
         borderColor: open ? `${dirColor}55` : 'rgba(71, 85, 105, 0.3)',
-        background: open ? `${dirColor}08` : 'rgba(15, 20, 33, 0.4)',
+        background: open ? `${dirColor}08` : 'var(--inset-bg)',
       }}
     >
       <button

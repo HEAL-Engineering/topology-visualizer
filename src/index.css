@@ -2,30 +2,131 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ----- Theme variables ---------------------------------------------------
+ * Components reference these in inline styles via `var(--token)` so we can
+ * flip the entire panel palette by swapping a single ancestor class instead
+ * of touching every component. Defaults below are the dark palette; the
+ * `.theme-light` overrides further down rewrite them for light mode.
+ */
+:root {
+  --page-bg: #040711;
+  --page-fg: #cbd5e1;
+
+  --panel-bg-strong: rgba(10, 14, 26, 0.92);
+  --panel-bg:        rgba(10, 14, 26, 0.78);
+  --panel-bg-soft:   rgba(10, 14, 26, 0.72);
+
+  --table-bg:       rgba(6, 9, 21, 0.86);
+  --table-hdr-bg:   rgba(6, 9, 21, 0.96);
+
+  --inset-bg: rgba(15, 20, 33, 0.4);
+  --scrim-bg: rgba(4, 7, 17, 0.72);
+
+  --label-bg-strong: rgba(4, 7, 17, 0.92);
+  --label-bg:        rgba(4, 7, 17, 0.78);
+
+  --scroll-track: rgba(255, 255, 255, 0.02);
+  --scroll-thumb: rgba(255, 255, 255, 0.1);
+  --scroll-thumb-hover: rgba(255, 255, 255, 0.2);
+}
+
+.theme-light {
+  --page-bg: #f4f1ea;
+  --page-fg: #1e293b;
+
+  /* Warm-cream glass — pure white is too clinical against the paper bg. */
+  --panel-bg-strong: rgba(255, 252, 246, 0.92);
+  --panel-bg:        rgba(255, 252, 246, 0.82);
+  --panel-bg-soft:   rgba(255, 252, 246, 0.74);
+
+  --table-bg:     rgba(255, 252, 246, 0.92);
+  --table-hdr-bg: rgba(248, 244, 235, 0.96);
+
+  --inset-bg: rgba(232, 226, 214, 0.55);
+  --scrim-bg: rgba(244, 241, 234, 0.72);
+
+  --label-bg-strong: rgba(255, 252, 246, 0.95);
+  --label-bg:        rgba(255, 252, 246, 0.85);
+
+  --scroll-track: rgba(0, 0, 0, 0.04);
+  --scroll-thumb: rgba(0, 0, 0, 0.15);
+  --scroll-thumb-hover: rgba(0, 0, 0, 0.28);
+}
+
 html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: #040711;
-  color: #cbd5e1;
+  background: var(--page-bg);
+  color: var(--page-fg);
 }
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
 }
 
-/* Custom scrollbar for the table panel */
+/* Custom scrollbar for panel scroll regions — theme-aware via CSS vars. */
 .atlas-scroll::-webkit-scrollbar {
   width: 6px;
 }
 .atlas-scroll::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--scroll-track);
 }
 .atlas-scroll::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--scroll-thumb);
   border-radius: 3px;
 }
 .atlas-scroll::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--scroll-thumb-hover);
 }
+
+/* ----- Light-mode slate-ramp overrides -----------------------------------
+ * The codebase uses Tailwind's `slate-*` ramp where 100 = brightest text
+ * on dark, 700 = nearly invisible rule lines. In light mode we invert the
+ * ramp so 100 maps to the darkest gray (acts as "primary text" on light
+ * bg) and 700 maps to the lightest. Every existing class keeps its
+ * semantic role — "the brightest variant" — without per-component edits.
+ *
+ * The selectors are higher-specificity (`.theme-light .text-slate-N`)
+ * than Tailwind's atomic classes, so they win without `!important`.
+ */
+/* Light-mode ramp shifted one stop darker than the strict inversion — the
+ * cream background reads softer than pure white, so slate-900 for primary
+ * text isn't quite punchy enough. Primary text goes to slate-950 (near
+ * pure black) and the rest of the ramp follows. Net effect: every label
+ * that read as "bright" in dark mode now reads as "vibrant" in light. */
+.theme-light .text-slate-100 { color: rgb(2 6 23); }      /* → slate-950 */
+.theme-light .text-slate-200 { color: rgb(15 23 42); }    /* → slate-900 */
+.theme-light .text-slate-300 { color: rgb(30 41 59); }    /* → slate-800 */
+.theme-light .text-slate-400 { color: rgb(51 65 85); }    /* → slate-700 */
+.theme-light .text-slate-500 { color: rgb(71 85 105); }   /* → slate-600 */
+.theme-light .text-slate-600 { color: rgb(100 116 139); } /* → slate-500 */
+.theme-light .text-slate-700 { color: rgb(148 163 184); } /* → slate-400 */
+
+.theme-light .hover\:text-slate-100:hover { color: rgb(2 6 23); }
+.theme-light .hover\:text-slate-200:hover { color: rgb(15 23 42); }
+.theme-light .hover\:text-slate-300:hover { color: rgb(30 41 59); }
+
+/* Borders — each opacity variant is its own atomic class in Tailwind so
+ * we enumerate the ones the codebase actually uses. */
+.theme-light .border-slate-500 { border-color: rgb(100 116 139); }
+.theme-light .border-slate-600 { border-color: rgb(148 163 184); }
+.theme-light .border-slate-700\/30 { border-color: rgb(148 163 184 / 0.45); }
+.theme-light .border-slate-700\/40 { border-color: rgb(148 163 184 / 0.55); }
+.theme-light .border-slate-700\/60 { border-color: rgb(148 163 184 / 0.7); }
+.theme-light .border-slate-800\/30 { border-color: rgb(148 163 184 / 0.35); }
+.theme-light .border-slate-800\/40 { border-color: rgb(148 163 184 / 0.45); }
+.theme-light .border-slate-800\/60 { border-color: rgb(148 163 184 / 0.55); }
+.theme-light .border-slate-800\/80 { border-color: rgb(148 163 184 / 0.75); }
+
+.theme-light .hover\:border-slate-500:hover { border-color: rgb(100 116 139); }
+.theme-light .hover\:border-slate-600:hover { border-color: rgb(148 163 184); }
+
+/* Table grouping rows + row hover. */
+.theme-light .bg-slate-900\/60 { background-color: rgb(232 226 214 / 0.55); }
+.theme-light .hover\:bg-slate-800\/40:hover { background-color: rgb(232 226 214 / 0.55); }
+
+/* Decoration colors (line-through on disabled filter rows, etc.). The
+ * inline style sets `textDecorationColor: '#475569'`. That looks fine on
+ * light bg too (medium slate), no override needed. */

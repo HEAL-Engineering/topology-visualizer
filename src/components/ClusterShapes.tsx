@@ -8,21 +8,32 @@
  * scaled by 2σ half-axes and rotated so the primitive's local x matches
  * the cluster's major principal axis.
  *
- * Why per-frame opacity in useFrame instead of derived state:
- *   Hover changes opacity on the order of pointer events, not on the
- *   order of dataset changes. Bouncing through useMemo/useEffect would
- *   thrash. useFrame mutates the live material in place.
+ * Opacity / visibility updates are driven by useEffect keyed on the relevant
+ * store state, not a per-frame loop — the per-frame approach was paying for
+ * 15 material writes / 60fps when the dependent state changes far less
+ * often. The effect-driven path costs O(N clusters) per state change and
+ * idles to nothing in between, which matters when the canvas is in
+ * demand-frameloop mode (see AtlasCanvas).
  */
-import { useMemo, useRef } from 'react';
-import { useFrame } from '@react-three/fiber';
+import { useEffect, useMemo, useRef } from 'react';
+import { useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { useAtlasStore } from '../store';
 import { useDerivedState, type CategoryShape } from '../lib/use-derived';
 import type { ClusterShapeKind } from '../schema/types';
+import { darken } from './ClusterLabels';
 
 // Tunable cosmetics ─────────────────────────────────────────────────────────
 const FILL_OPACITY = 0.05;
 const WIRE_OPACITY = 0.95;
+// Light-mode counterparts — additive blending vanishes on near-white, so we
+// switch to NormalBlending and re-tune opacities. Wire opacity ramps higher
+// because a darkened category color reading at ~0.5 alpha on paper is still
+// only a faint line; halo stays modest so the cluster outline doesn't print
+// like a hard ink stroke.
+const FILL_OPACITY_LIGHT = 0.12;
+const WIRE_OPACITY_LIGHT = 0.90;
+const HALO_OPACITY_LIGHT = 0.28;
 // Halo wireframe — a slightly-scaled-up clone of the same wireframe stacked
 // on top with additive blending. WebGL's `LineBasicMaterial.linewidth` is
 // effectively ignored on most platforms, so we fake outline thickness by
@@ -48,15 +59,23 @@ export default function ClusterShapes() {
   const showHulls = useAtlasStore(s => s.showHulls);
   const enabledCategories = useAtlasStore(s => s.enabledCategories);
   const hoveredCategory = useAtlasStore(s => s.hoveredCategory);
+  const activeMetric = useAtlasStore(s => s.activeMetric);
+  const theme = useAtlasStore(s => s.theme);
   const setInspectedCategory = useAtlasStore(s => s.setInspectedCategory);
+  const isLight = theme === 'light';
+  const fillOpacity = isLight ? FILL_OPACITY_LIGHT : FILL_OPACITY;
+  const wireOpacity = isLight ? WIRE_OPACITY_LIGHT : WIRE_OPACITY;
+  const haloOpacity = isLight ? HALO_OPACITY_LIGHT : HALO_OPACITY;
+  const blending = isLight ? THREE.NormalBlending : THREE.AdditiveBlending;
 
   const items = useMemo(() => clusterShapes.map(buildItem), [clusterShapes]);
 
   const fillRefs = useRef<(THREE.Mesh | null)[]>([]);
   const wireRefs = useRef<(THREE.LineSegments | null)[]>([]);
   const haloRefs = useRef<(THREE.LineSegments | null)[]>([]);
+  const invalidate = useThree(s => s.invalidate);
 
-  useFrame(() => {
+  useEffect(() => {
     items.forEach(({ category }, i) => {
       const fill = fillRefs.current[i];
       const wire = wireRefs.current[i];
@@ -68,13 +87,16 @@ export default function ClusterShapes() {
       let mult = 1;
       if (hoveredCategory && category.id !== hoveredCategory) mult = HOVER_FADE;
       else if (hoveredCategory && category.id === hoveredCategory) mult = HOVER_AMP;
-      (fill.material as THREE.MeshBasicMaterial).opacity = FILL_OPACITY * mult;
-      (wire.material as THREE.LineBasicMaterial).opacity = WIRE_OPACITY * mult;
-      (halo.material as THREE.LineBasicMaterial).opacity = HALO_OPACITY * mult;
+      (fill.material as THREE.MeshBasicMaterial).opacity = fillOpacity * mult;
+      (wire.material as THREE.LineBasicMaterial).opacity = Math.min(1, wireOpacity * mult);
+      (halo.material as THREE.LineBasicMaterial).opacity = Math.min(1, haloOpacity * mult);
     });
-  });
+    invalidate();
+  }, [items, enabledCategories, hoveredCategory, invalidate, fillOpacity, wireOpacity, haloOpacity]);
 
-  if (!showHulls) return null;
+  // Hide cluster outlines while a metric lens is active — their per-category
+  // color would compete with the heatmap reading.
+  if (!showHulls || activeMetric) return null;
   return (
     <group>
       {items.map(({ category, geom, wireGeom, haloWireGeom }, i) => {
@@ -82,6 +104,14 @@ export default function ClusterShapes() {
           e.stopPropagation();
           setInspectedCategory(category.id);
         };
+        // Light mode: substitute a lightly darkened color so the wire reads
+        // on paper without losing its saturation. Same hue, ~75% luminance —
+        // keeps category recognition AND vibrance now that the wire opacity
+        // sits high enough to carry the color cleanly.
+        const drawColor = isLight ? darken(category.color, 0.75) : category.color;
+        // `materialKey` forces fresh material instances when theme flips so
+        // three rebuilds the shader with the new blending mode.
+        const materialKey = isLight ? 'light' : 'dark';
         return (
         <group
           key={category.id}
@@ -91,10 +121,11 @@ export default function ClusterShapes() {
         >
           <mesh ref={el => { fillRefs.current[i] = el; }} geometry={geom}>
             <meshBasicMaterial
-              color={category.color}
+              key={materialKey}
+              color={drawColor}
               transparent
-              opacity={FILL_OPACITY}
-              blending={THREE.AdditiveBlending}
+              opacity={fillOpacity}
+              blending={blending}
               side={THREE.DoubleSide}
               depthWrite={false}
             />
@@ -102,21 +133,24 @@ export default function ClusterShapes() {
           {/* Bright inner outline — the actual cluster boundary. */}
           <lineSegments ref={el => { wireRefs.current[i] = el; }} geometry={wireGeom}>
             <lineBasicMaterial
-              color={category.color}
+              key={materialKey}
+              color={drawColor}
               transparent
-              opacity={WIRE_OPACITY}
-              blending={THREE.AdditiveBlending}
+              opacity={wireOpacity}
+              blending={blending}
               depthWrite={false}
             />
           </lineSegments>
-          {/* Halo: same wireframe scaled out ~4%, additively blended to
-              fatten the visible outline (WebGL ignores linewidth). */}
+          {/* Halo: same wireframe scaled out ~4%, blended to fatten the
+              visible outline (WebGL ignores linewidth). Blending mode is
+              flipped along with the rest in light mode. */}
           <lineSegments ref={el => { haloRefs.current[i] = el; }} geometry={haloWireGeom}>
             <lineBasicMaterial
-              color={category.color}
+              key={materialKey}
+              color={drawColor}
               transparent
-              opacity={HALO_OPACITY}
-              blending={THREE.AdditiveBlending}
+              opacity={haloOpacity}
+              blending={blending}
               depthWrite={false}
             />
           </lineSegments>

@@ -1,0 +1,3449 @@
+{
+  "user_id": 7,
+  "dedup_heart_rates": [
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 147,
+      "min_bpm": 56,
+      "avg_bpm": 73,
+      "start_time": "2024-05-01T07:00:00Z",
+      "end_time": "2024-05-01T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 156,
+      "min_bpm": 57,
+      "avg_bpm": 75,
+      "start_time": "2024-05-02T07:00:00Z",
+      "end_time": "2024-05-02T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 149,
+      "min_bpm": 60,
+      "avg_bpm": 74,
+      "start_time": "2024-05-03T07:00:00Z",
+      "end_time": "2024-05-03T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 184,
+      "min_bpm": 58,
+      "avg_bpm": 66,
+      "start_time": "2024-05-04T07:00:00Z",
+      "end_time": "2024-05-04T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 151,
+      "min_bpm": 58,
+      "avg_bpm": 64,
+      "start_time": "2024-05-05T07:00:00Z",
+      "end_time": "2024-05-05T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 138,
+      "min_bpm": 56,
+      "avg_bpm": 73,
+      "start_time": "2024-05-06T07:00:00Z",
+      "end_time": "2024-05-06T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 173,
+      "min_bpm": 61,
+      "avg_bpm": 65,
+      "start_time": "2024-05-07T07:00:00Z",
+      "end_time": "2024-05-07T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 173,
+      "min_bpm": 62,
+      "avg_bpm": 69,
+      "start_time": "2024-05-08T07:00:00Z",
+      "end_time": "2024-05-08T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 167,
+      "min_bpm": 51,
+      "avg_bpm": 80,
+      "start_time": "2024-05-09T07:00:00Z",
+      "end_time": "2024-05-09T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 182,
+      "min_bpm": 54,
+      "avg_bpm": 73,
+      "start_time": "2024-05-10T07:00:00Z",
+      "end_time": "2024-05-10T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 169,
+      "min_bpm": 57,
+      "avg_bpm": 77,
+      "start_time": "2024-05-11T07:00:00Z",
+      "end_time": "2024-05-11T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 158,
+      "min_bpm": 53,
+      "avg_bpm": 78,
+      "start_time": "2024-05-12T07:00:00Z",
+      "end_time": "2024-05-12T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 169,
+      "min_bpm": 53,
+      "avg_bpm": 62,
+      "start_time": "2024-05-13T07:00:00Z",
+      "end_time": "2024-05-13T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 152,
+      "min_bpm": 53,
+      "avg_bpm": 76,
+      "start_time": "2024-05-14T07:00:00Z",
+      "end_time": "2024-05-14T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 158,
+      "min_bpm": 58,
+      "avg_bpm": 76,
+      "start_time": "2024-05-15T07:00:00Z",
+      "end_time": "2024-05-15T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 156,
+      "min_bpm": 54,
+      "avg_bpm": 61,
+      "start_time": "2024-05-16T07:00:00Z",
+      "end_time": "2024-05-16T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 169,
+      "min_bpm": 58,
+      "avg_bpm": 80,
+      "start_time": "2024-05-17T07:00:00Z",
+      "end_time": "2024-05-17T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 155,
+      "min_bpm": 56,
+      "avg_bpm": 67,
+      "start_time": "2024-05-18T07:00:00Z",
+      "end_time": "2024-05-18T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 143,
+      "min_bpm": 53,
+      "avg_bpm": 72,
+      "start_time": "2024-05-19T07:00:00Z",
+      "end_time": "2024-05-19T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 127,
+      "min_bpm": 59,
+      "avg_bpm": 71,
+      "start_time": "2024-05-20T07:00:00Z",
+      "end_time": "2024-05-20T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 175,
+      "min_bpm": 60,
+      "avg_bpm": 77,
+      "start_time": "2024-05-21T07:00:00Z",
+      "end_time": "2024-05-21T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 160,
+      "min_bpm": 65,
+      "avg_bpm": 76,
+      "start_time": "2024-05-22T07:00:00Z",
+      "end_time": "2024-05-22T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 169,
+      "min_bpm": 59,
+      "avg_bpm": 63,
+      "start_time": "2024-05-23T07:00:00Z",
+      "end_time": "2024-05-23T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 139,
+      "min_bpm": 53,
+      "avg_bpm": 74,
+      "start_time": "2024-05-24T07:00:00Z",
+      "end_time": "2024-05-24T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 156,
+      "min_bpm": 53,
+      "avg_bpm": 80,
+      "start_time": "2024-05-25T07:00:00Z",
+      "end_time": "2024-05-25T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 176,
+      "min_bpm": 56,
+      "avg_bpm": 79,
+      "start_time": "2024-05-26T07:00:00Z",
+      "end_time": "2024-05-26T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 137,
+      "min_bpm": 53,
+      "avg_bpm": 73,
+      "start_time": "2024-05-27T07:00:00Z",
+      "end_time": "2024-05-27T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 171,
+      "min_bpm": 59,
+      "avg_bpm": 73,
+      "start_time": "2024-05-28T07:00:00Z",
+      "end_time": "2024-05-28T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 156,
+      "min_bpm": 62,
+      "avg_bpm": 66,
+      "start_time": "2024-05-29T07:00:00Z",
+      "end_time": "2024-05-29T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 169,
+      "min_bpm": 66,
+      "avg_bpm": 85,
+      "start_time": "2024-05-30T07:00:00Z",
+      "end_time": "2024-05-30T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 156,
+      "min_bpm": 50,
+      "avg_bpm": 68,
+      "start_time": "2024-05-31T07:00:00Z",
+      "end_time": "2024-05-31T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 176,
+      "min_bpm": 62,
+      "avg_bpm": 73,
+      "start_time": "2024-06-01T07:00:00Z",
+      "end_time": "2024-06-01T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 174,
+      "min_bpm": 63,
+      "avg_bpm": 76,
+      "start_time": "2024-06-02T07:00:00Z",
+      "end_time": "2024-06-02T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 177,
+      "min_bpm": 57,
+      "avg_bpm": 77,
+      "start_time": "2024-06-03T07:00:00Z",
+      "end_time": "2024-06-03T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 168,
+      "min_bpm": 61,
+      "avg_bpm": 68,
+      "start_time": "2024-06-04T07:00:00Z",
+      "end_time": "2024-06-04T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 152,
+      "min_bpm": 57,
+      "avg_bpm": 68,
+      "start_time": "2024-06-05T07:00:00Z",
+      "end_time": "2024-06-05T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 179,
+      "min_bpm": 52,
+      "avg_bpm": 76,
+      "start_time": "2024-06-06T07:00:00Z",
+      "end_time": "2024-06-06T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 165,
+      "min_bpm": 63,
+      "avg_bpm": 71,
+      "start_time": "2024-06-07T07:00:00Z",
+      "end_time": "2024-06-07T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 165,
+      "min_bpm": 57,
+      "avg_bpm": 61,
+      "start_time": "2024-06-08T07:00:00Z",
+      "end_time": "2024-06-08T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 154,
+      "min_bpm": 62,
+      "avg_bpm": 66,
+      "start_time": "2024-06-09T07:00:00Z",
+      "end_time": "2024-06-09T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 162,
+      "min_bpm": 61,
+      "avg_bpm": 85,
+      "start_time": "2024-06-10T07:00:00Z",
+      "end_time": "2024-06-10T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 169,
+      "min_bpm": 64,
+      "avg_bpm": 74,
+      "start_time": "2024-06-11T07:00:00Z",
+      "end_time": "2024-06-11T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 157,
+      "min_bpm": 45,
+      "avg_bpm": 75,
+      "start_time": "2024-06-12T07:00:00Z",
+      "end_time": "2024-06-12T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 173,
+      "min_bpm": 61,
+      "avg_bpm": 75,
+      "start_time": "2024-06-13T07:00:00Z",
+      "end_time": "2024-06-13T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 143,
+      "min_bpm": 65,
+      "avg_bpm": 70,
+      "start_time": "2024-06-14T07:00:00Z",
+      "end_time": "2024-06-14T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 178,
+      "min_bpm": 54,
+      "avg_bpm": 77,
+      "start_time": "2024-06-15T07:00:00Z",
+      "end_time": "2024-06-15T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 170,
+      "min_bpm": 55,
+      "avg_bpm": 67,
+      "start_time": "2024-06-16T07:00:00Z",
+      "end_time": "2024-06-16T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 155,
+      "min_bpm": 53,
+      "avg_bpm": 75,
+      "start_time": "2024-06-17T07:00:00Z",
+      "end_time": "2024-06-17T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 175,
+      "min_bpm": 60,
+      "avg_bpm": 66,
+      "start_time": "2024-06-18T07:00:00Z",
+      "end_time": "2024-06-18T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 159,
+      "min_bpm": 63,
+      "avg_bpm": 71,
+      "start_time": "2024-06-19T07:00:00Z",
+      "end_time": "2024-06-19T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 179,
+      "min_bpm": 54,
+      "avg_bpm": 75,
+      "start_time": "2024-06-20T07:00:00Z",
+      "end_time": "2024-06-20T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 156,
+      "min_bpm": 57,
+      "avg_bpm": 72,
+      "start_time": "2024-06-21T07:00:00Z",
+      "end_time": "2024-06-21T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 136,
+      "min_bpm": 59,
+      "avg_bpm": 73,
+      "start_time": "2024-06-22T07:00:00Z",
+      "end_time": "2024-06-22T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 175,
+      "min_bpm": 55,
+      "avg_bpm": 74,
+      "start_time": "2024-06-23T07:00:00Z",
+      "end_time": "2024-06-23T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 132,
+      "min_bpm": 63,
+      "avg_bpm": 69,
+      "start_time": "2024-06-24T07:00:00Z",
+      "end_time": "2024-06-24T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 165,
+      "min_bpm": 59,
+      "avg_bpm": 68,
+      "start_time": "2024-06-25T07:00:00Z",
+      "end_time": "2024-06-25T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 152,
+      "min_bpm": 60,
+      "avg_bpm": 72,
+      "start_time": "2024-06-26T07:00:00Z",
+      "end_time": "2024-06-26T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 165,
+      "min_bpm": 56,
+      "avg_bpm": 81,
+      "start_time": "2024-06-27T07:00:00Z",
+      "end_time": "2024-06-27T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 182,
+      "min_bpm": 59,
+      "avg_bpm": 75,
+      "start_time": "2024-06-28T07:00:00Z",
+      "end_time": "2024-06-28T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 154,
+      "min_bpm": 64,
+      "avg_bpm": 71,
+      "start_time": "2024-06-29T07:00:00Z",
+      "end_time": "2024-06-29T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 161,
+      "min_bpm": 57,
+      "avg_bpm": 75,
+      "start_time": "2024-06-30T07:00:00Z",
+      "end_time": "2024-06-30T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 171,
+      "min_bpm": 51,
+      "avg_bpm": 75,
+      "start_time": "2024-07-01T07:00:00Z",
+      "end_time": "2024-07-01T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 161,
+      "min_bpm": 57,
+      "avg_bpm": 79,
+      "start_time": "2024-07-02T07:00:00Z",
+      "end_time": "2024-07-02T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 157,
+      "min_bpm": 58,
+      "avg_bpm": 63,
+      "start_time": "2024-07-03T07:00:00Z",
+      "end_time": "2024-07-03T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 179,
+      "min_bpm": 57,
+      "avg_bpm": 76,
+      "start_time": "2024-07-04T07:00:00Z",
+      "end_time": "2024-07-04T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 165,
+      "min_bpm": 46,
+      "avg_bpm": 72,
+      "start_time": "2024-07-05T07:00:00Z",
+      "end_time": "2024-07-05T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 135,
+      "min_bpm": 61,
+      "avg_bpm": 67,
+      "start_time": "2024-07-06T07:00:00Z",
+      "end_time": "2024-07-06T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 171,
+      "min_bpm": 68,
+      "avg_bpm": 81,
+      "start_time": "2024-07-07T07:00:00Z",
+      "end_time": "2024-07-07T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 164,
+      "min_bpm": 55,
+      "avg_bpm": 73,
+      "start_time": "2024-07-08T07:00:00Z",
+      "end_time": "2024-07-08T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 150,
+      "min_bpm": 54,
+      "avg_bpm": 71,
+      "start_time": "2024-07-09T07:00:00Z",
+      "end_time": "2024-07-09T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 158,
+      "min_bpm": 58,
+      "avg_bpm": 69,
+      "start_time": "2024-07-10T07:00:00Z",
+      "end_time": "2024-07-10T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 145,
+      "min_bpm": 58,
+      "avg_bpm": 67,
+      "start_time": "2024-07-11T07:00:00Z",
+      "end_time": "2024-07-11T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 162,
+      "min_bpm": 58,
+      "avg_bpm": 74,
+      "start_time": "2024-07-12T07:00:00Z",
+      "end_time": "2024-07-12T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 167,
+      "min_bpm": 51,
+      "avg_bpm": 66,
+      "start_time": "2024-07-13T07:00:00Z",
+      "end_time": "2024-07-13T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 172,
+      "min_bpm": 46,
+      "avg_bpm": 75,
+      "start_time": "2024-07-14T07:00:00Z",
+      "end_time": "2024-07-14T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 150,
+      "min_bpm": 66,
+      "avg_bpm": 78,
+      "start_time": "2024-07-15T07:00:00Z",
+      "end_time": "2024-07-15T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 147,
+      "min_bpm": 57,
+      "avg_bpm": 74,
+      "start_time": "2024-07-16T07:00:00Z",
+      "end_time": "2024-07-16T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 171,
+      "min_bpm": 55,
+      "avg_bpm": 69,
+      "start_time": "2024-07-17T07:00:00Z",
+      "end_time": "2024-07-17T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 187,
+      "min_bpm": 57,
+      "avg_bpm": 69,
+      "start_time": "2024-07-18T07:00:00Z",
+      "end_time": "2024-07-18T09:00:00Z"
+    },
+    {
+      "user_id": 7,
+      "source": "apple_health",
+      "max_bpm": 160,
+      "min_bpm": 54,
+      "avg_bpm": 70,
+      "start_time": "2024-07-19T07:00:00Z",
+      "end_time": "2024-07-19T09:00:00Z"
+    }
+  ],
+  "dedup_sleep_sessions": [
+    {
+      "user_id": 7,
+      "date": "2024-05-01",
+      "stage_type": 2,
+      "duration_minutes": 88,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-01",
+      "stage_type": 3,
+      "duration_minutes": 81,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-01",
+      "stage_type": 1,
+      "duration_minutes": 214,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-01",
+      "stage_type": 4,
+      "duration_minutes": 8,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-02",
+      "stage_type": 2,
+      "duration_minutes": 50,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-02",
+      "stage_type": 3,
+      "duration_minutes": 98,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-02",
+      "stage_type": 1,
+      "duration_minutes": 267,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-02",
+      "stage_type": 4,
+      "duration_minutes": 20,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-03",
+      "stage_type": 2,
+      "duration_minutes": 79,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-03",
+      "stage_type": 3,
+      "duration_minutes": 117,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-03",
+      "stage_type": 1,
+      "duration_minutes": 245,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-03",
+      "stage_type": 4,
+      "duration_minutes": 11,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-04",
+      "stage_type": 2,
+      "duration_minutes": 62,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-04",
+      "stage_type": 3,
+      "duration_minutes": 95,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-04",
+      "stage_type": 1,
+      "duration_minutes": 264,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-04",
+      "stage_type": 4,
+      "duration_minutes": 26,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-05",
+      "stage_type": 2,
+      "duration_minutes": 72,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-05",
+      "stage_type": 3,
+      "duration_minutes": 107,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-05",
+      "stage_type": 1,
+      "duration_minutes": 272,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-05",
+      "stage_type": 4,
+      "duration_minutes": 2,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-06",
+      "stage_type": 2,
+      "duration_minutes": 65,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-06",
+      "stage_type": 3,
+      "duration_minutes": 96,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-06",
+      "stage_type": 1,
+      "duration_minutes": 254,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-06",
+      "stage_type": 4,
+      "duration_minutes": 11,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-07",
+      "stage_type": 2,
+      "duration_minutes": 106,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-07",
+      "stage_type": 3,
+      "duration_minutes": 143,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-07",
+      "stage_type": 1,
+      "duration_minutes": 286,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-07",
+      "stage_type": 4,
+      "duration_minutes": 15,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-08",
+      "stage_type": 2,
+      "duration_minutes": 88,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-08",
+      "stage_type": 3,
+      "duration_minutes": 95,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-08",
+      "stage_type": 1,
+      "duration_minutes": 281,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-08",
+      "stage_type": 4,
+      "duration_minutes": 13,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-09",
+      "stage_type": 2,
+      "duration_minutes": 77,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-09",
+      "stage_type": 3,
+      "duration_minutes": 100,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-09",
+      "stage_type": 1,
+      "duration_minutes": 270,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-09",
+      "stage_type": 4,
+      "duration_minutes": 22,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-10",
+      "stage_type": 2,
+      "duration_minutes": 81,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-10",
+      "stage_type": 3,
+      "duration_minutes": 103,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-10",
+      "stage_type": 1,
+      "duration_minutes": 232,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-10",
+      "stage_type": 4,
+      "duration_minutes": 19,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-11",
+      "stage_type": 2,
+      "duration_minutes": 67,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-11",
+      "stage_type": 3,
+      "duration_minutes": 103,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-11",
+      "stage_type": 1,
+      "duration_minutes": 283,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-11",
+      "stage_type": 4,
+      "duration_minutes": 15,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-12",
+      "stage_type": 2,
+      "duration_minutes": 73,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-12",
+      "stage_type": 3,
+      "duration_minutes": 116,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-12",
+      "stage_type": 1,
+      "duration_minutes": 286,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-12",
+      "stage_type": 4,
+      "duration_minutes": 22,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-13",
+      "stage_type": 2,
+      "duration_minutes": 83,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-13",
+      "stage_type": 3,
+      "duration_minutes": 121,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-13",
+      "stage_type": 1,
+      "duration_minutes": 232,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-13",
+      "stage_type": 4,
+      "duration_minutes": 20,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-14",
+      "stage_type": 2,
+      "duration_minutes": 75,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-14",
+      "stage_type": 3,
+      "duration_minutes": 98,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-14",
+      "stage_type": 1,
+      "duration_minutes": 264,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-14",
+      "stage_type": 4,
+      "duration_minutes": 15,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-15",
+      "stage_type": 2,
+      "duration_minutes": 80,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-15",
+      "stage_type": 3,
+      "duration_minutes": 134,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-15",
+      "stage_type": 1,
+      "duration_minutes": 279,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-15",
+      "stage_type": 4,
+      "duration_minutes": 14,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-16",
+      "stage_type": 2,
+      "duration_minutes": 74,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-16",
+      "stage_type": 3,
+      "duration_minutes": 115,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-16",
+      "stage_type": 1,
+      "duration_minutes": 237,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-16",
+      "stage_type": 4,
+      "duration_minutes": 24,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-17",
+      "stage_type": 2,
+      "duration_minutes": 71,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-17",
+      "stage_type": 3,
+      "duration_minutes": 121,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-17",
+      "stage_type": 1,
+      "duration_minutes": 258,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-17",
+      "stage_type": 4,
+      "duration_minutes": 5,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-18",
+      "stage_type": 2,
+      "duration_minutes": 89,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-18",
+      "stage_type": 3,
+      "duration_minutes": 97,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-18",
+      "stage_type": 1,
+      "duration_minutes": 231,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-18",
+      "stage_type": 4,
+      "duration_minutes": 19,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-19",
+      "stage_type": 2,
+      "duration_minutes": 69,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-19",
+      "stage_type": 3,
+      "duration_minutes": 123,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-19",
+      "stage_type": 1,
+      "duration_minutes": 230,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-19",
+      "stage_type": 4,
+      "duration_minutes": 16,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-20",
+      "stage_type": 2,
+      "duration_minutes": 80,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-20",
+      "stage_type": 3,
+      "duration_minutes": 81,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-20",
+      "stage_type": 1,
+      "duration_minutes": 275,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-20",
+      "stage_type": 4,
+      "duration_minutes": 23,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-21",
+      "stage_type": 2,
+      "duration_minutes": 55,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-21",
+      "stage_type": 3,
+      "duration_minutes": 99,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-21",
+      "stage_type": 1,
+      "duration_minutes": 241,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-21",
+      "stage_type": 4,
+      "duration_minutes": 4,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-22",
+      "stage_type": 2,
+      "duration_minutes": 91,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-22",
+      "stage_type": 3,
+      "duration_minutes": 79,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-22",
+      "stage_type": 1,
+      "duration_minutes": 245,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-22",
+      "stage_type": 4,
+      "duration_minutes": 11,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-23",
+      "stage_type": 2,
+      "duration_minutes": 71,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-23",
+      "stage_type": 3,
+      "duration_minutes": 117,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-23",
+      "stage_type": 1,
+      "duration_minutes": 245,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-23",
+      "stage_type": 4,
+      "duration_minutes": 4,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-24",
+      "stage_type": 2,
+      "duration_minutes": 82,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-24",
+      "stage_type": 3,
+      "duration_minutes": 121,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-24",
+      "stage_type": 1,
+      "duration_minutes": 247,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-24",
+      "stage_type": 4,
+      "duration_minutes": 15,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-25",
+      "stage_type": 2,
+      "duration_minutes": 83,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-25",
+      "stage_type": 3,
+      "duration_minutes": 114,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-25",
+      "stage_type": 1,
+      "duration_minutes": 251,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-25",
+      "stage_type": 4,
+      "duration_minutes": 9,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-26",
+      "stage_type": 2,
+      "duration_minutes": 66,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-26",
+      "stage_type": 3,
+      "duration_minutes": 106,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-26",
+      "stage_type": 1,
+      "duration_minutes": 243,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-26",
+      "stage_type": 4,
+      "duration_minutes": 13,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-27",
+      "stage_type": 2,
+      "duration_minutes": 71,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-27",
+      "stage_type": 3,
+      "duration_minutes": 89,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-27",
+      "stage_type": 1,
+      "duration_minutes": 277,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-27",
+      "stage_type": 4,
+      "duration_minutes": 19,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-28",
+      "stage_type": 2,
+      "duration_minutes": 74,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-28",
+      "stage_type": 3,
+      "duration_minutes": 124,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-28",
+      "stage_type": 1,
+      "duration_minutes": 306,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-28",
+      "stage_type": 4,
+      "duration_minutes": 24,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-29",
+      "stage_type": 2,
+      "duration_minutes": 88,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-29",
+      "stage_type": 3,
+      "duration_minutes": 96,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-29",
+      "stage_type": 1,
+      "duration_minutes": 238,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-29",
+      "stage_type": 4,
+      "duration_minutes": 13,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-30",
+      "stage_type": 2,
+      "duration_minutes": 75,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-30",
+      "stage_type": 3,
+      "duration_minutes": 105,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-30",
+      "stage_type": 1,
+      "duration_minutes": 210,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-30",
+      "stage_type": 4,
+      "duration_minutes": 13,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-31",
+      "stage_type": 2,
+      "duration_minutes": 87,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-31",
+      "stage_type": 3,
+      "duration_minutes": 102,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-31",
+      "stage_type": 1,
+      "duration_minutes": 279,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-31",
+      "stage_type": 4,
+      "duration_minutes": 10,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-01",
+      "stage_type": 2,
+      "duration_minutes": 89,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-01",
+      "stage_type": 3,
+      "duration_minutes": 110,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-01",
+      "stage_type": 1,
+      "duration_minutes": 292,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-01",
+      "stage_type": 4,
+      "duration_minutes": 11,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-02",
+      "stage_type": 2,
+      "duration_minutes": 62,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-02",
+      "stage_type": 3,
+      "duration_minutes": 82,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-02",
+      "stage_type": 1,
+      "duration_minutes": 298,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-02",
+      "stage_type": 4,
+      "duration_minutes": 18,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-03",
+      "stage_type": 2,
+      "duration_minutes": 62,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-03",
+      "stage_type": 3,
+      "duration_minutes": 89,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-03",
+      "stage_type": 1,
+      "duration_minutes": 316,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-03",
+      "stage_type": 4,
+      "duration_minutes": 29,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-04",
+      "stage_type": 2,
+      "duration_minutes": 64,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-04",
+      "stage_type": 3,
+      "duration_minutes": 99,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-04",
+      "stage_type": 1,
+      "duration_minutes": 277,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-04",
+      "stage_type": 4,
+      "duration_minutes": 15,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-05",
+      "stage_type": 2,
+      "duration_minutes": 94,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-05",
+      "stage_type": 3,
+      "duration_minutes": 111,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-05",
+      "stage_type": 1,
+      "duration_minutes": 240,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-05",
+      "stage_type": 4,
+      "duration_minutes": 8,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-06",
+      "stage_type": 2,
+      "duration_minutes": 71,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-06",
+      "stage_type": 3,
+      "duration_minutes": 100,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-06",
+      "stage_type": 1,
+      "duration_minutes": 246,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-06",
+      "stage_type": 4,
+      "duration_minutes": 7,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-07",
+      "stage_type": 2,
+      "duration_minutes": 70,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-07",
+      "stage_type": 3,
+      "duration_minutes": 90,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-07",
+      "stage_type": 1,
+      "duration_minutes": 296,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-07",
+      "stage_type": 4,
+      "duration_minutes": 17,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-08",
+      "stage_type": 2,
+      "duration_minutes": 76,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-08",
+      "stage_type": 3,
+      "duration_minutes": 91,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-08",
+      "stage_type": 1,
+      "duration_minutes": 247,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-08",
+      "stage_type": 4,
+      "duration_minutes": 28,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-09",
+      "stage_type": 2,
+      "duration_minutes": 68,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-09",
+      "stage_type": 3,
+      "duration_minutes": 103,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-09",
+      "stage_type": 1,
+      "duration_minutes": 282,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-09",
+      "stage_type": 4,
+      "duration_minutes": 17,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-10",
+      "stage_type": 2,
+      "duration_minutes": 79,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-10",
+      "stage_type": 3,
+      "duration_minutes": 114,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-10",
+      "stage_type": 1,
+      "duration_minutes": 281,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-10",
+      "stage_type": 4,
+      "duration_minutes": 26,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-11",
+      "stage_type": 2,
+      "duration_minutes": 81,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-11",
+      "stage_type": 3,
+      "duration_minutes": 87,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-11",
+      "stage_type": 1,
+      "duration_minutes": 285,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-11",
+      "stage_type": 4,
+      "duration_minutes": 12,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-12",
+      "stage_type": 2,
+      "duration_minutes": 67,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-12",
+      "stage_type": 3,
+      "duration_minutes": 94,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-12",
+      "stage_type": 1,
+      "duration_minutes": 254,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-12",
+      "stage_type": 4,
+      "duration_minutes": 12,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-13",
+      "stage_type": 2,
+      "duration_minutes": 91,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-13",
+      "stage_type": 3,
+      "duration_minutes": 98,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-13",
+      "stage_type": 1,
+      "duration_minutes": 237,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-13",
+      "stage_type": 4,
+      "duration_minutes": 22,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-14",
+      "stage_type": 2,
+      "duration_minutes": 83,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-14",
+      "stage_type": 3,
+      "duration_minutes": 119,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-14",
+      "stage_type": 1,
+      "duration_minutes": 252,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-14",
+      "stage_type": 4,
+      "duration_minutes": 27,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-15",
+      "stage_type": 2,
+      "duration_minutes": 72,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-15",
+      "stage_type": 3,
+      "duration_minutes": 80,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-15",
+      "stage_type": 1,
+      "duration_minutes": 212,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-15",
+      "stage_type": 4,
+      "duration_minutes": 23,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-16",
+      "stage_type": 2,
+      "duration_minutes": 68,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-16",
+      "stage_type": 3,
+      "duration_minutes": 104,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-16",
+      "stage_type": 1,
+      "duration_minutes": 239,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-16",
+      "stage_type": 4,
+      "duration_minutes": 14,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-17",
+      "stage_type": 2,
+      "duration_minutes": 94,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-17",
+      "stage_type": 3,
+      "duration_minutes": 79,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-17",
+      "stage_type": 1,
+      "duration_minutes": 264,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-17",
+      "stage_type": 4,
+      "duration_minutes": 15,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-18",
+      "stage_type": 2,
+      "duration_minutes": 65,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-18",
+      "stage_type": 3,
+      "duration_minutes": 116,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-18",
+      "stage_type": 1,
+      "duration_minutes": 183,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-18",
+      "stage_type": 4,
+      "duration_minutes": 24,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-19",
+      "stage_type": 2,
+      "duration_minutes": 75,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-19",
+      "stage_type": 3,
+      "duration_minutes": 93,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-19",
+      "stage_type": 1,
+      "duration_minutes": 242,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-19",
+      "stage_type": 4,
+      "duration_minutes": 29,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-20",
+      "stage_type": 2,
+      "duration_minutes": 80,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-20",
+      "stage_type": 3,
+      "duration_minutes": 68,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-20",
+      "stage_type": 1,
+      "duration_minutes": 214,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-20",
+      "stage_type": 4,
+      "duration_minutes": 17,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-21",
+      "stage_type": 2,
+      "duration_minutes": 79,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-21",
+      "stage_type": 3,
+      "duration_minutes": 86,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-21",
+      "stage_type": 1,
+      "duration_minutes": 275,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-21",
+      "stage_type": 4,
+      "duration_minutes": 16,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-22",
+      "stage_type": 2,
+      "duration_minutes": 73,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-22",
+      "stage_type": 3,
+      "duration_minutes": 86,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-22",
+      "stage_type": 1,
+      "duration_minutes": 258,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-22",
+      "stage_type": 4,
+      "duration_minutes": 16,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-23",
+      "stage_type": 2,
+      "duration_minutes": 90,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-23",
+      "stage_type": 3,
+      "duration_minutes": 101,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-23",
+      "stage_type": 1,
+      "duration_minutes": 260,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-23",
+      "stage_type": 4,
+      "duration_minutes": 18,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-24",
+      "stage_type": 2,
+      "duration_minutes": 72,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-24",
+      "stage_type": 3,
+      "duration_minutes": 99,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-24",
+      "stage_type": 1,
+      "duration_minutes": 225,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-24",
+      "stage_type": 4,
+      "duration_minutes": 17,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-25",
+      "stage_type": 2,
+      "duration_minutes": 75,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-25",
+      "stage_type": 3,
+      "duration_minutes": 64,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-25",
+      "stage_type": 1,
+      "duration_minutes": 272,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-25",
+      "stage_type": 4,
+      "duration_minutes": 12,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-26",
+      "stage_type": 2,
+      "duration_minutes": 72,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-26",
+      "stage_type": 3,
+      "duration_minutes": 95,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-26",
+      "stage_type": 1,
+      "duration_minutes": 272,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-26",
+      "stage_type": 4,
+      "duration_minutes": 9,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-27",
+      "stage_type": 2,
+      "duration_minutes": 90,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-27",
+      "stage_type": 3,
+      "duration_minutes": 136,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-27",
+      "stage_type": 1,
+      "duration_minutes": 272,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-27",
+      "stage_type": 4,
+      "duration_minutes": 14,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-28",
+      "stage_type": 2,
+      "duration_minutes": 91,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-28",
+      "stage_type": 3,
+      "duration_minutes": 109,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-28",
+      "stage_type": 1,
+      "duration_minutes": 183,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-28",
+      "stage_type": 4,
+      "duration_minutes": 15,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-29",
+      "stage_type": 2,
+      "duration_minutes": 74,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-29",
+      "stage_type": 3,
+      "duration_minutes": 83,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-29",
+      "stage_type": 1,
+      "duration_minutes": 276,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-29",
+      "stage_type": 4,
+      "duration_minutes": 13,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-30",
+      "stage_type": 2,
+      "duration_minutes": 67,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-30",
+      "stage_type": 3,
+      "duration_minutes": 99,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-30",
+      "stage_type": 1,
+      "duration_minutes": 250,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-30",
+      "stage_type": 4,
+      "duration_minutes": 14,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-01",
+      "stage_type": 2,
+      "duration_minutes": 86,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-01",
+      "stage_type": 3,
+      "duration_minutes": 109,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-01",
+      "stage_type": 1,
+      "duration_minutes": 275,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-01",
+      "stage_type": 4,
+      "duration_minutes": 15,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-02",
+      "stage_type": 2,
+      "duration_minutes": 91,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-02",
+      "stage_type": 3,
+      "duration_minutes": 138,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-02",
+      "stage_type": 1,
+      "duration_minutes": 245,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-02",
+      "stage_type": 4,
+      "duration_minutes": 23,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-03",
+      "stage_type": 2,
+      "duration_minutes": 85,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-03",
+      "stage_type": 3,
+      "duration_minutes": 91,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-03",
+      "stage_type": 1,
+      "duration_minutes": 271,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-03",
+      "stage_type": 4,
+      "duration_minutes": 21,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-04",
+      "stage_type": 2,
+      "duration_minutes": 76,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-04",
+      "stage_type": 3,
+      "duration_minutes": 87,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-04",
+      "stage_type": 1,
+      "duration_minutes": 260,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-04",
+      "stage_type": 4,
+      "duration_minutes": 7,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-05",
+      "stage_type": 2,
+      "duration_minutes": 95,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-05",
+      "stage_type": 3,
+      "duration_minutes": 136,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-05",
+      "stage_type": 1,
+      "duration_minutes": 211,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-05",
+      "stage_type": 4,
+      "duration_minutes": 18,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-06",
+      "stage_type": 2,
+      "duration_minutes": 84,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-06",
+      "stage_type": 3,
+      "duration_minutes": 89,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-06",
+      "stage_type": 1,
+      "duration_minutes": 243,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-06",
+      "stage_type": 4,
+      "duration_minutes": 7,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-07",
+      "stage_type": 2,
+      "duration_minutes": 94,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-07",
+      "stage_type": 3,
+      "duration_minutes": 106,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-07",
+      "stage_type": 1,
+      "duration_minutes": 310,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-07",
+      "stage_type": 4,
+      "duration_minutes": 19,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-08",
+      "stage_type": 2,
+      "duration_minutes": 67,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-08",
+      "stage_type": 3,
+      "duration_minutes": 116,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-08",
+      "stage_type": 1,
+      "duration_minutes": 261,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-08",
+      "stage_type": 4,
+      "duration_minutes": 17,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-09",
+      "stage_type": 2,
+      "duration_minutes": 70,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-09",
+      "stage_type": 3,
+      "duration_minutes": 95,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-09",
+      "stage_type": 1,
+      "duration_minutes": 244,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-09",
+      "stage_type": 4,
+      "duration_minutes": 27,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-10",
+      "stage_type": 2,
+      "duration_minutes": 77,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-10",
+      "stage_type": 3,
+      "duration_minutes": 97,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-10",
+      "stage_type": 1,
+      "duration_minutes": 239,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-10",
+      "stage_type": 4,
+      "duration_minutes": 14,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-11",
+      "stage_type": 2,
+      "duration_minutes": 71,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-11",
+      "stage_type": 3,
+      "duration_minutes": 103,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-11",
+      "stage_type": 1,
+      "duration_minutes": 274,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-11",
+      "stage_type": 4,
+      "duration_minutes": 27,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-12",
+      "stage_type": 2,
+      "duration_minutes": 84,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-12",
+      "stage_type": 3,
+      "duration_minutes": 99,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-12",
+      "stage_type": 1,
+      "duration_minutes": 210,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-12",
+      "stage_type": 4,
+      "duration_minutes": 22,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-13",
+      "stage_type": 2,
+      "duration_minutes": 56,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-13",
+      "stage_type": 3,
+      "duration_minutes": 89,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-13",
+      "stage_type": 1,
+      "duration_minutes": 273,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-13",
+      "stage_type": 4,
+      "duration_minutes": 8,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-14",
+      "stage_type": 2,
+      "duration_minutes": 70,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-14",
+      "stage_type": 3,
+      "duration_minutes": 113,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-14",
+      "stage_type": 1,
+      "duration_minutes": 200,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-14",
+      "stage_type": 4,
+      "duration_minutes": 16,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-15",
+      "stage_type": 2,
+      "duration_minutes": 92,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-15",
+      "stage_type": 3,
+      "duration_minutes": 97,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-15",
+      "stage_type": 1,
+      "duration_minutes": 236,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-15",
+      "stage_type": 4,
+      "duration_minutes": 24,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-16",
+      "stage_type": 2,
+      "duration_minutes": 73,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-16",
+      "stage_type": 3,
+      "duration_minutes": 95,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-16",
+      "stage_type": 1,
+      "duration_minutes": 244,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-16",
+      "stage_type": 4,
+      "duration_minutes": 15,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-17",
+      "stage_type": 2,
+      "duration_minutes": 81,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-17",
+      "stage_type": 3,
+      "duration_minutes": 96,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-17",
+      "stage_type": 1,
+      "duration_minutes": 269,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-17",
+      "stage_type": 4,
+      "duration_minutes": 23,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-18",
+      "stage_type": 2,
+      "duration_minutes": 84,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-18",
+      "stage_type": 3,
+      "duration_minutes": 101,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-18",
+      "stage_type": 1,
+      "duration_minutes": 253,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-18",
+      "stage_type": 4,
+      "duration_minutes": 23,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-19",
+      "stage_type": 2,
+      "duration_minutes": 96,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-19",
+      "stage_type": 3,
+      "duration_minutes": 103,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-19",
+      "stage_type": 1,
+      "duration_minutes": 238,
+      "source": "oura"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-19",
+      "stage_type": 4,
+      "duration_minutes": 19,
+      "source": "oura"
+    }
+  ],
+  "dedup_daily_steps": [
+    {
+      "user_id": 7,
+      "date": "2024-05-01",
+      "steps": 9458,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-02",
+      "steps": 8566,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-03",
+      "steps": 10335,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-04",
+      "steps": 10974,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-05",
+      "steps": 9695,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-06",
+      "steps": 7260,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-07",
+      "steps": 7552,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-08",
+      "steps": 10751,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-09",
+      "steps": 8094,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-10",
+      "steps": 9197,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-11",
+      "steps": 8417,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-12",
+      "steps": 5340,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-13",
+      "steps": 8371,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-14",
+      "steps": 9353,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-15",
+      "steps": 7730,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-16",
+      "steps": 8558,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-17",
+      "steps": 8468,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-18",
+      "steps": 10028,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-19",
+      "steps": 9224,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-20",
+      "steps": 10222,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-21",
+      "steps": 9193,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-22",
+      "steps": 7057,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-23",
+      "steps": 8584,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-24",
+      "steps": 8652,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-25",
+      "steps": 11804,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-26",
+      "steps": 8898,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-27",
+      "steps": 9829,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-28",
+      "steps": 8826,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-29",
+      "steps": 7796,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-30",
+      "steps": 9551,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-05-31",
+      "steps": 11151,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-01",
+      "steps": 6999,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-02",
+      "steps": 9529,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-03",
+      "steps": 9741,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-04",
+      "steps": 11743,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-05",
+      "steps": 7627,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-06",
+      "steps": 10729,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-07",
+      "steps": 11719,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-08",
+      "steps": 8967,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-09",
+      "steps": 10912,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-10",
+      "steps": 5035,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-11",
+      "steps": 7863,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-12",
+      "steps": 6881,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-13",
+      "steps": 10471,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-14",
+      "steps": 8832,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-15",
+      "steps": 11283,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-16",
+      "steps": 5768,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-17",
+      "steps": 8773,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-18",
+      "steps": 10520,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-19",
+      "steps": 11324,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-20",
+      "steps": 8729,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-21",
+      "steps": 11067,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-22",
+      "steps": 7799,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-23",
+      "steps": 9502,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-24",
+      "steps": 9213,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-25",
+      "steps": 7894,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-26",
+      "steps": 10583,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-27",
+      "steps": 7235,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-28",
+      "steps": 7267,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-29",
+      "steps": 5296,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-06-30",
+      "steps": 10530,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-01",
+      "steps": 11221,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-02",
+      "steps": 8575,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-03",
+      "steps": 8149,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-04",
+      "steps": 8902,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-05",
+      "steps": 8498,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-06",
+      "steps": 8510,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-07",
+      "steps": 7717,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-08",
+      "steps": 9728,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-09",
+      "steps": 9932,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-10",
+      "steps": 11852,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-11",
+      "steps": 8983,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-12",
+      "steps": 12283,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-13",
+      "steps": 7253,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-14",
+      "steps": 10250,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-15",
+      "steps": 10262,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-16",
+      "steps": 13043,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-17",
+      "steps": 7991,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-18",
+      "steps": 7727,
+      "source": "fitbit"
+    },
+    {
+      "user_id": 7,
+      "date": "2024-07-19",
+      "steps": 8256,
+      "source": "fitbit"
+    }
+  ]
+}

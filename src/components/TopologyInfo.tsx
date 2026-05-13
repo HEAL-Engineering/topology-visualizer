@@ -17,13 +17,13 @@ export default function TopologyInfo({ open, onClose }: Props) {
   return (
     <div
       className="absolute inset-0 z-30 flex items-center justify-center p-6 pointer-events-auto"
-      style={{ background: 'rgba(4,7,17,0.72)', backdropFilter: 'blur(4px)' }}
+      style={{ background: 'var(--scrim-bg)', backdropFilter: 'blur(4px)' }}
       onClick={onClose}
     >
       <div
         className="relative w-full max-w-[720px] max-h-[88vh] overflow-y-auto border backdrop-blur-xl"
         style={{
-          background: 'rgba(10, 14, 26, 0.92)',
+          background: 'var(--panel-bg-strong)',
           borderColor: 'rgba(52, 211, 153, 0.25)',
           boxShadow: '0 0 80px rgba(52, 211, 153, 0.08), inset 0 0 0 1px rgba(255,255,255,0.03)',
         }}
@@ -82,7 +82,7 @@ export default function TopologyInfo({ open, onClose }: Props) {
                   className="border"
                   style={{
                     borderColor: isOpen ? `${cat.color}55` : 'rgba(71, 85, 105, 0.35)',
-                    background: isOpen ? `${cat.color}08` : 'rgba(15, 20, 33, 0.4)',
+                    background: isOpen ? `${cat.color}08` : 'var(--inset-bg)',
                     boxShadow: isOpen ? `0 0 40px ${cat.color}15, inset 0 0 0 1px ${cat.color}10` : undefined,
                     transition: 'all 200ms',
                   }}

@@ -1,4 +1,4 @@
-import { RotateCw, Box, Globe, Table, Info } from 'lucide-react';
+import { RotateCw, Box, Table, Info, Sun, Moon } from 'lucide-react';
 import { useAtlasStore } from '../store';
 
 type Props = { onOpenTopology: () => void };
@@ -10,13 +10,18 @@ const BTN_CLASS_OFF = 'border-slate-700/60 text-slate-400 hover:border-slate-500
 export default function ControlBar({ onOpenTopology }: Props) {
   const dataset = useAtlasStore(s => s.dataset);
   const showHulls = useAtlasStore(s => s.showHulls);
-  const showGlobalHull = useAtlasStore(s => s.showGlobalHull);
   const showTable = useAtlasStore(s => s.showTable);
   const autoRotate = useAtlasStore(s => s.autoRotate);
+  const theme = useAtlasStore(s => s.theme);
   const setShowHulls = useAtlasStore(s => s.setShowHulls);
-  const setShowGlobalHull = useAtlasStore(s => s.setShowGlobalHull);
   const setShowTable = useAtlasStore(s => s.setShowTable);
   const setAutoRotate = useAtlasStore(s => s.setAutoRotate);
+  const setTheme = useAtlasStore(s => s.setTheme);
+  const isLight = theme === 'light';
+  // Theme toggle is a "what will I become if I click" affordance — show
+  // the inverse icon. Sun shown while dark = "switch to light".
+  const ThemeIcon = isLight ? Moon : Sun;
+  const themeLabel = isLight ? 'Dark' : 'Light';
 
   return (
     <div className="absolute top-0 left-0 right-0 z-20 px-8 py-6 flex justify-between items-start pointer-events-none">
@@ -48,11 +53,15 @@ export default function ControlBar({ onOpenTopology }: Props) {
         <button onClick={() => setShowHulls(!showHulls)} className={`${BTN_CLASS_BASE} ${showHulls ? BTN_CLASS_ON : BTN_CLASS_OFF}`}>
           <Box size={11} className="inline mr-2 -mt-0.5" /> Hulls
         </button>
-        <button onClick={() => setShowGlobalHull(!showGlobalHull)} className={`${BTN_CLASS_BASE} ${showGlobalHull ? BTN_CLASS_ON : BTN_CLASS_OFF}`}>
-          <Globe size={11} className="inline mr-2 -mt-0.5" /> Manifold
-        </button>
         <button onClick={() => setShowTable(!showTable)} className={`${BTN_CLASS_BASE} ${showTable ? BTN_CLASS_ON : BTN_CLASS_OFF}`}>
           <Table size={11} className="inline mr-2 -mt-0.5" /> Table
+        </button>
+        <button
+          onClick={() => setTheme(isLight ? 'dark' : 'light')}
+          className={`${BTN_CLASS_BASE} ${BTN_CLASS_OFF}`}
+          title={`Switch to ${themeLabel.toLowerCase()} mode`}
+        >
+          <ThemeIcon size={11} className="inline mr-2 -mt-0.5" /> {themeLabel}
         </button>
       </div>
     </div>

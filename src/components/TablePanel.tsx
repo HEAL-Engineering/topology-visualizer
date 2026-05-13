@@ -124,7 +124,7 @@ export default function TablePanel() {
   return (
     <div
       className="absolute top-0 right-0 z-30 h-full pointer-events-auto flex flex-col border-l border-slate-800/60"
-      style={{ width: 620, background: 'rgba(6, 9, 21, 0.86)', backdropFilter: 'blur(24px)' }}
+      style={{ width: 620, background: 'var(--table-bg)', backdropFilter: 'blur(24px)' }}
     >
       <div className="px-6 py-5 border-b border-slate-800/60 flex items-start justify-between flex-shrink-0">
         <div>
@@ -209,7 +209,7 @@ function PointsTable({ rows, categoryById, selectedPoint, setSelectedPoint, hand
   let lastUser: string | null = null;
   return (
     <table className="w-full text-[11px]">
-      <thead className="sticky top-0 z-10" style={{ background: 'rgba(6, 9, 21, 0.96)' }}>
+      <thead className="sticky top-0 z-10" style={{ background: 'var(--table-hdr-bg)' }}>
         <tr className="border-b border-slate-800/80">
           <Th onClick={() => handleSort('user')} icon={sortIcon('user')}>User</Th>
           <Th onClick={() => handleSort('category')} icon={sortIcon('category')}>Category</Th>
@@ -290,7 +290,7 @@ function RawTable({ rows, hasBundle, handleSort, sortIcon, groupByUser }: RawTab
   let lastUser: string | null = null;
   return (
     <table className="w-full text-[11px]">
-      <thead className="sticky top-0 z-10" style={{ background: 'rgba(6, 9, 21, 0.96)' }}>
+      <thead className="sticky top-0 z-10" style={{ background: 'var(--table-hdr-bg)' }}>
         <tr className="border-b border-slate-800/80">
           <Th onClick={() => handleSort('user')} icon={sortIcon('user')}>User</Th>
           <Th onClick={() => handleSort('when')} icon={sortIcon('when')}>When</Th>

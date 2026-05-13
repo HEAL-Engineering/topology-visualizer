@@ -41,7 +41,7 @@ export default function InspectPanel() {
       // the user can rotate / compare while reading.
       className="absolute top-24 right-8 bottom-16 z-20 w-[420px] flex flex-col border backdrop-blur-xl pointer-events-auto"
       style={{
-        background: 'rgba(10, 14, 26, 0.92)',
+        background: 'var(--panel-bg-strong)',
         borderColor: `${accent}40`,
         boxShadow: `0 0 60px ${accent}18, inset 0 0 0 1px rgba(255,255,255,0.03)`,
       }}

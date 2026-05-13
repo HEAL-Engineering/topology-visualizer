@@ -19,7 +19,7 @@ export default function EventCard() {
     <div
       className="absolute top-28 left-8 z-20 w-[320px] backdrop-blur-xl border pointer-events-auto"
       style={{
-        background: 'rgba(10, 14, 26, 0.72)',
+        background: 'var(--panel-bg-soft)',
         borderColor: `${category.color}30`,
         boxShadow: `0 0 60px ${category.color}20, inset 0 0 0 1px rgba(255,255,255,0.03)`,
       }}

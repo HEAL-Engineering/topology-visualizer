@@ -14,27 +14,35 @@ import { useAtlasStore } from '../store';
 import PointCloud from './PointCloud';
 import ClusterShapes from './ClusterShapes';
 import ClusterLabels from './ClusterLabels';
-import GlobalHull from './GlobalHull';
 import Scenery from './Scenery';
 
 export default function AtlasCanvas() {
   const autoRotate = useAtlasStore(s => s.autoRotate);
   const spaceHeld = useSpacebarHold();
 
+  // Render only when something changes. OrbitControls with damping requests
+  // its own renders during interaction; autoRotate needs the always-on loop
+  // because it animates without any pointer input. We flip back to demand
+  // the moment auto-rotate is paused so an idle scene costs ~0 GPU.
+  const rotating = autoRotate && !spaceHeld;
+
   return (
     <Canvas
       camera={{ position: [12, 6, 12], fov: 50, near: 0.1, far: 1000 }}
-      dpr={[1, 2]}
+      // Cap DPR at 1.5 — on Retina (devicePixelRatio=2) this halves the
+      // shaded fragment count, the single biggest GPU win for this scene
+      // since additive blends produce heavy overdraw.
+      dpr={[1, 1.5]}
       gl={{ antialias: true, alpha: false }}
+      frameloop={rotating ? 'always' : 'demand'}
     >
       <Scenery />
       <PointCloud />
       <ClusterShapes />
       <ClusterLabels />
-      <GlobalHull />
       <OrbitControls
         makeDefault
-        autoRotate={autoRotate && !spaceHeld}
+        autoRotate={rotating}
         autoRotateSpeed={0.6}
         enableDamping
         dampingFactor={0.08}
@@ -42,8 +50,37 @@ export default function AtlasCanvas() {
         maxDistance={200}
       />
       <CameraFit />
+      <StoreInvalidator />
     </Canvas>
   );
+}
+
+/**
+ * Bridges store-driven scene mutations (filter toggles, hover changes,
+ * inspect-panel selection) into the R3F render scheduler. Without this,
+ * the demand frameloop would never repaint on a filter toggle — the scene
+ * would freeze on the last rendered frame until the user nudged orbit.
+ *
+ * Subscribes via store selectors (cheap; no re-render on unrelated state)
+ * and pokes `invalidate()` once per change.
+ */
+function StoreInvalidator() {
+  const invalidate = useThree(s => s.invalidate);
+  const enabledCategories = useAtlasStore(s => s.enabledCategories);
+  const enabledLabels = useAtlasStore(s => s.enabledLabels);
+  const hoveredCategory = useAtlasStore(s => s.hoveredCategory);
+  const selectedPoint = useAtlasStore(s => s.selectedPoint);
+  const showHulls = useAtlasStore(s => s.showHulls);
+  const activeMetric = useAtlasStore(s => s.activeMetric);
+  const theme = useAtlasStore(s => s.theme);
+  const dataset = useAtlasStore(s => s.dataset);
+
+  useEffect(() => {
+    invalidate();
+  }, [invalidate, enabledCategories, enabledLabels, hoveredCategory,
+      selectedPoint, showHulls, activeMetric, theme, dataset]);
+
+  return null;
 }
 
 /**
