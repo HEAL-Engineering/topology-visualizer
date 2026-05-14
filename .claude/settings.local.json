@@ -5,7 +5,8 @@
       "Bash(uv run *)",
       "Bash(pnpm typecheck *)",
       "Bash(task release *)",
-      "Bash(npx vite *)"
+      "Bash(npx vite *)",
+      "Bash(pnpm build *)"
     ]
   }
 }

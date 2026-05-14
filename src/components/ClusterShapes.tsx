@@ -62,6 +62,7 @@ export default function ClusterShapes() {
   const activeMetric = useAtlasStore(s => s.activeMetric);
   const theme = useAtlasStore(s => s.theme);
   const setInspectedCategory = useAtlasStore(s => s.setInspectedCategory);
+  const setInspectedSubIndex = useAtlasStore(s => s.setInspectedSubIndex);
   const isLight = theme === 'light';
   const fillOpacity = isLight ? FILL_OPACITY_LIGHT : FILL_OPACITY;
   const wireOpacity = isLight ? WIRE_OPACITY_LIGHT : WIRE_OPACITY;
@@ -102,10 +103,29 @@ export default function ClusterShapes() {
   if (!showHulls || activeMetric) return null;
   return (
     <group>
-      {items.map(({ category, geom, wireGeom, haloWireGeom }, i) => {
+      {items.map(({ category, geom, wireGeom, haloWireGeom, subIndex }, i) => {
+        const enabled = enabledCategories.has(category.id);
+        // Filter guard: three.js's raycaster still hit-tests meshes with
+        // `visible = false`, and cohort ellipsoids overlap the user cluster
+        // in 3D space — without this guard, clicking near a user point
+        // could open the panel for whichever filtered cohort ellipsoid the
+        // ray pierced first.
         const handleClick = (e: { stopPropagation: () => void }) => {
+          if (!enabled) return;
           e.stopPropagation();
+          // Open the panel on this category; if the user clicked a non-
+          // primary sub-cluster, page it to the matching tab.
           setInspectedCategory(category.id);
+          if (subIndex !== 0) setInspectedSubIndex(subIndex);
+        };
+        const handlePointerOver = (e: { stopPropagation: () => void }) => {
+          if (!enabled) return;
+          e.stopPropagation();
+          document.body.style.cursor = 'pointer';
+        };
+        const handlePointerOut = () => {
+          if (!enabled) return;
+          document.body.style.cursor = 'auto';
         };
         // Light mode: substitute a lightly darkened color so the wire reads
         // on paper without losing its saturation. Same hue, ~75% luminance —
@@ -117,10 +137,13 @@ export default function ClusterShapes() {
         const materialKey = isLight ? 'light' : 'dark';
         return (
         <group
-          key={category.id}
+          // Composite key so React doesn't collapse two sub-cluster groups
+          // of the same category onto a single instance (which would leak
+          // refs and merge their hover/click hit regions).
+          key={`${category.id}-sub-${subIndex}`}
           onClick={handleClick}
-          onPointerOver={(e) => { e.stopPropagation(); document.body.style.cursor = 'pointer'; }}
-          onPointerOut={() => { document.body.style.cursor = 'auto'; }}
+          onPointerOver={handlePointerOver}
+          onPointerOut={handlePointerOut}
         >
           <mesh ref={el => { fillRefs.current[i] = el; }} geometry={geom}>
             <meshBasicMaterial
@@ -175,6 +198,10 @@ interface ShapeItem {
   wireGeom: THREE.WireframeGeometry;
   /** Slightly-scaled-out clone of `wireGeom`; stacked for fake line thickness. */
   haloWireGeom: THREE.WireframeGeometry;
+  /** Sub-cluster index within this category. Passed through to the click
+   *  handler so a click on a non-primary lobe opens the InspectPanel paged
+   *  to that lobe's tab. */
+  subIndex: number;
 }
 
 /**
@@ -183,7 +210,7 @@ interface ShapeItem {
  * wrapping <group>) so the WireframeGeometry sees the transformed vertices
  * — wireframes are derived in object-local space, not world space.
  */
-function buildItem({ category, shape }: CategoryShape): ShapeItem {
+function buildItem({ category, shape, subIndex }: CategoryShape): ShapeItem {
   const kind: ClusterShapeKind = category.shape ?? 'ellipsoid';
   const { centroid, basis, halfAxes } = shape;
   const [a, b, c] = halfAxes;
@@ -246,6 +273,7 @@ function buildItem({ category, shape }: CategoryShape): ShapeItem {
 
   return {
     category,
+    subIndex,
     geom,
     wireGeom: new THREE.WireframeGeometry(geom),
     haloWireGeom: new THREE.WireframeGeometry(haloGeom),

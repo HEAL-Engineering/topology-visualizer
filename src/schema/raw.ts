@@ -7,6 +7,13 @@
  * underlying records rather than the projected embedding points.
  */
 
+/**
+ * `atlas_point_id` is the optional provenance link a record carries when
+ * the dedup dump has been processed through `pipeline/publish-raw.mjs`.
+ * It names the user-day atlas point this record contributed to (`user-<date>`),
+ * letting the Raw table show the raw→atlas many-to-one collapse explicitly.
+ * Absent on raw dumps that haven't been tagged.
+ */
 export interface RawHeartRate {
   user_id: number | string;
   source: string;
@@ -15,6 +22,7 @@ export interface RawHeartRate {
   avg_bpm: number;
   start_time: string;
   end_time: string;
+  atlas_point_id?: string;
 }
 
 export interface RawSleepSession {
@@ -24,6 +32,7 @@ export interface RawSleepSession {
   stage_type: 1 | 2 | 3 | 4;
   duration_minutes: number;
   source: string;
+  atlas_point_id?: string;
 }
 
 export interface RawDailySteps {
@@ -31,6 +40,7 @@ export interface RawDailySteps {
   date: string;
   steps: number;
   source: string;
+  atlas_point_id?: string;
 }
 
 /**
@@ -67,6 +77,8 @@ export interface RawRow {
   unit: string;
   /** Free-form trailing detail string (HR range, sleep stage name, …). */
   details: string;
+  /** Provenance: which user-day atlas point this record collapsed into. */
+  atlas_point_id?: string;
 }
 
 const STAGE_NAMES: Record<RawSleepSession['stage_type'], string> = {
@@ -118,6 +130,7 @@ export function flattenUser(user: RawUser): RawRow[] {
       value: hr.avg_bpm,
       unit: 'bpm',
       details: `${hr.min_bpm}–${hr.max_bpm} bpm · ${formatWindow(hr.start_time, hr.end_time)}`,
+      atlas_point_id: hr.atlas_point_id,
     });
   }
   for (const s of user.sleep_sessions) {
@@ -129,6 +142,7 @@ export function flattenUser(user: RawUser): RawRow[] {
       value: s.duration_minutes,
       unit: 'min',
       details: `${STAGE_NAMES[s.stage_type] ?? `stage ${s.stage_type}`}`,
+      atlas_point_id: s.atlas_point_id,
     });
   }
   for (const st of user.daily_steps) {
@@ -140,6 +154,7 @@ export function flattenUser(user: RawUser): RawRow[] {
       value: st.steps,
       unit: 'steps',
       details: '',
+      atlas_point_id: st.atlas_point_id,
     });
   }
   return rows;

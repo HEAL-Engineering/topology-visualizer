@@ -17,6 +17,7 @@ import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 import type { AtlasDataset, AtlasPoint, ClusterShapeKind } from '../schema/types';
 import type { RawBundle } from '../schema/raw';
+import type { PhantomTrajectory } from '../lib/phantom-trajectory';
 
 /**
  * Table column key. Spans both the Points view (atlas point fields) and the
@@ -41,6 +42,14 @@ export type Theme = 'dark' | 'light';
 
 interface DataSlice {
   dataset: AtlasDataset | null;
+  /**
+   * Monotonically increasing counter that only bumps when an entirely new
+   * dataset is set via `setDataset` (i.e. a fresh load). Point-mutating
+   * actions like `addPoints` / `removeInjectedPoints` deliberately leave
+   * this alone. Consumed by `CameraFit` so the camera refits on a real
+   * dataset swap but stays put when the user logs training behaviors.
+   */
+  datasetEpoch: number;
   rawBundle: RawBundle | null;
   loadError: string | null;
   setDataset: (d: AtlasDataset) => void;
@@ -52,6 +61,27 @@ interface DataSlice {
   removeInjectedPoints: () => void;
   /** Patch a single category's `shape` field (drives the rendered primitive in ClusterShapes). */
   setCategoryShape: (categoryId: string, shape: ClusterShapeKind) => void;
+  /**
+   * Cache of projected "could-be" topologies keyed by
+   * `${userCategoryId}::${eliteTargetId}` (e.g. `user::elite_male`). Pre-
+   * populated in the background by `usePhantomPrecompute` whenever a
+   * dataset loads, then read from `PhantomSection` and the renderer
+   * without recomputing. Storing plural here (rather than a single
+   * `phantomTrajectory`) means switching elite targets is instant — the
+   * other projection is already sitting in the cache.
+   */
+  phantomCache: Record<string, PhantomTrajectory>;
+  /** Mirror of in-flight projection keys → true. Drives the spinner UI. */
+  phantomLoading: Record<string, boolean>;
+  /** Cache key the renderer is currently showing. `null` = nothing chosen. */
+  activePhantomKey: string | null;
+  /** UI toggle for the 3D-scene phantom render. Independent from existence. */
+  showPhantom: boolean;
+  setPhantomCacheEntry: (key: string, trajectory: PhantomTrajectory) => void;
+  setPhantomLoading: (key: string, loading: boolean) => void;
+  setActivePhantomKey: (key: string | null) => void;
+  setShowPhantom: (v: boolean) => void;
+  clearPhantomCache: () => void;
 }
 
 // ---------------- Filter slice ----------------
@@ -82,6 +112,14 @@ interface UISlice {
    */
   inspectedCategory: string | null;
   /**
+   * Which sub-cluster within `inspectedCategory` is currently focused. A
+   * category that splits into multiple spatial lobes (see splitIntoSubClusters)
+   * emits one shape per lobe; the InspectPanel paginates between them via
+   * this index. Always 0 for single-lobe categories. Resets to 0 whenever
+   * inspectedCategory changes.
+   */
+  inspectedSubIndex: number;
+  /**
    * Which biomarker metric (key into meta.biomarkers) the user has selected
    * as a lens. When set, PointCloud recolors points by the metric's value
    * (heatmap) and fades points lacking the field. `null` = default category
@@ -98,6 +136,7 @@ interface UISlice {
   setExpandedCategory: (v: string | null) => void;
   setSelectedPoint: (p: AtlasPoint | null) => void;
   setInspectedCategory: (v: string | null) => void;
+  setInspectedSubIndex: (i: number) => void;
   setActiveMetric: (v: string | null) => void;
   setTheme: (v: Theme) => void;
   setTableSort: (s: { key: TableSortKey; dir: 'asc' | 'desc' }) => void;
@@ -110,9 +149,14 @@ export const useAtlasStore = create<AtlasStore>()(
   devtools((set) => ({
     // Data
     dataset: null,
+    datasetEpoch: 0,
     rawBundle: null,
     loadError: null,
-    setDataset: (d) => set({ dataset: d, loadError: null }, false, 'setDataset'),
+    setDataset: (d) => set((state) => ({
+      dataset: d,
+      loadError: null,
+      datasetEpoch: state.datasetEpoch + 1,
+    }), false, 'setDataset'),
     setRawBundle: (b) => set({ rawBundle: b }, false, 'setRawBundle'),
     setLoadError: (err) => set({ loadError: err }, false, 'setLoadError'),
     addPoints: (newPoints) => set((state) => {
@@ -142,6 +186,29 @@ export const useAtlasStore = create<AtlasStore>()(
         },
       };
     }, false, 'setCategoryShape'),
+    phantomCache: {},
+    phantomLoading: {},
+    activePhantomKey: null,
+    showPhantom: false,
+    setPhantomCacheEntry: (key, trajectory) => set((state) => ({
+      phantomCache: { ...state.phantomCache, [key]: trajectory },
+    }), false, 'setPhantomCacheEntry'),
+    setPhantomLoading: (key, loading) => set((state) => {
+      // Drop the key entirely when loading is false — keeps the loading
+      // map small and lets `phantomLoading[key]` read as falsy without
+      // a defined-but-false entry lingering.
+      const next = { ...state.phantomLoading };
+      if (loading) next[key] = true; else delete next[key];
+      return { phantomLoading: next };
+    }, false, 'setPhantomLoading'),
+    setActivePhantomKey: (key) => set({ activePhantomKey: key }, false, 'setActivePhantomKey'),
+    setShowPhantom: (v) => set({ showPhantom: v }, false, 'setShowPhantom'),
+    clearPhantomCache: () => set({
+      phantomCache: {},
+      phantomLoading: {},
+      activePhantomKey: null,
+      showPhantom: false,
+    }, false, 'clearPhantomCache'),
 
     // Filters
     enabledCategories: new Set<string>(),
@@ -175,6 +242,7 @@ export const useAtlasStore = create<AtlasStore>()(
     expandedCategory: null,
     selectedPoint: null,
     inspectedCategory: null,
+    inspectedSubIndex: 0,
     activeMetric: null,
     theme: 'dark',
     tableSort: { key: 'user', dir: 'asc' },
@@ -185,7 +253,11 @@ export const useAtlasStore = create<AtlasStore>()(
     setHoveredCategory: (v) => set({ hoveredCategory: v }, false, 'setHoveredCategory'),
     setExpandedCategory: (v) => set({ expandedCategory: v }, false, 'setExpandedCategory'),
     setSelectedPoint: (p) => set({ selectedPoint: p }, false, 'setSelectedPoint'),
-    setInspectedCategory: (v) => set({ inspectedCategory: v }, false, 'setInspectedCategory'),
+    // Inspecting a (different) category always resets the sub-pagination so
+    // a freshly-opened panel starts on lobe 0. Tab clicks call setInspected-
+    // SubIndex directly to switch within the same category.
+    setInspectedCategory: (v) => set({ inspectedCategory: v, inspectedSubIndex: 0 }, false, 'setInspectedCategory'),
+    setInspectedSubIndex: (i) => set({ inspectedSubIndex: i }, false, 'setInspectedSubIndex'),
     setActiveMetric: (v) => set({ activeMetric: v }, false, 'setActiveMetric'),
     setTheme: (v) => set({ theme: v }, false, 'setTheme'),
     setTableSort: (s) => set({ tableSort: s }, false, 'setTableSort'),

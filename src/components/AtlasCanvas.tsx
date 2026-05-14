@@ -14,10 +14,13 @@ import { useAtlasStore } from '../store';
 import PointCloud from './PointCloud';
 import ClusterShapes from './ClusterShapes';
 import ClusterLabels from './ClusterLabels';
+import PhantomTrajectory from './PhantomTrajectory';
 import Scenery from './Scenery';
 
 export default function AtlasCanvas() {
   const autoRotate = useAtlasStore(s => s.autoRotate);
+  const showPhantom = useAtlasStore(s => s.showPhantom);
+  const activePhantomKey = useAtlasStore(s => s.activePhantomKey);
   const spaceHeld = useSpacebarHold();
 
   // Render only when something changes. OrbitControls with damping requests
@@ -25,6 +28,10 @@ export default function AtlasCanvas() {
   // because it animates without any pointer input. We flip back to demand
   // the moment auto-rotate is paused so an idle scene costs ~0 GPU.
   const rotating = autoRotate && !spaceHeld;
+  // Phantom trajectory pulses opacity via useFrame, so it also needs the
+  // always-on loop while visible. Independent from autoRotate.
+  const phantomAnimating = showPhantom && activePhantomKey !== null;
+  const continuous = rotating || phantomAnimating;
 
   return (
     <Canvas
@@ -38,12 +45,13 @@ export default function AtlasCanvas() {
       // edges self-soften, so the visual delta is negligible while the
       // shading load drops by ~half during orbit.
       gl={{ antialias: false, alpha: false }}
-      frameloop={rotating ? 'always' : 'demand'}
+      frameloop={continuous ? 'always' : 'demand'}
     >
       <Scenery />
       <PointCloud />
       <ClusterShapes />
       <ClusterLabels />
+      <PhantomTrajectory />
       <OrbitControls
         makeDefault
         autoRotate={rotating}
@@ -78,11 +86,15 @@ function StoreInvalidator() {
   const activeMetric = useAtlasStore(s => s.activeMetric);
   const theme = useAtlasStore(s => s.theme);
   const dataset = useAtlasStore(s => s.dataset);
+  const phantomCache = useAtlasStore(s => s.phantomCache);
+  const activePhantomKey = useAtlasStore(s => s.activePhantomKey);
+  const showPhantom = useAtlasStore(s => s.showPhantom);
 
   useEffect(() => {
     invalidate();
   }, [invalidate, enabledCategories, enabledLabels, hoveredCategory,
-      selectedPoint, showHulls, activeMetric, theme, dataset]);
+      selectedPoint, showHulls, activeMetric, theme, dataset,
+      phantomCache, activePhantomKey, showPhantom]);
 
   return null;
 }
@@ -91,16 +103,26 @@ function StoreInvalidator() {
  * Frames the camera around the loaded point cloud once per dataset.
  * Without this, the hard-coded starting position misses datasets whose
  * coordinate range differs from the sample's ~±3 span.
+ *
+ * Refits exactly when a *new* dataset settles — keyed off `datasetEpoch`,
+ * which is bumped only by `setDataset` (full-load semantics). Point
+ * mutations from logging training behaviors, removing injected points,
+ * etc. leave the epoch unchanged so the user's current camera framing
+ * is preserved. Otherwise every "log meal" click would yank the view.
  */
 function CameraFit() {
-  const points = useAtlasStore(s => s.dataset?.points);
+  const datasetEpoch = useAtlasStore(s => s.datasetEpoch);
   const camera = useThree(s => s.camera);
   const controls = useThree(s => s.controls) as { target: THREE.Vector3; update: () => void } | null;
-  const fittedKeyRef = useRef<unknown>(null);
+  const fittedEpochRef = useRef<number>(-1);
 
   useEffect(() => {
+    if (fittedEpochRef.current === datasetEpoch) return;
+    // Snapshot the points at the moment the new epoch lands. Read once
+    // here rather than subscribing so subsequent point mutations don't
+    // re-trigger this effect.
+    const points = useAtlasStore.getState().dataset?.points;
     if (!points || points.length === 0) return;
-    if (fittedKeyRef.current === points) return;
 
     const box = new THREE.Box3();
     const v = new THREE.Vector3();
@@ -125,8 +147,8 @@ function CameraFit() {
       controls.target.copy(center);
       controls.update();
     }
-    fittedKeyRef.current = points;
-  }, [points, camera, controls]);
+    fittedEpochRef.current = datasetEpoch;
+  }, [datasetEpoch, camera, controls]);
 
   return null;
 }

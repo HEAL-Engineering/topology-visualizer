@@ -26,6 +26,7 @@ const TablePanel   = lazy(() => import('./components/TablePanel'));
 import { useAtlasStore } from './store';
 import { jsonToDataset } from './schema/adapters/json';
 import { parseRawBundle } from './schema/raw';
+import { usePhantomPrecompute } from './lib/use-phantom-precompute';
 
 // Served from Vite's `public/` at the site root. If you ever deploy under a
 // subpath, swap to `${import.meta.env.BASE_URL}atlas.json` and add a
@@ -39,6 +40,11 @@ export default function App() {
   const resetFilters = useAtlasStore(s => s.resetFilters);
   const theme = useAtlasStore(s => s.theme);
   const [topologyOpen, setTopologyOpen] = useState(false);
+
+  // Fires whenever a new dataset settles; fills `phantomCache` in the
+  // background for both elite targets so PhantomSection can switch /
+  // show instantly.
+  usePhantomPrecompute();
 
   const isLight = theme === 'light';
   // Match the canvas's `<color attach="background">` in Scenery so the

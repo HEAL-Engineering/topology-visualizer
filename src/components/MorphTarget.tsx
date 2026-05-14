@@ -1,7 +1,9 @@
 import { useMemo, useState } from 'react';
-import { ArrowUp, ArrowDown, Check, Utensils, Dumbbell, Moon, HeartPulse, RotateCcw, Sparkles } from 'lucide-react';
+import { ArrowUp, ArrowDown, Check, Utensils, Dumbbell, Moon, HeartPulse, RotateCcw, Sparkles, Eye, EyeOff, Wand2, Loader2 } from 'lucide-react';
 import { useAtlasStore } from '../store';
 import type { AtlasPoint, ClusterShapeKind } from '../schema/types';
+import { projectPhantomTrajectory } from '../lib/phantom-trajectory';
+import { phantomCacheKey } from '../lib/use-phantom-precompute';
 
 /**
  * Fitness signature per cohort. Numbers are synthetic prototypes that match
@@ -265,6 +267,8 @@ export default function MorphTarget() {
       </div>
 
       <TrainSection target={target} accent={accent} targetShape={targetCat.shape ?? 'octahedron'} />
+
+      <PhantomSection target={target} targetLabel={targetCat.label} />
 
       <div className="space-y-2">
         {METRICS.map(metric => {
@@ -591,6 +595,184 @@ function TrainSection({
       </div>
     </div>
   );
+}
+
+/**
+ * PhantomSection — surfaces the "could-be" projection. Clicking Project
+ * computes a synthetic point cluster sitting near the chosen elite cohort,
+ * stores it on the Zustand store, and toggles its 3D-scene render on.
+ *
+ * The button does two things on the same click:
+ *   1. (Re)projects — sampling is non-deterministic, so a second click
+ *      regenerates the phantom in a slightly different position. This is
+ *      a feature: users can re-roll to see the projection isn't a single
+ *      fixed point but a region of possible futures.
+ *   2. Ensures it's visible — the projection without the render would be
+ *      silent and unmotivating.
+ *
+ * Show/hide is independent from existence so the user can dim the
+ * trajectory while reading the action items without losing the data.
+ */
+const PHANTOM_COLOR = '#a78bfa';
+
+function PhantomSection({
+  target,
+  targetLabel,
+}: { target: TargetKey; targetLabel: string }) {
+  const dataset = useAtlasStore(s => s.dataset);
+  const phantomCache = useAtlasStore(s => s.phantomCache);
+  const phantomLoading = useAtlasStore(s => s.phantomLoading);
+  const activePhantomKey = useAtlasStore(s => s.activePhantomKey);
+  const setPhantomCacheEntry = useAtlasStore(s => s.setPhantomCacheEntry);
+  const setPhantomLoading = useAtlasStore(s => s.setPhantomLoading);
+  const setActivePhantomKey = useAtlasStore(s => s.setActivePhantomKey);
+  const showPhantom = useAtlasStore(s => s.showPhantom);
+  const setShowPhantom = useAtlasStore(s => s.setShowPhantom);
+
+  const key = phantomCacheKey('user', target);
+  const cached = phantomCache[key] ?? null;
+  const loading = phantomLoading[key] === true;
+  // Currently showing this target's projection — gates the Hide/Show label
+  // (vs. simply having a projection elsewhere active for a different target).
+  const isActive = activePhantomKey === key && showPhantom;
+
+  // Re-roll: regenerate with a fresh sample so users can preview the
+  // *region* of futures, not a single fixed dot. Deferred via setTimeout
+  // so the loading state actually paints before the work runs (same
+  // rationale as the background precompute).
+  const reroll = () => {
+    if (!dataset) return;
+    setPhantomLoading(key, true);
+    setTimeout(() => {
+      try {
+        const traj = projectPhantomTrajectory(dataset, target);
+        if (traj) setPhantomCacheEntry(key, traj);
+      } finally {
+        setPhantomLoading(key, false);
+      }
+    }, 0);
+  };
+
+  const showInScene = () => {
+    setActivePhantomKey(key);
+    setShowPhantom(true);
+  };
+  const hideInScene = () => setShowPhantom(false);
+
+  return (
+    <div
+      className="border px-4 py-4 space-y-3"
+      style={{
+        borderColor: `${PHANTOM_COLOR}40`,
+        background: `${PHANTOM_COLOR}08`,
+      }}
+    >
+      <div className="flex items-center justify-between gap-3">
+        <div className="flex items-center gap-2">
+          <Wand2 size={12} style={{ color: PHANTOM_COLOR }} />
+          <div className="text-[10px] tracking-[0.28em] uppercase font-mono text-slate-300">
+            Could-be trajectory
+          </div>
+        </div>
+        {cached && !loading && (
+          <span
+            className="text-[10px] tracking-[0.22em] uppercase font-mono"
+            style={{ color: PHANTOM_COLOR }}
+            title="Pre-computed in background and cached"
+          >
+            Ready · {cached.points.length} pts
+          </span>
+        )}
+      </div>
+
+      <p className="text-[12px] text-slate-400 leading-relaxed">
+        Where your topology <span className="text-slate-200">would</span> sit if you followed every
+        action item and converged on {targetLabel}. Pre-computed in the background — click to drop
+        the projection into the scene with a dashed arrow from your current centroid.
+      </p>
+
+      <div className="flex gap-2">
+        <button
+          onClick={isActive ? hideInScene : showInScene}
+          disabled={!cached || loading || !dataset}
+          className="flex-1 px-3 py-2 text-[10px] tracking-[0.22em] uppercase border transition-all font-mono flex items-center justify-center gap-2"
+          style={{
+            borderColor: `${PHANTOM_COLOR}88`,
+            color: PHANTOM_COLOR,
+            background: isActive ? `${PHANTOM_COLOR}22` : `${PHANTOM_COLOR}10`,
+            cursor: !cached || loading ? 'not-allowed' : 'pointer',
+            opacity: !cached && !loading ? 0.55 : 1,
+          }}
+          title={
+            loading
+              ? 'Computing projection in background…'
+              : !cached
+                ? 'Projection unavailable for this target'
+                : isActive
+                  ? 'Hide the projection in the scene'
+                  : `Show projection toward ${targetLabel}`
+          }
+        >
+          {loading ? (
+            <>
+              <Loader2 size={11} className="animate-spin" />
+              <span>Generating · {targetLabel}</span>
+            </>
+          ) : isActive ? (
+            <>
+              <Eye size={11} />
+              <span>Hide · {cached?.points.length ?? '—'} pts</span>
+            </>
+          ) : (
+            <>
+              <EyeOff size={11} />
+              <span>Show · {cached?.points.length ?? '—'} pts</span>
+            </>
+          )}
+        </button>
+        <button
+          onClick={reroll}
+          disabled={!dataset || loading}
+          className="px-3 py-2 text-[10px] tracking-[0.22em] uppercase border transition-all font-mono flex items-center gap-1.5"
+          style={{
+            borderColor: 'rgba(148,163,184,0.4)',
+            color: '#94a3b8',
+            cursor: !dataset || loading ? 'not-allowed' : 'pointer',
+          }}
+          title="Re-roll — same goal, fresh random sample"
+        >
+          <RotateCcw size={10} />
+        </button>
+      </div>
+
+      {cached && !loading && (
+        <div className="pt-1 space-y-1 text-[10px] tracking-[0.18em] uppercase font-mono">
+          <div className="flex justify-between text-slate-500">
+            <span>Shape</span>
+            <span style={{ color: PHANTOM_COLOR }}>
+              {cached.category.shape ?? 'sphere'}
+            </span>
+          </div>
+          <div className="flex justify-between text-slate-500">
+            <span>Distance to close</span>
+            <span style={{ color: PHANTOM_COLOR }}>
+              {distance3(cached.userCentroid, cached.shape.centroid).toFixed(2)} u
+            </span>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function distance3(
+  a: [number, number, number],
+  b: [number, number, number],
+): number {
+  const dx = a[0] - b[0];
+  const dy = a[1] - b[1];
+  const dz = a[2] - b[2];
+  return Math.sqrt(dx * dx + dy * dy + dz * dz);
 }
 
 function SuggestionGroup({

@@ -12,7 +12,9 @@ import { useEffect, useMemo, useRef } from 'react';
 import { useThree, type ThreeEvent } from '@react-three/fiber';
 import * as THREE from 'three';
 import { useAtlasStore } from '../store';
+import { useDerivedState } from '../lib/use-derived';
 import { METRICS, normalizeMetric, readMetric } from '../data/metrics';
+import type { AtlasPoint } from '../schema/types';
 
 const SPRITE_TEXTURE = createGlowSprite();
 
@@ -55,6 +57,8 @@ export default function PointCloud() {
   const theme = useAtlasStore(s => s.theme);
   const setSelectedPoint = useAtlasStore(s => s.setSelectedPoint);
   const setInspectedCategory = useAtlasStore(s => s.setInspectedCategory);
+  const setInspectedSubIndex = useAtlasStore(s => s.setInspectedSubIndex);
+  const { pointSubIndex } = useDerivedState();
   const isLight = theme === 'light';
 
   const pointsRef = useRef<THREE.Points>(null);
@@ -191,17 +195,46 @@ export default function PointCloud() {
 
   if (!dataset) return null;
 
+  /**
+   * Honor the filter panel when handling pointer events: a "hidden" point
+   * is still in the geometry buffer (we just black out its color in the
+   * recolor effect), so the raycaster will still hit it. Without this
+   * guard, clicking where a filtered category appears empty would open
+   * the EventCard/InspectPanel anyway.
+   */
+  const isPointVisible = (point: AtlasPoint): boolean => {
+    if (!enabledCategories.has(point.category)) return false;
+    const labelKey = `${point.category}::${point.label ?? ''}`;
+    if (point.label && !enabledLabels.has(labelKey)) return false;
+    return true;
+  };
+
   const handleClick = (e: ThreeEvent<MouseEvent>) => {
     e.stopPropagation();
     if (e.index == null) return;
     const point = dataset.points[e.index];
-    if (point) {
-      setSelectedPoint(point);
-      // Surface the cluster's archetype reading (geometry / strengths /
-      // action items) alongside the per-point detail so users connect the
-      // individual data point with the topology of its containing cluster.
-      setInspectedCategory(point.category);
-    }
+    if (!point || !isPointVisible(point)) return;
+    setSelectedPoint(point);
+    // Surface the cluster's archetype reading (geometry / strengths /
+    // action items) alongside the per-point detail so users connect the
+    // individual data point with the topology of its containing cluster.
+    // For categories that split into multiple lobes, page the panel to
+    // the lobe this specific point belongs to.
+    setInspectedCategory(point.category);
+    const sub = pointSubIndex.get(point.id) ?? 0;
+    if (sub !== 0) setInspectedSubIndex(sub);
+  };
+
+  /**
+   * Pointer cursor reflects whether the hovered point is interactable.
+   * Fires per-point as the cursor moves across the cloud, so the cursor
+   * switches between `pointer` and `default` as you sweep over a mix of
+   * filtered-in and filtered-out points.
+   */
+  const handlePointerMove = (e: ThreeEvent<PointerEvent>) => {
+    if (e.index == null) return;
+    const point = dataset.points[e.index];
+    document.body.style.cursor = point && isPointVisible(point) ? 'pointer' : 'default';
   };
 
   return (
@@ -209,7 +242,7 @@ export default function PointCloud() {
       ref={pointsRef}
       geometry={geometry}
       onClick={handleClick}
-      onPointerOver={(e) => { e.stopPropagation(); document.body.style.cursor = 'pointer'; }}
+      onPointerMove={handlePointerMove}
       onPointerOut={() => { document.body.style.cursor = 'default'; }}
       raycast={(rc, intersects) => {
         rc.params.Points!.threshold = 0.22;

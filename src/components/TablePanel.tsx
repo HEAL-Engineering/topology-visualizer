@@ -168,6 +168,8 @@ export default function TablePanel() {
             handleSort={handleSort}
             sortIcon={sortIcon}
             groupByUser={tableSort.key === 'user'}
+            atlasPoints={dataset?.points ?? []}
+            setSelectedPoint={setSelectedPoint}
           />
         )}
       </div>
@@ -276,9 +278,19 @@ interface RawTableProps {
   handleSort: (key: TableSortKey) => void;
   sortIcon: (key: TableSortKey) => JSX.Element;
   groupByUser: boolean;
+  atlasPoints: AtlasPoint[];
+  setSelectedPoint: (p: AtlasPoint | null) => void;
 }
 
-function RawTable({ rows, hasBundle, handleSort, sortIcon, groupByUser }: RawTableProps) {
+function RawTable({ rows, hasBundle, handleSort, sortIcon, groupByUser, atlasPoints, setSelectedPoint }: RawTableProps) {
+  // Index atlas points by id once so the click-to-jump on the new
+  // `Derived → atlas` column is O(1) per row.
+  const atlasById = useMemo(() => {
+    const m = new Map<string, AtlasPoint>();
+    for (const p of atlasPoints) m.set(String(p.id), p);
+    return m;
+  }, [atlasPoints]);
+
   if (!hasBundle) {
     return (
       <div className="px-6 py-16 text-center text-slate-500 text-xs font-mono">
@@ -298,6 +310,7 @@ function RawTable({ rows, hasBundle, handleSort, sortIcon, groupByUser }: RawTab
           <Th onClick={() => handleSort('value')} icon={sortIcon('value')} align="right">Value</Th>
           <Th onClick={() => handleSort('source')} icon={sortIcon('source')}>Source</Th>
           <Th>Details</Th>
+          <Th>Derived → atlas</Th>
         </tr>
       </thead>
       <tbody>
@@ -308,7 +321,7 @@ function RawTable({ rows, hasBundle, handleSort, sortIcon, groupByUser }: RawTab
             <Fragment key={`raw-${i}`}>
               {showGroupHeader && (
                 <tr className="bg-slate-900/60">
-                  <td colSpan={6} className="px-5 py-2 text-[9px] uppercase tracking-[0.32em] text-slate-400 font-mono border-y border-slate-800/40">
+                  <td colSpan={7} className="px-5 py-2 text-[9px] uppercase tracking-[0.32em] text-slate-400 font-mono border-y border-slate-800/40">
                     User {r.userId}
                   </td>
                 </tr>
@@ -327,13 +340,35 @@ function RawTable({ rows, hasBundle, handleSort, sortIcon, groupByUser }: RawTab
                 </td>
                 <td className="px-3 py-2.5 text-slate-400 font-mono text-[10px]">{r.source}</td>
                 <td className="px-3 py-2.5 text-slate-500 font-mono text-[10px]">{r.details || '—'}</td>
+                <td className="px-3 py-2.5 font-mono text-[10px]">
+                  {r.atlas_point_id ? (
+                    (() => {
+                      const target = atlasById.get(r.atlas_point_id);
+                      return target ? (
+                        <button
+                          onClick={() => setSelectedPoint(target)}
+                          className="text-emerald-400 hover:text-emerald-200 underline-offset-2 hover:underline transition-colors"
+                          title="Jump to derived atlas point"
+                        >
+                          {r.atlas_point_id}
+                        </button>
+                      ) : (
+                        <span className="text-slate-600" title="atlas_point_id has no matching atlas point">
+                          {r.atlas_point_id}
+                        </span>
+                      );
+                    })()
+                  ) : (
+                    <span className="text-slate-700">—</span>
+                  )}
+                </td>
               </tr>
             </Fragment>
           );
         })}
         {rows.length === 0 && (
           <tr>
-            <td colSpan={6} className="px-5 py-12 text-center text-slate-500 text-xs font-mono">
+            <td colSpan={7} className="px-5 py-12 text-center text-slate-500 text-xs font-mono">
               Bundle loaded but contains no records.
             </td>
           </tr>

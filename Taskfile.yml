@@ -51,12 +51,13 @@ tasks:
     preconditions:
       - sh: 'docker exec heal-daily-pages-postgres-1 pg_isready -U heal -d heal_pages >/dev/null 2>&1'
         msg: 'Postgres is not reachable. Run `task db:up && task db:migrate` first.'
+    # Intentionally NO sources/generates fingerprinting here: the real input
+    # to this task is the Postgres `daily_pages` table, which Task can't see.
+    # If we let Task cache on .py + atlas.json, a `db:reset` + `backfill`
+    # would change DB content but Task would skip the regeneration entirely
+    # because the .py source hasn't changed. Always rerun.
     cmds:
       - uv run heal-atlas-from-db {{.ATLAS_OUT}} {{.USER_ID}}
-    sources:
-      - heal_atlas/**/*.py
-    generates:
-      - '{{.ATLAS_OUT}}'
 
   build:
     desc: 'Vite production build into dist/ (bundles current public/atlas.json)'
@@ -143,6 +144,72 @@ tasks:
     dir: '{{.HEAL_PAGES_DIR}}'
     deps: [install:py]
     cmd: uv run pytest
+
+  # ─────────────────────── Full DB reset ───────────────────────────────────
+  data:reset:
+    desc: 'Wipe Postgres, re-migrate, backfill fixture, regenerate atlas.json + lens biomarkers (DESTRUCTIVE)'
+    prompt: 'This will wipe all daily_pages data and regenerate atlas.json. Continue?'
+    cmds:
+      - task: db:reset
+      - task: backfill
+      - task: atlas
+      # heal-atlas-from-db emits only the pipeline-derived features. The
+      # MetricLens reads from meta.biomarkers (calories, VO2max, HRV, etc.),
+      # which is attached by augment-biomarkers — without this step the lens
+      # would have nothing to color by after a reset.
+      - task: synth:augment
+
+  # ─────────────────────── Synthetic data pipeline ─────────────────────────
+  # Demo / dev path. Generates a synthetic dedup dump locally, feeds it
+  # through the Python pipeline, augments lens biomarkers, and rebuilds
+  # dist. Does NOT touch Postgres — useful when the DB isn't running or
+  # when reproducible demo data is needed.
+
+  synth:generate:
+    desc: 'Generate N days of synthetic dedup records → pipeline/generated_input.json (override --days)'
+    cmd: node pipeline/generate-user-raw.mjs
+
+  synth:publish-raw:
+    desc: 'Write public/raw.json from generated_input.json, tagging each record with atlas_point_id'
+    cmd: node pipeline/publish-raw.mjs
+
+  synth:atlas:
+    desc: 'Run the Python pipeline against generated_input.json → public/atlas.json'
+    dir: '{{.PIPELINE_DIR}}'
+    deps: [install:pipeline]
+    cmd: uv run heal-atlas generated_input.json {{.ATLAS_OUT}}
+
+  synth:augment:
+    desc: 'Re-attach the 6 lens biomarkers to every point in public/atlas.json'
+    cmd: node pipeline/augment-biomarkers.mjs
+
+  synth:reset:
+    desc: 'Full synthetic reset: generate raw → publish raw.json → run pipeline → augment biomarkers'
+    cmds:
+      - task: synth:generate
+      - task: synth:publish-raw
+      - task: synth:atlas
+      - task: synth:augment
+
+  # ─────────────────────── Raw → atlas demo flow ──────────────────────────
+  # Pair of tasks for visually demonstrating the raw → atlas conversion:
+  #   1. demo:clear-user wipes user points from atlas.json (cohorts remain)
+  #   2. hard-refresh the browser → 3D scene shows cohorts only
+  #   3. demo:hydrate-user feeds public/raw.json through the Python pipeline
+  #      and re-augments biomarkers → user cluster reappears, derived from
+  #      the raw records visible in the Table → Raw tab.
+
+  demo:clear-user:
+    desc: 'Strip user-category points from public/atlas.json (cohorts remain). Reload to see empty user cluster.'
+    cmd: node pipeline/clear-user-points.mjs
+
+  demo:hydrate-user:
+    desc: 'Re-derive user-category atlas points from public/raw.json via the Python pipeline + augment biomarkers.'
+    dir: '{{.PIPELINE_DIR}}'
+    deps: [install:pipeline]
+    cmds:
+      - uv run heal-atlas {{.ROOT_DIR}}/public/raw.json {{.ATLAS_OUT}}
+      - node {{.ROOT_DIR}}/pipeline/augment-biomarkers.mjs
 
   # ─────────────────────── Installs (cached) ───────────────────────────────
   install:

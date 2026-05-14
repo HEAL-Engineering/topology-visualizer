@@ -34,29 +34,43 @@ const START_DATE = '2024-05-01';
 const USER_ID = 7;
 const SEED = 20260515;
 
-/** Per-day means for the 9 FEATURES — placed between avg_male and elite_male. */
+/**
+ * Per-day means for the 9 FEATURES — matched to the `avg_male` cohort prior
+ * in cohorts.py. Sitting the user-day distribution inside the avg_male
+ * region of the wearable feature space makes UMAP project these days into
+ * a single tight lobe near the avg_male cluster, instead of straddling
+ * the avg→elite corridor and producing two disjoint lobes the way an
+ * "between cohorts" mean did.
+ *
+ * To shift the user toward another cohort later, copy that cohort's
+ * `mean` row from cohorts.py COHORT_PRIORS into this object.
+ */
 const MEANS = {
-  resting_hr:       58,
-  avg_hr:           72,
-  peak_hr:         160,
-  sleep_deep_min:   75,
-  sleep_rem_min:   100,
+  resting_hr:       70,
+  avg_hr:           80,
+  peak_hr:         135,
+  sleep_deep_min:   60,
+  sleep_rem_min:    90,
   sleep_light_min: 250,
-  sleep_awake_min:  18,
-  steps:          9500,
+  sleep_awake_min:  20,
+  steps:          5300,
 };
 
-/** Per-feature σ. Tight enough that the cluster stays coherent, loose
- *  enough that the resulting UMAP shape spreads into an ellipsoid. */
+/**
+ * Per-feature σ — half of avg_male's cohort σ. Tight enough that all 80
+ * user-days project into a single coherent lobe (so the sub-cluster
+ * splitter doesn't see a gap), wide enough that the cluster reads as an
+ * ellipsoid rather than a point.
+ */
 const SIGMAS = {
   resting_hr:       4,
-  avg_hr:           5,
-  peak_hr:         12,
-  sleep_deep_min:  12,
-  sleep_rem_min:   18,
-  sleep_light_min: 30,
-  sleep_awake_min:  6,
-  steps:         1800,
+  avg_hr:           4,
+  peak_hr:          7,
+  sleep_deep_min:   7,
+  sleep_rem_min:   10,
+  sleep_light_min: 17,
+  sleep_awake_min:  4,
+  steps:          900,
 };
 
 function makeRng(seed) {

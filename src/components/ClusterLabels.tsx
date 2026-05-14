@@ -48,6 +48,7 @@ export default function ClusterLabels() {
   const theme = useAtlasStore(s => s.theme);
   const setHoveredCategory = useAtlasStore(s => s.setHoveredCategory);
   const setInspectedCategory = useAtlasStore(s => s.setInspectedCategory);
+  const setInspectedSubIndex = useAtlasStore(s => s.setInspectedSubIndex);
   const isLight = theme === 'light';
 
   // Per-category point counts — surfaced on the user badge so the "Your data"
@@ -66,7 +67,12 @@ export default function ClusterLabels() {
 
   return (
     <group>
-      {clusterShapes.map(({ category, shape }) => {
+      {clusterShapes.map(({ category, shape, subIndex, subCount, pointCount }) => {
+        // One label per sub-cluster (a split category gets two labels, one
+        // above each lobe). The sub-cluster index is surfaced in the badge
+        // text so the user can tell the lobes apart at a glance, and
+        // clicking a specific badge opens the InspectPanel paged to that
+        // lobe's tab.
         if (!enabledCategories.has(category.id)) return null;
         const [cx, cy, cz] = shape.centroid;
         // Offset upward along the world y-axis by the major half-axis so
@@ -75,9 +81,20 @@ export default function ClusterLabels() {
         const lift = shape.halfAxes[0] * LABEL_OFFSET_FACTOR;
         const dim = hoveredCategory != null && hoveredCategory !== category.id;
         const isUser = category.id === 'user';
-        const count = counts[category.id] ?? 0;
         const primary = isUser ? 'Your data' : category.label;
-        const subtitle = isUser ? `${count} day${count === 1 ? '' : 's'}` : null;
+        // Subtitle priorities:
+        //   - split category: this lobe's point count, e.g. "Lobe 1 · 46 days"
+        //   - single user cluster: total day count, e.g. "80 days"
+        //   - single cohort cluster: no subtitle (badge is just the label)
+        const subParts: string[] = [];
+        if (subCount > 1) {
+          subParts.push(`Lobe ${subIndex + 1}`);
+          subParts.push(isUser ? `${pointCount} day${pointCount === 1 ? '' : 's'}` : `${pointCount}`);
+        } else if (isUser) {
+          const total = counts[category.id] ?? 0;
+          subParts.push(`${total} day${total === 1 ? '' : 's'}`);
+        }
+        const subtitle = subParts.length > 0 ? subParts.join(' · ') : null;
         // Light-mode tuning: white-ish glass bg with a darkened version of
         // the category color (the saturated palette is tuned for additive
         // blending on near-black; on white it reads washed out).
@@ -88,7 +105,9 @@ export default function ClusterLabels() {
         const haloColor = isLight ? category.color : category.color;
         return (
           <Html
-            key={category.id}
+            // Composite key so React differentiates label nodes between
+            // sub-clusters of the same category instead of recycling one.
+            key={`${category.id}-sub-${subIndex}`}
             position={[cx, cy + lift, cz]}
             center
             distanceFactor={12}
@@ -99,9 +118,15 @@ export default function ClusterLabels() {
             <div
               onMouseEnter={() => setHoveredCategory(category.id)}
               onMouseLeave={() => setHoveredCategory(null)}
-              onClick={() => setInspectedCategory(category.id)}
+              onClick={() => {
+                // setInspectedCategory resets sub to 0, so set the category
+                // first, then immediately set the desired sub-index. Zustand
+                // batches these inside the same React event.
+                setInspectedCategory(category.id);
+                if (subIndex !== 0) setInspectedSubIndex(subIndex);
+              }}
               title={isUser
-                ? `Click to inspect your topology (${count} entries)`
+                ? `Click to inspect ${subCount > 1 ? `lobe ${subIndex + 1}` : 'your topology'} (${pointCount} day${pointCount === 1 ? '' : 's'})`
                 : `Click to inspect ${category.label} topology`}
               style={{
                 fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
