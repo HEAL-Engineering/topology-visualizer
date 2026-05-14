@@ -26,7 +26,7 @@ export type ArchetypeReading = {
 export const ARCHETYPE_READINGS: Record<string, ArchetypeReading> = {
   avg_male: {
     shape: 'ellipsoid',
-    geometryLabel: 'Ellipsoid',
+    geometryLabel: 'Oval',
     geometryNote:
       'Smooth, slightly elongated sphere. Continuous surface, no sharp features. The mildly stretched axis encodes a single mildly dominant dimension (usually occupational or physical).',
     signature: 'Balanced but undifferentiated — wellness present everywhere, excellent nowhere.',
@@ -45,14 +45,14 @@ export const ARCHETYPE_READINGS: Record<string, ArchetypeReading> = {
   },
   avg_female: {
     shape: 'torus',
-    geometryLabel: 'Torus (donut)',
+    geometryLabel: 'Ring',
     geometryNote:
       'Closed loop with a hole through the center. Genus-1 surface — the hole is topologically permanent, not a measurement gap.',
     signature: 'Strong cyclical rhythms with one persistently underdeveloped dimension at the center.',
     strengths: [
       'The closed loop encodes durable recurring habits — weekly/monthly rituals that compound (sleep cycles, social check-ins, self-care routines).',
       'High consistency in social and emotional dimensions; the ring is densest along these axes.',
-      'Resilience: a torus has no sharp corners, so disruption in one area doesn\'t cascade — the loop reroutes around the affected segment.',
+      'Resilience: a ring has no sharp corners, so disruption in one area doesn\'t cascade — the loop reroutes around the affected segment.',
     ],
     actions: [
       { from: 'Central hole = financial/occupational gap', do: 'Open a brokerage account this month. Auto-deposit 5% of every paycheck. Read one personal-finance book (start with I Will Teach You to Be Rich).' },
@@ -65,7 +65,7 @@ export const ARCHETYPE_READINGS: Record<string, ArchetypeReading> = {
   },
   elite_male: {
     shape: 'octahedron',
-    geometryLabel: 'Octahedron (8 faces, 6 vertices)',
+    geometryLabel: 'Diamond',
     geometryNote:
       'Three pairs of opposing sharp vertices along orthogonal axes. High curvature concentrated at the corners; flat faces between them.',
     signature: 'Polarized excellence on a few axes, with deep trade-offs encoded into the geometry.',
@@ -86,7 +86,7 @@ export const ARCHETYPE_READINGS: Record<string, ArchetypeReading> = {
   },
   elite_female: {
     shape: 'dodecahedron',
-    geometryLabel: 'Dodecahedron (12 pentagonal faces, 20 vertices)',
+    geometryLabel: 'Crystal',
     geometryNote:
       'Highly symmetric polyhedron approaching a sphere. Many vertices, none dominant — each face is a small, distinct plateau of competence.',
     signature: 'Broad multi-dimensional excellence; mastery distributed across nearly all 8 dimensions simultaneously.',
@@ -107,7 +107,7 @@ export const ARCHETYPE_READINGS: Record<string, ArchetypeReading> = {
   },
   user: {
     shape: 'icosahedron',
-    geometryLabel: 'Icosahedron (20 triangular faces, 12 vertices)',
+    geometryLabel: 'Bead',
     geometryNote:
       'The most spherical of the Platonic solids. Triangular faces tile densely — high resolution, high symmetry, low specialization.',
     signature: 'You — currently approaching maximum symmetry across the Wheel.',

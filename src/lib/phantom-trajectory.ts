@@ -33,8 +33,39 @@
  */
 import type { AtlasDataset, AtlasPoint, AtlasCategory } from '../schema/types';
 import { pcaClusterShape, type ClusterShape } from './cluster-shape';
+import { computeLobeStats, METRIC_KEYS, METRICS, type MetricKey } from './lobe-actions';
 
 export type PhantomTargetId = 'elite_male' | 'elite_female';
+
+/**
+ * Feature-space component of a phantom projection: a single metric's gap
+ * between the user's current baseline and the chosen elite cohort's actual
+ * mean (NOT the hardcoded `MetricInfo.eliteTarget`, which is elite_male-only
+ * and would mis-describe an elite_female projection).
+ *
+ * Surfaced in the UI as a guardrail list — answers the user's "what do I
+ * actually need to change to land at this shape" question that the pure
+ * geometric projection leaves implicit.
+ *
+ * Caveat baked into the section copy: feature-space ranking is correlated
+ * with but not identical to UMAP geometric contribution. We avoid claiming
+ * "this is what produces the shape" — the framing is "this is what the
+ * projection assumes you change," which is honest about the correlation.
+ */
+export interface PhantomComponent {
+  key: MetricKey;
+  label: string;
+  unit: string;
+  current: number;
+  target: number;
+  /** Signed target - current. */
+  delta: number;
+  /** |delta| / max(|target|, 1) — used for ranking; 1 == fallback. */
+  relGap: number;
+  direction: 'increase' | 'decrease';
+  /** Cohort-aware prescriptive sentence from `MetricInfo.do{Increase,Decrease}`. */
+  doSentence: string;
+}
 
 export interface PhantomTrajectory {
   /** Synthetic AtlasPoints (category id = `user_phantom`). */
@@ -47,6 +78,12 @@ export interface PhantomTrajectory {
   target: PhantomTargetId;
   /** User centroid at the moment of projection (line-start for the arrow). */
   userCentroid: [number, number, number];
+  /**
+   * Ranked feature-space deltas describing the metric composition the
+   * projection assumes. Top-N only (default 5) — beyond that the gaps are
+   * small and the noise dominates the ranking.
+   */
+  composition: PhantomComponent[];
 }
 
 export interface ProjectionOptions {
@@ -60,6 +97,8 @@ export interface ProjectionOptions {
   completion?: number;
   /** Position jitter half-width in world units. Default 0.6 — matches the elite spread. */
   jitter?: number;
+  /** Max composition entries returned. Default 5. */
+  compositionLimit?: number;
 }
 
 /**
@@ -136,11 +175,72 @@ export function projectPhantomTrajectory(
     position: shape.centroid,
   };
 
+  const composition = computeComposition(userPts, targetPts, options.compositionLimit ?? 5);
+
   return {
     points: phantoms,
     shape,
     category,
     target: targetId,
     userCentroid: [ux, uy, uz],
+    composition,
   };
+}
+
+/**
+ * Feature-space composition: per-metric current → cohort-mean target gap,
+ * ranked by relative magnitude. The "target" here is the *actual mean of
+ * the chosen cohort's points* — not the hardcoded `MetricInfo.eliteTarget`
+ * which only describes elite_male.
+ *
+ * Why both means are derived at runtime:
+ *   - Cohort-specific: elite_female mean ≠ elite_male mean for resting HR,
+ *     peak HR, and sleep totals; using the hardcoded prior would mis-state
+ *     the gap for an elite_female projection.
+ *   - User-specific: lobe-actions averages over a single lobe's points; the
+ *     phantom needs the user's *overall* baseline (all non-injected user
+ *     points) because the projection itself was computed against that
+ *     baseline. Mixing scopes here would make the composition disagree with
+ *     the geometric arrow it's meant to explain.
+ *
+ * Why ranked by `|gap| / |target|`:
+ *   - Same heuristic as lobe-actions, keeps the two surfaces consistent.
+ *   - Pure absolute gap would always foreground `steps` (units are 10⁴)
+ *     and bury sleep deltas; relative gap normalizes that.
+ *
+ * Skipped when a metric is missing in either side — happens for datasets
+ * that don't carry the heal-api feature meta (e.g. demo mocks). The UI
+ * gracefully shows fewer guardrails rather than zeros.
+ */
+function computeComposition(
+  userPts: readonly AtlasPoint[],
+  targetPts: readonly AtlasPoint[],
+  limit: number,
+): PhantomComponent[] {
+  const userMeans = computeLobeStats(userPts);
+  const targetMeans = computeLobeStats(targetPts);
+  const out: PhantomComponent[] = [];
+  for (const key of METRIC_KEYS) {
+    const current = userMeans[key];
+    const target = targetMeans[key];
+    if (current == null || target == null) continue;
+    const delta = target - current;
+    const denom = Math.abs(target) > 1e-6 ? Math.abs(target) : 1;
+    const relGap = Math.abs(delta) / denom;
+    const direction: 'increase' | 'decrease' = delta > 0 ? 'increase' : 'decrease';
+    const info = METRICS[key];
+    out.push({
+      key,
+      label: info.label,
+      unit: info.unit,
+      current,
+      target,
+      delta,
+      relGap,
+      direction,
+      doSentence: direction === 'increase' ? info.doIncrease : info.doDecrease,
+    });
+  }
+  out.sort((a, b) => b.relGap - a.relGap);
+  return out.slice(0, limit);
 }

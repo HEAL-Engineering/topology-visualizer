@@ -2,8 +2,9 @@ import { useMemo, useState } from 'react';
 import { ArrowUp, ArrowDown, Check, Utensils, Dumbbell, Moon, HeartPulse, RotateCcw, Sparkles, Eye, EyeOff, Wand2, Loader2 } from 'lucide-react';
 import { useAtlasStore } from '../store';
 import type { AtlasPoint, ClusterShapeKind } from '../schema/types';
-import { projectPhantomTrajectory } from '../lib/phantom-trajectory';
+import { projectPhantomTrajectory, type PhantomTrajectory } from '../lib/phantom-trajectory';
 import { phantomCacheKey } from '../lib/use-phantom-precompute';
+import { shapeLabel } from '../lib/shape-names';
 
 /**
  * Fitness signature per cohort. Numbers are synthetic prototypes that match
@@ -227,7 +228,7 @@ export default function MorphTarget() {
             Morph target
           </div>
           <div className="text-[13px] text-slate-200 mt-1">
-            How <span className="font-medium">your icosahedron</span> moves toward an elite shape.
+            How <span className="font-medium">your bead</span> moves toward an elite shape.
           </div>
         </div>
         <div className="flex gap-1.5">
@@ -260,10 +261,10 @@ export default function MorphTarget() {
           background: `${accent}06`,
         }}
       >
-        <span className="text-slate-200">Geometric goal:</span> grow your icosahedron's vertices
-        outward along the dimensions where {targetCat.label} dominates, until your shape
-        approximates a {target === 'elite_male' ? 'sharper octahedron' : 'symmetric dodecahedron'}.
-        Each metric below is one vertex pulling in that direction.
+        <span className="text-slate-200">Geometric goal:</span> grow your bead's vertices outward
+        along the dimensions where {targetCat.label} dominates, until your shape approximates
+        a {target === 'elite_male' ? 'sharper diamond' : 'symmetric crystal'}. Each metric below
+        is one vertex pulling in that direction.
       </div>
 
       <TrainSection target={target} accent={accent} targetShape={targetCat.shape ?? 'octahedron'} />
@@ -540,7 +541,7 @@ function TrainSection({
 
       <p className="text-[12px] text-slate-400 leading-relaxed">
         Each click logs a real-world behavior as a new point near {target === 'elite_male' ? 'the elite-male' : 'the elite-female'} cluster.
-        Your cluster's centroid migrates and the icosahedron crystallizes into the target's shape as you stack reps.
+        Your cluster's centroid migrates and the bead crystallizes into the target's shape as you stack reps.
       </p>
 
       <div className="grid grid-cols-2 gap-2">
@@ -586,10 +587,10 @@ function TrainSection({
           />
         </div>
         <div className="flex justify-between text-[9px] tracking-[0.18em] uppercase font-mono text-slate-600">
-          <span>icosahedron</span>
-          <span style={injected >= SHAPE_THRESHOLD_MID ? { color: accent } : undefined}>dodecahedron</span>
+          <span>{shapeLabel('icosahedron')}</span>
+          <span style={injected >= SHAPE_THRESHOLD_MID ? { color: accent } : undefined}>{shapeLabel('dodecahedron')}</span>
           <span style={injected >= SHAPE_THRESHOLD_FULL ? { color: accent } : undefined}>
-            {targetShape}
+            {shapeLabel(targetShape)}
           </span>
         </div>
       </div>
@@ -750,7 +751,7 @@ function PhantomSection({
           <div className="flex justify-between text-slate-500">
             <span>Shape</span>
             <span style={{ color: PHANTOM_COLOR }}>
-              {cached.category.shape ?? 'sphere'}
+              {shapeLabel(cached.category.shape)}
             </span>
           </div>
           <div className="flex justify-between text-slate-500">
@@ -761,8 +762,66 @@ function PhantomSection({
           </div>
         </div>
       )}
+
+      {cached && !loading && cached.composition.length > 0 && (
+        <PhantomComposition composition={cached.composition} />
+      )}
     </div>
   );
+}
+
+/**
+ * Per-metric guardrails for the active phantom. Answers: *what feature
+ * changes the projection assumes*. Rendered under the geometric summary so
+ * the user reads "could-be shape" first, then "what it takes" — keeps the
+ * visual the headline, the composition the substantiation.
+ *
+ * Framing note ("…assumes you change", not "…produces this shape"):
+ *   The ranking is computed in feature space (current vs cohort mean per
+ *   tracked metric), but the visualized geometry lives in UMAP space.
+ *   The two are correlated — UMAP placed the cohort apart precisely because
+ *   these features differ — but feature ranking ≠ geometric contribution.
+ *   The copy avoids overstating that link.
+ */
+function PhantomComposition({ composition }: { composition: PhantomTrajectory['composition'] }) {
+  return (
+    <div className="pt-3 space-y-2">
+      <div
+        className="text-[10px] tracking-[0.28em] uppercase font-mono"
+        style={{ color: PHANTOM_COLOR }}
+      >
+        What this projection assumes you change
+      </div>
+      <ul className="space-y-2">
+        {composition.map(c => (
+          <li
+            key={c.key}
+            className="border-l-2 pl-2 py-0.5"
+            style={{ borderColor: `${PHANTOM_COLOR}66` }}
+          >
+            <div className="flex items-baseline justify-between gap-2 text-[11px] font-mono">
+              <span className="text-slate-200">{c.label}</span>
+              <span className="text-slate-400 tabular-nums">
+                <span>{fmtMetric(c.current)}</span>
+                <span className="px-1.5 text-slate-500">→</span>
+                <span style={{ color: PHANTOM_COLOR }}>{fmtMetric(c.target)}</span>
+                <span className="ml-1.5 text-[10px] text-slate-500">{c.unit}</span>
+              </span>
+            </div>
+            <div className="text-[11px] text-slate-400 leading-snug mt-0.5">
+              {c.doSentence}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function fmtMetric(v: number): string {
+  if (Math.abs(v) >= 1000) return Math.round(v).toLocaleString();
+  if (Math.abs(v) >= 10) return Math.round(v).toString();
+  return v.toFixed(1);
 }
 
 function distance3(

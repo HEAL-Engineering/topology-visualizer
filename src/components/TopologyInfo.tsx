@@ -63,7 +63,7 @@ export default function TopologyInfo({ open, onClose }: Props) {
             </div>
             <Row dot="bg-emerald-400" term="Vertices" body="Sharp peaks = dimensions where this cohort excels above baseline." />
             <Row dot="bg-amber-300" term="Faces" body="Flat regions = dimensions that are present but undifferentiated — no growth, no deficit." />
-            <Row dot="bg-rose-400" term="Holes" body="Genus &gt; 0 (torus) = a dimension perpetually orbited but never entered." />
+            <Row dot="bg-rose-400" term="Holes" body="A ring shape = a dimension perpetually orbited but never entered." />
             <Row dot="bg-sky-400" term="Symmetry" body="Higher symmetry = more even distribution across dimensions; lower headroom for breakthrough." />
             <Row dot="bg-violet-400" term="Position" body="Where the shape sits in the atlas tells you which cohort this user is drifting toward." />
           </div>

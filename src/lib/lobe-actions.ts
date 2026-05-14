@@ -25,7 +25,7 @@
 
 import type { AtlasPoint } from '../schema/types';
 
-const METRIC_KEYS = [
+export const METRIC_KEYS = [
   'resting_hr',
   'peak_hr',
   'sleep_deep_min',
@@ -34,12 +34,15 @@ const METRIC_KEYS = [
   'steps',
 ] as const;
 
-type MetricKey = typeof METRIC_KEYS[number];
+export type MetricKey = typeof METRIC_KEYS[number];
 
-interface MetricInfo {
+export interface MetricInfo {
   label: string;
   unit: string;
-  /** elite_male mean from cohorts.py COHORT_PRIORS. */
+  /** elite_male mean from cohorts.py COHORT_PRIORS. Used as fallback when a
+   *  caller doesn't supply its own cohort-specific target (e.g. lobe action
+   *  generation), but phantom composition derives the target from the actual
+   *  cohort cluster at projection time. */
   eliteTarget: number;
   /** Sentence prescribing how to move the metric toward the elite end. */
   doIncrease: string;
@@ -48,7 +51,7 @@ interface MetricInfo {
   doDecrease: string;
 }
 
-const METRICS: Record<MetricKey, MetricInfo> = {
+export const METRICS: Record<MetricKey, MetricInfo> = {
   resting_hr: {
     label: 'Resting HR',
     unit: 'bpm',
