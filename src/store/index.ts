@@ -18,6 +18,7 @@ import { devtools } from 'zustand/middleware';
 import type { AtlasDataset, AtlasPoint, ClusterShapeKind } from '../schema/types';
 import type { RawBundle } from '../schema/raw';
 import type { PhantomTrajectory } from '../lib/phantom-trajectory';
+import { type RampId, DEFAULT_RAMP_ID } from '../data/color-ramps';
 
 /**
  * Table column key. Spans both the Points view (atlas point fields) and the
@@ -126,6 +127,12 @@ interface UISlice {
    * coloring. Single-active by design — multi-lens overlays would garble.
    */
   activeMetric: string | null;
+  /**
+   * Color ramp used by the metric lens. Decoupled from `activeMetric` so the
+   * user can switch ramps with a lens already on and see the change live,
+   * or pick a preferred ramp before turning a lens on.
+   */
+  activeRamp: RampId;
   theme: Theme;
   tableSort: { key: TableSortKey; dir: 'asc' | 'desc' };
   tableView: TableView;
@@ -138,6 +145,7 @@ interface UISlice {
   setInspectedCategory: (v: string | null) => void;
   setInspectedSubIndex: (i: number) => void;
   setActiveMetric: (v: string | null) => void;
+  setActiveRamp: (v: RampId) => void;
   setTheme: (v: Theme) => void;
   setTableSort: (s: { key: TableSortKey; dir: 'asc' | 'desc' }) => void;
   setTableView: (v: TableView) => void;
@@ -244,6 +252,7 @@ export const useAtlasStore = create<AtlasStore>()(
     inspectedCategory: null,
     inspectedSubIndex: 0,
     activeMetric: null,
+    activeRamp: DEFAULT_RAMP_ID,
     theme: 'dark',
     tableSort: { key: 'user', dir: 'asc' },
     tableView: 'points',
@@ -259,6 +268,7 @@ export const useAtlasStore = create<AtlasStore>()(
     setInspectedCategory: (v) => set({ inspectedCategory: v, inspectedSubIndex: 0 }, false, 'setInspectedCategory'),
     setInspectedSubIndex: (i) => set({ inspectedSubIndex: i }, false, 'setInspectedSubIndex'),
     setActiveMetric: (v) => set({ activeMetric: v }, false, 'setActiveMetric'),
+    setActiveRamp: (v) => set({ activeRamp: v }, false, 'setActiveRamp'),
     setTheme: (v) => set({ theme: v }, false, 'setTheme'),
     setTableSort: (s) => set({ tableSort: s }, false, 'setTableSort'),
     setTableView: (v) => set({ tableView: v }, false, 'setTableView'),

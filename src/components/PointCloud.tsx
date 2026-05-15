@@ -14,39 +14,10 @@ import * as THREE from 'three';
 import { useAtlasStore } from '../store';
 import { useDerivedState } from '../lib/use-derived';
 import { METRICS, normalizeMetric, readMetric } from '../data/metrics';
+import { RAMPS, sampleRamp } from '../data/color-ramps';
 import type { AtlasPoint } from '../schema/types';
 
 const SPRITE_TEXTURE = createGlowSprite();
-
-/**
- * Viridis-inspired ramp keyed at six stops along normalized [0, 1]. Sampled
- * on demand by lerping between adjacent stops — cheap, no LUT allocation.
- * Same gradient as the Legend stripe in MetricLens, so the panel reads as
- * the literal key to the colors on screen.
- */
-const RAMP_STOPS: Array<[number, [number, number, number]]> = [
-  [0.00, [0.12, 0.23, 0.54]],  // #1e3a8a
-  [0.20, [0.02, 0.71, 0.83]],  // #06b6d4
-  [0.40, [0.52, 0.80, 0.09]],  // #84cc16
-  [0.60, [0.98, 0.80, 0.08]],  // #facc15
-  [0.80, [0.98, 0.45, 0.09]],  // #f97316
-  [1.00, [0.86, 0.15, 0.15]],  // #dc2626
-];
-function sampleRamp(t: number, out: [number, number, number]) {
-  const c = Math.max(0, Math.min(1, t));
-  for (let i = 0; i < RAMP_STOPS.length - 1; i++) {
-    const [a, ca] = RAMP_STOPS[i]!;
-    const [b, cb] = RAMP_STOPS[i + 1]!;
-    if (c <= b) {
-      const u = (c - a) / (b - a);
-      out[0] = ca[0] + (cb[0] - ca[0]) * u;
-      out[1] = ca[1] + (cb[1] - ca[1]) * u;
-      out[2] = ca[2] + (cb[2] - ca[2]) * u;
-      return;
-    }
-  }
-  out[0] = 0.86; out[1] = 0.15; out[2] = 0.15;
-}
 
 export default function PointCloud() {
   const dataset = useAtlasStore(s => s.dataset);
@@ -54,6 +25,7 @@ export default function PointCloud() {
   const enabledLabels = useAtlasStore(s => s.enabledLabels);
   const hoveredCategory = useAtlasStore(s => s.hoveredCategory);
   const activeMetric = useAtlasStore(s => s.activeMetric);
+  const activeRamp = useAtlasStore(s => s.activeRamp);
   const theme = useAtlasStore(s => s.theme);
   const setSelectedPoint = useAtlasStore(s => s.setSelectedPoint);
   const setInspectedCategory = useAtlasStore(s => s.setInspectedCategory);
@@ -112,6 +84,7 @@ export default function PointCloud() {
     const arr = colorAttr.array as Float32Array;
     const posArr = posAttr.array as Float32Array;
     const metricDef = activeMetric ? METRICS.find(m => m.key === activeMetric) ?? null : null;
+    const rampStops = RAMPS[activeRamp].stops;
     const rampColor: [number, number, number] = [0, 0, 0];
 
     for (let i = 0; i < dataset.points.length; i++) {
@@ -145,13 +118,13 @@ export default function PointCloud() {
           continue;
         }
         const t = normalizeMetric(metricDef, raw);
-        sampleRamp(t, rampColor);
-        // Brightness floor so even "low" points are still visible; hovered
-        // category gets a slight amp so the user can compare metric values
-        // within one cohort against another. The user-cluster brightness
-        // boost is intentionally NOT applied here — lens mode strips all
-        // category-specific styling so colors read purely as metric values.
-        let mult = 0.85 + t * 0.6;
+        sampleRamp(rampStops, t, rampColor);
+        // Render every point at its ramp hue with no value-based brightness
+        // scaling. Previously low-metric points were further darkened on top
+        // of the already-dark ramp end, which collapsed contrast where it
+        // mattered most. Hover modulation still applies because that's about
+        // cohort comparison, not metric value.
+        let mult = 1;
         if (hoveredCategory && p.category !== hoveredCategory) mult *= 0.25;
         else if (hoveredCategory && p.category === hoveredCategory) mult *= 1.4;
         arr[i * 3 + 0] = rampColor[0] * mult;
@@ -191,7 +164,7 @@ export default function PointCloud() {
     // throw a warning. Recompute so the visible subset bounds the draw.
     geometry.computeBoundingSphere();
     invalidate();
-  }, [dataset, geometry, enabledCategories, enabledLabels, hoveredCategory, activeMetric, categoryColors, invalidate, isLight, originalPositions]);
+  }, [dataset, geometry, enabledCategories, enabledLabels, hoveredCategory, activeMetric, activeRamp, categoryColors, invalidate, isLight, originalPositions]);
 
   if (!dataset) return null;
 

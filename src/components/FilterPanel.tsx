@@ -40,7 +40,7 @@ export default function FilterPanel() {
   };
 
   return (
-    <div className="absolute bottom-8 left-8 z-20 pointer-events-auto atlas-scroll" style={{ width: 340, maxHeight: '50vh', overflowY: 'auto' }}>
+    <div className="pointer-events-auto atlas-scroll" style={{ width: 340, maxHeight: '50vh', overflowY: 'auto' }}>
       <div className="flex items-center justify-between mb-3">
         <div className="text-[10px] tracking-[0.32em] text-slate-500 uppercase font-mono">
           Filters · <span className="text-slate-400">{stats.totalVisible}</span>

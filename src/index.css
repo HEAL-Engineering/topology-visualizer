@@ -32,7 +32,7 @@
 
 .theme-light {
   --page-bg: #f4f1ea;
-  --page-fg: #1e293b;
+  --page-fg: #020617;  /* slate-950 — darker default text on cream */
 
   /* Warm-cream glass — pure white is too clinical against the paper bg. */
   --panel-bg-strong: rgba(255, 252, 246, 0.92);
@@ -91,37 +91,40 @@ body {
  * The selectors are higher-specificity (`.theme-light .text-slate-N`)
  * than Tailwind's atomic classes, so they win without `!important`.
  */
-/* Light-mode ramp shifted one stop darker than the strict inversion — the
- * cream background reads softer than pure white, so slate-900 for primary
- * text isn't quite punchy enough. Primary text goes to slate-950 (near
- * pure black) and the rest of the ramp follows. Net effect: every label
- * that read as "bright" in dark mode now reads as "vibrant" in light. */
+/* Light-mode ramp shifted one stop darker than the previous mapping. The
+ * cream paper bg has more inherent warmth than pure white, which makes
+ * mid-slates wash out — primary text needs slate-950, low-contrast labels
+ * need at least slate-600, and faint borders need to clear slate-500 or
+ * they read as smudges instead of rules. Net effect: every label and rule
+ * that previously felt "ghosted" on cream now reads with intent. */
 .theme-light .text-slate-100 { color: rgb(2 6 23); }      /* → slate-950 */
-.theme-light .text-slate-200 { color: rgb(15 23 42); }    /* → slate-900 */
-.theme-light .text-slate-300 { color: rgb(30 41 59); }    /* → slate-800 */
-.theme-light .text-slate-400 { color: rgb(51 65 85); }    /* → slate-700 */
-.theme-light .text-slate-500 { color: rgb(71 85 105); }   /* → slate-600 */
-.theme-light .text-slate-600 { color: rgb(100 116 139); } /* → slate-500 */
-.theme-light .text-slate-700 { color: rgb(148 163 184); } /* → slate-400 */
+.theme-light .text-slate-200 { color: rgb(2 6 23); }      /* → slate-950 */
+.theme-light .text-slate-300 { color: rgb(15 23 42); }    /* → slate-900 */
+.theme-light .text-slate-400 { color: rgb(30 41 59); }    /* → slate-800 */
+.theme-light .text-slate-500 { color: rgb(51 65 85); }    /* → slate-700 */
+.theme-light .text-slate-600 { color: rgb(71 85 105); }   /* → slate-600 */
+.theme-light .text-slate-700 { color: rgb(100 116 139); } /* → slate-500 */
 
 .theme-light .hover\:text-slate-100:hover { color: rgb(2 6 23); }
-.theme-light .hover\:text-slate-200:hover { color: rgb(15 23 42); }
-.theme-light .hover\:text-slate-300:hover { color: rgb(30 41 59); }
+.theme-light .hover\:text-slate-200:hover { color: rgb(2 6 23); }
+.theme-light .hover\:text-slate-300:hover { color: rgb(15 23 42); }
 
 /* Borders — each opacity variant is its own atomic class in Tailwind so
- * we enumerate the ones the codebase actually uses. */
-.theme-light .border-slate-500 { border-color: rgb(100 116 139); }
-.theme-light .border-slate-600 { border-color: rgb(148 163 184); }
-.theme-light .border-slate-700\/30 { border-color: rgb(148 163 184 / 0.45); }
-.theme-light .border-slate-700\/40 { border-color: rgb(148 163 184 / 0.55); }
-.theme-light .border-slate-700\/60 { border-color: rgb(148 163 184 / 0.7); }
-.theme-light .border-slate-800\/30 { border-color: rgb(148 163 184 / 0.35); }
-.theme-light .border-slate-800\/40 { border-color: rgb(148 163 184 / 0.45); }
-.theme-light .border-slate-800\/60 { border-color: rgb(148 163 184 / 0.55); }
-.theme-light .border-slate-800\/80 { border-color: rgb(148 163 184 / 0.75); }
+ * we enumerate the ones the codebase actually uses. Mapped one stop
+ * darker than the text ramp (slate-500 base) and bumped alpha so faint
+ * dividers don't dissolve into the cream bg. */
+.theme-light .border-slate-500 { border-color: rgb(71 85 105); }
+.theme-light .border-slate-600 { border-color: rgb(100 116 139); }
+.theme-light .border-slate-700\/30 { border-color: rgb(100 116 139 / 0.55); }
+.theme-light .border-slate-700\/40 { border-color: rgb(100 116 139 / 0.65); }
+.theme-light .border-slate-700\/60 { border-color: rgb(100 116 139 / 0.8); }
+.theme-light .border-slate-800\/30 { border-color: rgb(100 116 139 / 0.45); }
+.theme-light .border-slate-800\/40 { border-color: rgb(100 116 139 / 0.55); }
+.theme-light .border-slate-800\/60 { border-color: rgb(100 116 139 / 0.65); }
+.theme-light .border-slate-800\/80 { border-color: rgb(100 116 139 / 0.85); }
 
-.theme-light .hover\:border-slate-500:hover { border-color: rgb(100 116 139); }
-.theme-light .hover\:border-slate-600:hover { border-color: rgb(148 163 184); }
+.theme-light .hover\:border-slate-500:hover { border-color: rgb(71 85 105); }
+.theme-light .hover\:border-slate-600:hover { border-color: rgb(100 116 139); }
 
 /* Table grouping rows + row hover. */
 .theme-light .bg-slate-900\/60 { background-color: rgb(232 226 214 / 0.55); }

@@ -44,6 +44,15 @@ const HALO_OPACITY = 0.50;
 const HALO_SCALE = 1.04;
 const HOVER_FADE = 0.15;
 const HOVER_AMP = 1.6;
+// Lens-mode dampeners. Only the fill (large colored surface) is dimmed —
+// outlines stay at full strength so every cluster's shape stays drawn.
+// Previously the wire was also dimmed (~0.55), which made low-edge-count
+// primitives (icosahedron, octahedron) on saturated colors like the user's
+// red dissolve into the heatmap and read as "missing." Keeping the outline
+// at its normal opacity guarantees the shape is visible regardless of the
+// primitive's edge density or the underlying lens hue.
+const LENS_FILL_MULT = 0.25;
+const LENS_WIRE_MULT = 1.0;
 
 /** Sphere primitive scaled by halfAxes → ellipsoid. */
 const UNIT_SPHERE = new THREE.SphereGeometry(1, 32, 20);
@@ -91,16 +100,24 @@ export default function ClusterShapes() {
       let mult = 1;
       if (hoveredCategory && category.id !== hoveredCategory) mult = HOVER_FADE;
       else if (hoveredCategory && category.id === hoveredCategory) mult = HOVER_AMP;
-      (fill.material as THREE.MeshBasicMaterial).opacity = fillOpacity * mult;
-      (wire.material as THREE.LineBasicMaterial).opacity = Math.min(1, wireOpacity * mult);
-      if (halo) (halo.material as THREE.LineBasicMaterial).opacity = Math.min(1, haloOpacity * mult);
+      // Lens mode: keep cluster shapes drawn so the user doesn't lose the
+      // spatial structure of the atlas, but dim them so their per-category
+      // colors don't fight the heatmap. Fill is hit hardest (the largest
+      // colored surface); wire/halo dim less so the outlines stay readable.
+      if (activeMetric) {
+        (fill.material as THREE.MeshBasicMaterial).opacity = fillOpacity * mult * LENS_FILL_MULT;
+        (wire.material as THREE.LineBasicMaterial).opacity = Math.min(1, wireOpacity * mult * LENS_WIRE_MULT);
+        if (halo) (halo.material as THREE.LineBasicMaterial).opacity = Math.min(1, haloOpacity * mult * LENS_WIRE_MULT);
+      } else {
+        (fill.material as THREE.MeshBasicMaterial).opacity = fillOpacity * mult;
+        (wire.material as THREE.LineBasicMaterial).opacity = Math.min(1, wireOpacity * mult);
+        if (halo) (halo.material as THREE.LineBasicMaterial).opacity = Math.min(1, haloOpacity * mult);
+      }
     });
     invalidate();
-  }, [items, enabledCategories, hoveredCategory, invalidate, fillOpacity, wireOpacity, haloOpacity]);
+  }, [items, enabledCategories, hoveredCategory, activeMetric, invalidate, fillOpacity, wireOpacity, haloOpacity]);
 
-  // Hide cluster outlines while a metric lens is active — their per-category
-  // color would compete with the heatmap reading.
-  if (!showHulls || activeMetric) return null;
+  if (!showHulls) return null;
   return (
     <group>
       {items.map(({ category, geom, wireGeom, haloWireGeom, subIndex }, i) => {

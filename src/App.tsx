@@ -102,9 +102,18 @@ export default function App() {
       <AtlasCanvas />
       <ControlBar onOpenTopology={() => setTopologyOpen(true)} />
       <DataLoader />
-      <FilterPanel />
+      {/* Bottom-left column: MetricLens sits directly above FilterPanel so the
+          two left-side legends (color-by-metric and category visibility) read
+          together. Wrapper is pointer-events-none; children re-enable on
+          themselves to keep the gap between cards click-through. */}
+      <div
+        className="absolute bottom-8 left-8 z-20 flex flex-col gap-3 pointer-events-none"
+        style={{ width: 340 }}
+      >
+        <MetricLens />
+        <FilterPanel />
+      </div>
       <EventCard />
-      <MetricLens />
       <Suspense fallback={null}>
         <TablePanel />
         <TopologyInfo open={topologyOpen} onClose={() => setTopologyOpen(false)} />

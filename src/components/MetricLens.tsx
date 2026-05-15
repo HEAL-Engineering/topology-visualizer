@@ -17,10 +17,13 @@
 import { Eye, X } from 'lucide-react';
 import { useAtlasStore } from '../store';
 import { METRICS, type MetricDef } from '../data/metrics';
+import { RAMPS, RAMP_IDS, type RampId } from '../data/color-ramps';
 
 export default function MetricLens() {
   const activeMetric = useAtlasStore(s => s.activeMetric);
   const setActiveMetric = useAtlasStore(s => s.setActiveMetric);
+  const activeRamp = useAtlasStore(s => s.activeRamp);
+  const setActiveRamp = useAtlasStore(s => s.setActiveRamp);
   const dataset = useAtlasStore(s => s.dataset);
 
   if (!dataset) return null;
@@ -29,12 +32,11 @@ export default function MetricLens() {
 
   return (
     <div
-      // Anchored to the left side, just above the FilterPanel (which sits at
-      // bottom-8 with maxHeight 50vh). This keeps the lens out of the
-      // InspectPanel's right-side zone so per-point / per-cluster info
-      // overlays no longer cover it.
-      className="absolute left-8 z-20 pointer-events-auto"
-      style={{ width: 340, bottom: 'calc(50vh + 24px)' }}
+      // Positioning is owned by the bottom-left column wrapper in App.tsx
+      // (MetricLens stacked directly above FilterPanel). Keeping only width
+      // here so the card matches the filter list's footprint.
+      className="pointer-events-auto"
+      style={{ width: 340 }}
     >
       <div
         className="px-4 py-3 border"
@@ -90,13 +92,64 @@ export default function MetricLens() {
           })}
         </div>
 
-        {active && <Legend metric={active} />}
+        <RampSelector activeRamp={activeRamp} onChange={setActiveRamp} />
+
+        {active && <Legend metric={active} rampId={activeRamp} />}
       </div>
     </div>
   );
 }
 
-function Legend({ metric }: { metric: MetricDef }) {
+/**
+ * Three-button ramp picker. Lives below the metric grid so it reads as a
+ * meta-control over *how* the lens shows values, not *which* value. The
+ * gradient strip on each button is the actual ramp it would apply — the
+ * user picks visually rather than by name.
+ */
+function RampSelector({
+  activeRamp,
+  onChange,
+}: {
+  activeRamp: RampId;
+  onChange: (id: RampId) => void;
+}) {
+  return (
+    <div className="mt-2 pt-2 border-t border-slate-700/40">
+      <div className="text-[9px] tracking-[0.28em] uppercase font-mono text-slate-500 mb-1.5">
+        Ramp
+      </div>
+      <div className="grid grid-cols-3 gap-1.5">
+        {RAMP_IDS.map(id => {
+          const on = activeRamp === id;
+          const ramp = RAMPS[id];
+          return (
+            <button
+              key={id}
+              onClick={() => onChange(id)}
+              className="px-2 py-1 text-left border transition-all font-mono"
+              style={{
+                borderColor: on ? 'rgba(251, 191, 36, 0.6)' : 'rgba(71, 85, 105, 0.5)',
+                background: on ? 'rgba(251, 191, 36, 0.08)' : 'transparent',
+                color: on ? '#fcd34d' : '#94a3b8',
+              }}
+              title={ramp.description}
+            >
+              <div className="text-[9px] tracking-[0.18em] uppercase">
+                {ramp.label}
+              </div>
+              <div
+                className="h-1.5 w-full mt-1"
+                style={{ background: `linear-gradient(to right, ${ramp.hex.join(', ')})` }}
+              />
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function Legend({ metric, rampId }: { metric: MetricDef; rampId: RampId }) {
   const [lo, hi] = metric.range;
   // The ramp itself reads left → right as "0 → 1" after normalization, so
   // for higher-is-better the left label is the low raw value, for lower-is-
@@ -108,7 +161,7 @@ function Legend({ metric }: { metric: MetricDef }) {
       <div
         className="h-2 w-full"
         style={{
-          background: 'linear-gradient(to right, #1e3a8a, #06b6d4, #84cc16, #facc15, #f97316, #dc2626)',
+          background: `linear-gradient(to right, ${RAMPS[rampId].hex.join(', ')})`,
           boxShadow: '0 0 10px rgba(251, 191, 36, 0.25)',
         }}
       />
