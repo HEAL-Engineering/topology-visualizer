@@ -6,7 +6,14 @@
       "Bash(pnpm typecheck *)",
       "Bash(task release *)",
       "Bash(npx vite *)",
-      "Bash(pnpm build *)"
+      "Bash(pnpm build *)",
+      "WebSearch",
+      "WebFetch(domain:www.garmin.com)",
+      "WebFetch(domain:www.healthline.com)",
+      "WebFetch(domain:www.topendsports.com)",
+      "WebFetch(domain:appleheartandmovementstudy.bwh.harvard.edu)",
+      "Bash(npx tsc *)",
+      "Bash(echo \"exit=$?\")"
     ]
   }
 }

@@ -29,6 +29,9 @@ vars:
   TODAY: '2026-04-30'
   DAYS: '41'
   QUERY: 'restorative sleep'
+  # persona:* demo path — see generate-persona-raw.mjs and DESIGN.md §4
+  PERSONA: 'avg_male'
+  PERSONA_DAYS: '80'
 
 tasks:
 
@@ -189,6 +192,42 @@ tasks:
       - task: synth:generate
       - task: synth:publish-raw
       - task: synth:atlas
+      - task: synth:augment
+
+  # ─────────────────────── Persona demo flow (Garmin/Apple-sourced) ──────
+  # Demo path using sourced Garmin/Apple Health priors (May 2026). Lands
+  # the user cluster *inside* a named cohort centroid by sampling the
+  # user-day vector from that cohort's distribution. Useful for demos
+  # where the user persona ("I am the average male") needs to read
+  # unambiguously against the four reference clusters.
+  #
+  # Personas: avg_male, avg_female, elite_male, elite_female
+  # Override:   task persona:reset PERSONA=elite_female PERSONA_DAYS=120
+
+  persona:generate:
+    desc: 'Generate {{.PERSONA_DAYS}} days of {{.PERSONA}} dedup records → pipeline/persona-{{.PERSONA}}.json (override PERSONA, PERSONA_DAYS)'
+    cmd: node pipeline/generate-persona-raw.mjs {{.PERSONA}} --days {{.PERSONA_DAYS}}
+
+  persona:generate-all:
+    desc: 'Generate {{.PERSONA_DAYS}}-day dedup files for all four personas (avg_male, avg_female, elite_male, elite_female)'
+    cmd: node pipeline/generate-persona-raw.mjs --all --days {{.PERSONA_DAYS}}
+
+  persona:atlas:
+    desc: 'Run the Python pipeline against pipeline/persona-{{.PERSONA}}.json → public/atlas.json'
+    dir: '{{.PIPELINE_DIR}}'
+    deps: [install:pipeline]
+    cmd: uv run heal-atlas persona-{{.PERSONA}}.json {{.ATLAS_OUT}}
+
+  persona:publish-raw:
+    desc: 'Write public/raw.json bundling all four personas — {{.PERSONA}} tagged as the user, others as cohort exemplars'
+    cmd: node pipeline/publish-raw.mjs --personas --active {{.PERSONA}}
+
+  persona:reset:
+    desc: 'Full persona demo: generate-all → publish-raw → run pipeline → augment biomarkers (override PERSONA, PERSONA_DAYS)'
+    cmds:
+      - task: persona:generate-all
+      - task: persona:publish-raw
+      - task: persona:atlas
       - task: synth:augment
 
   # ─────────────────────── Raw → atlas demo flow ──────────────────────────

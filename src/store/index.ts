@@ -102,10 +102,25 @@ interface FilterSlice {
 interface UISlice {
   showHulls: boolean;
   showTable: boolean;
+  /**
+   * Toggle for the in-scene region-axis overlay (RegionAxes component).
+   * Renders thin arrows + captions between cohort centroids, labeling what
+   * each direction means (e.g. avg_male → elite_male = "lower RHR, more
+   * steps"). Off by default — adds visual density that's only useful
+   * when the user is reading the topology, not when scanning points.
+   */
+  showRegionAxes: boolean;
   autoRotate: boolean;
   hoveredCategory: string | null;
   expandedCategory: string | null;
   selectedPoint: AtlasPoint | null;
+  /**
+   * Point under the cursor — set by PointCloud's pointer-move handler,
+   * cleared on pointer-out. Drives the EventCard's transient preview
+   * mode: when no point is selected (clicked), hovering surfaces the
+   * same detail card. Click pins it (selectedPoint takes precedence).
+   */
+  hoveredPoint: AtlasPoint | null;
   /**
    * Which category cluster the user clicked to inspect. Currently only the
    * 'user' cluster has a dedicated panel (MorphTargetPanel); future categories
@@ -138,10 +153,12 @@ interface UISlice {
   tableView: TableView;
   setShowHulls: (v: boolean) => void;
   setShowTable: (v: boolean) => void;
+  setShowRegionAxes: (v: boolean) => void;
   setAutoRotate: (v: boolean) => void;
   setHoveredCategory: (v: string | null) => void;
   setExpandedCategory: (v: string | null) => void;
   setSelectedPoint: (p: AtlasPoint | null) => void;
+  setHoveredPoint: (p: AtlasPoint | null) => void;
   setInspectedCategory: (v: string | null) => void;
   setInspectedSubIndex: (i: number) => void;
   setActiveMetric: (v: string | null) => void;
@@ -243,12 +260,14 @@ export const useAtlasStore = create<AtlasStore>()(
     }, false, 'resetFilters'),
 
     // UI
-    showHulls: true,
+    showHulls: false,
     showTable: false,
+    showRegionAxes: false,
     autoRotate: false,
     hoveredCategory: null,
     expandedCategory: null,
     selectedPoint: null,
+    hoveredPoint: null,
     inspectedCategory: null,
     inspectedSubIndex: 0,
     activeMetric: null,
@@ -258,10 +277,12 @@ export const useAtlasStore = create<AtlasStore>()(
     tableView: 'points',
     setShowHulls: (v) => set({ showHulls: v }, false, 'setShowHulls'),
     setShowTable: (v) => set({ showTable: v }, false, 'setShowTable'),
+    setShowRegionAxes: (v) => set({ showRegionAxes: v }, false, 'setShowRegionAxes'),
     setAutoRotate: (v) => set({ autoRotate: v }, false, 'setAutoRotate'),
     setHoveredCategory: (v) => set({ hoveredCategory: v }, false, 'setHoveredCategory'),
     setExpandedCategory: (v) => set({ expandedCategory: v }, false, 'setExpandedCategory'),
     setSelectedPoint: (p) => set({ selectedPoint: p }, false, 'setSelectedPoint'),
+    setHoveredPoint: (p) => set({ hoveredPoint: p }, false, 'setHoveredPoint'),
     // Inspecting a (different) category always resets the sub-pagination so
     // a freshly-opened panel starts on lobe 0. Tab clicks call setInspected-
     // SubIndex directly to switch within the same category.

@@ -1,0 +1,3449 @@
+{
+  "user_id": 104,
+  "dedup_heart_rates": [
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 191,
+      "min_bpm": 43,
+      "avg_bpm": 68,
+      "start_time": "2024-05-01T07:00:00Z",
+      "end_time": "2024-05-01T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 178,
+      "min_bpm": 47,
+      "avg_bpm": 75,
+      "start_time": "2024-05-02T07:00:00Z",
+      "end_time": "2024-05-02T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 188,
+      "min_bpm": 44,
+      "avg_bpm": 68,
+      "start_time": "2024-05-03T07:00:00Z",
+      "end_time": "2024-05-03T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 201,
+      "min_bpm": 43,
+      "avg_bpm": 72,
+      "start_time": "2024-05-04T07:00:00Z",
+      "end_time": "2024-05-04T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 184,
+      "min_bpm": 41,
+      "avg_bpm": 77,
+      "start_time": "2024-05-05T07:00:00Z",
+      "end_time": "2024-05-05T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 195,
+      "min_bpm": 44,
+      "avg_bpm": 70,
+      "start_time": "2024-05-06T07:00:00Z",
+      "end_time": "2024-05-06T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 193,
+      "min_bpm": 42,
+      "avg_bpm": 77,
+      "start_time": "2024-05-07T07:00:00Z",
+      "end_time": "2024-05-07T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 189,
+      "min_bpm": 43,
+      "avg_bpm": 59,
+      "start_time": "2024-05-08T07:00:00Z",
+      "end_time": "2024-05-08T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 187,
+      "min_bpm": 46,
+      "avg_bpm": 77,
+      "start_time": "2024-05-09T07:00:00Z",
+      "end_time": "2024-05-09T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 181,
+      "min_bpm": 43,
+      "avg_bpm": 69,
+      "start_time": "2024-05-10T07:00:00Z",
+      "end_time": "2024-05-10T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 185,
+      "min_bpm": 43,
+      "avg_bpm": 70,
+      "start_time": "2024-05-11T07:00:00Z",
+      "end_time": "2024-05-11T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 200,
+      "min_bpm": 45,
+      "avg_bpm": 69,
+      "start_time": "2024-05-12T07:00:00Z",
+      "end_time": "2024-05-12T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 201,
+      "min_bpm": 43,
+      "avg_bpm": 64,
+      "start_time": "2024-05-13T07:00:00Z",
+      "end_time": "2024-05-13T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 190,
+      "min_bpm": 44,
+      "avg_bpm": 67,
+      "start_time": "2024-05-14T07:00:00Z",
+      "end_time": "2024-05-14T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 201,
+      "min_bpm": 40,
+      "avg_bpm": 58,
+      "start_time": "2024-05-15T07:00:00Z",
+      "end_time": "2024-05-15T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 190,
+      "min_bpm": 47,
+      "avg_bpm": 68,
+      "start_time": "2024-05-16T07:00:00Z",
+      "end_time": "2024-05-16T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 180,
+      "min_bpm": 46,
+      "avg_bpm": 70,
+      "start_time": "2024-05-17T07:00:00Z",
+      "end_time": "2024-05-17T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 184,
+      "min_bpm": 42,
+      "avg_bpm": 70,
+      "start_time": "2024-05-18T07:00:00Z",
+      "end_time": "2024-05-18T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 200,
+      "min_bpm": 45,
+      "avg_bpm": 69,
+      "start_time": "2024-05-19T07:00:00Z",
+      "end_time": "2024-05-19T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 191,
+      "min_bpm": 46,
+      "avg_bpm": 75,
+      "start_time": "2024-05-20T07:00:00Z",
+      "end_time": "2024-05-20T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 185,
+      "min_bpm": 41,
+      "avg_bpm": 77,
+      "start_time": "2024-05-21T07:00:00Z",
+      "end_time": "2024-05-21T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 190,
+      "min_bpm": 45,
+      "avg_bpm": 72,
+      "start_time": "2024-05-22T07:00:00Z",
+      "end_time": "2024-05-22T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 190,
+      "min_bpm": 48,
+      "avg_bpm": 76,
+      "start_time": "2024-05-23T07:00:00Z",
+      "end_time": "2024-05-23T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 193,
+      "min_bpm": 46,
+      "avg_bpm": 77,
+      "start_time": "2024-05-24T07:00:00Z",
+      "end_time": "2024-05-24T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 186,
+      "min_bpm": 44,
+      "avg_bpm": 81,
+      "start_time": "2024-05-25T07:00:00Z",
+      "end_time": "2024-05-25T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 192,
+      "min_bpm": 39,
+      "avg_bpm": 65,
+      "start_time": "2024-05-26T07:00:00Z",
+      "end_time": "2024-05-26T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 196,
+      "min_bpm": 47,
+      "avg_bpm": 72,
+      "start_time": "2024-05-27T07:00:00Z",
+      "end_time": "2024-05-27T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 178,
+      "min_bpm": 41,
+      "avg_bpm": 70,
+      "start_time": "2024-05-28T07:00:00Z",
+      "end_time": "2024-05-28T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 191,
+      "min_bpm": 42,
+      "avg_bpm": 74,
+      "start_time": "2024-05-29T07:00:00Z",
+      "end_time": "2024-05-29T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 185,
+      "min_bpm": 43,
+      "avg_bpm": 70,
+      "start_time": "2024-05-30T07:00:00Z",
+      "end_time": "2024-05-30T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 193,
+      "min_bpm": 45,
+      "avg_bpm": 70,
+      "start_time": "2024-05-31T07:00:00Z",
+      "end_time": "2024-05-31T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 180,
+      "min_bpm": 44,
+      "avg_bpm": 76,
+      "start_time": "2024-06-01T07:00:00Z",
+      "end_time": "2024-06-01T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 187,
+      "min_bpm": 41,
+      "avg_bpm": 67,
+      "start_time": "2024-06-02T07:00:00Z",
+      "end_time": "2024-06-02T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 185,
+      "min_bpm": 43,
+      "avg_bpm": 70,
+      "start_time": "2024-06-03T07:00:00Z",
+      "end_time": "2024-06-03T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 186,
+      "min_bpm": 47,
+      "avg_bpm": 75,
+      "start_time": "2024-06-04T07:00:00Z",
+      "end_time": "2024-06-04T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 183,
+      "min_bpm": 45,
+      "avg_bpm": 75,
+      "start_time": "2024-06-05T07:00:00Z",
+      "end_time": "2024-06-05T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 191,
+      "min_bpm": 47,
+      "avg_bpm": 76,
+      "start_time": "2024-06-06T07:00:00Z",
+      "end_time": "2024-06-06T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 201,
+      "min_bpm": 44,
+      "avg_bpm": 68,
+      "start_time": "2024-06-07T07:00:00Z",
+      "end_time": "2024-06-07T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 187,
+      "min_bpm": 45,
+      "avg_bpm": 68,
+      "start_time": "2024-06-08T07:00:00Z",
+      "end_time": "2024-06-08T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 189,
+      "min_bpm": 43,
+      "avg_bpm": 74,
+      "start_time": "2024-06-09T07:00:00Z",
+      "end_time": "2024-06-09T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 186,
+      "min_bpm": 45,
+      "avg_bpm": 88,
+      "start_time": "2024-06-10T07:00:00Z",
+      "end_time": "2024-06-10T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 185,
+      "min_bpm": 43,
+      "avg_bpm": 75,
+      "start_time": "2024-06-11T07:00:00Z",
+      "end_time": "2024-06-11T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 189,
+      "min_bpm": 45,
+      "avg_bpm": 73,
+      "start_time": "2024-06-12T07:00:00Z",
+      "end_time": "2024-06-12T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 175,
+      "min_bpm": 45,
+      "avg_bpm": 79,
+      "start_time": "2024-06-13T07:00:00Z",
+      "end_time": "2024-06-13T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 191,
+      "min_bpm": 45,
+      "avg_bpm": 68,
+      "start_time": "2024-06-14T07:00:00Z",
+      "end_time": "2024-06-14T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 184,
+      "min_bpm": 43,
+      "avg_bpm": 70,
+      "start_time": "2024-06-15T07:00:00Z",
+      "end_time": "2024-06-15T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 195,
+      "min_bpm": 47,
+      "avg_bpm": 71,
+      "start_time": "2024-06-16T07:00:00Z",
+      "end_time": "2024-06-16T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 183,
+      "min_bpm": 43,
+      "avg_bpm": 73,
+      "start_time": "2024-06-17T07:00:00Z",
+      "end_time": "2024-06-17T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 192,
+      "min_bpm": 44,
+      "avg_bpm": 66,
+      "start_time": "2024-06-18T07:00:00Z",
+      "end_time": "2024-06-18T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 197,
+      "min_bpm": 42,
+      "avg_bpm": 72,
+      "start_time": "2024-06-19T07:00:00Z",
+      "end_time": "2024-06-19T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 184,
+      "min_bpm": 40,
+      "avg_bpm": 73,
+      "start_time": "2024-06-20T07:00:00Z",
+      "end_time": "2024-06-20T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 187,
+      "min_bpm": 44,
+      "avg_bpm": 73,
+      "start_time": "2024-06-21T07:00:00Z",
+      "end_time": "2024-06-21T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 190,
+      "min_bpm": 48,
+      "avg_bpm": 68,
+      "start_time": "2024-06-22T07:00:00Z",
+      "end_time": "2024-06-22T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 194,
+      "min_bpm": 44,
+      "avg_bpm": 72,
+      "start_time": "2024-06-23T07:00:00Z",
+      "end_time": "2024-06-23T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 183,
+      "min_bpm": 45,
+      "avg_bpm": 69,
+      "start_time": "2024-06-24T07:00:00Z",
+      "end_time": "2024-06-24T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 198,
+      "min_bpm": 49,
+      "avg_bpm": 76,
+      "start_time": "2024-06-25T07:00:00Z",
+      "end_time": "2024-06-25T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 188,
+      "min_bpm": 43,
+      "avg_bpm": 79,
+      "start_time": "2024-06-26T07:00:00Z",
+      "end_time": "2024-06-26T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 184,
+      "min_bpm": 52,
+      "avg_bpm": 72,
+      "start_time": "2024-06-27T07:00:00Z",
+      "end_time": "2024-06-27T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 188,
+      "min_bpm": 47,
+      "avg_bpm": 74,
+      "start_time": "2024-06-28T07:00:00Z",
+      "end_time": "2024-06-28T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 181,
+      "min_bpm": 50,
+      "avg_bpm": 80,
+      "start_time": "2024-06-29T07:00:00Z",
+      "end_time": "2024-06-29T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 192,
+      "min_bpm": 44,
+      "avg_bpm": 69,
+      "start_time": "2024-06-30T07:00:00Z",
+      "end_time": "2024-06-30T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 194,
+      "min_bpm": 40,
+      "avg_bpm": 67,
+      "start_time": "2024-07-01T07:00:00Z",
+      "end_time": "2024-07-01T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 177,
+      "min_bpm": 40,
+      "avg_bpm": 74,
+      "start_time": "2024-07-02T07:00:00Z",
+      "end_time": "2024-07-02T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 191,
+      "min_bpm": 45,
+      "avg_bpm": 61,
+      "start_time": "2024-07-03T07:00:00Z",
+      "end_time": "2024-07-03T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 191,
+      "min_bpm": 42,
+      "avg_bpm": 73,
+      "start_time": "2024-07-04T07:00:00Z",
+      "end_time": "2024-07-04T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 180,
+      "min_bpm": 45,
+      "avg_bpm": 61,
+      "start_time": "2024-07-05T07:00:00Z",
+      "end_time": "2024-07-05T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 189,
+      "min_bpm": 47,
+      "avg_bpm": 67,
+      "start_time": "2024-07-06T07:00:00Z",
+      "end_time": "2024-07-06T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 181,
+      "min_bpm": 42,
+      "avg_bpm": 72,
+      "start_time": "2024-07-07T07:00:00Z",
+      "end_time": "2024-07-07T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 194,
+      "min_bpm": 45,
+      "avg_bpm": 72,
+      "start_time": "2024-07-08T07:00:00Z",
+      "end_time": "2024-07-08T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 187,
+      "min_bpm": 45,
+      "avg_bpm": 78,
+      "start_time": "2024-07-09T07:00:00Z",
+      "end_time": "2024-07-09T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 182,
+      "min_bpm": 45,
+      "avg_bpm": 73,
+      "start_time": "2024-07-10T07:00:00Z",
+      "end_time": "2024-07-10T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 189,
+      "min_bpm": 42,
+      "avg_bpm": 68,
+      "start_time": "2024-07-11T07:00:00Z",
+      "end_time": "2024-07-11T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 185,
+      "min_bpm": 44,
+      "avg_bpm": 67,
+      "start_time": "2024-07-12T07:00:00Z",
+      "end_time": "2024-07-12T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 191,
+      "min_bpm": 47,
+      "avg_bpm": 68,
+      "start_time": "2024-07-13T07:00:00Z",
+      "end_time": "2024-07-13T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 187,
+      "min_bpm": 43,
+      "avg_bpm": 64,
+      "start_time": "2024-07-14T07:00:00Z",
+      "end_time": "2024-07-14T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 190,
+      "min_bpm": 39,
+      "avg_bpm": 66,
+      "start_time": "2024-07-15T07:00:00Z",
+      "end_time": "2024-07-15T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 193,
+      "min_bpm": 40,
+      "avg_bpm": 72,
+      "start_time": "2024-07-16T07:00:00Z",
+      "end_time": "2024-07-16T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 195,
+      "min_bpm": 46,
+      "avg_bpm": 70,
+      "start_time": "2024-07-17T07:00:00Z",
+      "end_time": "2024-07-17T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 183,
+      "min_bpm": 43,
+      "avg_bpm": 79,
+      "start_time": "2024-07-18T07:00:00Z",
+      "end_time": "2024-07-18T09:00:00Z"
+    },
+    {
+      "user_id": 104,
+      "source": "apple_health",
+      "max_bpm": 188,
+      "min_bpm": 46,
+      "avg_bpm": 64,
+      "start_time": "2024-07-19T07:00:00Z",
+      "end_time": "2024-07-19T09:00:00Z"
+    }
+  ],
+  "dedup_sleep_sessions": [
+    {
+      "user_id": 104,
+      "date": "2024-05-01",
+      "stage_type": 2,
+      "duration_minutes": 89,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-01",
+      "stage_type": 3,
+      "duration_minutes": 125,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-01",
+      "stage_type": 1,
+      "duration_minutes": 289,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-01",
+      "stage_type": 4,
+      "duration_minutes": 12,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-02",
+      "stage_type": 2,
+      "duration_minutes": 106,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-02",
+      "stage_type": 3,
+      "duration_minutes": 130,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-02",
+      "stage_type": 1,
+      "duration_minutes": 262,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-02",
+      "stage_type": 4,
+      "duration_minutes": 16,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-03",
+      "stage_type": 2,
+      "duration_minutes": 101,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-03",
+      "stage_type": 3,
+      "duration_minutes": 120,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-03",
+      "stage_type": 1,
+      "duration_minutes": 290,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-03",
+      "stage_type": 4,
+      "duration_minutes": 13,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-04",
+      "stage_type": 2,
+      "duration_minutes": 114,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-04",
+      "stage_type": 3,
+      "duration_minutes": 127,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-04",
+      "stage_type": 1,
+      "duration_minutes": 317,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-04",
+      "stage_type": 4,
+      "duration_minutes": 14,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-05",
+      "stage_type": 2,
+      "duration_minutes": 103,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-05",
+      "stage_type": 3,
+      "duration_minutes": 142,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-05",
+      "stage_type": 1,
+      "duration_minutes": 297,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-05",
+      "stage_type": 4,
+      "duration_minutes": 16,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-06",
+      "stage_type": 2,
+      "duration_minutes": 125,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-06",
+      "stage_type": 3,
+      "duration_minutes": 119,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-06",
+      "stage_type": 1,
+      "duration_minutes": 238,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-06",
+      "stage_type": 4,
+      "duration_minutes": 16,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-07",
+      "stage_type": 2,
+      "duration_minutes": 96,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-07",
+      "stage_type": 3,
+      "duration_minutes": 115,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-07",
+      "stage_type": 1,
+      "duration_minutes": 260,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-07",
+      "stage_type": 4,
+      "duration_minutes": 17,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-08",
+      "stage_type": 2,
+      "duration_minutes": 110,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-08",
+      "stage_type": 3,
+      "duration_minutes": 116,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-08",
+      "stage_type": 1,
+      "duration_minutes": 274,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-08",
+      "stage_type": 4,
+      "duration_minutes": 13,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-09",
+      "stage_type": 2,
+      "duration_minutes": 116,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-09",
+      "stage_type": 3,
+      "duration_minutes": 106,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-09",
+      "stage_type": 1,
+      "duration_minutes": 290,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-09",
+      "stage_type": 4,
+      "duration_minutes": 15,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-10",
+      "stage_type": 2,
+      "duration_minutes": 112,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-10",
+      "stage_type": 3,
+      "duration_minutes": 117,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-10",
+      "stage_type": 1,
+      "duration_minutes": 300,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-10",
+      "stage_type": 4,
+      "duration_minutes": 14,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-11",
+      "stage_type": 2,
+      "duration_minutes": 82,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-11",
+      "stage_type": 3,
+      "duration_minutes": 145,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-11",
+      "stage_type": 1,
+      "duration_minutes": 267,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-11",
+      "stage_type": 4,
+      "duration_minutes": 16,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-12",
+      "stage_type": 2,
+      "duration_minutes": 95,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-12",
+      "stage_type": 3,
+      "duration_minutes": 132,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-12",
+      "stage_type": 1,
+      "duration_minutes": 301,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-12",
+      "stage_type": 4,
+      "duration_minutes": 15,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-13",
+      "stage_type": 2,
+      "duration_minutes": 116,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-13",
+      "stage_type": 3,
+      "duration_minutes": 128,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-13",
+      "stage_type": 1,
+      "duration_minutes": 257,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-13",
+      "stage_type": 4,
+      "duration_minutes": 13,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-14",
+      "stage_type": 2,
+      "duration_minutes": 95,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-14",
+      "stage_type": 3,
+      "duration_minutes": 130,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-14",
+      "stage_type": 1,
+      "duration_minutes": 281,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-14",
+      "stage_type": 4,
+      "duration_minutes": 18,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-15",
+      "stage_type": 2,
+      "duration_minutes": 113,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-15",
+      "stage_type": 3,
+      "duration_minutes": 128,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-15",
+      "stage_type": 1,
+      "duration_minutes": 273,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-15",
+      "stage_type": 4,
+      "duration_minutes": 13,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-16",
+      "stage_type": 2,
+      "duration_minutes": 97,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-16",
+      "stage_type": 3,
+      "duration_minutes": 140,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-16",
+      "stage_type": 1,
+      "duration_minutes": 284,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-16",
+      "stage_type": 4,
+      "duration_minutes": 8,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-17",
+      "stage_type": 2,
+      "duration_minutes": 126,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-17",
+      "stage_type": 3,
+      "duration_minutes": 141,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-17",
+      "stage_type": 1,
+      "duration_minutes": 278,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-17",
+      "stage_type": 4,
+      "duration_minutes": 16,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-18",
+      "stage_type": 2,
+      "duration_minutes": 104,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-18",
+      "stage_type": 3,
+      "duration_minutes": 145,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-18",
+      "stage_type": 1,
+      "duration_minutes": 280,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-18",
+      "stage_type": 4,
+      "duration_minutes": 12,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-19",
+      "stage_type": 2,
+      "duration_minutes": 108,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-19",
+      "stage_type": 3,
+      "duration_minutes": 138,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-19",
+      "stage_type": 1,
+      "duration_minutes": 273,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-19",
+      "stage_type": 4,
+      "duration_minutes": 16,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-20",
+      "stage_type": 2,
+      "duration_minutes": 122,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-20",
+      "stage_type": 3,
+      "duration_minutes": 128,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-20",
+      "stage_type": 1,
+      "duration_minutes": 303,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-20",
+      "stage_type": 4,
+      "duration_minutes": 16,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-21",
+      "stage_type": 2,
+      "duration_minutes": 100,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-21",
+      "stage_type": 3,
+      "duration_minutes": 151,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-21",
+      "stage_type": 1,
+      "duration_minutes": 278,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-21",
+      "stage_type": 4,
+      "duration_minutes": 16,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-22",
+      "stage_type": 2,
+      "duration_minutes": 102,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-22",
+      "stage_type": 3,
+      "duration_minutes": 119,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-22",
+      "stage_type": 1,
+      "duration_minutes": 284,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-22",
+      "stage_type": 4,
+      "duration_minutes": 11,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-23",
+      "stage_type": 2,
+      "duration_minutes": 106,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-23",
+      "stage_type": 3,
+      "duration_minutes": 148,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-23",
+      "stage_type": 1,
+      "duration_minutes": 297,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-23",
+      "stage_type": 4,
+      "duration_minutes": 18,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-24",
+      "stage_type": 2,
+      "duration_minutes": 96,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-24",
+      "stage_type": 3,
+      "duration_minutes": 121,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-24",
+      "stage_type": 1,
+      "duration_minutes": 272,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-24",
+      "stage_type": 4,
+      "duration_minutes": 14,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-25",
+      "stage_type": 2,
+      "duration_minutes": 108,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-25",
+      "stage_type": 3,
+      "duration_minutes": 152,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-25",
+      "stage_type": 1,
+      "duration_minutes": 281,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-25",
+      "stage_type": 4,
+      "duration_minutes": 14,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-26",
+      "stage_type": 2,
+      "duration_minutes": 89,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-26",
+      "stage_type": 3,
+      "duration_minutes": 129,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-26",
+      "stage_type": 1,
+      "duration_minutes": 277,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-26",
+      "stage_type": 4,
+      "duration_minutes": 17,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-27",
+      "stage_type": 2,
+      "duration_minutes": 94,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-27",
+      "stage_type": 3,
+      "duration_minutes": 130,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-27",
+      "stage_type": 1,
+      "duration_minutes": 263,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-27",
+      "stage_type": 4,
+      "duration_minutes": 11,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-28",
+      "stage_type": 2,
+      "duration_minutes": 113,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-28",
+      "stage_type": 3,
+      "duration_minutes": 128,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-28",
+      "stage_type": 1,
+      "duration_minutes": 278,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-28",
+      "stage_type": 4,
+      "duration_minutes": 18,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-29",
+      "stage_type": 2,
+      "duration_minutes": 110,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-29",
+      "stage_type": 3,
+      "duration_minutes": 120,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-29",
+      "stage_type": 1,
+      "duration_minutes": 291,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-29",
+      "stage_type": 4,
+      "duration_minutes": 13,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-30",
+      "stage_type": 2,
+      "duration_minutes": 93,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-30",
+      "stage_type": 3,
+      "duration_minutes": 132,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-30",
+      "stage_type": 1,
+      "duration_minutes": 287,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-30",
+      "stage_type": 4,
+      "duration_minutes": 16,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-31",
+      "stage_type": 2,
+      "duration_minutes": 87,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-31",
+      "stage_type": 3,
+      "duration_minutes": 134,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-31",
+      "stage_type": 1,
+      "duration_minutes": 270,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-31",
+      "stage_type": 4,
+      "duration_minutes": 17,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-01",
+      "stage_type": 2,
+      "duration_minutes": 114,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-01",
+      "stage_type": 3,
+      "duration_minutes": 109,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-01",
+      "stage_type": 1,
+      "duration_minutes": 269,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-01",
+      "stage_type": 4,
+      "duration_minutes": 15,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-02",
+      "stage_type": 2,
+      "duration_minutes": 100,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-02",
+      "stage_type": 3,
+      "duration_minutes": 118,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-02",
+      "stage_type": 1,
+      "duration_minutes": 283,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-02",
+      "stage_type": 4,
+      "duration_minutes": 18,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-03",
+      "stage_type": 2,
+      "duration_minutes": 99,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-03",
+      "stage_type": 3,
+      "duration_minutes": 142,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-03",
+      "stage_type": 1,
+      "duration_minutes": 280,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-03",
+      "stage_type": 4,
+      "duration_minutes": 14,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-04",
+      "stage_type": 2,
+      "duration_minutes": 82,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-04",
+      "stage_type": 3,
+      "duration_minutes": 136,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-04",
+      "stage_type": 1,
+      "duration_minutes": 292,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-04",
+      "stage_type": 4,
+      "duration_minutes": 13,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-05",
+      "stage_type": 2,
+      "duration_minutes": 107,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-05",
+      "stage_type": 3,
+      "duration_minutes": 138,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-05",
+      "stage_type": 1,
+      "duration_minutes": 259,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-05",
+      "stage_type": 4,
+      "duration_minutes": 19,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-06",
+      "stage_type": 2,
+      "duration_minutes": 109,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-06",
+      "stage_type": 3,
+      "duration_minutes": 128,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-06",
+      "stage_type": 1,
+      "duration_minutes": 273,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-06",
+      "stage_type": 4,
+      "duration_minutes": 8,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-07",
+      "stage_type": 2,
+      "duration_minutes": 107,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-07",
+      "stage_type": 3,
+      "duration_minutes": 141,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-07",
+      "stage_type": 1,
+      "duration_minutes": 263,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-07",
+      "stage_type": 4,
+      "duration_minutes": 11,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-08",
+      "stage_type": 2,
+      "duration_minutes": 110,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-08",
+      "stage_type": 3,
+      "duration_minutes": 132,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-08",
+      "stage_type": 1,
+      "duration_minutes": 294,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-08",
+      "stage_type": 4,
+      "duration_minutes": 15,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-09",
+      "stage_type": 2,
+      "duration_minutes": 112,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-09",
+      "stage_type": 3,
+      "duration_minutes": 150,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-09",
+      "stage_type": 1,
+      "duration_minutes": 315,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-09",
+      "stage_type": 4,
+      "duration_minutes": 16,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-10",
+      "stage_type": 2,
+      "duration_minutes": 101,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-10",
+      "stage_type": 3,
+      "duration_minutes": 120,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-10",
+      "stage_type": 1,
+      "duration_minutes": 257,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-10",
+      "stage_type": 4,
+      "duration_minutes": 20,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-11",
+      "stage_type": 2,
+      "duration_minutes": 100,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-11",
+      "stage_type": 3,
+      "duration_minutes": 125,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-11",
+      "stage_type": 1,
+      "duration_minutes": 256,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-11",
+      "stage_type": 4,
+      "duration_minutes": 18,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-12",
+      "stage_type": 2,
+      "duration_minutes": 109,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-12",
+      "stage_type": 3,
+      "duration_minutes": 128,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-12",
+      "stage_type": 1,
+      "duration_minutes": 277,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-12",
+      "stage_type": 4,
+      "duration_minutes": 16,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-13",
+      "stage_type": 2,
+      "duration_minutes": 98,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-13",
+      "stage_type": 3,
+      "duration_minutes": 127,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-13",
+      "stage_type": 1,
+      "duration_minutes": 283,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-13",
+      "stage_type": 4,
+      "duration_minutes": 18,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-14",
+      "stage_type": 2,
+      "duration_minutes": 79,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-14",
+      "stage_type": 3,
+      "duration_minutes": 132,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-14",
+      "stage_type": 1,
+      "duration_minutes": 263,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-14",
+      "stage_type": 4,
+      "duration_minutes": 15,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-15",
+      "stage_type": 2,
+      "duration_minutes": 100,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-15",
+      "stage_type": 3,
+      "duration_minutes": 142,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-15",
+      "stage_type": 1,
+      "duration_minutes": 298,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-15",
+      "stage_type": 4,
+      "duration_minutes": 14,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-16",
+      "stage_type": 2,
+      "duration_minutes": 100,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-16",
+      "stage_type": 3,
+      "duration_minutes": 135,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-16",
+      "stage_type": 1,
+      "duration_minutes": 312,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-16",
+      "stage_type": 4,
+      "duration_minutes": 16,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-17",
+      "stage_type": 2,
+      "duration_minutes": 106,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-17",
+      "stage_type": 3,
+      "duration_minutes": 124,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-17",
+      "stage_type": 1,
+      "duration_minutes": 272,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-17",
+      "stage_type": 4,
+      "duration_minutes": 17,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-18",
+      "stage_type": 2,
+      "duration_minutes": 94,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-18",
+      "stage_type": 3,
+      "duration_minutes": 139,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-18",
+      "stage_type": 1,
+      "duration_minutes": 281,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-18",
+      "stage_type": 4,
+      "duration_minutes": 16,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-19",
+      "stage_type": 2,
+      "duration_minutes": 98,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-19",
+      "stage_type": 3,
+      "duration_minutes": 130,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-19",
+      "stage_type": 1,
+      "duration_minutes": 281,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-19",
+      "stage_type": 4,
+      "duration_minutes": 15,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-20",
+      "stage_type": 2,
+      "duration_minutes": 104,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-20",
+      "stage_type": 3,
+      "duration_minutes": 145,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-20",
+      "stage_type": 1,
+      "duration_minutes": 237,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-20",
+      "stage_type": 4,
+      "duration_minutes": 10,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-21",
+      "stage_type": 2,
+      "duration_minutes": 89,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-21",
+      "stage_type": 3,
+      "duration_minutes": 120,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-21",
+      "stage_type": 1,
+      "duration_minutes": 297,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-21",
+      "stage_type": 4,
+      "duration_minutes": 13,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-22",
+      "stage_type": 2,
+      "duration_minutes": 87,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-22",
+      "stage_type": 3,
+      "duration_minutes": 130,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-22",
+      "stage_type": 1,
+      "duration_minutes": 260,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-22",
+      "stage_type": 4,
+      "duration_minutes": 12,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-23",
+      "stage_type": 2,
+      "duration_minutes": 112,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-23",
+      "stage_type": 3,
+      "duration_minutes": 137,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-23",
+      "stage_type": 1,
+      "duration_minutes": 257,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-23",
+      "stage_type": 4,
+      "duration_minutes": 18,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-24",
+      "stage_type": 2,
+      "duration_minutes": 106,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-24",
+      "stage_type": 3,
+      "duration_minutes": 142,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-24",
+      "stage_type": 1,
+      "duration_minutes": 257,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-24",
+      "stage_type": 4,
+      "duration_minutes": 18,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-25",
+      "stage_type": 2,
+      "duration_minutes": 85,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-25",
+      "stage_type": 3,
+      "duration_minutes": 130,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-25",
+      "stage_type": 1,
+      "duration_minutes": 279,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-25",
+      "stage_type": 4,
+      "duration_minutes": 14,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-26",
+      "stage_type": 2,
+      "duration_minutes": 98,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-26",
+      "stage_type": 3,
+      "duration_minutes": 118,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-26",
+      "stage_type": 1,
+      "duration_minutes": 286,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-26",
+      "stage_type": 4,
+      "duration_minutes": 14,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-27",
+      "stage_type": 2,
+      "duration_minutes": 88,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-27",
+      "stage_type": 3,
+      "duration_minutes": 135,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-27",
+      "stage_type": 1,
+      "duration_minutes": 255,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-27",
+      "stage_type": 4,
+      "duration_minutes": 19,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-28",
+      "stage_type": 2,
+      "duration_minutes": 113,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-28",
+      "stage_type": 3,
+      "duration_minutes": 131,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-28",
+      "stage_type": 1,
+      "duration_minutes": 269,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-28",
+      "stage_type": 4,
+      "duration_minutes": 15,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-29",
+      "stage_type": 2,
+      "duration_minutes": 90,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-29",
+      "stage_type": 3,
+      "duration_minutes": 146,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-29",
+      "stage_type": 1,
+      "duration_minutes": 277,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-29",
+      "stage_type": 4,
+      "duration_minutes": 20,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-30",
+      "stage_type": 2,
+      "duration_minutes": 104,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-30",
+      "stage_type": 3,
+      "duration_minutes": 119,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-30",
+      "stage_type": 1,
+      "duration_minutes": 293,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-30",
+      "stage_type": 4,
+      "duration_minutes": 12,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-01",
+      "stage_type": 2,
+      "duration_minutes": 112,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-01",
+      "stage_type": 3,
+      "duration_minutes": 110,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-01",
+      "stage_type": 1,
+      "duration_minutes": 275,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-01",
+      "stage_type": 4,
+      "duration_minutes": 13,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-02",
+      "stage_type": 2,
+      "duration_minutes": 101,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-02",
+      "stage_type": 3,
+      "duration_minutes": 130,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-02",
+      "stage_type": 1,
+      "duration_minutes": 276,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-02",
+      "stage_type": 4,
+      "duration_minutes": 18,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-03",
+      "stage_type": 2,
+      "duration_minutes": 78,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-03",
+      "stage_type": 3,
+      "duration_minutes": 125,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-03",
+      "stage_type": 1,
+      "duration_minutes": 265,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-03",
+      "stage_type": 4,
+      "duration_minutes": 13,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-04",
+      "stage_type": 2,
+      "duration_minutes": 103,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-04",
+      "stage_type": 3,
+      "duration_minutes": 139,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-04",
+      "stage_type": 1,
+      "duration_minutes": 301,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-04",
+      "stage_type": 4,
+      "duration_minutes": 15,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-05",
+      "stage_type": 2,
+      "duration_minutes": 108,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-05",
+      "stage_type": 3,
+      "duration_minutes": 128,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-05",
+      "stage_type": 1,
+      "duration_minutes": 264,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-05",
+      "stage_type": 4,
+      "duration_minutes": 12,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-06",
+      "stage_type": 2,
+      "duration_minutes": 90,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-06",
+      "stage_type": 3,
+      "duration_minutes": 129,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-06",
+      "stage_type": 1,
+      "duration_minutes": 294,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-06",
+      "stage_type": 4,
+      "duration_minutes": 15,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-07",
+      "stage_type": 2,
+      "duration_minutes": 103,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-07",
+      "stage_type": 3,
+      "duration_minutes": 115,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-07",
+      "stage_type": 1,
+      "duration_minutes": 282,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-07",
+      "stage_type": 4,
+      "duration_minutes": 8,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-08",
+      "stage_type": 2,
+      "duration_minutes": 97,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-08",
+      "stage_type": 3,
+      "duration_minutes": 110,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-08",
+      "stage_type": 1,
+      "duration_minutes": 278,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-08",
+      "stage_type": 4,
+      "duration_minutes": 10,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-09",
+      "stage_type": 2,
+      "duration_minutes": 77,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-09",
+      "stage_type": 3,
+      "duration_minutes": 134,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-09",
+      "stage_type": 1,
+      "duration_minutes": 255,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-09",
+      "stage_type": 4,
+      "duration_minutes": 14,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-10",
+      "stage_type": 2,
+      "duration_minutes": 98,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-10",
+      "stage_type": 3,
+      "duration_minutes": 139,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-10",
+      "stage_type": 1,
+      "duration_minutes": 281,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-10",
+      "stage_type": 4,
+      "duration_minutes": 12,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-11",
+      "stage_type": 2,
+      "duration_minutes": 102,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-11",
+      "stage_type": 3,
+      "duration_minutes": 143,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-11",
+      "stage_type": 1,
+      "duration_minutes": 279,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-11",
+      "stage_type": 4,
+      "duration_minutes": 18,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-12",
+      "stage_type": 2,
+      "duration_minutes": 92,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-12",
+      "stage_type": 3,
+      "duration_minutes": 124,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-12",
+      "stage_type": 1,
+      "duration_minutes": 278,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-12",
+      "stage_type": 4,
+      "duration_minutes": 13,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-13",
+      "stage_type": 2,
+      "duration_minutes": 88,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-13",
+      "stage_type": 3,
+      "duration_minutes": 134,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-13",
+      "stage_type": 1,
+      "duration_minutes": 279,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-13",
+      "stage_type": 4,
+      "duration_minutes": 14,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-14",
+      "stage_type": 2,
+      "duration_minutes": 99,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-14",
+      "stage_type": 3,
+      "duration_minutes": 138,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-14",
+      "stage_type": 1,
+      "duration_minutes": 280,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-14",
+      "stage_type": 4,
+      "duration_minutes": 12,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-15",
+      "stage_type": 2,
+      "duration_minutes": 93,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-15",
+      "stage_type": 3,
+      "duration_minutes": 159,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-15",
+      "stage_type": 1,
+      "duration_minutes": 269,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-15",
+      "stage_type": 4,
+      "duration_minutes": 16,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-16",
+      "stage_type": 2,
+      "duration_minutes": 105,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-16",
+      "stage_type": 3,
+      "duration_minutes": 147,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-16",
+      "stage_type": 1,
+      "duration_minutes": 246,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-16",
+      "stage_type": 4,
+      "duration_minutes": 12,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-17",
+      "stage_type": 2,
+      "duration_minutes": 104,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-17",
+      "stage_type": 3,
+      "duration_minutes": 142,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-17",
+      "stage_type": 1,
+      "duration_minutes": 262,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-17",
+      "stage_type": 4,
+      "duration_minutes": 17,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-18",
+      "stage_type": 2,
+      "duration_minutes": 82,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-18",
+      "stage_type": 3,
+      "duration_minutes": 128,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-18",
+      "stage_type": 1,
+      "duration_minutes": 280,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-18",
+      "stage_type": 4,
+      "duration_minutes": 15,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-19",
+      "stage_type": 2,
+      "duration_minutes": 77,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-19",
+      "stage_type": 3,
+      "duration_minutes": 135,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-19",
+      "stage_type": 1,
+      "duration_minutes": 293,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-19",
+      "stage_type": 4,
+      "duration_minutes": 14,
+      "source": "garmin"
+    }
+  ],
+  "dedup_daily_steps": [
+    {
+      "user_id": 104,
+      "date": "2024-05-01",
+      "steps": 14577,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-02",
+      "steps": 13741,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-03",
+      "steps": 16308,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-04",
+      "steps": 14689,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-05",
+      "steps": 16212,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-06",
+      "steps": 12385,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-07",
+      "steps": 15439,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-08",
+      "steps": 17581,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-09",
+      "steps": 14945,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-10",
+      "steps": 13774,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-11",
+      "steps": 14448,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-12",
+      "steps": 15732,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-13",
+      "steps": 12070,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-14",
+      "steps": 16653,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-15",
+      "steps": 14297,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-16",
+      "steps": 14458,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-17",
+      "steps": 13952,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-18",
+      "steps": 14544,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-19",
+      "steps": 15864,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-20",
+      "steps": 15923,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-21",
+      "steps": 14755,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-22",
+      "steps": 16401,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-23",
+      "steps": 15918,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-24",
+      "steps": 14614,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-25",
+      "steps": 13451,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-26",
+      "steps": 13697,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-27",
+      "steps": 15588,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-28",
+      "steps": 15603,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-29",
+      "steps": 13765,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-30",
+      "steps": 14814,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-05-31",
+      "steps": 14706,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-01",
+      "steps": 12173,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-02",
+      "steps": 14747,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-03",
+      "steps": 16834,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-04",
+      "steps": 14601,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-05",
+      "steps": 15840,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-06",
+      "steps": 11790,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-07",
+      "steps": 10863,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-08",
+      "steps": 15648,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-09",
+      "steps": 13687,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-10",
+      "steps": 11272,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-11",
+      "steps": 13979,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-12",
+      "steps": 12400,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-13",
+      "steps": 12705,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-14",
+      "steps": 11204,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-15",
+      "steps": 13631,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-16",
+      "steps": 13961,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-17",
+      "steps": 13823,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-18",
+      "steps": 17493,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-19",
+      "steps": 13845,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-20",
+      "steps": 13652,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-21",
+      "steps": 14651,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-22",
+      "steps": 12812,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-23",
+      "steps": 13354,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-24",
+      "steps": 15720,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-25",
+      "steps": 15229,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-26",
+      "steps": 12938,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-27",
+      "steps": 11161,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-28",
+      "steps": 17442,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-29",
+      "steps": 12215,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-06-30",
+      "steps": 13376,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-01",
+      "steps": 16123,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-02",
+      "steps": 17021,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-03",
+      "steps": 12284,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-04",
+      "steps": 9833,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-05",
+      "steps": 12658,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-06",
+      "steps": 15210,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-07",
+      "steps": 12121,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-08",
+      "steps": 14399,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-09",
+      "steps": 14022,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-10",
+      "steps": 16024,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-11",
+      "steps": 11973,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-12",
+      "steps": 14587,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-13",
+      "steps": 14891,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-14",
+      "steps": 15062,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-15",
+      "steps": 12448,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-16",
+      "steps": 14360,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-17",
+      "steps": 17102,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-18",
+      "steps": 10479,
+      "source": "garmin"
+    },
+    {
+      "user_id": 104,
+      "date": "2024-07-19",
+      "steps": 15857,
+      "source": "garmin"
+    }
+  ]
+}

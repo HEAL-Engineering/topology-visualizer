@@ -28,6 +28,7 @@ export default function PointCloud() {
   const activeRamp = useAtlasStore(s => s.activeRamp);
   const theme = useAtlasStore(s => s.theme);
   const setSelectedPoint = useAtlasStore(s => s.setSelectedPoint);
+  const setHoveredPoint = useAtlasStore(s => s.setHoveredPoint);
   const setInspectedCategory = useAtlasStore(s => s.setInspectedCategory);
   const setInspectedSubIndex = useAtlasStore(s => s.setInspectedSubIndex);
   const { pointSubIndex } = useDerivedState();
@@ -199,15 +200,19 @@ export default function PointCloud() {
   };
 
   /**
-   * Pointer cursor reflects whether the hovered point is interactable.
-   * Fires per-point as the cursor moves across the cloud, so the cursor
-   * switches between `pointer` and `default` as you sweep over a mix of
-   * filtered-in and filtered-out points.
+   * Pointer cursor reflects whether the hovered point is interactable, and
+   * we publish the hovered point so the EventCard can render a transient
+   * preview without requiring a click. Fires per-point as the cursor
+   * moves across the cloud, so the cursor switches between `pointer` and
+   * `default` (and `hoveredPoint` flips between live points and null) as
+   * you sweep over a mix of filtered-in and filtered-out points.
    */
   const handlePointerMove = (e: ThreeEvent<PointerEvent>) => {
     if (e.index == null) return;
     const point = dataset.points[e.index];
-    document.body.style.cursor = point && isPointVisible(point) ? 'pointer' : 'default';
+    const visible = !!point && isPointVisible(point);
+    document.body.style.cursor = visible ? 'pointer' : 'default';
+    setHoveredPoint(visible ? point : null);
   };
 
   return (
@@ -216,7 +221,10 @@ export default function PointCloud() {
       geometry={geometry}
       onClick={handleClick}
       onPointerMove={handlePointerMove}
-      onPointerOut={() => { document.body.style.cursor = 'default'; }}
+      onPointerOut={() => {
+        document.body.style.cursor = 'default';
+        setHoveredPoint(null);
+      }}
       raycast={(rc, intersects) => {
         rc.params.Points!.threshold = 0.22;
         THREE.Points.prototype.raycast.call(pointsRef.current!, rc, intersects);

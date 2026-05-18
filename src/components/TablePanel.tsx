@@ -7,6 +7,20 @@ import { flattenUser, type RawRow } from '../schema/raw';
 const POINT_SORT_KEYS = ['user', 'category', 'label', 'value', 'id'] as const;
 const RAW_SORT_KEYS = ['user', 'when', 'kind', 'value', 'source'] as const;
 
+/**
+ * Cohort preset chips. Each preset solos a subset of the canonical
+ * heal-atlas cohorts in one click. Only presets whose categories all
+ * exist in the active dataset are rendered — non-cohort datasets don't
+ * see the preset row at all.
+ */
+const COHORT_PRESETS: { label: string; categories: string[] }[] = [
+  { label: 'Averages', categories: ['avg_male', 'avg_female'] },
+  { label: 'Elites',   categories: ['elite_male', 'elite_female'] },
+  { label: 'Male',     categories: ['avg_male', 'elite_male'] },
+  { label: 'Female',   categories: ['avg_female', 'elite_female'] },
+  { label: 'User',     categories: ['user'] },
+];
+
 const KIND_COLORS: Record<RawRow['kind'], string> = {
   heart_rate: '#ff6b6b',
   sleep: '#7c3aed',
@@ -26,12 +40,24 @@ export default function TablePanel() {
   const tableSort = useAtlasStore(s => s.tableSort);
   const tableView = useAtlasStore(s => s.tableView);
   const selectedPoint = useAtlasStore(s => s.selectedPoint);
+  const enabledCategories = useAtlasStore(s => s.enabledCategories);
+  const enableAll = useAtlasStore(s => s.enableAll);
   const setShowTable = useAtlasStore(s => s.setShowTable);
   const setTableSort = useAtlasStore(s => s.setTableSort);
   const setTableView = useAtlasStore(s => s.setTableView);
   const setSelectedPoint = useAtlasStore(s => s.setSelectedPoint);
 
   const { filteredWithIdx } = useDerivedState();
+
+  // Map a RawUser's user_id → category id for filter binding. Persona mode
+  // (publish-raw --personas) sets user_id to the cohort name directly
+  // ("avg_male", "user", …) so it matches. Legacy single-user mode uses a
+  // numeric id from the dedup dump; fall back to "user" so those rows track
+  // the user filter rather than disappearing.
+  const rawUserToCategoryId = useMemo(() => {
+    const knownCategoryIds = new Set(dataset?.categories.map(c => c.id) ?? []);
+    return (rawUserId: string): string => knownCategoryIds.has(rawUserId) ? rawUserId : 'user';
+  }, [dataset]);
 
   const categoryById = useMemo(() => {
     const m = new Map<string, { color: string; label: string }>();
@@ -65,13 +91,27 @@ export default function TablePanel() {
   }, [filteredWithIdx]);
 
   // ---------- Raw mode ----------
+  // Raw rows respect the same category filter as the 3D scene + Points
+  // table. Toggling "Avg Female" off in FilterPanel hides both her atlas
+  // points AND her raw records. Single-user dumps (legacy synth path)
+  // map to the 'user' category, so they follow the user toggle.
   const rawRows = useMemo<RawRow[]>(() => {
     if (!rawBundle) return [];
     const rows: RawRow[] = [];
     for (const user of Object.values(rawBundle.users)) {
+      if (!enabledCategories.has(rawUserToCategoryId(user.userId))) continue;
       rows.push(...flattenUser(user));
     }
     return rows;
+  }, [rawBundle, enabledCategories, rawUserToCategoryId]);
+
+  const rawRowsTotal = useMemo(() => {
+    if (!rawBundle) return 0;
+    let n = 0;
+    for (const u of Object.values(rawBundle.users)) {
+      n += u.heart_rates.length + u.sleep_sessions.length + u.daily_steps.length;
+    }
+    return n;
   }, [rawBundle]);
 
   const sortedRaw = useMemo(() => {
@@ -91,7 +131,46 @@ export default function TablePanel() {
     return arr;
   }, [rawRows, tableSort]);
 
-  const rawUserCount = rawBundle ? Object.keys(rawBundle.users).length : 0;
+  const rawUserCount = useMemo(() => {
+    if (!rawBundle) return 0;
+    return Object.values(rawBundle.users).filter(u => enabledCategories.has(rawUserToCategoryId(u.userId))).length;
+  }, [rawBundle, enabledCategories, rawUserToCategoryId]);
+  const rawUserTotal = rawBundle ? Object.keys(rawBundle.users).length : 0;
+
+  // Preset chips share the FilterPanel's filter state but render here so
+  // they sit alongside the table they re-scope. Hidden in non-cohort
+  // datasets where none of the canonical category ids are present.
+  const labelsByCategory = useMemo(() => {
+    const map = new Map<string, string[]>();
+    if (!dataset) return map;
+    for (const p of dataset.points) {
+      if (!p.label) continue;
+      const existing = map.get(p.category) ?? [];
+      if (!existing.includes(p.label)) existing.push(p.label);
+      map.set(p.category, existing);
+    }
+    return map;
+  }, [dataset]);
+
+  const availablePresets = useMemo(() => {
+    if (!dataset) return [];
+    const known = new Set(dataset.categories.map(c => c.id));
+    return COHORT_PRESETS.filter(p => p.categories.every(c => known.has(c)));
+  }, [dataset]);
+
+  const handlePreset = (categoryIds: string[]) => {
+    const presetLabels: string[] = [];
+    for (const cat of categoryIds) {
+      const labels = labelsByCategory.get(cat) ?? [];
+      for (const l of labels) presetLabels.push(`${cat}::${l}`);
+    }
+    enableAll(categoryIds, presetLabels);
+  };
+
+  const presetIsActive = (categoryIds: string[]) => {
+    if (enabledCategories.size !== categoryIds.length) return false;
+    return categoryIds.every(c => enabledCategories.has(c));
+  };
 
   useEffect(() => {
     if (!selectedPoint || !showTable || tableView !== 'points') return;
@@ -134,7 +213,7 @@ export default function TablePanel() {
             <span className="text-slate-600 italic text-xl ml-2">
               {tableView === 'points'
                 ? `/ ${dataset.points.length} · ${pointUserCount} user${pointUserCount === 1 ? '' : 's'}`
-                : `raw record${sortedRaw.length === 1 ? '' : 's'} · ${rawUserCount} user${rawUserCount === 1 ? '' : 's'}`}
+                : `/ ${rawRowsTotal} raw record${rawRowsTotal === 1 ? '' : 's'} · ${rawUserCount}/${rawUserTotal} user${rawUserTotal === 1 ? '' : 's'}`}
             </span>
           </div>
           <div className="text-[10px] text-slate-600 mt-2 tracking-wide font-mono">
@@ -143,6 +222,29 @@ export default function TablePanel() {
         </div>
         <button onClick={() => setShowTable(false)} className="text-slate-500 hover:text-slate-200 text-xl leading-none w-8 h-8 flex items-center justify-center">×</button>
       </div>
+
+      {availablePresets.length > 0 && (
+        <div className="px-6 py-3 border-b border-slate-800/60 flex flex-wrap gap-1.5 flex-shrink-0">
+          {availablePresets.map(preset => {
+            const active = presetIsActive(preset.categories);
+            return (
+              <button
+                key={preset.label}
+                onClick={() => handlePreset(preset.categories)}
+                className="px-2.5 py-1 text-[9px] tracking-[0.22em] uppercase border transition-all font-mono"
+                style={{
+                  borderColor: active ? '#34d39960' : '#334155',
+                  background: active ? '#34d39918' : 'transparent',
+                  color: active ? '#6ee7b7' : '#94a3b8',
+                }}
+                title={`Show only ${preset.categories.join(', ')}`}
+              >
+                {preset.label}
+              </button>
+            );
+          })}
+        </div>
+      )}
 
       {/* View tabs */}
       <div className="flex border-b border-slate-800/60 flex-shrink-0">

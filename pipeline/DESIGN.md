@@ -66,7 +66,25 @@ A "day" is the smallest unit at which sleep / steps / heart rate resolve into a 
 - *Real anonymized data* — not available for MVP.
 - *Public dataset (NHANES, MESA, UK Biobank)* — schema mismatch with the dedup tables, plus licensing / ETL overhead inappropriate for an MVP.
 
-The priors encode the *direction* of cohort separation (low resting HR and high steps for elites, etc.) without claiming demographic accuracy. **Replace before any clinical or comparative claim is made.**
+The priors encode the *direction* of cohort separation (low resting HR and high steps for elites, etc.). **The current values (May 2026 refresh) come from published Garmin / Apple Health / sports-medicine aggregates — not from a single longitudinal cohort study — so use them for demo/visualization but replace before any clinical or comparative claim is made.**
+
+### Provenance of each feature (May 2026 scrape)
+
+| Feature                         | avg_male / avg_female source                                                            | elite_male / elite_female source                                                  |
+|---------------------------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
+| `resting_hr`                    | Apple Heart & Movement Study (n=207,609, 2021–2025), age 30–49 peak: M 66 / F 68.9 bpm  | Topend Sports — pro cyclists & marathoners RHR: M 35–45 / F 40–50 bpm; midpoints  |
+| `avg_hr`                        | Derived (RHR + typical activity load)                                                   | Derived (lower base + higher daily training time)                                 |
+| `peak_hr`                       | Allison et al. ACC 2014 observed peaks: M 166±17 / F 163±16 bpm                         | Sports-science consensus: elite training peaks 185–195 bpm                        |
+| `sleep_deep_min` / `_rem_min` / `_light_min` / `_awake_min` / `_total_min` | Garmin 2024 sleep report (mean adult): M 7h29m total (deep 67 / REM 82 / light 275 / awake 24); F 7h50m total (deep 71 / REM 92 / light 292 / awake 24) | Sports-medicine consensus (PMC4008810, runbikecalc 2026): target 9h, observed ~8.5h; deep+REM elevated for recovery |
+| `steps`                         | Bassett et al. 2010 US adults: M 5,340 / F 4,912 steps/day                              | Sub-elite endurance training (~100–150 km/wk running): 13–15k steps/day           |
+
+Same numbers also drive the persona generator (`pipeline/generate-persona-raw.mjs`), which emits dedup-format JSON input matching each cohort centroid — useful for demos where the user cluster should land *inside* a named cohort instead of off to one side. Outputs: `persona-avg_male.json`, `persona-avg_female.json`, `persona-elite_male.json`, `persona-elite_female.json`.
+
+```
+node pipeline/generate-persona-raw.mjs --all --days 80
+uv run heal-atlas pipeline/persona-avg_male.json public/atlas.json
+node pipeline/augment-biomarkers.mjs
+```
 
 ---
 

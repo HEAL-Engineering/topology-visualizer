@@ -15,6 +15,7 @@ import PointCloud from './PointCloud';
 import ClusterShapes from './ClusterShapes';
 import ClusterLabels from './ClusterLabels';
 import PhantomTrajectory from './PhantomTrajectory';
+import RegionAxes from './RegionAxes';
 import Scenery from './Scenery';
 
 export default function AtlasCanvas() {
@@ -51,6 +52,7 @@ export default function AtlasCanvas() {
       <PointCloud />
       <ClusterShapes />
       <ClusterLabels />
+      <RegionAxes />
       <PhantomTrajectory />
       <OrbitControls
         makeDefault
@@ -82,7 +84,9 @@ function StoreInvalidator() {
   const enabledLabels = useAtlasStore(s => s.enabledLabels);
   const hoveredCategory = useAtlasStore(s => s.hoveredCategory);
   const selectedPoint = useAtlasStore(s => s.selectedPoint);
+  const hoveredPoint = useAtlasStore(s => s.hoveredPoint);
   const showHulls = useAtlasStore(s => s.showHulls);
+  const showRegionAxes = useAtlasStore(s => s.showRegionAxes);
   const activeMetric = useAtlasStore(s => s.activeMetric);
   const theme = useAtlasStore(s => s.theme);
   const dataset = useAtlasStore(s => s.dataset);
@@ -93,7 +97,7 @@ function StoreInvalidator() {
   useEffect(() => {
     invalidate();
   }, [invalidate, enabledCategories, enabledLabels, hoveredCategory,
-      selectedPoint, showHulls, activeMetric, theme, dataset,
+      selectedPoint, hoveredPoint, showHulls, showRegionAxes, activeMetric, theme, dataset,
       phantomCache, activePhantomKey, showPhantom]);
 
   return null;

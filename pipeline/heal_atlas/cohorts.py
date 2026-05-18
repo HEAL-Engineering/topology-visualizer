@@ -32,22 +32,42 @@ FEATURES: list[str] = [
 COHORT_NAMES: list[str] = ["avg_male", "avg_female", "elite_male", "elite_female"]
 
 # Means and stds aligned to FEATURES, in order.
+#
+# Sourced from published Garmin / Apple Health / sports-science data
+# (May 2026 scrape). Provenance documented in pipeline/DESIGN.md §4.
+#   avg_male/avg_female:
+#     - resting_hr   Apple Heart & Movement Study (n=207,609, 2021-2025)
+#                    age-30-49 peak: M 66, F 68.9
+#     - peak_hr      Allison et al. ACC 2014 observed peaks
+#                    M 166±17, F 163±16
+#     - sleep_*      Garmin 2024 sleep report (mean adult user)
+#                    M total 7h29m (deep 67 / REM 82 / light 275 / awake 24)
+#                    F total 7h50m (deep 71 / REM 92 / light 292 / awake 24)
+#     - steps        Bassett et al. 2010 US adults
+#                    M 5,340 / F 4,912 steps/day
+#   elite_male/elite_female:
+#     - resting_hr   Topend Sports elite-RHR ranges (cyclists/marathoners)
+#                    M 35-45, F 40-50; midpoints used
+#     - sleep_*      Sports-medicine consensus (PMC4008810, runbikecalc 2026):
+#                    target 9h, observed <8h; deep+REM elevated for recovery
+#     - steps        Sub-elite endurance training volume (~100-150 km/wk)
+#                    yields 13-15k steps/day
 COHORT_PRIORS: dict[str, dict[str, list[float]]] = {
     "avg_male": {
-        "mean": [70, 80, 135, 60,  90, 250, 20, 420,  5300],
-        "std":  [ 8,  9,  15, 15,  20,  35,  8,  60,  1800],
+        "mean": [66, 80, 165,  67,  82, 275, 24, 449,  5340],
+        "std":  [ 8,  9,  17,  14,  18,  35,  8,  55,  1800],
     },
     "avg_female": {
-        "mean": [74, 83, 140, 60,  95, 260, 25, 440,  4900],
-        "std":  [ 9, 10,  15, 15,  22,  38,  9,  60,  1700],
+        "mean": [68, 83, 163,  71,  92, 292, 24, 470,  4912],
+        "std":  [ 9, 10,  16,  15,  20,  38,  9,  55,  1700],
     },
     "elite_male": {
-        "mean": [45, 65, 185, 95, 120, 250, 15, 480, 14500],
-        "std":  [ 5,  8,  10, 18,  20,  30,  6,  35,  3500],
+        "mean": [40, 70, 190,  95, 130, 280, 15, 520, 15000],
+        "std":  [ 5,  8,  12,  18,  22,  32,  6,  40,  3500],
     },
     "elite_female": {
-        "mean": [48, 68, 190, 100, 120, 250, 15, 490, 13500],
-        "std":  [ 5,  9,  12,  20,  20,  30,  6,  35,  3300],
+        "mean": [44, 72, 188, 100, 130, 280, 15, 525, 14000],
+        "std":  [ 5,  9,  12,  20,  22,  32,  6,  40,  3300],
     },
 }
 
