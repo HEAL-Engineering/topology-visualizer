@@ -15,7 +15,6 @@ import FilterPanel from './components/FilterPanel';
 import EventCard from './components/EventCard';
 import DataLoader from './components/DataLoader';
 import MetricLens from './components/MetricLens';
-import RegionLegend from './components/RegionLegend';
 
 // Lazy-loaded overlays. They only render after a user action (Read button,
 // cluster click, Table toggle), so their parse cost can be deferred past
@@ -114,7 +113,6 @@ export default function App() {
         <MetricLens />
         <FilterPanel />
       </div>
-      <RegionLegend />
       <EventCard />
       <Suspense fallback={null}>
         <TablePanel />

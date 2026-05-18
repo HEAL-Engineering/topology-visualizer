@@ -21,7 +21,19 @@ import { useMemo } from 'react';
 import { useAtlasStore } from '../store';
 import { useDerivedState } from '../lib/use-derived';
 
-const LABEL_OFFSET_FACTOR = 1.1;
+/**
+ * Vertical lift, in multiples of the cluster's major half-axis, that floats
+ * the label above the cluster. Bumped above the obvious "just clear the
+ * cluster" value because the user cluster sits *inside* the avg_female
+ * cluster — at 1.1× the avg_female label landed in screen-space pixels
+ * also occupied by user dots, and the label (drei <Html> with pointer-
+ * events: auto) was swallowing clicks meant for those dots. The user would
+ * see EventCard show the user (via the lingering hover preview) while
+ * InspectPanel opened on avg_female. 1.8× lifts the label clearly above
+ * the host cluster's vertical extent so it no longer overlaps sibling-
+ * cluster dots from common camera angles.
+ */
+const LABEL_OFFSET_FACTOR = 1.8;
 
 /**
  * Darken a hex color toward black for use as text on a light background.

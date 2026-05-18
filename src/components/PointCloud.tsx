@@ -159,11 +159,51 @@ export default function PointCloud() {
     }
     colorAttr.needsUpdate = true;
     posAttr.needsUpdate = true;
-    // Bounding sphere is used by the frustum culler. After we NaN out some
-    // positions, the cached sphere is stale and (more importantly) NaN-
-    // contaminated, which can mark the whole Points object as culled or
-    // throw a warning. Recompute so the visible subset bounds the draw.
-    geometry.computeBoundingSphere();
+    // Bounding sphere — recompute over the *visible* points only.
+    //
+    // We NaN out the positions of filtered points above so the raycaster
+    // can't hit them. Three.js's stock `computeBoundingSphere` is *almost*
+    // NaN-safe: `Box3.setFromBufferAttribute` survives NaN (comparisons
+    // against NaN are always false, so NaN doesn't update min/max). But
+    // the second pass that computes the radius does
+    // `Math.max(maxRadiusSq, distanceToSquared(NaN))` → NaN, leaving the
+    // sphere's radius NaN. `Ray.intersectsSphere` against a NaN radius is
+    // always false, so the raycaster early-outs before iterating points —
+    // breaking both hover and click on any visible point whenever ANY
+    // point is NaN'd. Visible most obviously when soloing a single
+    // category via the preset chips.
+    let minX = Infinity, minY = Infinity, minZ = Infinity;
+    let maxX = -Infinity, maxY = -Infinity, maxZ = -Infinity;
+    let visibleCount = 0;
+    const n = dataset.points.length;
+    for (let i = 0; i < n; i++) {
+      const x = posArr[i * 3], y = posArr[i * 3 + 1], z = posArr[i * 3 + 2];
+      if (!Number.isFinite(x)) continue;
+      if (x! < minX) minX = x!; if (x! > maxX) maxX = x!;
+      if (y! < minY) minY = y!; if (y! > maxY) maxY = y!;
+      if (z! < minZ) minZ = z!; if (z! > maxZ) maxZ = z!;
+      visibleCount++;
+    }
+    if (visibleCount > 0) {
+      const cx = (minX + maxX) * 0.5;
+      const cy = (minY + maxY) * 0.5;
+      const cz = (minZ + maxZ) * 0.5;
+      let maxRadiusSq = 0;
+      for (let i = 0; i < n; i++) {
+        const x = posArr[i * 3], y = posArr[i * 3 + 1], z = posArr[i * 3 + 2];
+        if (!Number.isFinite(x)) continue;
+        const dx = x! - cx, dy = y! - cy, dz = z! - cz;
+        const r = dx * dx + dy * dy + dz * dz;
+        if (r > maxRadiusSq) maxRadiusSq = r;
+      }
+      if (!geometry.boundingSphere) geometry.boundingSphere = new THREE.Sphere();
+      geometry.boundingSphere.center.set(cx, cy, cz);
+      geometry.boundingSphere.radius = Math.sqrt(maxRadiusSq);
+    } else {
+      if (!geometry.boundingSphere) geometry.boundingSphere = new THREE.Sphere();
+      geometry.boundingSphere.center.set(0, 0, 0);
+      geometry.boundingSphere.radius = 0;
+    }
     invalidate();
   }, [dataset, geometry, enabledCategories, enabledLabels, hoveredCategory, activeMetric, activeRamp, categoryColors, invalidate, isLight, originalPositions]);
 

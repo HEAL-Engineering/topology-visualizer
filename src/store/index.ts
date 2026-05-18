@@ -102,14 +102,6 @@ interface FilterSlice {
 interface UISlice {
   showHulls: boolean;
   showTable: boolean;
-  /**
-   * Toggle for the in-scene region-axis overlay (RegionAxes component).
-   * Renders thin arrows + captions between cohort centroids, labeling what
-   * each direction means (e.g. avg_male → elite_male = "lower RHR, more
-   * steps"). Off by default — adds visual density that's only useful
-   * when the user is reading the topology, not when scanning points.
-   */
-  showRegionAxes: boolean;
   autoRotate: boolean;
   hoveredCategory: string | null;
   expandedCategory: string | null;
@@ -153,7 +145,6 @@ interface UISlice {
   tableView: TableView;
   setShowHulls: (v: boolean) => void;
   setShowTable: (v: boolean) => void;
-  setShowRegionAxes: (v: boolean) => void;
   setAutoRotate: (v: boolean) => void;
   setHoveredCategory: (v: string | null) => void;
   setExpandedCategory: (v: string | null) => void;
@@ -262,7 +253,6 @@ export const useAtlasStore = create<AtlasStore>()(
     // UI
     showHulls: false,
     showTable: false,
-    showRegionAxes: false,
     autoRotate: false,
     hoveredCategory: null,
     expandedCategory: null,
@@ -277,7 +267,6 @@ export const useAtlasStore = create<AtlasStore>()(
     tableView: 'points',
     setShowHulls: (v) => set({ showHulls: v }, false, 'setShowHulls'),
     setShowTable: (v) => set({ showTable: v }, false, 'setShowTable'),
-    setShowRegionAxes: (v) => set({ showRegionAxes: v }, false, 'setShowRegionAxes'),
     setAutoRotate: (v) => set({ autoRotate: v }, false, 'setAutoRotate'),
     setHoveredCategory: (v) => set({ hoveredCategory: v }, false, 'setHoveredCategory'),
     setExpandedCategory: (v) => set({ expandedCategory: v }, false, 'setExpandedCategory'),

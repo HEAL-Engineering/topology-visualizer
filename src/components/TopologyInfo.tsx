@@ -2,17 +2,24 @@ import { useState } from 'react';
 import { X, ChevronDown, TrendingUp, Target } from 'lucide-react';
 import { useAtlasStore } from '../store';
 import { ARCHETYPE_READINGS } from '../data/archetype-readings';
+import { darken } from './ClusterLabels';
 
 type Props = { open: boolean; onClose: () => void };
 
 
 export default function TopologyInfo({ open, onClose }: Props) {
   const dataset = useAtlasStore(s => s.dataset);
+  const theme = useAtlasStore(s => s.theme);
+  const isLight = theme === 'light';
   const [showDeep, setShowDeep] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
   if (!open) return null;
 
   const categories = dataset?.categories ?? [];
+  // Category palette is tuned for additive blending on the dark scene
+  // (sky/emerald/amber land near-white on cream); darken when light mode
+  // is active so the per-archetype "Geometry" subtitle stays readable.
+  const accentText = (hex: string) => isLight ? darken(hex, 0.55) : hex;
 
   return (
     <div
@@ -118,7 +125,7 @@ export default function TopologyInfo({ open, onClose }: Props) {
                     <div className="px-4 pb-4 pt-1 space-y-4 border-t" style={{ borderColor: `${cat.color}20` }}>
                       <div>
                         <div className="text-[10px] tracking-[0.28em] uppercase font-mono mb-1.5"
-                          style={{ color: cat.color }}>
+                          style={{ color: accentText(cat.color) }}>
                           Geometry
                         </div>
                         <p className="text-[12px] text-slate-400 leading-relaxed">

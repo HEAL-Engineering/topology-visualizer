@@ -1,4 +1,4 @@
-import { RotateCw, Box, Table, Info, Sun, Moon, Compass } from 'lucide-react';
+import { RotateCw, Box, Table, Info, Sun, Moon } from 'lucide-react';
 import { useAtlasStore } from '../store';
 
 type Props = { onOpenTopology: () => void };
@@ -11,12 +11,10 @@ export default function ControlBar({ onOpenTopology }: Props) {
   const dataset = useAtlasStore(s => s.dataset);
   const showHulls = useAtlasStore(s => s.showHulls);
   const showTable = useAtlasStore(s => s.showTable);
-  const showRegionAxes = useAtlasStore(s => s.showRegionAxes);
   const autoRotate = useAtlasStore(s => s.autoRotate);
   const theme = useAtlasStore(s => s.theme);
   const setShowHulls = useAtlasStore(s => s.setShowHulls);
   const setShowTable = useAtlasStore(s => s.setShowTable);
-  const setShowRegionAxes = useAtlasStore(s => s.setShowRegionAxes);
   const setAutoRotate = useAtlasStore(s => s.setAutoRotate);
   const setTheme = useAtlasStore(s => s.setTheme);
   const isLight = theme === 'light';
@@ -54,13 +52,6 @@ export default function ControlBar({ onOpenTopology }: Props) {
         </button>
         <button onClick={() => setShowHulls(!showHulls)} className={`${BTN_CLASS_BASE} ${showHulls ? BTN_CLASS_ON : BTN_CLASS_OFF}`}>
           <Box size={11} className="inline mr-2 -mt-0.5" /> Hulls
-        </button>
-        <button
-          onClick={() => setShowRegionAxes(!showRegionAxes)}
-          className={`${BTN_CLASS_BASE} ${showRegionAxes ? BTN_CLASS_ON : BTN_CLASS_OFF}`}
-          title="Show what each quadrant of the atlas means — in-scene arrows + side legend explaining biomarker semantics between cohorts"
-        >
-          <Compass size={11} className="inline mr-2 -mt-0.5" /> Regions
         </button>
         <button onClick={() => setShowTable(!showTable)} className={`${BTN_CLASS_BASE} ${showTable ? BTN_CLASS_ON : BTN_CLASS_OFF}`}>
           <Table size={11} className="inline mr-2 -mt-0.5" /> Table

@@ -25,6 +25,7 @@ import { useDerivedState, type CategoryShape } from '../lib/use-derived';
 import { ARCHETYPE_READINGS } from '../data/archetype-readings';
 import { generateLobeActions } from '../lib/lobe-actions';
 import MorphTarget from './MorphTarget';
+import { darken } from './ClusterLabels';
 
 export default function InspectPanel() {
   // ── All hooks first (Rules of Hooks: same order every render) ─────────
@@ -79,6 +80,9 @@ export default function InspectPanel() {
     return reading?.actions ?? [];
   }, [isUser, lobePoints, reading]);
 
+  const theme = useAtlasStore(s => s.theme);
+  const isLight = theme === 'light';
+
   // ── Early returns AFTER all hooks ─────────────────────────────────────
   if (!inspectedCategory) return null;
   // Hide while the table drawer is open — drawer takes the same screen
@@ -87,6 +91,11 @@ export default function InspectPanel() {
   if (!cat || !reading) return null;
 
   const accent = cat.color;
+  // Text-only accent. Category palette is tuned for additive blending on
+  // the dark scene (sky/amber/emerald land near-white on cream), so any
+  // chip or heading rendered AS TEXT needs a darkened variant in light
+  // mode. Borders / boxShadows still use the raw accent — they read fine.
+  const accentText = isLight ? darken(accent, 0.55) : accent;
   const close = () => setInspectedCategory(null);
 
   return (
@@ -107,7 +116,7 @@ export default function InspectPanel() {
         <div className="min-w-0">
           <div
             className="text-[10px] tracking-[0.32em] uppercase font-mono mb-2 flex items-center gap-2"
-            style={{ color: accent }}
+            style={{ color: accentText }}
           >
             <span
               className="w-1.5 h-1.5 rounded-full shrink-0"
@@ -152,7 +161,7 @@ export default function InspectPanel() {
                 onClick={() => setInspectedSubIndex(s.subIndex)}
                 className="flex-1 px-3 py-2.5 text-[10px] tracking-[0.22em] uppercase font-mono transition-all"
                 style={{
-                  color: on ? accent : '#94a3b8',
+                  color: on ? accentText : (isLight ? '#475569' : '#94a3b8'),
                   background: on ? `${accent}10` : 'transparent',
                   borderBottom: `2px solid ${on ? accent : 'transparent'}`,
                 }}

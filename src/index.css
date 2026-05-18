@@ -34,6 +34,15 @@
   --page-bg: #f4f1ea;
   --page-fg: #020617;  /* slate-950 — darker default text on cream */
 
+  /* Reapply color HERE — `body { color: var(--page-fg) }` resolves the
+   * variable in :root's scope (always dark-mode #cbd5e1), so anything
+   * inside the wrapper that lacks an explicit text color was inheriting
+   * slate-300 over the cream paper and rendering as pale gray. Setting
+   * `color` on .theme-light itself re-resolves the var in this scope so
+   * the wrapper and all its serif headings (EventCard title,
+   * ControlBar h1, TopologyInfo h2, etc.) cascade slate-950 instead. */
+  color: var(--page-fg);
+
   /* Warm-cream glass — pure white is too clinical against the paper bg. */
   --panel-bg-strong: rgba(255, 252, 246, 0.92);
   --panel-bg:        rgba(255, 252, 246, 0.82);
